@@ -29,7 +29,41 @@ namespace Inventory
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if(string.IsNullOrEmpty(txtUser.Text))
+            {
+                MessageBox.Show("Please enter your Username!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtUser.Focus();
+                return;
+            }
+            if(string.IsNullOrEmpty(txtPassword.Text))
+            {
+                MessageBox.Show("Please enter your Password!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtPassword.Focus();
+                return;
+            }
+            try
+            {
+                using (dbtestEntities test = new dbtestEntities())
+                {
+                    var query = from o in test.Users where o.Username == txtUser.Text && o.Password == txtPassword.Text
+                                select o;
 
+                    if(query.SingleOrDefault() != null)
+                    {
+                        MessageBox.Show("You have loged in.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        //TODO::Code to process login
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your username or password was incorrect!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -54,12 +88,18 @@ namespace Inventory
 
         private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if(e.KeyChar == (char)13)
+            {
+                txtPassword.Focus();
+            }
         }
 
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if(e.KeyChar == (char)13)
+            {
+                btnLogin.PerformClick();
+            }
         }
     }
 }

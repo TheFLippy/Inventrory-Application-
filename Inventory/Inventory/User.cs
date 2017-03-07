@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Inventory
+﻿namespace Inventory
 {
-    class user
+    public class User
     {
-        //aedfadfasdf wersdfadfadfdsfsdsdfasdfa df  asdfadfffadfadsfasdsga h sgffg 
+        public string Username { get; set; }
+        public string Password { get; set; }
     }
 }

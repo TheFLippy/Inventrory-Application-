@@ -53,6 +53,10 @@ namespace Inventory
                         MessageBox.Show("You have loged in.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         //TODO::Code to process login
+                        MainMenu menu = new MainMenu();
+                        menu.Show();
+                        this.Hide();
+
                     }
                     else
                     {

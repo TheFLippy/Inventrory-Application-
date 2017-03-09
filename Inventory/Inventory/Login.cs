@@ -7,12 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Inventory
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+        public string logedUser;
+        public int logedPriveleges; 
+
+        public Login()
         {
             InitializeComponent();
         }
@@ -27,8 +31,10 @@ namespace Inventory
 
         }
 
+        //LOGIN BUTTON//
         private void button1_Click(object sender, EventArgs e)
         {
+            //Checking if form fields are empty
             if(string.IsNullOrEmpty(txtUser.Text))
             {
                 MessageBox.Show("Please enter your Username!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -43,16 +49,19 @@ namespace Inventory
             }
             try
             {
+                //Create new instance of database
                 using (dbtestEntities test = new dbtestEntities())
                 {
+                    //Querying the database
                     var query = from o in test.Users where o.Username == txtUser.Text && o.Password == txtPassword.Text
                                 select o;
 
+                    //If query returns a row (more than 0 a.k.a not null) then it has been successfull
                     if(query.SingleOrDefault() != null)
                     {
-                        MessageBox.Show("You have loged in.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("You have logged in.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        //TODO::Code to process login
+                        //Creating the main menu form and showing it and hiding the login form
                         MainMenu menu = new MainMenu();
                         menu.Show();
                         this.Hide();
@@ -64,12 +73,13 @@ namespace Inventory
                     }
                 }
             }
+            //Exceptions
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+    
         private void label1_Click(object sender, EventArgs e)
         {
 

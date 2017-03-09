@@ -33,7 +33,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -82,21 +82,22 @@
             this.button4.Text = "Assign deliveries";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnLogout
             // 
-            this.button5.Location = new System.Drawing.Point(72, 335);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(244, 28);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Logout";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnLogout.Location = new System.Drawing.Point(72, 335);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(244, 28);
+            this.btnLogout.TabIndex = 5;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(386, 450);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -118,6 +119,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

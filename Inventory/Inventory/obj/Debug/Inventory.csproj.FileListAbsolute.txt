@@ -1,0 +1,13 @@
+C:\Users\Sergey\Desktop\Inventrory-Application--master\Inventrory-Application--master\Inventory\Inventory\bin\Debug\Inventory.exe.config
+C:\Users\Sergey\Desktop\Inventrory-Application--master\Inventrory-Application--master\Inventory\Inventory\bin\Debug\Inventory.exe
+C:\Users\Sergey\Desktop\Inventrory-Application--master\Inventrory-Application--master\Inventory\Inventory\bin\Debug\Inventory.pdb
+C:\Users\Sergey\Desktop\Inventrory-Application--master\Inventrory-Application--master\Inventory\Inventory\bin\Debug\EntityFramework.dll
+C:\Users\Sergey\Desktop\Inventrory-Application--master\Inventrory-Application--master\Inventory\Inventory\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Sergey\Desktop\Inventrory-Application--master\Inventrory-Application--master\Inventory\Inventory\bin\Debug\EntityFramework.xml
+C:\Users\Sergey\Desktop\Inventrory-Application--master\Inventrory-Application--master\Inventory\Inventory\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Sergey\Desktop\Inventrory-Application--master\Inventrory-Application--master\Inventory\Inventory\obj\Debug\Inventory.Login.resources
+C:\Users\Sergey\Desktop\Inventrory-Application--master\Inventrory-Application--master\Inventory\Inventory\obj\Debug\Inventory.MainMenu.resources
+C:\Users\Sergey\Desktop\Inventrory-Application--master\Inventrory-Application--master\Inventory\Inventory\obj\Debug\Inventory.Properties.Resources.resources
+C:\Users\Sergey\Desktop\Inventrory-Application--master\Inventrory-Application--master\Inventory\Inventory\obj\Debug\Inventory.csproj.GenerateResource.Cache
+C:\Users\Sergey\Desktop\Inventrory-Application--master\Inventrory-Application--master\Inventory\Inventory\obj\Debug\Inventory.exe
+C:\Users\Sergey\Desktop\Inventrory-Application--master\Inventrory-Application--master\Inventory\Inventory\obj\Debug\Inventory.pdb

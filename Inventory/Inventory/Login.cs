@@ -13,9 +13,7 @@ namespace Inventory
 {
     public partial class Login : Form
     {
-        public string logedUser;
-        public int logedPriveleges; 
-
+        public string connectionString = @"Data Source=gapt-inventory.database.windows.net;Initial Catalog = Inventory; Persist Security Info=True;User ID = TheFLippy; Password=Gapt1234";
         public Login()
         {
             InitializeComponent();
@@ -49,29 +47,27 @@ namespace Inventory
             }
             try
             {
-                //Create new instance of database
-                using (dbtestEntities test = new dbtestEntities())
+                SqlConnection con = new SqlConnection(connectionString);
+                con.Open();
+                if(con.State == System.Data.ConnectionState.Open)
                 {
-                    //Querying the database
-                    var query = from o in test.Users where o.Username == txtUser.Text && o.Password == txtPassword.Text
-                                select o;
-
-                    //If query returns a row (more than 0 a.k.a not null) then it has been successfull
-                    if(query.SingleOrDefault() != null)
+                    string query = "select username from login where username='"+txtUser.ToString()+"'and password='"+txtPassword.ToString()+"'";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    int result = cmd.ExecuteNonQuery();
+                    if(result != 0)
                     {
                         MessageBox.Show("You have logged in.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                         //Creating the main menu form and showing it and hiding the login form
                         MainMenu menu = new MainMenu();
                         menu.Show();
                         this.Hide();
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Your username or password was incorrect!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Your username or password was incorrect!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
             }
             //Exceptions
             catch(Exception ex)

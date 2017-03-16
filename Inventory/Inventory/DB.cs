@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace Inventory
 {
     class db
     {
-        //public string connectionString = @"Data Source=gapt-inventory.database.windows.net;Initial Catalog = Inventory; Persist Security Info=True;User ID = TheFLippy; Password=Gapt1234";
         public string connectionString = @"Data Source=gapt-inventory.database.windows.net;Initial Catalog = Inventory; Persist Security Info=True;User ID = TheFLippy; Password=Gapt1234"; 
         public void sqlConnect()
         {
@@ -33,13 +33,25 @@ namespace Inventory
             return false;
         }
 
-        public void insert(string username, string password, string email)
+        public bool insert(string username, string password, string name, string surname, int group)
         {
             SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            DateTime currentDay = DateTime.Today;
 
-            string query = "INSERT INTO login (username, password, email) VALUES ('" + username + "', '" + password + "', '" + email + "')";
+            string query = "INSERT INTO login VALUES ('" + username + "', '" + password + "', '" + 
+                                                                            name + "', '"  + surname + "', GETDATE() , '" + group + "')";
             SqlCommand cmd = new SqlCommand(query, conn);
-            cmd.ExecuteNonQuery();
+            int result = cmd.ExecuteNonQuery();
+            conn.Close();
+
+            if(result != 0)
+            {
+                return true;
+            }
+
+            return false;
+
         }
         
     }

@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.gridMngEmployees = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridMngEmployees)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,13 +41,13 @@
             // 
             this.txtSearch.Location = new System.Drawing.Point(37, 36);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(347, 20);
+            this.txtSearch.Size = new System.Drawing.Size(611, 20);
             this.txtSearch.TabIndex = 0;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(390, 36);
+            this.btnSearch.Location = new System.Drawing.Point(37, 71);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 1;
@@ -55,10 +57,14 @@
             // gridMngEmployees
             // 
             this.gridMngEmployees.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gridMngEmployees.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridMngEmployees.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gridMngEmployees.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridMngEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridMngEmployees.Location = new System.Drawing.Point(12, 118);
+            this.gridMngEmployees.Location = new System.Drawing.Point(37, 118);
             this.gridMngEmployees.Name = "gridMngEmployees";
-            this.gridMngEmployees.Size = new System.Drawing.Size(453, 326);
+            this.gridMngEmployees.Size = new System.Drawing.Size(611, 326);
             this.gridMngEmployees.TabIndex = 2;
             // 
             // btnAdd
@@ -71,11 +77,22 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(678, 455);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 4;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // ManageEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(765, 490);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.gridMngEmployees);
             this.Controls.Add(this.btnSearch);
@@ -96,5 +113,6 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView gridMngEmployees;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnBack;
     }
 }

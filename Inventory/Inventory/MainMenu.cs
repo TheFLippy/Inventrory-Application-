@@ -33,5 +33,12 @@ namespace Inventory
             Login login = new Login();
             login.Show();
         }
+
+        private void btnManageEmployees_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ManageEmployees mng = new ManageEmployees();
+            mng.Show();
+        }
     }
 }

@@ -47,30 +47,23 @@ namespace Inventory
             }
             try
             {
-                SqlConnection con = new SqlConnection(connectionString);
-                con.Open();
-                if(con.State == System.Data.ConnectionState.Open)
+                db sqlConn = new db();
+                sqlConn.login(txtUser.Text, txtPassword.Text);
+
+                if(sqlConn.login(txtUser.Text, txtPassword.Text))
                 {
-                    string query = "select username from login where username='"+txtUser.ToString()+"'and password='"+txtPassword.ToString()+"'";
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    int result = cmd.ExecuteNonQuery();
-                    if(result != 0)
-                    {
-                        MessageBox.Show("You have logged in.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //Creating the main menu form and showing it and hiding the login form
-                        MainMenu menu = new MainMenu();
-                        menu.Show();
-                        this.Hide();
-                    }
+                    MessageBox.Show("Successfully loged in.");
+                    this.Hide();
+                    MainMenu menu = new MainMenu();
+                    menu.Show();
                 }
                 else
                 {
                     MessageBox.Show("Your username or password was incorrect!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-
             }
             //Exceptions
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

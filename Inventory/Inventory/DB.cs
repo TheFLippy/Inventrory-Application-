@@ -33,7 +33,7 @@ namespace Inventory
             return false;
         }
 
-        public bool insert(string username, string password, string name, string surname, int group)
+        public bool insert(string username, string password, string name, string surname, string group)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();

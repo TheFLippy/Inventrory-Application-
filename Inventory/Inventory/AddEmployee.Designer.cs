@@ -162,6 +162,7 @@
             this.rbAdmin.TabStop = true;
             this.rbAdmin.Text = "Admin";
             this.rbAdmin.UseVisualStyleBackColor = true;
+            this.rbAdmin.CheckedChanged += new System.EventHandler(this.rbAdmin_CheckedChanged);
             // 
             // rbClerk
             // 
@@ -173,6 +174,7 @@
             this.rbClerk.TabStop = true;
             this.rbClerk.Text = "Clerk";
             this.rbClerk.UseVisualStyleBackColor = true;
+            this.rbClerk.CheckedChanged += new System.EventHandler(this.rbClerk_CheckedChanged);
             // 
             // rbDriver
             // 
@@ -184,6 +186,7 @@
             this.rbDriver.TabStop = true;
             this.rbDriver.Text = "Driver";
             this.rbDriver.UseVisualStyleBackColor = true;
+            this.rbDriver.CheckedChanged += new System.EventHandler(this.rbDriver_CheckedChanged);
             // 
             // AddEmployee
             // 

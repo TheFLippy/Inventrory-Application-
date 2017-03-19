@@ -64,7 +64,7 @@
             this.gridMngEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridMngEmployees.Location = new System.Drawing.Point(37, 118);
             this.gridMngEmployees.Name = "gridMngEmployees";
-            this.gridMngEmployees.Size = new System.Drawing.Size(611, 326);
+            this.gridMngEmployees.Size = new System.Drawing.Size(611, 360);
             this.gridMngEmployees.TabIndex = 2;
             // 
             // btnAdd

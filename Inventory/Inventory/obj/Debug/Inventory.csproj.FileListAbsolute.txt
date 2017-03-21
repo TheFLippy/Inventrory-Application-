@@ -25,5 +25,5 @@ C:\Users\Sergey\Source\Repos\Inventrory-Application-3\Inventory\Inventory\obj\De
 C:\Users\Sergey\Source\Repos\Inventrory-Application-3\Inventory\Inventory\obj\Debug\Inventory.Properties.Resources.resources
 C:\Users\Sergey\Source\Repos\Inventrory-Application-3\Inventory\Inventory\obj\Debug\Inventory.csproj.GenerateResource.Cache
 C:\Users\Sergey\Source\Repos\Inventrory-Application-3\Inventory\Inventory\obj\Debug\Inventory.ManageEmployees.resources
-C:\Users\Sergey\Source\Repos\Inventrory-Application-3\Inventory\Inventory\obj\Debug\Inventory.csprojResolveAssemblyReference.cache
 C:\Users\Sergey\Source\Repos\Inventrory-Application-3\Inventory\Inventory\obj\Debug\Inventory.AddEmployee.resources
+C:\Users\Sergey\Source\Repos\Inventrory-Application-3\Inventory\Inventory\obj\Debug\Inventory.csprojResolveAssemblyReference.cache

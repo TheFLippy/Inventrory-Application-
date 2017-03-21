@@ -81,6 +81,7 @@
             // 
             this.txtAddPassword.Location = new System.Drawing.Point(198, 88);
             this.txtAddPassword.Name = "txtAddPassword";
+            this.txtAddPassword.PasswordChar = '*';
             this.txtAddPassword.Size = new System.Drawing.Size(154, 20);
             this.txtAddPassword.TabIndex = 1;
             // 
@@ -113,6 +114,7 @@
             // 
             this.txtConfirm.Location = new System.Drawing.Point(198, 125);
             this.txtConfirm.Name = "txtConfirm";
+            this.txtConfirm.PasswordChar = '*';
             this.txtConfirm.Size = new System.Drawing.Size(154, 20);
             this.txtConfirm.TabIndex = 2;
             // 
@@ -121,7 +123,7 @@
             this.btnAdd.Location = new System.Drawing.Point(408, 302);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 4;
+            this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -131,7 +133,7 @@
             this.btnBack.Location = new System.Drawing.Point(408, 331);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
-            this.btnBack.TabIndex = 5;
+            this.btnBack.TabIndex = 9;
             this.btnBack.Text = "Cancel";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -150,7 +152,7 @@
             this.txtSurname.Location = new System.Drawing.Point(198, 204);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(154, 20);
-            this.txtSurname.TabIndex = 9;
+            this.txtSurname.TabIndex = 4;
             // 
             // rbAdmin
             // 
@@ -158,7 +160,7 @@
             this.rbAdmin.Location = new System.Drawing.Point(152, 264);
             this.rbAdmin.Name = "rbAdmin";
             this.rbAdmin.Size = new System.Drawing.Size(54, 17);
-            this.rbAdmin.TabIndex = 11;
+            this.rbAdmin.TabIndex = 5;
             this.rbAdmin.TabStop = true;
             this.rbAdmin.Text = "Admin";
             this.rbAdmin.UseVisualStyleBackColor = true;
@@ -170,7 +172,7 @@
             this.rbClerk.Location = new System.Drawing.Point(238, 264);
             this.rbClerk.Name = "rbClerk";
             this.rbClerk.Size = new System.Drawing.Size(49, 17);
-            this.rbClerk.TabIndex = 12;
+            this.rbClerk.TabIndex = 6;
             this.rbClerk.TabStop = true;
             this.rbClerk.Text = "Clerk";
             this.rbClerk.UseVisualStyleBackColor = true;
@@ -182,7 +184,7 @@
             this.rbDriver.Location = new System.Drawing.Point(313, 264);
             this.rbDriver.Name = "rbDriver";
             this.rbDriver.Size = new System.Drawing.Size(53, 17);
-            this.rbDriver.TabIndex = 13;
+            this.rbDriver.TabIndex = 7;
             this.rbDriver.TabStop = true;
             this.rbDriver.Text = "Driver";
             this.rbDriver.UseVisualStyleBackColor = true;

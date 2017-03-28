@@ -58,6 +58,10 @@ namespace Inventory
                     ManageEmployees mng = new ManageEmployees();
                     mng.Show();
                 }
+                else
+                {
+                    MessageBox.Show("Username already exists!\nPlease chooe a different one.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
             }
             catch (Exception ex)

@@ -51,7 +51,15 @@ namespace Inventory
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM login WHERE username='" + username + "'", connectionString);
+            sda.Fill(dt);
+            if (dt.Rows[0][0].ToString() == "1")
+            {
+                return false;
+            }
+
             string passwordHash = Hash.ComputeHash(password, null);
 
             User addUser = new User(username, passwordHash, name, surname, group);
@@ -62,7 +70,6 @@ namespace Inventory
             myCommand.Parameters.AddWithValue("@name", addUser.Name);
             myCommand.Parameters.AddWithValue("@surname", addUser.Surname);
             myCommand.Parameters.AddWithValue("@group", addUser.Group);
-            //myCommand.Parameters.AddWithValue("@salt", addUser.Salt);
 
             int result = myCommand.ExecuteNonQuery();
 
@@ -71,6 +78,29 @@ namespace Inventory
                 return true;
             }
             return false;
+        }
+
+        public bool delete(int[] array)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if(array[i] != 0 && array[i] != null)
+                {
+                    var myCommand = new SqlCommand("DELETE FROM login WHERE ID = @id", conn);
+                    myCommand.Parameters.AddWithValue("@id", array[i]);
+
+                    int result = myCommand.ExecuteNonQuery();
+
+                    if(result == 0)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
 
     }

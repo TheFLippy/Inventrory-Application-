@@ -34,6 +34,7 @@
             this.gridMngEmployees = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.btnDeleteEmp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridMngEmployees)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,9 +54,11 @@
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // gridMngEmployees
             // 
+            this.gridMngEmployees.AllowUserToAddRows = false;
             this.gridMngEmployees.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.gridMngEmployees.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -66,6 +69,7 @@
             this.gridMngEmployees.Name = "gridMngEmployees";
             this.gridMngEmployees.Size = new System.Drawing.Size(611, 360);
             this.gridMngEmployees.TabIndex = 2;
+            this.gridMngEmployees.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridMngEmployees_CellContentClick);
             // 
             // btnAdd
             // 
@@ -87,11 +91,22 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // btnDeleteEmp
+            // 
+            this.btnDeleteEmp.Location = new System.Drawing.Point(654, 147);
+            this.btnDeleteEmp.Name = "btnDeleteEmp";
+            this.btnDeleteEmp.Size = new System.Drawing.Size(99, 23);
+            this.btnDeleteEmp.TabIndex = 5;
+            this.btnDeleteEmp.Text = "Delete";
+            this.btnDeleteEmp.UseVisualStyleBackColor = true;
+            this.btnDeleteEmp.Click += new System.EventHandler(this.btnDeleteEmp_Click);
+            // 
             // ManageEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(765, 490);
+            this.Controls.Add(this.btnDeleteEmp);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.gridMngEmployees);
@@ -114,5 +129,6 @@
         private System.Windows.Forms.DataGridView gridMngEmployees;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnDeleteEmp;
     }
 }

@@ -10,7 +10,7 @@
             this.Name = name;
             this.Surname = surname;
             this.Group = group;
-            //this.Salt = salt;
+
         }
 
         //public int id { get; set; }

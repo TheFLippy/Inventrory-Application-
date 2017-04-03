@@ -35,6 +35,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnDeleteEmp = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridMngEmployees)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,6 +70,7 @@
             this.gridMngEmployees.Name = "gridMngEmployees";
             this.gridMngEmployees.Size = new System.Drawing.Size(611, 360);
             this.gridMngEmployees.TabIndex = 2;
+            this.gridMngEmployees.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridMngEmployees_CellClick);
             this.gridMngEmployees.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridMngEmployees_CellContentClick);
             // 
             // btnAdd
@@ -77,7 +79,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(99, 23);
             this.btnAdd.TabIndex = 3;
-            this.btnAdd.Text = "Add Employee";
+            this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -93,7 +95,7 @@
             // 
             // btnDeleteEmp
             // 
-            this.btnDeleteEmp.Location = new System.Drawing.Point(654, 147);
+            this.btnDeleteEmp.Location = new System.Drawing.Point(654, 176);
             this.btnDeleteEmp.Name = "btnDeleteEmp";
             this.btnDeleteEmp.Size = new System.Drawing.Size(99, 23);
             this.btnDeleteEmp.TabIndex = 5;
@@ -101,11 +103,22 @@
             this.btnDeleteEmp.UseVisualStyleBackColor = true;
             this.btnDeleteEmp.Click += new System.EventHandler(this.btnDeleteEmp_Click);
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(654, 147);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(99, 23);
+            this.btnEdit.TabIndex = 6;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // ManageEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(765, 490);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnDeleteEmp);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnAdd);
@@ -130,5 +143,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnDeleteEmp;
+        private System.Windows.Forms.Button btnEdit;
     }
 }

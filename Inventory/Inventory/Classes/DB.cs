@@ -80,6 +80,32 @@ namespace Inventory
             return false;
         }
 
+        public bool update(string username, string password, string name, string surname, string group, int id)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            string passwordHash = Hash.ComputeHash(password, null);
+
+            User editUser = new User(username, passwordHash, name, surname, group);
+
+            var myCommand = new SqlCommand("UPDATE login SET username = @username, password = @password, name = @name, surname = @surname WHERE id='" + id + "'", conn);
+            myCommand.Parameters.AddWithValue("@username", editUser.Username);
+            myCommand.Parameters.AddWithValue("@password", editUser.Password);
+            myCommand.Parameters.AddWithValue("@name", editUser.Name);
+            myCommand.Parameters.AddWithValue("@surname", editUser.Surname);
+            //myCommand.Parameters.AddWithValue("@group", editUser.Group);
+
+            int result = myCommand.ExecuteNonQuery();
+
+            if (result != 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         public bool delete(int[] array)
         {
             SqlConnection conn = new SqlConnection(connectionString);

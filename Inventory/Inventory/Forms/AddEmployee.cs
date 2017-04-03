@@ -55,8 +55,6 @@ namespace Inventory
 
                     //switching to search after completion
                     this.Hide();
-                    ManageEmployees mng = new ManageEmployees();
-                    mng.Show();
                 }
                 else
                 {
@@ -72,10 +70,7 @@ namespace Inventory
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            
             this.Hide();
-            ManageEmployees mng = new ManageEmployees();
-            mng.Show();
         }
 
         private void rbAdmin_CheckedChanged(object sender, EventArgs e)

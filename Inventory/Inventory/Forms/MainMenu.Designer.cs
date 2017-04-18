@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.btnManageEmployees = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAddPackage = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
@@ -55,14 +55,15 @@
             this.btnManageEmployees.UseVisualStyleBackColor = true;
             this.btnManageEmployees.Click += new System.EventHandler(this.btnManageEmployees_Click);
             // 
-            // button2
+            // btnAddPackage
             // 
-            this.button2.Location = new System.Drawing.Point(72, 107);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(244, 28);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Add Package";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAddPackage.Location = new System.Drawing.Point(72, 107);
+            this.btnAddPackage.Name = "btnAddPackage";
+            this.btnAddPackage.Size = new System.Drawing.Size(244, 28);
+            this.btnAddPackage.TabIndex = 2;
+            this.btnAddPackage.Text = "Add Package";
+            this.btnAddPackage.UseVisualStyleBackColor = true;
+            this.btnAddPackage.Click += new System.EventHandler(this.btnAddPackage_Click);
             // 
             // button3
             // 
@@ -100,7 +101,7 @@
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnAddPackage);
             this.Controls.Add(this.btnManageEmployees);
             this.Controls.Add(this.label1);
             this.Name = "MainMenu";
@@ -116,7 +117,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnManageEmployees;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAddPackage;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnLogout;

@@ -35,5 +35,13 @@ namespace Inventory
             ManageEmployees mng = new ManageEmployees();
             mng.Show();
         }
+
+       
+        private void btnAddPackage_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Add_Package add = new Add_Package();
+            add.Show();
+        }
     }
 }

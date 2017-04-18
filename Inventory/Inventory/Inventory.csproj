@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Package.cs" />
     <Compile Include="Forms\AddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +65,12 @@
     </Compile>
     <Compile Include="Classes\DB.cs" />
     <Compile Include="Classes\Hash.cs" />
+    <Compile Include="Forms\Add_Package.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Add_Package.Designer.cs">
+      <DependentUpon>Add_Package.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EditEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +101,9 @@
     <Compile Include="Classes\Utility.cs" />
     <EmbeddedResource Include="Forms\AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Add_Package.resx">
+      <DependentUpon>Add_Package.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditEmployee.resx">
       <DependentUpon>EditEmployee.cs</DependentUpon>

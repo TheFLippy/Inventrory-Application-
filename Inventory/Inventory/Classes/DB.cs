@@ -11,6 +11,7 @@ namespace Inventory
     class db
     {
         public string connectionString = @"Data Source=gapt-inventory.database.windows.net;Initial Catalog = Inventory; Persist Security Info=True;User ID = TheFLippy; Password=Gapt1234";
+        int id = 0;
         public void sqlConnect()
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -79,6 +80,56 @@ namespace Inventory
             }
             return false;
         }
+
+        //txtpackagenumber.Text,  txtheight.Text, txtlength.Text, txtweight.Text, txtwidth.Text, txttelephone_2.Text, txtaddress1_2.Text, txtaddress2_2.Text, txtcity_2.Text,  txtcountry_2.Text, txtname_2.Text, txtpostcode_2.Text, txtsurname_2.Text,))
+        public bool insertpack( float deliveryNumber, float height, float length, float weight, float width, float returnNumber, 
+            string deliveryAddress1, string deliveryAddress2, string deliveryCity, string deliveryCountry, 
+            string deliveryName , string deliveryPostcode, string deliverySurname, string returnAddress1, 
+            string returnAddress2, string returnCity, string returnCountry, string returnName,
+            string returnPostcode, string returnSurname,float packagenumber)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            Package addPack = new Package(deliveryNumber, height, length, weight, width, returnNumber, deliveryAddress1, deliveryAddress2, deliveryCity, deliveryCountry, deliveryName, deliveryPostcode, deliverySurname, returnAddress1, returnAddress2, returnCity, returnCountry, returnName, returnPostcode, returnSurname, packagenumber);
+
+
+            var myCommand = new SqlCommand("INSERT INTO package VALUES(@id ,GETDATE(),GETDATE(),NULL,'false','false', @deliveryNumber, @height, @length, @weight, @width, @returnNumber, @deliveryAddress1, @deliveryAddress2,@deliveryCity, @deliveryCountry, @deliveryName, @deliveryPostcode, @deliverySurname, @returnAddress1, @returnAddress2, @returnCity, @returnCountry, @returnName, @returnPostcode, @returnSurname, @packageNumber)", conn);
+            myCommand.Parameters.Add("@id", id);
+            myCommand.Parameters.AddWithValue("@deliveryNumber", addPack.deliverynumber);
+            myCommand.Parameters.AddWithValue("@height", addPack.height);
+            myCommand.Parameters.AddWithValue("@length", addPack.length);
+            myCommand.Parameters.AddWithValue("@weight", addPack.weight);
+            myCommand.Parameters.AddWithValue("@width",  addPack.width);
+            myCommand.Parameters.AddWithValue("@returnNumber", addPack.returnnumber);
+            myCommand.Parameters.AddWithValue("@deliveryAddress1", addPack.deliveryaddress1);
+            myCommand.Parameters.AddWithValue("@deliveryAddress2", addPack.deliveryaddress2);
+            myCommand.Parameters.AddWithValue("@deliveryCity", addPack.deliverycity);
+            myCommand.Parameters.AddWithValue("@deliveryCountry", addPack.deliverycountry);
+            myCommand.Parameters.AddWithValue("@deliveryName", addPack.deliveryname);
+            myCommand.Parameters.AddWithValue("@deliveryPostcode", addPack.deliverypostcode);
+            myCommand.Parameters.AddWithValue("@deliverySurname", addPack.deliverysurname);
+            myCommand.Parameters.AddWithValue("@returnAddress1", addPack.returnaddress1);
+            myCommand.Parameters.AddWithValue("@returnAddress2", addPack.returnaddress2);
+            myCommand.Parameters.AddWithValue("@returnCity", addPack.returncity);
+            myCommand.Parameters.AddWithValue("@returnCountry", addPack.returncountry);
+            myCommand.Parameters.AddWithValue("@returnName", addPack.returnname);
+            myCommand.Parameters.AddWithValue("@returnPostcode", addPack.returnpostcode);
+            myCommand.Parameters.AddWithValue("@returnSurname", addPack.returnsurname);
+            myCommand.Parameters.AddWithValue("@packageNumber", addPack.packagenumber);
+
+            int result = myCommand.ExecuteNonQuery();
+            id++;
+            if (result != 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+
+
+
 
         public bool update(string username, string password, string name, string surname, string group, int id)
         {

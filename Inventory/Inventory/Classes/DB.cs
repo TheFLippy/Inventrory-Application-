@@ -97,14 +97,18 @@ namespace Inventory
             sda.Fill(dt);
 
             Package addPack = new Package(deliveryNumber, height, length, weight, width, returnNumber, deliveryAddress1, deliveryAddress2, deliveryCity, deliveryCountry, deliveryName, deliveryPostcode, deliverySurname, returnAddress1, returnAddress2, returnCity, returnCountry, returnName, returnPostcode, returnSurname, packagenumber);
-
+            
+            //for testing
             Console.WriteLine("to string: " + dt.Rows[0][0].ToString());
             Console.WriteLine("not tring: " + dt.Rows[0][0]);
-            //int id = int.Parse(dt.Rows[0][0].ToString());
+            
             int id = Convert.ToInt32(dt.Rows[0][0]);
             id += 1;
+
+            //for testing
             Console.WriteLine("parsed" + id);
-            var myCommand = new SqlCommand("INSERT INTO package VALUES(@id ,GETDATE(),GETDATE(),NULL,'false','false', @deliveryNumber, @height, @length, @weight, @width, @returnNumber, @deliveryAddress1, @deliveryAddress2,@deliveryCity, @deliveryCountry, @deliveryName, @deliveryPostcode, @deliverySurname, @returnAddress1, @returnAddress2, @returnCity, @returnCountry, @returnName, @returnPostcode, @returnSurname, @packageNumber , NULL)", conn);
+
+            var myCommand = new SqlCommand("INSERT INTO package VALUES(@id ,GETDATE(),GETDATE(),NULL,'false','false', @deliveryNumber, @height, @length, @weight, @width, @returnNumber, @deliveryAddress1, @deliveryAddress2,@deliveryCity, @deliveryCountry, @deliveryName, @deliveryPostcode, @deliverySurname, @returnAddress1, @returnAddress2, @returnCity, @returnCountry, @returnName, @returnPostcode, @returnSurname, @packageNumber , 'Scamel')", conn);
             myCommand.Parameters.AddWithValue("@id", id);
             myCommand.Parameters.AddWithValue("@deliveryNumber", addPack.deliverynumber);
             myCommand.Parameters.AddWithValue("@height", addPack.height);

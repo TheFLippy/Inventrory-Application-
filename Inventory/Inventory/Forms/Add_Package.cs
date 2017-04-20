@@ -91,9 +91,10 @@ namespace Inventory
                     txtsurname.Text, packagenumber))
                 {
                     MessageBox.Show("Successfully added an package!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    //switching to search after completion
                     this.Hide();
+                    MainMenu mn = new MainMenu();
+                    mn.Show();       
+
                 }
                 else
                 {

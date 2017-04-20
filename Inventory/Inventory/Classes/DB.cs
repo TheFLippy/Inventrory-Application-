@@ -94,8 +94,8 @@ namespace Inventory
             Package addPack = new Package(deliveryNumber, height, length, weight, width, returnNumber, deliveryAddress1, deliveryAddress2, deliveryCity, deliveryCountry, deliveryName, deliveryPostcode, deliverySurname, returnAddress1, returnAddress2, returnCity, returnCountry, returnName, returnPostcode, returnSurname, packagenumber);
 
 
-            var myCommand = new SqlCommand("INSERT INTO package VALUES(@id ,GETDATE(),GETDATE(),NULL,'false','false', @deliveryNumber, @height, @length, @weight, @width, @returnNumber, @deliveryAddress1, @deliveryAddress2,@deliveryCity, @deliveryCountry, @deliveryName, @deliveryPostcode, @deliverySurname, @returnAddress1, @returnAddress2, @returnCity, @returnCountry, @returnName, @returnPostcode, @returnSurname, @packageNumber)", conn);
-            myCommand.Parameters.Add("@id", id);
+            var myCommand = new SqlCommand("INSERT INTO package VALUES(@id ,GETDATE(),GETDATE(),NULL,'false','false', @deliveryNumber, @height, @length, @weight, @width, @returnNumber, @deliveryAddress1, @deliveryAddress2,@deliveryCity, @deliveryCountry, @deliveryName, @deliveryPostcode, @deliverySurname, @returnAddress1, @returnAddress2, @returnCity, @returnCountry, @returnName, @returnPostcode, @returnSurname, @packageNumber , NULL)", conn);
+            myCommand.Parameters.AddWithValue("@id", id);
             myCommand.Parameters.AddWithValue("@deliveryNumber", addPack.deliverynumber);
             myCommand.Parameters.AddWithValue("@height", addPack.height);
             myCommand.Parameters.AddWithValue("@length", addPack.length);

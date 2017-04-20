@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_Inventory));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDeleteEmp = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
@@ -71,8 +71,8 @@
             // 
             this.gridMngEmployees.AllowUserToAddRows = false;
             this.gridMngEmployees.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.gridMngEmployees.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gridMngEmployees.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.gridMngEmployees.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.gridMngEmployees.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridMngEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -110,6 +110,7 @@
             this.Controls.Add(this.txtSearch);
             this.Name = "View_Inventory";
             this.Text = "View_Inventory";
+            this.Load += new System.EventHandler(this.View_Inventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridMngEmployees)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

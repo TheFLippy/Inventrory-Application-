@@ -81,7 +81,7 @@ namespace Inventory
             return false;
         }
 
-        //txtpackagenumber.Text,  txtheight.Text, txtlength.Text, txtweight.Text, txtwidth.Text, txttelephone_2.Text, txtaddress1_2.Text, txtaddress2_2.Text, txtcity_2.Text,  txtcountry_2.Text, txtname_2.Text, txtpostcode_2.Text, txtsurname_2.Text,))
+       
         public bool insertpack( float deliveryNumber, float height, float length, float weight, float width, float returnNumber, 
             string deliveryAddress1, string deliveryAddress2, string deliveryCity, string deliveryCountry, 
             string deliveryName , string deliveryPostcode, string deliverySurname, string returnAddress1, 

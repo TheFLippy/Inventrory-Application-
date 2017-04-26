@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inventory.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,6 +43,13 @@ namespace Inventory
             this.Hide();
             Add_Package add = new Add_Package();
             add.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            View_Inventory inv = new View_Inventory();
+            inv.Show();
         }
     }
 }

@@ -109,6 +109,7 @@
             this.btncancel.TabIndex = 1;
             this.btncancel.Text = "Cancel";
             this.btncancel.UseVisualStyleBackColor = true;
+            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
             // btnsave
             // 
@@ -160,6 +161,7 @@
             this.btnnext.TabIndex = 5;
             this.btnnext.Text = "NEXT";
             this.btnnext.UseVisualStyleBackColor = true;
+            this.btnnext.Click += new System.EventHandler(this.btnnext_Click);
             // 
             // txtlength
             // 
@@ -339,7 +341,7 @@
             // 
             // txtaddress1_2
             // 
-            this.txtaddress1_2.Location = new System.Drawing.Point(484, 113);
+            this.txtaddress1_2.Location = new System.Drawing.Point(484, 115);
             this.txtaddress1_2.Name = "txtaddress1_2";
             this.txtaddress1_2.Size = new System.Drawing.Size(202, 20);
             this.txtaddress1_2.TabIndex = 3;
@@ -382,6 +384,7 @@
             this.btnprevious.TabIndex = 9;
             this.btnprevious.Text = "previous ";
             this.btnprevious.UseVisualStyleBackColor = true;
+            this.btnprevious.Click += new System.EventHandler(this.btnprevious_Click);
             // 
             // btnnext_2
             // 
@@ -391,6 +394,7 @@
             this.btnnext_2.TabIndex = 8;
             this.btnnext_2.Text = "next";
             this.btnnext_2.UseVisualStyleBackColor = true;
+            this.btnnext_2.Click += new System.EventHandler(this.btnnext_2_Click);
             // 
             // label3
             // 
@@ -485,14 +489,14 @@
             // 
             // txttelephone
             // 
-            this.txttelephone.Location = new System.Drawing.Point(116, 176);
+            this.txttelephone.Location = new System.Drawing.Point(116, 177);
             this.txttelephone.Name = "txttelephone";
             this.txttelephone.Size = new System.Drawing.Size(202, 20);
             this.txttelephone.TabIndex = 2;
             // 
             // txtsurname
             // 
-            this.txtsurname.Location = new System.Drawing.Point(116, 145);
+            this.txtsurname.Location = new System.Drawing.Point(116, 146);
             this.txtsurname.Name = "txtsurname";
             this.txtsurname.Size = new System.Drawing.Size(202, 20);
             this.txtsurname.TabIndex = 1;
@@ -506,28 +510,28 @@
             // 
             // txtcountry
             // 
-            this.txtcountry.Location = new System.Drawing.Point(484, 235);
+            this.txtcountry.Location = new System.Drawing.Point(484, 239);
             this.txtcountry.Name = "txtcountry";
             this.txtcountry.Size = new System.Drawing.Size(202, 20);
             this.txtcountry.TabIndex = 7;
             // 
             // txtpostcode
             // 
-            this.txtpostcode.Location = new System.Drawing.Point(484, 205);
+            this.txtpostcode.Location = new System.Drawing.Point(484, 208);
             this.txtpostcode.Name = "txtpostcode";
             this.txtpostcode.Size = new System.Drawing.Size(202, 20);
             this.txtpostcode.TabIndex = 6;
             // 
             // txtcity
             // 
-            this.txtcity.Location = new System.Drawing.Point(484, 176);
+            this.txtcity.Location = new System.Drawing.Point(484, 177);
             this.txtcity.Name = "txtcity";
             this.txtcity.Size = new System.Drawing.Size(202, 20);
             this.txtcity.TabIndex = 5;
             // 
             // txtaddress2
             // 
-            this.txtaddress2.Location = new System.Drawing.Point(484, 145);
+            this.txtaddress2.Location = new System.Drawing.Point(484, 146);
             this.txtaddress2.Name = "txtaddress2";
             this.txtaddress2.Size = new System.Drawing.Size(202, 20);
             this.txtaddress2.TabIndex = 4;
@@ -543,7 +547,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(389, 233);
+            this.label26.Location = new System.Drawing.Point(389, 239);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(72, 20);
             this.label26.TabIndex = 24;
@@ -553,17 +557,18 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(389, 143);
+            this.label20.Location = new System.Drawing.Point(389, 144);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(89, 20);
             this.label20.TabIndex = 22;
             this.label20.Text = "Address 2 :";
+            this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(389, 174);
+            this.label21.Location = new System.Drawing.Point(389, 177);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(43, 20);
             this.label21.TabIndex = 20;
@@ -573,7 +578,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(389, 203);
+            this.label24.Location = new System.Drawing.Point(389, 208);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(84, 20);
             this.label24.TabIndex = 18;
@@ -593,7 +598,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(18, 143);
+            this.label23.Location = new System.Drawing.Point(18, 144);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(86, 20);
             this.label23.TabIndex = 14;
@@ -603,7 +608,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(18, 174);
+            this.label22.Location = new System.Drawing.Point(18, 175);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(92, 20);
             this.label22.TabIndex = 12;
@@ -627,6 +632,7 @@
             this.btnprevious2.TabIndex = 13;
             this.btnprevious2.Text = "Previous";
             this.btnprevious2.UseVisualStyleBackColor = true;
+            this.btnprevious2.Click += new System.EventHandler(this.btnprevious2_Click);
             // 
             // label2
             // 

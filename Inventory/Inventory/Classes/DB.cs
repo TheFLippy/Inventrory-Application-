@@ -17,6 +17,7 @@ namespace Inventory
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
         }
+
         public bool login(string username, string password)
         {
             DataTable dt = new DataTable();
@@ -81,7 +82,6 @@ namespace Inventory
             return false;
         }
 
-       
         public bool insertpack( float deliveryNumber, float height, float length, float weight, float width, float returnNumber, 
             string deliveryAddress1, string deliveryAddress2, string deliveryCity, string deliveryCountry, 
             string deliveryName , string deliveryPostcode, string deliverySurname, string returnAddress1, 
@@ -140,10 +140,8 @@ namespace Inventory
             }
             return false;
         }
-
-
-
-
+        
+      
 
         public bool update(string username, string password, string name, string surname, string group, int id)
         {
@@ -193,6 +191,28 @@ namespace Inventory
             }
             return true;
         }
+            
+        public bool deletepackage(int[] array)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            
+            for(int i =0; i < array.GetLength(0); i++)
+            {
+                
+                if(array[i] != null)
+                {
+                    var myCommand = new SqlCommand("UPDATE package SET deleted = 1 WHERE id =" + array[i].ToString(), conn);
+                    int result = myCommand.ExecuteNonQuery();
 
+                    if (result == 0)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+
+        }
     }
 }

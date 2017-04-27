@@ -52,8 +52,6 @@ namespace Inventory
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MainMenu menu = new MainMenu();
-            menu.Show();
         }
 
         //Search
@@ -209,6 +207,11 @@ namespace Inventory
                 EditEmployee edit = new EditEmployee(editUserName, editName, editSurname, editGroup, editID);
                 edit.Show();
             }
+        }
+
+        private void MainMenu(object sender, EventArgs e)
+        {
+
         }
     }
 }

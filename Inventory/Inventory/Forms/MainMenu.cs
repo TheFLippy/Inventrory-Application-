@@ -13,21 +13,23 @@ namespace Inventory
 {
     public partial class MainMenu : Form
     {
-        public string displayName { get; set; }
-        public string displaySurname { get; set; }
 
-        public string privelage { get; set; }
+        //Holding forms in order to check if they have been opened
+        Login login;
+        Add_Package addPckg;
+        ManageEmployees mng;
+        View_Inventory viewInv;
 
-        public MainMenu()
+        public MainMenu(string privelage)
         {
             InitializeComponent();
-            
 
-            lblWelcomeMsg.Text = "Logged in as: " + displayName + " " + displaySurname;
+            lblWelcomeMsg.Text = "Loged in as " + privelage;
 
             switch (privelage)
             {
                 case "Admin":
+                    btnManageEmployees.Show();
                     break;
 
                 case "Clerk":
@@ -40,39 +42,82 @@ namespace Inventory
             }
         }
 
-        
-        private void MainMenu_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Login login = new Login();
-            login.Show();
+            DialogResult d = MessageBox.Show("Are you sure you want to logout?", "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (d == DialogResult.OK)
+            {
+                if (login == null)
+                {
+                    login = new Login();
+                    login.FormClosed += login_FormClosed;
+                }
+
+                login.Show(this);
+                Hide();
+            }            
+        }
+        void login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            login = null;
+            Show();
         }
 
         private void btnManageEmployees_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ManageEmployees mng = new ManageEmployees();
-            mng.Show();
+            if(mng == null)
+            {
+                mng = new ManageEmployees();
+                mng.FormClosed += mng_FormClosed;
+            }
+
+            mng.Show(this);
+            Hide();
+        }
+        //Event handler that closes form without needing to recreate
+        void mng_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            mng = null;
+            Show();
         }
 
        
         private void btnAddPackage_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Add_Package add = new Add_Package();
-            add.Show();
+            if (addPckg == null)
+            {
+                addPckg = new Add_Package();
+                addPckg.FormClosed += addPckg_FormClosed;
+            }
+
+            addPckg.Show(this);
+            Hide();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        void addPckg_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Hide();
-            View_Inventory inv = new View_Inventory();
-            inv.Show();
+            addPckg = null;
+            Show();
         }
+
+        private void btnViewIntentory_Click(object sender, EventArgs e)
+        {
+            if(viewInv == null)
+            {
+                viewInv = new View_Inventory();
+                viewInv.FormClosed += viewInv_FormClosed;
+            }
+
+            viewInv.Show(this);
+            Hide();
+        }
+
+        void viewInv_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            viewInv = null;
+            Show();
+        }
+
     }
 }

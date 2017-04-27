@@ -72,7 +72,7 @@ namespace Inventory
                 while (read.Read())
                 {
                     loginHash = (string)read["password"];
-                    privelage = (string)read["group"];
+                    //privelage = (string)read["group"];
                     displayName = (string)read["name"];
                     displaySurname = (string)read["surname"];
 
@@ -116,7 +116,7 @@ namespace Inventory
                 myCommand.Parameters.AddWithValue("@password", addUser.Password);
                 myCommand.Parameters.AddWithValue("@name", addUser.Name);
                 myCommand.Parameters.AddWithValue("@surname", addUser.Surname);
-                myCommand.Parameters.AddWithValue("@group", addUser.Group);
+                myCommand.Parameters.AddWithValue("@group", addUser.jobPosition);
 
                 int result = myCommand.ExecuteNonQuery();
                 conn.Close();
@@ -198,12 +198,12 @@ namespace Inventory
 
             User editUser = new User(username, passwordHash, name, surname, group);
 
-            var myCommand = new SqlCommand("UPDATE login SET username = @username, password = @password, name = @name, surname = @surname WHERE id='" + id + "'", conn);
+            var myCommand = new SqlCommand("UPDATE login SET username = @username, password = @password, name = @name, surname = @surname, jobPosition = @group WHERE id='" + id + "'", conn);
             myCommand.Parameters.AddWithValue("@username", editUser.Username);
             myCommand.Parameters.AddWithValue("@password", editUser.Password);
             myCommand.Parameters.AddWithValue("@name", editUser.Name);
             myCommand.Parameters.AddWithValue("@surname", editUser.Surname);
-            //myCommand.Parameters.AddWithValue("@group", editUser.Group);
+            myCommand.Parameters.AddWithValue("@group", editUser.jobPosition);
 
             int result = myCommand.ExecuteNonQuery();
 

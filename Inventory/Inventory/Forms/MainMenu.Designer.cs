@@ -34,6 +34,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.lblWelcomeMsg = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -94,11 +96,29 @@
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // lblWelcomeMsg
+            // 
+            this.lblWelcomeMsg.AutoSize = true;
+            this.lblWelcomeMsg.Location = new System.Drawing.Point(174, 428);
+            this.lblWelcomeMsg.MinimumSize = new System.Drawing.Size(200, 10);
+            this.lblWelcomeMsg.Name = "lblWelcomeMsg";
+            this.lblWelcomeMsg.Size = new System.Drawing.Size(200, 13);
+            this.lblWelcomeMsg.TabIndex = 6;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(216, 387);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 7;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(386, 450);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lblWelcomeMsg);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -122,5 +142,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Label lblWelcomeMsg;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

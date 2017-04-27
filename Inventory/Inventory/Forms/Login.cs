@@ -52,15 +52,22 @@ namespace Inventory
 
                 if(sqlConn.login(txtUser.Text, txtPassword.Text))
                 {
+                    
                     MessageBox.Show("Successfully loged in.");
                     this.Hide();
+
                     MainMenu menu = new MainMenu();
+                    menu.privelage = sqlConn.privelage;
+                    menu.displayName = sqlConn.displayName;
+                    menu.displaySurname = sqlConn.displaySurname;
+
                     menu.Show();
                 }
                 else
                 {
                     MessageBox.Show("Your username or password was incorrect!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                
             }
             //Exceptions
             catch (Exception ex)

@@ -178,7 +178,7 @@ namespace Inventory
             {
                 btnEdit.Visible = true;
 
-                string tempID = gridMngEmployees.Rows[e.RowIndex].Cells[7].Value.ToString();
+                string tempID = gridMngEmployees.Rows[e.RowIndex].Cells[1].Value.ToString();
                 editID = Convert.ToInt32(tempID);
             }
         }

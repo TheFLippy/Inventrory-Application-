@@ -10,41 +10,84 @@ namespace Inventory
 {
     class db
     {
+
+        //Class used to pass queries to the database
         public string connectionString = @"Data Source=gapt-inventory.database.windows.net;Initial Catalog = Inventory; Persist Security Info=True;User ID = TheFLippy; Password=Gapt1234";
-         
+
+        public string loginHash;
+        public string privelage;
+        public string displayName;
+        public string displaySurname;
+
         public void sqlConnect()
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
         }
 
-        public bool login(string username, string password)
+        public bool checkIfUserExists(string username)
         {
+            //Create datatable to hold data retrieved from database
             DataTable dt = new DataTable();
+            //Create connection
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
 
+            //Create adapter to hold the data
             SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM login WHERE username='" + username + "'", connectionString);
+
+            //Fill datatable with retrieved data
             sda.Fill(dt);
-            if(dt.Rows[0][0].ToString() == "1")
+            con.Close();
+
+            //Check if any login  a record, therefore record exists
+            if (dt.Rows[0][0].ToString() == "1")
+            {    
+                return true;
+            }
+
+            return false;
+        }
+
+        //Login function
+        public bool login(string username, string password)
+        {
+            //Function that looks if user exists
+            if(checkIfUserExists(username))
             {
+                SqlConnection con = new SqlConnection(connectionString);
+                con.Open();
+
+                //Construct query to get hash from the database
                 SqlCommand command = new SqlCommand("select * from login where username='" + username + "'", con);
                 SqlDataReader read = command.ExecuteReader();
-                string loginHash = null;
 
+                //Reset data for logout to work
+                string loginHash = null;
+                string privelage = null;
+                string displayName = null;
+                string displaySurname = null;
+
+                //Read data from db
                 while (read.Read())
                 {
                     loginHash = (string)read["password"];
+                    privelage = (string)read["group"];
+                    displayName = (string)read["name"];
+                    displaySurname = (string)read["surname"];
+
                 }
 
+                //close reader
                 read.Close();
-                con.Close();
 
+                //Pass both the entered password and hashed password, function hashes password and compares it to hash from database 
                 if(Hash.Confirm(password, loginHash))
                 {
                     return true;
                 }
             }
+
             //fails if username did not match
             return false;
         }
@@ -54,30 +97,33 @@ namespace Inventory
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
 
-            DataTable dt = new DataTable();
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM login WHERE username='" + username + "'", connectionString);
-            sda.Fill(dt);
-            if (dt.Rows[0][0].ToString() == "1")
+            if(!checkIfUserExists(username))
             {
-                return false;
-            }
+                string passwordHash = Hash.ComputeHash(password, null);
+                DataTable dt = new DataTable();
 
-            string passwordHash = Hash.ComputeHash(password, null);
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT TOP (1) id FROM login ORDER BY id DESC", connectionString);
+                sda.Fill(dt);
 
-            User addUser = new User(username, passwordHash, name, surname, group);
+                int id = Convert.ToInt32(dt.Rows[0][0]);
+                id += 1;
 
-            var myCommand = new SqlCommand("INSERT INTO login VALUES(@username, @password, @name, @surname, GETDATE(), @group)", conn);
-            myCommand.Parameters.AddWithValue("@username", addUser.Username);
-            myCommand.Parameters.AddWithValue("@password", addUser.Password);
-            myCommand.Parameters.AddWithValue("@name", addUser.Name);
-            myCommand.Parameters.AddWithValue("@surname", addUser.Surname);
-            myCommand.Parameters.AddWithValue("@group", addUser.Group);
+                User addUser = new User(username, passwordHash, name, surname, group);
 
-            int result = myCommand.ExecuteNonQuery();
+                var myCommand = new SqlCommand("INSERT INTO login VALUES(@id, @username, @password, @name, @surname, GETDATE(), @group)", conn);
+                myCommand.Parameters.AddWithValue("@id", id);
+                myCommand.Parameters.AddWithValue("@username", addUser.Username);
+                myCommand.Parameters.AddWithValue("@password", addUser.Password);
+                myCommand.Parameters.AddWithValue("@name", addUser.Name);
+                myCommand.Parameters.AddWithValue("@surname", addUser.Surname);
+                myCommand.Parameters.AddWithValue("@group", addUser.Group);
 
-            if (result != 0)
-            {
-                return true;
+                int result = myCommand.ExecuteNonQuery();
+                conn.Close();
+                if (result != 0)
+                {
+                    return true;
+                }
             }
             return false;
         }

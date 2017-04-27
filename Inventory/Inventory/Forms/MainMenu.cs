@@ -13,11 +13,34 @@ namespace Inventory
 {
     public partial class MainMenu : Form
     {
+        public string displayName { get; set; }
+        public string displaySurname { get; set; }
+
+        public string privelage { get; set; }
+
         public MainMenu()
         {
             InitializeComponent();
+            
+
+            lblWelcomeMsg.Text = "Logged in as: " + displayName + " " + displaySurname;
+
+            switch (privelage)
+            {
+                case "Admin":
+                    break;
+
+                case "Clerk":
+                    btnManageEmployees.Hide();
+                    break;
+
+                case "Driver":
+                    btnManageEmployees.Hide();
+                    break;
+            }
         }
 
+        
         private void MainMenu_Load(object sender, EventArgs e)
         {
 

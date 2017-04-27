@@ -51,5 +51,12 @@ namespace Inventory
             View_Inventory inv = new View_Inventory();
             inv.Show();
         }
+
+        private void btnVans_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ManageVans mngV = new ManageVans();
+            mngV.Show();
+        }
     }
 }

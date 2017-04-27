@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Package.cs" />
+    <Compile Include="Classes\Van.cs" />
     <Compile Include="Forms\AddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +66,12 @@
     </Compile>
     <Compile Include="Classes\DB.cs" />
     <Compile Include="Classes\Hash.cs" />
+    <Compile Include="Forms\AddVan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddVan.Designer.cs">
+      <DependentUpon>AddVan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Add_Package.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +83,12 @@
     </Compile>
     <Compile Include="Forms\EditEmployee.Designer.cs">
       <DependentUpon>EditEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditVan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditVan.Designer.cs">
+      <DependentUpon>EditVan.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Edit_Packages.cs">
       <SubType>Form</SubType>
@@ -102,6 +115,12 @@
       <DependentUpon>ManageEmployees.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Program.cs" />
+    <Compile Include="Forms\ManageVans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageVans.Designer.cs">
+      <DependentUpon>ManageVans.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\View_Inventory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,11 +133,17 @@
     <EmbeddedResource Include="Forms\AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddVan.resx">
+      <DependentUpon>AddVan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Add_Package.resx">
       <DependentUpon>Add_Package.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditEmployee.resx">
       <DependentUpon>EditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditVan.resx">
+      <DependentUpon>EditVan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Edit_Packages.resx">
       <DependentUpon>Edit_Packages.cs</DependentUpon>
@@ -131,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageEmployees.resx">
       <DependentUpon>ManageEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageVans.resx">
+      <DependentUpon>ManageVans.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\View_Inventory.resx">
       <DependentUpon>View_Inventory.cs</DependentUpon>

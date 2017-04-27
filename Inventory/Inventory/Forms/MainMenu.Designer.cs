@@ -34,6 +34,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.btnVans = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -94,11 +95,22 @@
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // btnVans
+            // 
+            this.btnVans.Location = new System.Drawing.Point(72, 209);
+            this.btnVans.Name = "btnVans";
+            this.btnVans.Size = new System.Drawing.Size(244, 28);
+            this.btnVans.TabIndex = 6;
+            this.btnVans.Text = "Manage Vans";
+            this.btnVans.UseVisualStyleBackColor = true;
+            this.btnVans.Click += new System.EventHandler(this.btnVans_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(386, 450);
+            this.Controls.Add(this.btnVans);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -122,5 +134,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnVans;
     }
 }

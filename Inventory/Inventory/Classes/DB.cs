@@ -215,6 +215,48 @@ namespace Inventory
             return false;
         }
 
+        public bool updatepackage(int id ,float packagenumber, float weight, float height, float width, float length, string returnName, string returnSurname, float returnNumber, string returnAddress1, string returnAddress2, string returnCity, string returnPostcode, string returnCountry, string deliveryName, string deliverySurname, float deliveryNumber, string deliveryAddress1, string deliveryAddress2, string deliveryCity, string deliveryPostcode, string deliveryCountry)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            Package pk = new Package(deliveryNumber, height, length, weight, width, returnNumber, deliveryAddress1, deliveryAddress2, deliveryCity, deliveryCountry, deliveryName, deliveryPostcode, deliverySurname, returnAddress1, returnAddress2, returnCity, returnCountry, returnName, returnPostcode, returnSurname, packagenumber);
+
+            var myCommand = new SqlCommand("UPDATE package SET deliveryNumber = @deliveryNumber, height = @height, length = @length, weight = @weight, width = @width , returnNumber = @returnNumber, deliveryAddress1 = @deliveryAddress1, deliveryCity = @deliveryCity, deliveryCountry = @deliveryCountry, deliveryName = @deliveryName , deliveryPostcode = @deliveryPostcode, deliverySurname = @deliverySurname, returnAddress1 = @returnAddress1, returnCity = @returnCity, returnCountry = @returnCountry, returnName = @returnName , returnPostcode = @returnPostcode, returnSurname = @returnSurname,packagenumber = @packagenumber WHERE id='" + id + "'", conn);
+            myCommand.Parameters.AddWithValue("@deliveryNumber", pk.deliverynumber);
+            myCommand.Parameters.AddWithValue("@height", pk.height);
+            myCommand.Parameters.AddWithValue("@length", pk.length);
+            myCommand.Parameters.AddWithValue("@weight", pk.weight);
+            myCommand.Parameters.AddWithValue("@width", pk.width);
+            myCommand.Parameters.AddWithValue("@returnNumber", pk.returnnumber);
+            myCommand.Parameters.AddWithValue("@deliveryAddress1", pk.deliveryaddress1);
+            myCommand.Parameters.AddWithValue("@deliveryAddress2", pk.deliveryaddress2);
+            myCommand.Parameters.AddWithValue("@deliveryCity", pk.deliverycity);
+            myCommand.Parameters.AddWithValue("@deliveryCountry", pk.deliverycountry);
+            myCommand.Parameters.AddWithValue("@deliveryName", pk.deliveryname);
+            myCommand.Parameters.AddWithValue("@deliveryPostcode", pk.deliverypostcode);
+            myCommand.Parameters.AddWithValue("@deliverySurname", pk.deliverysurname);
+            myCommand.Parameters.AddWithValue("@returnAddress1", pk.returnaddress1);
+            myCommand.Parameters.AddWithValue("@returnAddress2", pk.returnaddress2);
+            myCommand.Parameters.AddWithValue("@returnCity", pk.returncity);
+            myCommand.Parameters.AddWithValue("@returnCountry", pk.returncountry);
+            myCommand.Parameters.AddWithValue("@returnName", pk.returnname);
+            myCommand.Parameters.AddWithValue("@returnPostcode", pk.returnpostcode);
+            myCommand.Parameters.AddWithValue("@returnSurname", pk.returnsurname);
+            myCommand.Parameters.AddWithValue("@packageNumber", pk.packagenumber);
+
+
+
+            int result = myCommand.ExecuteNonQuery();
+
+            if (result != 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         public bool delete(int[] array)
         {
             SqlConnection conn = new SqlConnection(connectionString);

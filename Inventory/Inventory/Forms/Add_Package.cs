@@ -81,7 +81,7 @@ namespace Inventory
                 float height = (float)Convert.ToDouble(txtheight.Text);
                 float length = (float)Convert.ToDouble(txtlength.Text);
                 float weight = (float)Convert.ToDouble(txtweight.Text);
-                float width = (float)Convert.ToDouble(txtweight.Text);
+                float width = (float)Convert.ToDouble(txtwidth.Text);
                 float returntel = (float)Convert.ToDouble(txttelephone.Text);
                 float packagenumber = (float)Convert.ToDouble(txtpackagenumber.Text);
                 //if successfully added
@@ -94,7 +94,6 @@ namespace Inventory
                     this.Hide();
                     MainMenu mn = new MainMenu();
                     mn.Show();       
-
                 }
                 else
                 {

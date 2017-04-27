@@ -121,3 +121,4 @@ C:\Users\Sergey\Source\Repos\Inventrory-Application-\Inventory\Inventory\obj\Deb
 C:\Users\Sergey\Source\Repos\Inventrory-Application-\Inventory\Inventory\obj\Debug\Inventory.Forms.View_Inventory.resources
 C:\Users\Sergey\Source\Repos\Inventrory-Application-\Inventory\Inventory\obj\Debug\Inventory.Properties.Resources.resources
 C:\Users\Sergey\Source\Repos\Inventrory-Application-\Inventory\Inventory\obj\Debug\Inventory.csproj.GenerateResource.Cache
+C:\Users\Sergey\Source\Repos\Inventrory-Application-\Inventory\Inventory\obj\Debug\Inventory.Forms.AssignPackage.resources

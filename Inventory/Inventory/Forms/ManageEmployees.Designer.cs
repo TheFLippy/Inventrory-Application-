@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.gridMngEmployees = new System.Windows.Forms.DataGridView();
@@ -41,7 +41,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(37, 36);
+            this.txtSearch.Location = new System.Drawing.Point(37, 32);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(611, 20);
             this.txtSearch.TabIndex = 0;
@@ -49,7 +49,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(37, 71);
+            this.btnSearch.Location = new System.Drawing.Point(654, 30);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 1;
@@ -61,12 +61,12 @@
             // 
             this.gridMngEmployees.AllowUserToAddRows = false;
             this.gridMngEmployees.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.gridMngEmployees.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gridMngEmployees.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.gridMngEmployees.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.gridMngEmployees.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridMngEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridMngEmployees.Location = new System.Drawing.Point(37, 118);
+            this.gridMngEmployees.Location = new System.Drawing.Point(37, 58);
             this.gridMngEmployees.Name = "gridMngEmployees";
             this.gridMngEmployees.Size = new System.Drawing.Size(611, 360);
             this.gridMngEmployees.TabIndex = 2;
@@ -75,7 +75,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(654, 118);
+            this.btnAdd.Location = new System.Drawing.Point(37, 424);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(99, 23);
             this.btnAdd.TabIndex = 3;
@@ -91,11 +91,11 @@
             this.btnBack.TabIndex = 4;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.btnBack.Click += new System.EventHandler(this.MainMenu);
             // 
             // btnDeleteEmp
             // 
-            this.btnDeleteEmp.Location = new System.Drawing.Point(654, 176);
+            this.btnDeleteEmp.Location = new System.Drawing.Point(247, 424);
             this.btnDeleteEmp.Name = "btnDeleteEmp";
             this.btnDeleteEmp.Size = new System.Drawing.Size(99, 23);
             this.btnDeleteEmp.TabIndex = 5;
@@ -105,7 +105,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(654, 147);
+            this.btnEdit.Location = new System.Drawing.Point(142, 424);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(99, 23);
             this.btnEdit.TabIndex = 6;

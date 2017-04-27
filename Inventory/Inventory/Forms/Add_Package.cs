@@ -81,7 +81,7 @@ namespace Inventory
                 float height = (float)Convert.ToDouble(txtheight.Text);
                 float length = (float)Convert.ToDouble(txtlength.Text);
                 float weight = (float)Convert.ToDouble(txtweight.Text);
-                float width = (float)Convert.ToDouble(txtwidth.Text);
+                float width = (float)Convert.ToDouble(txtweight.Text);
                 float returntel = (float)Convert.ToDouble(txttelephone.Text);
                 float packagenumber = (float)Convert.ToDouble(txtpackagenumber.Text);
                 //if successfully added
@@ -92,8 +92,6 @@ namespace Inventory
                 {
                     MessageBox.Show("Successfully added an package!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
-                    MainMenu mn = new MainMenu();
-                    mn.Show();       
                 }
                 else
                 {
@@ -135,8 +133,6 @@ namespace Inventory
         private void btncancel_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MainMenu mm = new MainMenu();
-            mm.Show();
         }
     }
 }

@@ -14,11 +14,6 @@ namespace Inventory
         //Class used to pass queries to the database
         public string connectionString = @"Data Source=gapt-inventory.database.windows.net;Initial Catalog = Inventory; Persist Security Info=True;User ID = TheFLippy; Password=Gapt1234";
 
-        public string loginHash;
-        public string privelage;
-        public string displayName;
-        public string displaySurname;
-
         public void sqlConnect()
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -49,6 +44,27 @@ namespace Inventory
             return false;
         }
 
+        public string getJobPosition(string username)
+        {
+            SqlConnection con = new SqlConnection(connectionString);
+            con.Open();
+
+            SqlCommand command = new SqlCommand("select * from login where username='" + username + "'", con);
+            SqlDataReader read = command.ExecuteReader();
+
+            string privelage = null;
+
+            while (read.Read())
+            {
+                privelage = (string)read["jobPosition"];
+            }
+
+            
+            read.Close();
+            con.Close();
+
+            return privelage;
+        }
         //Login function
         public bool login(string username, string password)
         {
@@ -72,10 +88,6 @@ namespace Inventory
                 while (read.Read())
                 {
                     loginHash = (string)read["password"];
-                    //privelage = (string)read["group"];
-                    displayName = (string)read["name"];
-                    displaySurname = (string)read["surname"];
-
                 }
 
                 //close reader

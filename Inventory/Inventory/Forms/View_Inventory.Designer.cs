@@ -127,6 +127,7 @@
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
             this.Name = "View_Inventory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View_Inventory";
             this.Load += new System.EventHandler(this.View_Inventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridViewInv)).EndInit();

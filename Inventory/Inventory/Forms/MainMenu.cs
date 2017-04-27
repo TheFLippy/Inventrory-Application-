@@ -19,6 +19,7 @@ namespace Inventory
         Add_Package addPckg;
         ManageEmployees mng;
         View_Inventory viewInv;
+        ManageVans mngVans;
 
         public MainMenu(string privelage)
         {
@@ -116,6 +117,24 @@ namespace Inventory
         void viewInv_FormClosed(object sender, FormClosedEventArgs e)
         {
             viewInv = null;
+            Show();
+        }
+
+
+        private void btnManageVans_Click(object sender, EventArgs e)
+        {
+            if (mngVans == null)
+            {
+                mngVans = new ManageVans();
+                mngVans.FormClosed += viewInv_FormClosed;
+            }
+
+            mngVans.Show(this);
+            Hide();
+        }
+        void mngVans_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            mngVans = null;
             Show();
         }
 

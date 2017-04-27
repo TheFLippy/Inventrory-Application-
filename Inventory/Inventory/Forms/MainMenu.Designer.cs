@@ -35,6 +35,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.lblWelcomeMsg = new System.Windows.Forms.Label();
+            this.btnManageVans = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -48,7 +49,7 @@
             // 
             // btnManageEmployees
             // 
-            this.btnManageEmployees.Location = new System.Drawing.Point(72, 73);
+            this.btnManageEmployees.Location = new System.Drawing.Point(72, 51);
             this.btnManageEmployees.Name = "btnManageEmployees";
             this.btnManageEmployees.Size = new System.Drawing.Size(244, 28);
             this.btnManageEmployees.TabIndex = 1;
@@ -58,7 +59,7 @@
             // 
             // btnAddPackage
             // 
-            this.btnAddPackage.Location = new System.Drawing.Point(72, 107);
+            this.btnAddPackage.Location = new System.Drawing.Point(72, 141);
             this.btnAddPackage.Name = "btnAddPackage";
             this.btnAddPackage.Size = new System.Drawing.Size(244, 28);
             this.btnAddPackage.TabIndex = 2;
@@ -68,7 +69,7 @@
             // 
             // btnViewInventory
             // 
-            this.btnViewInventory.Location = new System.Drawing.Point(72, 141);
+            this.btnViewInventory.Location = new System.Drawing.Point(71, 187);
             this.btnViewInventory.Name = "btnViewInventory";
             this.btnViewInventory.Size = new System.Drawing.Size(244, 28);
             this.btnViewInventory.TabIndex = 3;
@@ -78,7 +79,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(72, 175);
+            this.button4.Location = new System.Drawing.Point(71, 232);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(244, 28);
             this.button4.TabIndex = 4;
@@ -104,11 +105,22 @@
             this.lblWelcomeMsg.Size = new System.Drawing.Size(200, 13);
             this.lblWelcomeMsg.TabIndex = 6;
             // 
+            // btnManageVans
+            // 
+            this.btnManageVans.Location = new System.Drawing.Point(72, 96);
+            this.btnManageVans.Name = "btnManageVans";
+            this.btnManageVans.Size = new System.Drawing.Size(244, 28);
+            this.btnManageVans.TabIndex = 7;
+            this.btnManageVans.Text = "Manage Vans";
+            this.btnManageVans.UseVisualStyleBackColor = true;
+            this.btnManageVans.Click += new System.EventHandler(this.btnManageVans_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(386, 450);
+            this.Controls.Add(this.btnManageVans);
             this.Controls.Add(this.lblWelcomeMsg);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.button4);
@@ -133,5 +145,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Label lblWelcomeMsg;
+        private System.Windows.Forms.Button btnManageVans;
     }
 }

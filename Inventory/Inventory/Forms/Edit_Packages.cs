@@ -31,7 +31,7 @@ namespace Inventory.Forms
             DataTable dt = new DataTable();
             SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM package Where id =" + id.ToString(), sqlCon.connectionString);
             sda.Fill(dt);
-            
+
             //populating the text fields with the data table items
             //package info
             txtpackagenumber.Text = dt.Rows[0][26].ToString();
@@ -64,7 +64,7 @@ namespace Inventory.Forms
         }
         private void Edit_Packages_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnnext_Click(object sender, EventArgs e)
@@ -94,9 +94,45 @@ namespace Inventory.Forms
             vw.Show();
         }
 
-        private void label20_Click(object sender, EventArgs e) 
+        private void label20_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnsave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                db sqlCon = new db();
+                float destinationtel = (float)Convert.ToDouble(txttelephone_2.Text);
+                float height = (float)Convert.ToDouble(txtheight.Text);
+                float length = (float)Convert.ToDouble(txtlength.Text);
+                float weight = (float)Convert.ToDouble(txtweight.Text);
+                float width = (float)Convert.ToDouble(txtwidth.Text);
+                float returntel = (float)Convert.ToDouble(txttelephone.Text);
+                float packagenumber = (float)Convert.ToDouble(txtpackagenumber.Text);
+
+                //if successfully added
+                
+                if (sqlCon.updatepackage(id, packagenumber,weight, height, width,
+                    length, txtname_2.Text, txtsurname_2.Text, returntel, txtaddress1_2.Text,
+                    txtaddress2_2.Text, txtcity_2.Text, txtpostcode_2.Text, txtcountry_2.Text,
+                    txtname.Text, txtsurname.Text, destinationtel, txtaddress1.Text,
+                    txtaddress2.Text, txtcity.Text, txtpostcode.Text, txtcountry.Text))
+                {
+                    MessageBox.Show("Successfully edited a package!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //switching to search after completion
+                    this.Hide();
+                    View_Inventory vi = new View_Inventory();
+                    vi.Show();
+                }
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -10,41 +10,96 @@ namespace Inventory
 {
     class db
     {
+
+        //Class used to pass queries to the database
         public string connectionString = @"Data Source=gapt-inventory.database.windows.net;Initial Catalog = Inventory; Persist Security Info=True;User ID = TheFLippy; Password=Gapt1234";
-         
+
         public void sqlConnect()
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
         }
 
-        public bool login(string username, string password)
+        public bool checkIfUserExists(string username)
         {
+            //Create datatable to hold data retrieved from database
             DataTable dt = new DataTable();
+            //Create connection
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
 
+            //Create adapter to hold the data
             SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM login WHERE username='" + username + "'", connectionString);
+
+            //Fill datatable with retrieved data
             sda.Fill(dt);
-            if(dt.Rows[0][0].ToString() == "1")
+            con.Close();
+
+            //Check if any login  a record, therefore record exists
+            if (dt.Rows[0][0].ToString() == "1")
+            {    
+                return true;
+            }
+
+            return false;
+        }
+
+        public string getJobPosition(string username)
+        {
+            SqlConnection con = new SqlConnection(connectionString);
+            con.Open();
+
+            SqlCommand command = new SqlCommand("select * from login where username='" + username + "'", con);
+            SqlDataReader read = command.ExecuteReader();
+
+            string privelage = null;
+
+            while (read.Read())
             {
+                privelage = (string)read["jobPosition"];
+            }
+
+            
+            read.Close();
+            con.Close();
+
+            return privelage;
+        }
+        //Login function
+        public bool login(string username, string password)
+        {
+            //Function that looks if user exists
+            if(checkIfUserExists(username))
+            {
+                SqlConnection con = new SqlConnection(connectionString);
+                con.Open();
+
+                //Construct query to get hash from the database
                 SqlCommand command = new SqlCommand("select * from login where username='" + username + "'", con);
                 SqlDataReader read = command.ExecuteReader();
-                string loginHash = null;
 
+                //Reset data for logout to work
+                string loginHash = null;
+                string privelage = null;
+                string displayName = null;
+                string displaySurname = null;
+
+                //Read data from db
                 while (read.Read())
                 {
                     loginHash = (string)read["password"];
                 }
 
+                //close reader
                 read.Close();
-                con.Close();
 
+                //Pass both the entered password and hashed password, function hashes password and compares it to hash from database 
                 if(Hash.Confirm(password, loginHash))
                 {
                     return true;
                 }
             }
+
             //fails if username did not match
             return false;
         }
@@ -54,30 +109,33 @@ namespace Inventory
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
 
-            DataTable dt = new DataTable();
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM login WHERE username='" + username + "'", connectionString);
-            sda.Fill(dt);
-            if (dt.Rows[0][0].ToString() == "1")
+            if(!checkIfUserExists(username))
             {
-                return false;
-            }
+                string passwordHash = Hash.ComputeHash(password, null);
+                DataTable dt = new DataTable();
 
-            string passwordHash = Hash.ComputeHash(password, null);
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT TOP (1) id FROM login ORDER BY id DESC", connectionString);
+                sda.Fill(dt);
 
-            User addUser = new User(username, passwordHash, name, surname, group);
+                int id = Convert.ToInt32(dt.Rows[0][0]);
+                id += 1;
 
-            var myCommand = new SqlCommand("INSERT INTO login VALUES(@username, @password, @name, @surname, GETDATE(), @group)", conn);
-            myCommand.Parameters.AddWithValue("@username", addUser.Username);
-            myCommand.Parameters.AddWithValue("@password", addUser.Password);
-            myCommand.Parameters.AddWithValue("@name", addUser.Name);
-            myCommand.Parameters.AddWithValue("@surname", addUser.Surname);
-            myCommand.Parameters.AddWithValue("@group", addUser.Group);
+                User addUser = new User(username, passwordHash, name, surname, group);
 
-            int result = myCommand.ExecuteNonQuery();
+                var myCommand = new SqlCommand("INSERT INTO login VALUES(@id, @username, @password, @name, @surname, GETDATE(), @group)", conn);
+                myCommand.Parameters.AddWithValue("@id", id);
+                myCommand.Parameters.AddWithValue("@username", addUser.Username);
+                myCommand.Parameters.AddWithValue("@password", addUser.Password);
+                myCommand.Parameters.AddWithValue("@name", addUser.Name);
+                myCommand.Parameters.AddWithValue("@surname", addUser.Surname);
+                myCommand.Parameters.AddWithValue("@group", addUser.jobPosition);
 
-            if (result != 0)
-            {
-                return true;
+                int result = myCommand.ExecuteNonQuery();
+                conn.Close();
+                if (result != 0)
+                {
+                    return true;
+                }
             }
             return false;
         }
@@ -223,12 +281,54 @@ namespace Inventory
 
             User editUser = new User(username, passwordHash, name, surname, group);
 
-            var myCommand = new SqlCommand("UPDATE login SET username = @username, password = @password, name = @name, surname = @surname WHERE id='" + id + "'", conn);
+            var myCommand = new SqlCommand("UPDATE login SET username = @username, password = @password, name = @name, surname = @surname, jobPosition = @group WHERE id='" + id + "'", conn);
             myCommand.Parameters.AddWithValue("@username", editUser.Username);
             myCommand.Parameters.AddWithValue("@password", editUser.Password);
             myCommand.Parameters.AddWithValue("@name", editUser.Name);
             myCommand.Parameters.AddWithValue("@surname", editUser.Surname);
-            //myCommand.Parameters.AddWithValue("@group", editUser.Group);
+            myCommand.Parameters.AddWithValue("@group", editUser.jobPosition);
+
+            int result = myCommand.ExecuteNonQuery();
+
+            if (result != 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool updatepackage(int id ,float packagenumber, float weight, float height, float width, float length, string returnName, string returnSurname, float returnNumber, string returnAddress1, string returnAddress2, string returnCity, string returnPostcode, string returnCountry, string deliveryName, string deliverySurname, float deliveryNumber, string deliveryAddress1, string deliveryAddress2, string deliveryCity, string deliveryPostcode, string deliveryCountry)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            Package pk = new Package(deliveryNumber, height, length, weight, width, returnNumber, deliveryAddress1, deliveryAddress2, deliveryCity, deliveryCountry, deliveryName, deliveryPostcode, deliverySurname, returnAddress1, returnAddress2, returnCity, returnCountry, returnName, returnPostcode, returnSurname, packagenumber);
+
+            var myCommand = new SqlCommand("UPDATE package SET deliveryNumber = @deliveryNumber, height = @height, length = @length, weight = @weight, width = @width , returnNumber = @returnNumber, deliveryAddress1 = @deliveryAddress1, deliveryCity = @deliveryCity, deliveryCountry = @deliveryCountry, deliveryName = @deliveryName , deliveryPostcode = @deliveryPostcode, deliverySurname = @deliverySurname, returnAddress1 = @returnAddress1, returnCity = @returnCity, returnCountry = @returnCountry, returnName = @returnName , returnPostcode = @returnPostcode, returnSurname = @returnSurname,packagenumber = @packagenumber WHERE id='" + id + "'", conn);
+            myCommand.Parameters.AddWithValue("@deliveryNumber", pk.deliverynumber);
+            myCommand.Parameters.AddWithValue("@height", pk.height);
+            myCommand.Parameters.AddWithValue("@length", pk.length);
+            myCommand.Parameters.AddWithValue("@weight", pk.weight);
+            myCommand.Parameters.AddWithValue("@width", pk.width);
+            myCommand.Parameters.AddWithValue("@returnNumber", pk.returnnumber);
+            myCommand.Parameters.AddWithValue("@deliveryAddress1", pk.deliveryaddress1);
+            myCommand.Parameters.AddWithValue("@deliveryAddress2", pk.deliveryaddress2);
+            myCommand.Parameters.AddWithValue("@deliveryCity", pk.deliverycity);
+            myCommand.Parameters.AddWithValue("@deliveryCountry", pk.deliverycountry);
+            myCommand.Parameters.AddWithValue("@deliveryName", pk.deliveryname);
+            myCommand.Parameters.AddWithValue("@deliveryPostcode", pk.deliverypostcode);
+            myCommand.Parameters.AddWithValue("@deliverySurname", pk.deliverysurname);
+            myCommand.Parameters.AddWithValue("@returnAddress1", pk.returnaddress1);
+            myCommand.Parameters.AddWithValue("@returnAddress2", pk.returnaddress2);
+            myCommand.Parameters.AddWithValue("@returnCity", pk.returncity);
+            myCommand.Parameters.AddWithValue("@returnCountry", pk.returncountry);
+            myCommand.Parameters.AddWithValue("@returnName", pk.returnname);
+            myCommand.Parameters.AddWithValue("@returnPostcode", pk.returnpostcode);
+            myCommand.Parameters.AddWithValue("@returnSurname", pk.returnsurname);
+            myCommand.Parameters.AddWithValue("@packageNumber", pk.packagenumber);
+
+
 
             int result = myCommand.ExecuteNonQuery();
 

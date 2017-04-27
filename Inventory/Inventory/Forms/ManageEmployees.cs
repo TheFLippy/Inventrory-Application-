@@ -52,8 +52,6 @@ namespace Inventory
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MainMenu menu = new MainMenu();
-            menu.Show();
         }
 
         //Search
@@ -178,7 +176,7 @@ namespace Inventory
             {
                 btnEdit.Visible = true;
 
-                string tempID = gridMngEmployees.Rows[e.RowIndex].Cells[7].Value.ToString();
+                string tempID = gridMngEmployees.Rows[e.RowIndex].Cells[1].Value.ToString();
                 editID = Convert.ToInt32(tempID);
             }
         }
@@ -209,6 +207,11 @@ namespace Inventory
                 EditEmployee edit = new EditEmployee(editUserName, editName, editSurname, editGroup, editID);
                 edit.Show();
             }
+        }
+
+        private void MainMenu(object sender, EventArgs e)
+        {
+
         }
     }
 }

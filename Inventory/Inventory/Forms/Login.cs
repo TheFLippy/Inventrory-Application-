@@ -13,10 +13,14 @@ namespace Inventory
 {
     public partial class Login : Form
     {
+        db displayData = new db();
+
         public string connectionString = @"Data Source=gapt-inventory.database.windows.net;Initial Catalog = Inventory; Persist Security Info=True;User ID = TheFLippy; Password=Gapt1234";
         public Login()
         {
             InitializeComponent();
+
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -52,15 +56,18 @@ namespace Inventory
 
                 if(sqlConn.login(txtUser.Text, txtPassword.Text))
                 {
+                    
                     MessageBox.Show("Successfully loged in.");
                     this.Hide();
-                    MainMenu menu = new MainMenu();
+
+                    MainMenu menu = new MainMenu(sqlConn.getJobPosition(txtUser.Text));
                     menu.Show();
                 }
                 else
                 {
                     MessageBox.Show("Your username or password was incorrect!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                
             }
             //Exceptions
             catch (Exception ex)

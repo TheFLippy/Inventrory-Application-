@@ -655,6 +655,7 @@
             this.ClientSize = new System.Drawing.Size(725, 394);
             this.Controls.Add(this.panel1);
             this.Name = "Add_Package";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add_Package";
             this.panel1.ResumeLayout(false);
             this.TabControl1.ResumeLayout(false);

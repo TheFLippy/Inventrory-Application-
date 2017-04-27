@@ -119,6 +119,7 @@
             this.btnsave.TabIndex = 0;
             this.btnsave.Text = "Save";
             this.btnsave.UseVisualStyleBackColor = true;
+            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
             // TabControl1
             // 
@@ -655,6 +656,7 @@
             this.ClientSize = new System.Drawing.Size(722, 386);
             this.Controls.Add(this.panel1);
             this.Name = "Edit_Packages";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit_Packages";
             this.Load += new System.EventHandler(this.Edit_Packages_Load);
             this.panel1.ResumeLayout(false);

@@ -92,9 +92,6 @@ namespace Inventory
                 {
                     MessageBox.Show("Successfully added an package!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
-                    MainMenu mn = new MainMenu();
-                    mn.Show();       
-
                 }
                 else
                 {
@@ -136,8 +133,6 @@ namespace Inventory
         private void btncancel_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MainMenu mm = new MainMenu();
-            mm.Show();
         }
     }
 }

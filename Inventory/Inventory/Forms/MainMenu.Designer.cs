@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnManageEmployees = new System.Windows.Forms.Button();
             this.btnAddPackage = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnViewInventory = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnVans = new System.Windows.Forms.Button();
@@ -66,15 +66,15 @@
             this.btnAddPackage.UseVisualStyleBackColor = true;
             this.btnAddPackage.Click += new System.EventHandler(this.btnAddPackage_Click);
             // 
-            // button3
+            // btnViewInventory
             // 
-            this.button3.Location = new System.Drawing.Point(72, 141);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(244, 28);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "View Inventory";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnViewInventory.Location = new System.Drawing.Point(72, 141);
+            this.btnViewInventory.Name = "btnViewInventory";
+            this.btnViewInventory.Size = new System.Drawing.Size(244, 28);
+            this.btnViewInventory.TabIndex = 3;
+            this.btnViewInventory.Text = "View Inventory";
+            this.btnViewInventory.UseVisualStyleBackColor = true;
+            this.btnViewInventory.Click += new System.EventHandler(this.btnViewIntentory_Click);
             // 
             // button4
             // 
@@ -113,14 +113,13 @@
             this.Controls.Add(this.btnVans);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnViewInventory);
             this.Controls.Add(this.btnAddPackage);
             this.Controls.Add(this.btnManageEmployees);
             this.Controls.Add(this.label1);
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainMenu";
-            this.Load += new System.EventHandler(this.MainMenu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,7 +130,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnManageEmployees;
         private System.Windows.Forms.Button btnAddPackage;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnViewInventory;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnVans;

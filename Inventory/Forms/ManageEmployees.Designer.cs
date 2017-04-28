@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageEmployees));
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.gridMngEmployees = new System.Windows.Forms.DataGridView();
@@ -61,8 +62,8 @@
             // 
             this.gridMngEmployees.AllowUserToAddRows = false;
             this.gridMngEmployees.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.gridMngEmployees.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gridMngEmployees.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gridMngEmployees.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.gridMngEmployees.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridMngEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -125,6 +126,7 @@
             this.Controls.Add(this.gridMngEmployees);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManageEmployees";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageEmployees";

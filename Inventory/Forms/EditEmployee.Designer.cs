@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditEmployee));
             this.rbDriver = new System.Windows.Forms.RadioButton();
             this.rbClerk = new System.Windows.Forms.RadioButton();
             this.rbAdmin = new System.Windows.Forms.RadioButton();
@@ -224,6 +225,7 @@
             this.Controls.Add(this.txtEditNewPassword);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtEditUsername);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditEmployee";

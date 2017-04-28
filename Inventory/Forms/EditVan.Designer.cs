@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditVan));
             this.txtengsize = new System.Windows.Forms.TextBox();
             this.txtweight = new System.Windows.Forms.TextBox();
             this.txtvolume = new System.Windows.Forms.TextBox();
@@ -221,6 +222,7 @@
             this.Controls.Add(this.btnsave);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btncancel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditVan";
             this.Text = "EditVan";
             this.Load += new System.EventHandler(this.EditVan_Load);

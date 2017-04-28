@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageVans));
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDeleteVan = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
@@ -124,6 +125,7 @@
             this.Controls.Add(this.gridMngVans);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManageVans";
             this.Text = "ManageVans";
             this.Load += new System.EventHandler(this.ManageVans_Load);

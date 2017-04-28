@@ -1,2 +1,0 @@
-# Inventrory-Application-
-GAPT Assignment

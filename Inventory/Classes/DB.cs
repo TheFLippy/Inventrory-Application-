@@ -291,7 +291,30 @@ namespace Inventory
             }
             return true;
         }
-            
+
+        public bool deleteVan(int[] array)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] != 0 && array[i] != null)
+                {
+                    var myCommand = new SqlCommand("DELETE FROM van WHERE ID = @id", conn);
+                    myCommand.Parameters.AddWithValue("@id", array[i]);
+
+                    int result = myCommand.ExecuteNonQuery();
+
+                    if (result == 0)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
         public bool deletepackage(int[] array)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -332,13 +355,13 @@ namespace Inventory
             Console.WriteLine("not to string: " + dt.Rows[0][0]);
 
             int id = Convert.ToInt32(dt.Rows[0][0]);
-            id += 1;
+            //id += 1;
 
             //for testing
             Console.WriteLine("parsed" + id);
 
-            var myCommand = new SqlCommand("INSERT INTO van VALUES(@id,@noPlate,@volume,@weight, '', 0, 'Available', @make, @model, @engSize, @YoM)", conn);
-            myCommand.Parameters.AddWithValue("@id", id);
+            var myCommand = new SqlCommand("INSERT INTO van VALUES(@noPlate,@volume,@weight, '', 0, 'Available', @make, @model, @engSize, @YoM)", conn);
+            //myCommand.Parameters.AddWithValue("@id", id);
             myCommand.Parameters.AddWithValue("@noPlate", addVan.NoPlate);
             myCommand.Parameters.AddWithValue("@volume", addVan.Volume);
             myCommand.Parameters.AddWithValue("@weight", addVan.Weight);

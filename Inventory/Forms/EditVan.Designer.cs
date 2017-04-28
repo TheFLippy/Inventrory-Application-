@@ -135,9 +135,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(275, 40);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(185, 25);
+            this.label3.Size = new System.Drawing.Size(133, 25);
             this.label3.TabIndex = 61;
-            this.label3.Text = "New Van Details";
+            this.label3.Text = "Van Details";
             // 
             // label11
             // 

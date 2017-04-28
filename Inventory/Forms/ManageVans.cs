@@ -22,7 +22,7 @@ namespace Inventory.Forms
         //variables for deletion of multiple rows
         bool ranOnce = false;
         int totalChk = 0;
-        int[] checkArray = new int[10];
+        int[] checkArray = new int [20];
         DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
         db sqlCon = new db();
 
@@ -137,7 +137,7 @@ namespace Inventory.Forms
             if (d == DialogResult.OK)
             {
                 //Passing the array of IDs to delete to DB class
-                if (sqlCon.delete(checkArray))
+                if (sqlCon.deleteVan(checkArray))
                 {
                     MessageBox.Show("Successfully deleted " + totalChk + " row(s)!");
                     totalChk = 0;

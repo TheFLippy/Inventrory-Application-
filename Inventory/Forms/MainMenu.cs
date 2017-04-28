@@ -140,7 +140,9 @@ namespace Inventory
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            AssignPackage ap = new AssignPackage();
+            ap.Show();
         }
     }
 }

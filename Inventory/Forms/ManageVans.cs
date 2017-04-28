@@ -166,7 +166,7 @@ namespace Inventory.Forms
 
         private void gridMngVans_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex != 0)
+            if (e.ColumnIndex != 0 &&e.RowIndex !=-1)
             {
                 btnEdit.Visible = true;
 
@@ -184,7 +184,7 @@ namespace Inventory.Forms
                 con.Open();
 
                 //Create command and reader
-                SqlCommand command = new SqlCommand("select * from login where id='" + editID + "'", con);
+                SqlCommand command = new SqlCommand("select * from van where id='" + editID + "'", con);
                 SqlDataReader read = command.ExecuteReader();
 
                 //Creating user object to hold values
@@ -196,15 +196,15 @@ namespace Inventory.Forms
                 while (read.Read())
                 {
                     noPlate = (string)read["noPlate"];
-                    volume = (float)read["volume"];
-                    weight = (float)read["weight"];
+                    volume = (float)Convert.ToDouble(read["volume"]);
+                    weight = (float)Convert.ToDouble(read["weight"]);
                     location = (string)read["location"];
-                    inUse = (int)read["inUse"];
+                    inUse = Convert.ToInt32(read["inUse"]);
                     state = (string)read["state"];
                     make = (string)read["make"];
                     model = (string)read["model"];
                     engSize = (string)read["engSize"];
-                    YoM = (int)read["YoM"];
+                    YoM = Convert.ToInt32(read["YoM"]);
                 }
 
                 EditVan edit = new EditVan(editID);

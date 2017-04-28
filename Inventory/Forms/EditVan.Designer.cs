@@ -53,7 +53,6 @@
             this.txtengsize.Name = "txtengsize";
             this.txtengsize.Size = new System.Drawing.Size(181, 20);
             this.txtengsize.TabIndex = 71;
-            
             // 
             // txtweight
             // 
@@ -61,7 +60,6 @@
             this.txtweight.Name = "txtweight";
             this.txtweight.Size = new System.Drawing.Size(181, 20);
             this.txtweight.TabIndex = 63;
-            
             // 
             // txtvolume
             // 
@@ -69,7 +67,6 @@
             this.txtvolume.Name = "txtvolume";
             this.txtvolume.Size = new System.Drawing.Size(181, 20);
             this.txtvolume.TabIndex = 59;
-           
             // 
             // txtnoplate
             // 
@@ -77,7 +74,6 @@
             this.txtnoplate.Name = "txtnoplate";
             this.txtnoplate.Size = new System.Drawing.Size(181, 20);
             this.txtnoplate.TabIndex = 55;
-            
             // 
             // txtyom
             // 
@@ -85,7 +81,6 @@
             this.txtyom.Name = "txtyom";
             this.txtyom.Size = new System.Drawing.Size(181, 20);
             this.txtyom.TabIndex = 67;
-            
             // 
             // txtmodel
             // 
@@ -93,7 +88,6 @@
             this.txtmodel.Name = "txtmodel";
             this.txtmodel.Size = new System.Drawing.Size(181, 20);
             this.txtmodel.TabIndex = 66;
-            
             // 
             // txtmake
             // 
@@ -101,7 +95,6 @@
             this.txtmake.Name = "txtmake";
             this.txtmake.Size = new System.Drawing.Size(181, 20);
             this.txtmake.TabIndex = 64;
-            
             // 
             // label13
             // 
@@ -112,7 +105,6 @@
             this.label13.Size = new System.Drawing.Size(75, 20);
             this.label13.TabIndex = 70;
             this.label13.Text = "Volume : ";
-            
             // 
             // label14
             // 
@@ -123,7 +115,6 @@
             this.label14.Size = new System.Drawing.Size(67, 20);
             this.label14.TabIndex = 69;
             this.label14.Text = "Weight :";
-            
             // 
             // label15
             // 
@@ -134,7 +125,6 @@
             this.label15.Size = new System.Drawing.Size(113, 20);
             this.label15.TabIndex = 68;
             this.label15.Text = "Number Plate :";
-            
             // 
             // label3
             // 
@@ -158,7 +148,6 @@
             this.label11.Size = new System.Drawing.Size(60, 20);
             this.label11.TabIndex = 65;
             this.label11.Text = "Model :";
-            
             // 
             // label9
             // 
@@ -169,7 +158,6 @@
             this.label9.Size = new System.Drawing.Size(50, 20);
             this.label9.TabIndex = 60;
             this.label9.Text = "YoM :";
-            
             // 
             // label10
             // 
@@ -180,7 +168,6 @@
             this.label10.Size = new System.Drawing.Size(102, 20);
             this.label10.TabIndex = 62;
             this.label10.Text = "Engine Size :";
-            
             // 
             // btnsave
             // 
@@ -201,7 +188,6 @@
             this.label8.Size = new System.Drawing.Size(56, 20);
             this.label8.TabIndex = 57;
             this.label8.Text = "Make :";
-            
             // 
             // btncancel
             // 
@@ -237,6 +223,7 @@
             this.Controls.Add(this.btncancel);
             this.Name = "EditVan";
             this.Text = "EditVan";
+            this.Load += new System.EventHandler(this.EditVan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

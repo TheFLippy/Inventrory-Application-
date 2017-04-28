@@ -92,6 +92,8 @@
             this.gridMngVans.Name = "gridMngVans";
             this.gridMngVans.Size = new System.Drawing.Size(611, 360);
             this.gridMngVans.TabIndex = 9;
+            this.gridMngVans.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridMngVans_CellClick);
+            this.gridMngVans.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridMngVans_CellContentClick);
             // 
             // btnSearch
             // 

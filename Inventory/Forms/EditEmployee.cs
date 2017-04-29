@@ -22,6 +22,21 @@ namespace Inventory.Forms
             txtEditName.Text = name;
             txtEditSurname.Text = surname;
             tempID = id;
+
+            switch(group)
+            {
+                case "Admin":
+                    rbAdmin.Checked = true;
+                    break;
+
+                case "Clerk":
+                    rbClerk.Checked = true;
+                    break;
+
+                case "Driver":
+                    rbDriver.Checked = true;
+                    break;
+            }
          }
 
         

@@ -49,7 +49,7 @@ namespace Inventory
             {
                 db sqlCon = new db();
                 //if successfully added
-                if(sqlCon.insert(txtAddUsername.Text, txtAddPassword.Text, txtAddName.Text, txtSurname.Text, group))
+                if(sqlCon.insertEmp(txtAddUsername.Text, txtAddPassword.Text, txtAddName.Text, txtSurname.Text, group))
                 {
                     MessageBox.Show("Successfully added an employee!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

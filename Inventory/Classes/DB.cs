@@ -104,7 +104,7 @@ namespace Inventory
             return false;
         }
 
-        public bool insert(string username, string password, string name, string surname, string group)
+        public bool insertEmp(string username, string password, string name, string surname, string group)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
@@ -122,7 +122,7 @@ namespace Inventory
 
                 User addUser = new User(username, passwordHash, name, surname, group);
 
-                var myCommand = new SqlCommand("INSERT INTO login VALUES(@id, @username, @password, @name, @surname, GETDATE(), @group)", conn);
+                var myCommand = new SqlCommand("INSERT INTO login VALUES(@id, @username, @password, @name, @surname, GETDATE(), @group, default, GETDATE(), GETDATE(), 'false')", conn);
                 myCommand.Parameters.AddWithValue("@id", id);
                 myCommand.Parameters.AddWithValue("@username", addUser.Username);
                 myCommand.Parameters.AddWithValue("@password", addUser.Password);

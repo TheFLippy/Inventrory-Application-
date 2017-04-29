@@ -25,7 +25,7 @@ namespace Inventory
         {
             InitializeComponent();
 
-            lblWelcomeMsg.Text = "Loged in as " + privelage;
+            lblWelcomeMsg.Text = "Logged in as " + privelage;
 
             switch (privelage)
             {

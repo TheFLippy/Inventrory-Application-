@@ -14,13 +14,54 @@ namespace Inventory.Forms
 {
     public partial class AssignPackage : Form
     {
+       // Form adding;
+        ComboBox drivercmbx;
+        DataTable dtdriver;
+        DataTable dtpackage;
+        int count;
+        int index;
+        int check = 0;
+        int position;
+        int pos = 0;
+        string packid;
+
+        Accordion acc;
+
         public string connectionString = @"Data Source=gapt-inventory.database.windows.net;Initial Catalog = Inventory; Persist Security Info=True;User ID = TheFLippy; Password=Gapt1234";
-        Random rnd = new Random();
+        //to store tlp
+        List<TableLayoutPanel> tlplst = new List<TableLayoutPanel>();
+        //to store to add tlp
+        List<TableLayoutPanel> tlp1lst = new List<TableLayoutPanel>();
+
+        //list to store accordions
+        List<String> acclst = new List<string>();
+
+
+        //to store labels
+        List<Label> labellst = new List<Label>();
+        //to store to add labels
+        List<Label> addlabellst = new List<Label>();
+        //to store to add button
+        List<Button> addbuttonlst = new List<Button>();
+        //to store remove buttons
+        List<Button> buttonlst = new List<Button>();
+        //checkbox list
+        List<CheckBox> chklst = new List<CheckBox>();
+
+        //queue to hold labels to remove 
+        Queue<Label> labelque = new Queue<Label>();
+        //stores the items to add 
+        Queue<Label> addPackage = new Queue<Label>();
+
+        Queue<string> que = new Queue<string>();
+
+        DataTable packageid = new DataTable();
 
         public AssignPackage()
         {
             InitializeComponent();
         }
+
         private string assigndriver(DataTable dtdriver)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -37,31 +78,29 @@ namespace Inventory.Forms
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
 
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT  deliveryCity FROM package WHERE deleted = 0 AND delivered = 0 AND driver IS NULL", connectionString);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT  deliveryCity,id FROM package WHERE deleted = 0 AND delivered = 0 AND driver IS NULL", connectionString);
             sda.Fill(dtpackage);
-
+            
             return dtpackage.ToString();
         }
 
-
         private void AssignPackage_Load(object sender, EventArgs e)
         {
-            //add.Visible = false;
-            string buttonName = "btn";
+
             //area1
             string[] city = new string[] { "Qala", "Kercem" };
             //area2
             string[] city2 = new string[] { "Munxar" };
 
 
-            DataTable dtdriver = new DataTable();
+            dtdriver = new DataTable();
             assigndriver(dtdriver);
-            int count = dtdriver.Select().Length;
+            count = dtdriver.Select().Length;
             //testing
             Console.WriteLine("dt count\t" + count);
 
 
-            DataTable dtpackage = new DataTable();
+            dtpackage = new DataTable();
             assignpackage(dtpackage);
             int count1 = dtpackage.Select().Length;
             //testing
@@ -70,7 +109,7 @@ namespace Inventory.Forms
             int totalPackages = count1 / count;
 
 
-            Queue<string> que = new Queue<string>();
+           
             for (int i = 0; i < city.GetLength(0); i++)
             {
                 for (int j = 0; j < count1; j++)
@@ -97,7 +136,7 @@ namespace Inventory.Forms
             }
 
 
-            Accordion acc = new Accordion();
+            acc = new Accordion();
             acc.Parent = this.panel1;
             acc.CheckBoxMargin = new Padding(2);
             acc.ContentMargin = new Padding(15, 5, 15, 5);
@@ -111,64 +150,246 @@ namespace Inventory.Forms
             for (int i = 0; i < count; i++)
             {
 
-                TableLayoutPanel tlp = new TableLayoutPanel { Dock = DockStyle.Fill, Padding = new Padding(5) };
+                TableLayoutPanel tlp = new TableLayoutPanel { Dock = DockStyle.Fill, Padding = new Padding(5)};
                 string name = dtdriver.Rows[i][0].ToString();
 
                 for (int j = 0; j < totalPackages; j++)
                 {
-                    
-                    tlp.Controls.Add(new Label { Text = que.Dequeue(), TextAlign = ContentAlignment.BottomLeft }, 0, j);
-                    //  tlp.Controls.Add(new Button { Name = "remove", Text = "Remove" }, 1, j);
-                    Button remove = new Button();
-                    //remove.Location = new Point(1, j);
-                    remove.Text = "Remove";
-                    tlp.Controls.Add(remove,1,j);
-                    remove.Click += new EventHandler(this.remove_Click);
+                    tlp.Name = name;
 
+                    Label lb = new Label();
+                    lb.Text = que.Dequeue();
+                    tlp.Controls.Add(lb, 0, j);
+                    lb.Name = "lb";// + j.ToString();
+                    labellst.Add(lb);
+
+                    Button remove = new Button();
+                    remove.Text = "Remove";
+                    remove.Name = "rmv" + j.ToString();
+                    buttonlst.Add(remove);
+                    tlp.Controls.Add(remove, 1, j);
+                    remove.Click += new EventHandler(this.remove_Click);
+                    position = j;
 
                 }
-
-                Button add = new Button();
-                add.Text = "ADD";
-                tlp.Controls.Add(add,1,count+1);
-                add.Click += new EventHandler(this.add_Click);
-                acc.Name = 1.ToString() + i.ToString();
+     
+                tlplst.Add(tlp);
                 acc.Add(tlp, name);
+               // acc.Name = name;
+                acclst.Add(acc.Name);
                 pk++;
 
-                if(pk == count+1)
+                if (pk == count + 1)
                 {
-                    if(que.Count != 0)
+                    if (que.Count != 0)
                     {
-                        name = "TO ADD";
-                        TableLayoutPanel tlp1 = new TableLayoutPanel { Dock = DockStyle.Fill, Padding = new Padding(5) };
-                        for (int j = 0; j <que.Count; j++)
+                       
+                        for (int j = 0; j < que.Count; j++)
                         {
-                            tlp1.Controls.Add(new Label { Text = que.Dequeue(), TextAlign = ContentAlignment.BottomLeft }, 0, j);
-                            tlp1.Controls.Add(new Button { Name = buttonName + j.ToString(), Text = "Remove" }, 1, j);
+                            
+                            //creating label
+                            Label addlb = new Label();
+                            addlb.Text = que.Dequeue().ToString();
+                            //addlabellst.Add(addlb);
+                            //addPackage.Enqueue(addlb);
+                            labellst.Add(addlb);
+                            tlp.Controls.Add(addlb, 0,position+1);
+
+                            Button remove = new Button();
+                            remove.Text = "Remove";
+                            remove.Name = "rmv" + j.ToString();
+                            buttonlst.Add(remove);
+                            tlp.Controls.Add(remove, 1, position+1);
+                            remove.Click += new EventHandler(this.remove_Click);
+
+                            
+                            pos = position;
                         }
-                        acc.Add(tlp1, name);
+
+                        
                     }
                 }
-                
+
+            }
+
+            adding.FlowDirection = FlowDirection.TopDown;
+            Label l = new Label();
+            l.Text = "To Add";
+            l.AutoSize = false;
+            l.TextAlign = ContentAlignment.TopCenter;
+            adding.Controls.Add(l);
+
+            drivercmbx = new ComboBox();
+            drivercmbx.Text = "Select driver";
+            for (int k = 0; k < count; k++)
+            {
+                drivercmbx.Items.Add(dtdriver.Rows[k][0].ToString());
+            }
+            flowLayoutPanel1.Controls.Add(drivercmbx);
+
+
+            Button addbtn = new Button();
+            addbtn.Text = "Add";
+            addbtn.Click += new EventHandler(this.addbtn_Click);
+            flowLayoutPanel1.Controls.Add(addbtn);
+            flowLayoutPanel1.Show();
+
+
+        }
+
+        private void addbtn_Click(Object sender, EventArgs e)
+        {
+            check = 0;
+            for (int j = 0; j < count; j++)
+            {
+                if (drivercmbx.SelectedItem == dtdriver.Rows[j][0])
+                {
+                    index = j;
+                }
+            }
+
+
+            for (int i = 0; i < chklst.Count; i++)
+            {
+                if (chklst.ElementAt(i).Checked)
+                {
+                    chklst.ElementAt(i).Visible = false;
+                    chklst.ElementAt(i).Checked = false;
+                    check++;
+
+                }
             }
            
+
+            for (int k = 0; k < check; k++)
+            {
+                Label label = new Label();
+                label.Text = addPackage.Dequeue().Text.ToString();
+                
+                tlplst.ElementAt(index).Controls.Add(label, 0, pos+2);
+                labellst.Add(label);
+
+                Button bt = new Button();
+                bt.Text = "Remove";
+                buttonlst.Add(bt);
+                //remove.Click += new EventHandler(this.remove_Click);
+                bt.Click += new EventHandler(this.remove_Click);
+
+                tlplst.ElementAt(index).Controls.Add(bt, 1, pos+2); 
+                pos++;
+
+            }
+          
+
+            check = 0;
+            acc.Hide();
+            acc.Show();
+
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void remove_Click(Object sender, EventArgs e)
         {
+            
+            for (int j = 0; j < buttonlst.Count; j++)
+            {
+                if (sender == buttonlst.ElementAt(j))
+                {
+                  
+                   // labellst.ElementAt(j).Visible = false;
+                    buttonlst.ElementAt(j).Visible = false;
+                    for(int i = 0; i < tlplst.Count; i++)
+                    {
+                        foreach (Control c in tlplst.ElementAt(i).Controls)
+                        {
+                            if(c is Label)
+                            {
+                                if(c == labellst.ElementAt(j))
+                                {
+                                    tlplst.ElementAt(i).Controls.Remove(labellst.ElementAt(j));
+                                }
+                            }
+                        }
+                    }
+                   
 
+
+                    acc.Hide();
+                    acc.Show();
+                    //  labelque.Enqueue(labellst.ElementAt(j));
+                    addPackage.Enqueue(labellst.ElementAt(j));
+                    addpk(labellst.ElementAt(j));
+                }
+            }
+        }
+        
+        private void addpk(Label lb)
+        { 
+                CheckBox ckb = new CheckBox();
+                ckb.Text = lb.Text.ToString();
+                ckb.AutoSize = true;
+                chklst.Add(ckb);
+                adding.Controls.Add(ckb);
+                
         }
 
-        private void add_Click(Object sender , EventArgs e)
+        private void AssignBtn_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Button Works");
-        }
+            int k = 0;
+            
+            
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            try
+            {
+                for (int i = 0; i < tlplst.Count; i++)
+                {
+                    foreach (Control lb in tlplst.ElementAt(i).Controls)
+                    {
+                        
+                        if (lb is Label)
+                        {
+                            string drivername = tlplst.ElementAt(i).Name.ToString();
+                            Console.WriteLine("DRIVER NAME: \t\t" + drivername);
 
-        private void remove_Click(Object sender , EventArgs e)
-        {
-            Console.WriteLine("Button remove Works");
+                            for(int j =0; j < dtpackage.Rows.Count; j++)
+                            {
+                                if(lb.Text.Equals(dtpackage.Rows[j][0]))
+                                {
+                                   packid = dtpackage.Rows[j][1].ToString();
+                                }
+                            }
+
+                            if (k <= dtpackage.Rows.Count)
+                            {
+                                var mycommand = new SqlCommand("UPDATE package SET driver = @drivername WHERE id = @id", conn);
+                                mycommand.Parameters.AddWithValue("@drivername", drivername);
+                                mycommand.Parameters.AddWithValue("@id", packid);
+                                Console.WriteLine("dtpackage.Rows[k][1]: \t\t" + packid);
+                                k++;
+                                
+                                int result = mycommand.ExecuteNonQuery();
+                                if (result != 0)
+                                {
+                                    Console.WriteLine("ROWS AFFECTED");
+                                    MessageBox.Show( "The packages were assigned");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("ROWS NOT AFFECTED");
+                                }
+                            }
+
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+          
         }
-     
     }
 }

@@ -82,9 +82,8 @@ namespace Inventory
             mng = null;
             Show();
         }
-
        
-        private void btnAddPackage_Click(object sender, EventArgs e)
+/*        private void btnAddPackage_Click(object sender, EventArgs e)
         {
             if (addPckg == null)
             {
@@ -100,7 +99,7 @@ namespace Inventory
         {
             addPckg = null;
             Show();
-        }
+        }*/
 
         private void btnViewIntentory_Click(object sender, EventArgs e)
         {
@@ -143,6 +142,11 @@ namespace Inventory
             this.Hide();
             AssignPackage ap = new AssignPackage();
             ap.Show();
+        }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -78,7 +78,7 @@ namespace Inventory.Forms
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
 
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT  deliveryCity,id FROM package WHERE deleted = 0 AND delivered = 0 AND driver IS NULL", connectionString);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT  deliveryCity,id, packageNumber FROM package WHERE deleted = 0 AND delivered = 0 AND driver IS NULL", connectionString);
             sda.Fill(dtpackage);
             
             return dtpackage.ToString();
@@ -116,8 +116,8 @@ namespace Inventory.Forms
                 {
                     if (dtpackage.Rows[j][0].ToString() == city[i])
                     {
-                        que.Enqueue(dtpackage.Rows[j][0].ToString());
-                        Console.WriteLine("FOUND\t" + dtpackage.Rows[j][0].ToString());
+                        que.Enqueue(dtpackage.Rows[j][1].ToString() + dtpackage.Rows[j][0].ToString());
+                        Console.WriteLine("FOUND\t" + dtpackage.Rows[j][1].ToString() + dtpackage.Rows[j][0].ToString());
                     }
                 }
             }
@@ -129,7 +129,7 @@ namespace Inventory.Forms
                 {
                     if (dtpackage.Rows[j][0].ToString() == city2[i])
                     {
-                        que.Enqueue(dtpackage.Rows[j][0].ToString());
+                        que.Enqueue(dtpackage.Rows[j][1].ToString() + dtpackage.Rows[j][0].ToString());
                         Console.WriteLine("FOUND\t" + dtpackage.Rows[j][0].ToString());
                     }
                 }
@@ -189,7 +189,7 @@ namespace Inventory.Forms
                             
                             //creating label
                             Label addlb = new Label();
-                            addlb.Text = que.Dequeue().ToString();
+                            addlb.Text = que.Dequeue();
                             //addlabellst.Add(addlb);
                             //addPackage.Enqueue(addlb);
                             labellst.Add(addlb);
@@ -266,7 +266,7 @@ namespace Inventory.Forms
                 Label label = new Label();
                 label.Text = addPackage.Dequeue().Text.ToString();
                 
-                tlplst.ElementAt(index).Controls.Add(label, 0, pos+2);
+                tlplst.ElementAt(index).Controls.Add(label, 0, pos+4);
                 labellst.Add(label);
 
                 Button bt = new Button();
@@ -275,7 +275,7 @@ namespace Inventory.Forms
                 //remove.Click += new EventHandler(this.remove_Click);
                 bt.Click += new EventHandler(this.remove_Click);
 
-                tlplst.ElementAt(index).Controls.Add(bt, 1, pos+2); 
+                tlplst.ElementAt(index).Controls.Add(bt, 1, pos+4); 
                 pos++;
 
             }
@@ -353,15 +353,16 @@ namespace Inventory.Forms
 
                             for(int j =0; j < dtpackage.Rows.Count; j++)
                             {
-                                if(lb.Text.Equals(dtpackage.Rows[j][0]))
+                                if(lb.Text.Equals(dtpackage.Rows[j][1].ToString()+ dtpackage.Rows[j][0].ToString()))
                                 {
-                                   packid = dtpackage.Rows[j][1].ToString();
+                                   packid = dtpackage.Rows[j][2].ToString();
+                                   break;
                                 }
                             }
 
                             if (k <= dtpackage.Rows.Count)
                             {
-                                var mycommand = new SqlCommand("UPDATE package SET driver = @drivername WHERE id = @id", conn);
+                                var mycommand = new SqlCommand("UPDATE package SET driver = @drivername WHERE packageNumber = @id", conn);
                                 mycommand.Parameters.AddWithValue("@drivername", drivername);
                                 mycommand.Parameters.AddWithValue("@id", packid);
                                 Console.WriteLine("dtpackage.Rows[k][1]: \t\t" + packid);
@@ -371,7 +372,6 @@ namespace Inventory.Forms
                                 if (result != 0)
                                 {
                                     Console.WriteLine("ROWS AFFECTED");
-                                    MessageBox.Show( "The packages were assigned");
                                 }
                                 else
                                 {
@@ -382,6 +382,7 @@ namespace Inventory.Forms
                         }
                     }
                 }
+                MessageBox.Show("The packages were assigned");
 
             }
             catch (Exception ex)

@@ -44,13 +44,13 @@
             // 
             this.txtSearch.Location = new System.Drawing.Point(37, 32);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(611, 20);
+            this.txtSearch.Size = new System.Drawing.Size(746, 20);
             this.txtSearch.TabIndex = 0;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(654, 30);
+            this.btnSearch.Location = new System.Drawing.Point(789, 32);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 1;
@@ -69,7 +69,7 @@
             this.gridMngEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridMngEmployees.Location = new System.Drawing.Point(37, 58);
             this.gridMngEmployees.Name = "gridMngEmployees";
-            this.gridMngEmployees.Size = new System.Drawing.Size(611, 360);
+            this.gridMngEmployees.Size = new System.Drawing.Size(746, 360);
             this.gridMngEmployees.TabIndex = 2;
             this.gridMngEmployees.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridMngEmployees_CellClick);
             this.gridMngEmployees.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridMngEmployees_CellContentClick);
@@ -86,7 +86,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(678, 455);
+            this.btnBack.Location = new System.Drawing.Point(789, 420);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 4;
@@ -118,7 +118,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(765, 490);
+            this.ClientSize = new System.Drawing.Size(885, 455);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnDeleteEmp);
             this.Controls.Add(this.btnBack);

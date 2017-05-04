@@ -17,7 +17,7 @@ namespace Inventory.Forms
         bool ranOnce = false;
         DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
         db sqlCon = new db();
-        
+        Add_Package addPckg = new Add_Package();
 
         int totalchk = 0;
         int[] id = new int[20];
@@ -196,6 +196,23 @@ namespace Inventory.Forms
 
             //filling the grid with the table contents
             gridViewInv.DataSource = dt;
+        }
+
+        private void btnAddPckg_Click(object sender, EventArgs e)
+        {
+            if (addPckg == null)
+            {
+                addPckg = new Add_Package();
+                addPckg.FormClosed += addPckg_FormClosed;
+            }
+            addPckg.Show(this);
+            Hide();
+        }
+
+        void addPckg_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            addPckg = null;
+            Show();
         }
     }
 }

@@ -52,6 +52,7 @@ namespace Inventory
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
+            Show();
         }
 
         //Search
@@ -62,8 +63,8 @@ namespace Inventory
             //Connectining to database
             sqlCon.sqlConnect();
             //Creating data adapter to query the database
-            SqlDataAdapter sda = new SqlDataAdapter("select * from login where username like'" + txtSearch.Text + "%'", sqlCon.connectionString);
-            
+            SqlDataAdapter sda = new SqlDataAdapter("select id as ID, username as Username, name as Name, surname as Surname, joinedDate as StartDate, jobPosition as Privelages  from login where username like'" + txtSearch.Text + "%' or name like '" + txtSearch.Text + "%' or surname like '" + txtSearch.Text + "%'", sqlCon.connectionString);
+
             //Filling the datatable with retrieved rows
             sda.Fill(dt);
 
@@ -71,6 +72,7 @@ namespace Inventory
             if (ranOnce == false)
             {
                 gridMngEmployees.Columns.Add(chk);
+                chk.HeaderText = "Delete";
 
             }
             ranOnce = true;
@@ -103,7 +105,7 @@ namespace Inventory
                 if (ch1.Value.ToString() == "True")
                 {
                     //Getting the ID of the user
-                    temp = gridMngEmployees.Rows[ch1.RowIndex].Cells[7].Value.ToString();
+                    temp = gridMngEmployees.Rows[ch1.RowIndex].Cells[1].Value.ToString();
                     //Placing that ID into an array with an index (needs to be this way in order to remove id when unchecked)
                     deleteArrayPopulation(temp, ch1.RowIndex);
                     //Display delete button
@@ -172,7 +174,7 @@ namespace Inventory
 
         private void gridMngEmployees_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex != 0)
+            if (e.ColumnIndex != 0 && e.RowIndex != 0)
             {
                 btnEdit.Visible = true;
 
@@ -183,7 +185,7 @@ namespace Inventory
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if(editID != 0)
+            if (editID != 0)
             {
                 //Create connection with db
                 SqlConnection con = new SqlConnection(sqlCon.connectionString);
@@ -201,7 +203,7 @@ namespace Inventory
                     editUserName = (string)read["username"];
                     editName = (string)read["name"];
                     editSurname = (string)read["surname"];
-                    editGroup = (string)read["group"];
+                    editGroup = (string)read["jobPosition"];
                 }
 
                 EditEmployee edit = new EditEmployee(editUserName, editName, editSurname, editGroup, editID);

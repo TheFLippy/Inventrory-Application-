@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_Inventory));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.gridViewInv = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.ViewAll = new System.Windows.Forms.Button();
+            this.btnAddPckg = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewInv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,8 +75,8 @@
             // 
             this.gridViewInv.AllowUserToAddRows = false;
             this.gridViewInv.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.gridViewInv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gridViewInv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.gridViewInv.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.gridViewInv.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridViewInv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -104,22 +104,22 @@
             this.txtSearch.Size = new System.Drawing.Size(474, 20);
             this.txtSearch.TabIndex = 7;
             // 
-            // ViewAll
+            // btnAddPckg
             // 
-            this.ViewAll.Location = new System.Drawing.Point(497, 473);
-            this.ViewAll.Name = "ViewAll";
-            this.ViewAll.Size = new System.Drawing.Size(93, 23);
-            this.ViewAll.TabIndex = 14;
-            this.ViewAll.Text = " View All";
-            this.ViewAll.UseVisualStyleBackColor = true;
-            this.ViewAll.Click += new System.EventHandler(this.ViewAll_Click);
+            this.btnAddPckg.Location = new System.Drawing.Point(497, 473);
+            this.btnAddPckg.Name = "btnAddPckg";
+            this.btnAddPckg.Size = new System.Drawing.Size(93, 23);
+            this.btnAddPckg.TabIndex = 14;
+            this.btnAddPckg.Text = "Add";
+            this.btnAddPckg.UseVisualStyleBackColor = true;
+            this.btnAddPckg.Click += new System.EventHandler(this.btnAddPckg_Click);
             // 
             // View_Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 508);
-            this.Controls.Add(this.ViewAll);
+            this.Controls.Add(this.btnAddPckg);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnBack);
@@ -145,6 +145,6 @@
         private System.Windows.Forms.DataGridView gridViewInv;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Button ViewAll;
+        private System.Windows.Forms.Button btnAddPckg;
     }
 }

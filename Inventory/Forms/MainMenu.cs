@@ -31,14 +31,21 @@ namespace Inventory
             {
                 case "Admin":
                     btnManageEmployees.Show();
+                    btnManageVans.Show();
                     break;
 
                 case "Clerk":
                     btnManageEmployees.Hide();
+                    btnManageVans.Hide();
+                    btnViewInventory.Location = new Point (188, 239);
+                    btnDeliveries.Location = new Point(433, 239);
                     break;
 
                 case "Driver":
                     btnManageEmployees.Hide();
+                    btnManageVans.Hide();
+                    btnViewInventory.Location = new Point(188, 229);
+                    btnDeliveries.Location = new Point(433, 229);
                     break;
             }
         }

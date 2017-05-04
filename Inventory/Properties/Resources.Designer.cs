@@ -63,10 +63,20 @@ namespace Inventory.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Logo {
+        internal static System.Drawing.Bitmap Solar_Transport_and_Deliveries_Logo {
             get {
-                object obj = ResourceManager.GetObject("Logo", resourceCulture);
+                object obj = ResourceManager.GetObject("Solar_Transport_and_Deliveries_Logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Solar_Transport_and_Deliveries_Logo1 {
+            get {
+                object obj = ResourceManager.GetObject("Solar_Transport_and_Deliveries_Logo1", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
     }

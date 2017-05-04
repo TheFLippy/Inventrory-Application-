@@ -104,12 +104,12 @@ namespace Inventory
             return false;
         }
 
-        public bool insert(string username, string password, string name, string surname, string group)
+        public bool insertEmp(string username, string password, string name, string surname, string group)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
 
-            if(!checkIfUserExists(username))
+            if (!checkIfUserExists(username))
             {
                 string passwordHash = Hash.ComputeHash(password, null);
                 DataTable dt = new DataTable();
@@ -122,7 +122,7 @@ namespace Inventory
 
                 User addUser = new User(username, passwordHash, name, surname, group);
 
-                var myCommand = new SqlCommand("INSERT INTO login VALUES(@id, @username, @password, @name, @surname, GETDATE(), @group)", conn);
+                var myCommand = new SqlCommand("INSERT INTO login VALUES(@id, @username, @password, @name, @surname, GETDATE(), @group, default, GETDATE(), GETDATE(), 'false')", conn);
                 myCommand.Parameters.AddWithValue("@id", id);
                 myCommand.Parameters.AddWithValue("@username", addUser.Username);
                 myCommand.Parameters.AddWithValue("@password", addUser.Password);
@@ -139,7 +139,6 @@ namespace Inventory
             }
             return false;
         }
-
         public bool insertpack( float deliveryNumber, float height, float length, float weight, float width, float returnNumber, 
             string deliveryAddress1, string deliveryAddress2, string deliveryCity, string deliveryCountry, 
             string deliveryName , string deliveryPostcode, string deliverySurname, string returnAddress1, 
@@ -198,10 +197,10 @@ namespace Inventory
             }
             return false;
         }
-        
-      
 
-        public bool update(string username, string password, string name, string surname, string group, int id)
+
+
+        public bool updateEmp(string username, string password, string name, string surname, string group, int id)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();

@@ -75,7 +75,7 @@ namespace Inventory.Forms
             {
                 db sqlCon = new db();
                 //if successfully added
-                if (sqlCon.update(txtEditUsername.Text, txtEditNewPassword.Text, txtEditName.Text, txtEditSurname.Text, editGroup, tempID))
+                if (sqlCon.updateEmp(txtEditUsername.Text, txtEditNewPassword.Text, txtEditName.Text, txtEditSurname.Text, editGroup, tempID))
                 {
                     MessageBox.Show("Successfully edited an employee!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

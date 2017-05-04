@@ -151,7 +151,6 @@ namespace Inventory
                     totalChk = 0;
                     //Reset the array of IDs 
                     resetArray(checkArray);
-                    gridMngEmployees.DataSource = null;
                     btnDeleteEmp.Visible = false;
 
                 }

@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnManageEmployees = new System.Windows.Forms.Button();
             this.btnViewInventory = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnDeliveries = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.lblWelcomeMsg = new System.Windows.Forms.Label();
             this.btnManageVans = new System.Windows.Forms.Button();
@@ -84,22 +84,22 @@
             this.btnViewInventory.UseVisualStyleBackColor = false;
             this.btnViewInventory.Click += new System.EventHandler(this.btnViewIntentory_Click);
             // 
-            // button4
+            // btnDeliveries
             // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button4.FlatAppearance.BorderSize = 2;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(319, 187);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(206, 61);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Deliveries";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnDeliveries.BackColor = System.Drawing.Color.White;
+            this.btnDeliveries.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDeliveries.FlatAppearance.BorderSize = 2;
+            this.btnDeliveries.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeliveries.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeliveries.Image = ((System.Drawing.Image)(resources.GetObject("btnDeliveries.Image")));
+            this.btnDeliveries.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeliveries.Location = new System.Drawing.Point(319, 187);
+            this.btnDeliveries.Name = "btnDeliveries";
+            this.btnDeliveries.Size = new System.Drawing.Size(206, 61);
+            this.btnDeliveries.TabIndex = 6;
+            this.btnDeliveries.Text = "Deliveries";
+            this.btnDeliveries.UseVisualStyleBackColor = false;
+            this.btnDeliveries.Click += new System.EventHandler(this.btnDeliveries_Click);
             // 
             // btnLogout
             // 
@@ -150,7 +150,7 @@
             this.Controls.Add(this.btnManageVans);
             this.Controls.Add(this.lblWelcomeMsg);
             this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnDeliveries);
             this.Controls.Add(this.btnViewInventory);
             this.Controls.Add(this.btnManageEmployees);
             this.Controls.Add(this.label1);
@@ -169,7 +169,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnManageEmployees;
         private System.Windows.Forms.Button btnViewInventory;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnDeliveries;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Label lblWelcomeMsg;
         private System.Windows.Forms.Button btnManageVans;

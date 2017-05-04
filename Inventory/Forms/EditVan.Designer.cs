@@ -224,6 +224,7 @@
             this.Controls.Add(this.btncancel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditVan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditVan";
             this.Load += new System.EventHandler(this.EditVan_Load);
             this.ResumeLayout(false);

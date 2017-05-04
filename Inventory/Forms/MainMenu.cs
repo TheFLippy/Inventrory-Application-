@@ -16,10 +16,10 @@ namespace Inventory
 
         //Holding forms in order to check if they have been opened
         Login login;
-        Add_Package addPckg;
         ManageEmployees mng;
         View_Inventory viewInv;
         ManageVans mngVans;
+        AssignPackage assPckg;
 
         public MainMenu(string privelage)
         {
@@ -125,7 +125,7 @@ namespace Inventory
             if (mngVans == null)
             {
                 mngVans = new ManageVans();
-                mngVans.FormClosed += viewInv_FormClosed;
+                mngVans.FormClosed += mngVans_FormClosed;
             }
 
             mngVans.Show(this);
@@ -137,11 +137,22 @@ namespace Inventory
             Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnDeliveries_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AssignPackage ap = new AssignPackage();
-            ap.Show();
+            if (assPckg == null)
+            {
+                assPckg = new AssignPackage();
+                assPckg.FormClosed += assPckg_FormClosed;
+            }
+
+            assPckg.Show(this);
+            Hide(); 
+        }
+
+        void assPckg_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            assPckg = null;
+            Show();
         }
 
         private void MainMenu_Load(object sender, EventArgs e)

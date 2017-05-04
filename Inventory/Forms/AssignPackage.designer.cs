@@ -32,8 +32,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.AssignBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.adding = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.adding = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +64,13 @@
             this.panel2.Size = new System.Drawing.Size(354, 497);
             this.panel2.TabIndex = 1;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 199);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(348, 110);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
             // adding
             // 
             this.adding.AutoScroll = true;
@@ -71,13 +78,6 @@
             this.adding.Name = "adding";
             this.adding.Size = new System.Drawing.Size(354, 193);
             this.adding.TabIndex = 2;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 199);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(348, 110);
-            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // AssignPackage
             // 
@@ -88,6 +88,7 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AssignPackage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AssignPackage";
             this.Load += new System.EventHandler(this.AssignPackage_Load);
             this.panel2.ResumeLayout(false);

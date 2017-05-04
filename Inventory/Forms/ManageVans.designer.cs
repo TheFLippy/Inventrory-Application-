@@ -127,6 +127,7 @@
             this.Controls.Add(this.txtSearch);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManageVans";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageVans";
             this.Load += new System.EventHandler(this.ManageVans_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridMngVans)).EndInit();

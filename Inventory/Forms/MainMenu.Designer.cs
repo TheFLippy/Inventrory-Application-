@@ -101,7 +101,7 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(666, 35);
+            this.btnLogout.Location = new System.Drawing.Point(666, 42);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(57, 30);
             this.btnLogout.TabIndex = 5;
@@ -112,7 +112,8 @@
             // lblWelcomeMsg
             // 
             this.lblWelcomeMsg.AutoSize = true;
-            this.lblWelcomeMsg.Location = new System.Drawing.Point(523, 19);
+            this.lblWelcomeMsg.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeMsg.Location = new System.Drawing.Point(523, 9);
             this.lblWelcomeMsg.MinimumSize = new System.Drawing.Size(200, 10);
             this.lblWelcomeMsg.Name = "lblWelcomeMsg";
             this.lblWelcomeMsg.Size = new System.Drawing.Size(200, 13);

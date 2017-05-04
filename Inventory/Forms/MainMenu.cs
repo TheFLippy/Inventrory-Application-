@@ -21,11 +21,11 @@ namespace Inventory
         ManageVans mngVans;
         AssignPackage assPckg;
 
-        public MainMenu(string privelage)
+        public MainMenu(string privelage, string welcomeMsg)
         {
             InitializeComponent();
 
-            lblWelcomeMsg.Text = "Logged in as " + privelage;
+            lblWelcomeMsg.Text = welcomeMsg + "\nLogged in as " + privelage;
 
             switch (privelage)
             {

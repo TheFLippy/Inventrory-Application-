@@ -54,6 +54,7 @@ namespace Inventory
 
             string privelage = null;
 
+
             while (read.Read())
             {
                 privelage = (string)read["jobPosition"];
@@ -64,6 +65,32 @@ namespace Inventory
             con.Close();
 
             return privelage;
+        }
+        public string getWelcomeMessage(string username)
+        {
+            SqlConnection con = new SqlConnection(connectionString);
+            con.Open();
+
+            SqlCommand command = new SqlCommand("select * from login where username='" + username + "'", con);
+            SqlDataReader read = command.ExecuteReader();
+
+            string welcomeMsg;
+            string name = null;
+            string surname = null;
+            string usr = null;
+
+            while (read.Read())
+            {
+                name = (string)read["name"];
+                surname = (string)read["surname"];
+                usr = (string)read["username"];
+            }
+
+            welcomeMsg = "Welcome " + name + " " + surname + " (" + usr + ")";
+            read.Close();
+            con.Close();
+
+            return welcomeMsg;
         }
         //Login function
         public bool login(string username, string password)
@@ -80,9 +107,7 @@ namespace Inventory
 
                 //Reset data for logout to work
                 string loginHash = null;
-                string privelage = null;
-                string displayName = null;
-                string displaySurname = null;
+
 
                 //Read data from db
                 while (read.Read())

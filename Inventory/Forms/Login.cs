@@ -60,7 +60,7 @@ namespace Inventory
                     MessageBox.Show("Successfully loged in.");
                     this.Hide();
 
-                    MainMenu menu = new MainMenu(sqlConn.getJobPosition(txtUser.Text));
+                    MainMenu menu = new MainMenu(sqlConn.getJobPosition(txtUser.Text), sqlConn.getWelcomeMessage(txtUser.Text));
                     menu.Show();
                 }
                 else

@@ -240,6 +240,24 @@ namespace Inventory.Forms
         private void addbtn_Click(Object sender, EventArgs e)
         {
             check = 0;
+            int c = 0;
+
+            for(int x = 0; x < chklst.Count; x++)
+            {
+                if (chklst.ElementAt(x).Checked == false)
+                {
+                    c++;
+                }
+
+            }
+
+
+            if (c == chklst.Count)
+            {
+                MessageBox.Show("Please choose a package");
+                return;
+            }
+
             for (int j = 0; j < count; j++)
             {
                 if (drivercmbx.SelectedItem == dtdriver.Rows[j][0])

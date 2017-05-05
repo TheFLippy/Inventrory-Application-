@@ -34,6 +34,7 @@ namespace Inventory
         {
             btnDeleteEmp.Visible = false;
             btnEdit.Visible = false;
+            btnSearch_Click(sender, e);
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -52,7 +53,7 @@ namespace Inventory
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Show();
+           // Show();
         }
 
         //Search
@@ -67,6 +68,7 @@ namespace Inventory
 
             //Filling the datatable with retrieved rows
             sda.Fill(dt);
+           
 
             //If function has more than once, will not put checkbox onto the row
             if (ranOnce == false)
@@ -173,7 +175,7 @@ namespace Inventory
 
         private void gridMngEmployees_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex != 0 && e.RowIndex != 0)
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
             {
                 btnEdit.Visible = true;
 

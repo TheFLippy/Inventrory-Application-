@@ -46,7 +46,7 @@
             this.btnManageEmployees.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnManageEmployees.FlatAppearance.BorderSize = 0;
             this.btnManageEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageEmployees.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageEmployees.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageEmployees.Image = ((System.Drawing.Image)(resources.GetObject("btnManageEmployees.Image")));
             this.btnManageEmployees.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnManageEmployees.Location = new System.Drawing.Point(188, 155);
@@ -64,7 +64,7 @@
             this.btnViewInventory.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnViewInventory.FlatAppearance.BorderSize = 0;
             this.btnViewInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewInventory.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewInventory.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewInventory.Image = ((System.Drawing.Image)(resources.GetObject("btnViewInventory.Image")));
             this.btnViewInventory.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnViewInventory.Location = new System.Drawing.Point(188, 307);
@@ -82,7 +82,7 @@
             this.btnDeliveries.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDeliveries.FlatAppearance.BorderSize = 0;
             this.btnDeliveries.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeliveries.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeliveries.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeliveries.Image = ((System.Drawing.Image)(resources.GetObject("btnDeliveries.Image")));
             this.btnDeliveries.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnDeliveries.Location = new System.Drawing.Point(433, 307);
@@ -101,7 +101,7 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(666, 42);
+            this.btnLogout.Location = new System.Drawing.Point(666, 85);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(57, 30);
             this.btnLogout.TabIndex = 5;
@@ -113,7 +113,7 @@
             // 
             this.lblWelcomeMsg.AutoSize = true;
             this.lblWelcomeMsg.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcomeMsg.Location = new System.Drawing.Point(523, 9);
+            this.lblWelcomeMsg.Location = new System.Drawing.Point(523, 52);
             this.lblWelcomeMsg.MinimumSize = new System.Drawing.Size(200, 10);
             this.lblWelcomeMsg.Name = "lblWelcomeMsg";
             this.lblWelcomeMsg.Size = new System.Drawing.Size(200, 13);
@@ -126,7 +126,7 @@
             this.btnManageVans.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnManageVans.FlatAppearance.BorderSize = 0;
             this.btnManageVans.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageVans.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageVans.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageVans.Image = ((System.Drawing.Image)(resources.GetObject("btnManageVans.Image")));
             this.btnManageVans.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnManageVans.Location = new System.Drawing.Point(433, 155);
@@ -152,7 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(735, 461);
             this.Controls.Add(this.btnManageVans);
             this.Controls.Add(this.lblWelcomeMsg);

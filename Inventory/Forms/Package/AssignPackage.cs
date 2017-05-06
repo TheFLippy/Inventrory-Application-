@@ -410,5 +410,14 @@ namespace Inventory.Forms
             
           
         }
+
+        private void AssignPackage_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            DialogResult d = MessageBox.Show("Are you sure you want to exit the application?", "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (d == DialogResult.OK)
+            {
+                System.Windows.Forms.Application.Exit();
+            }
+        }
     }
 }

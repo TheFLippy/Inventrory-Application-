@@ -18,9 +18,7 @@ namespace Inventory
         public string connectionString = @"Data Source=gapt-inventory.database.windows.net;Initial Catalog = Inventory; Persist Security Info=True;User ID = TheFLippy; Password=Gapt1234";
         public Login()
         {
-            InitializeComponent();
-
-            
+            InitializeComponent();       
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -46,6 +44,7 @@ namespace Inventory
             if(string.IsNullOrEmpty(txtPassword.Text))
             {
                 MessageBox.Show("Please enter your Password!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
                 txtPassword.Focus();
                 return;
             }
@@ -66,6 +65,7 @@ namespace Inventory
                 else
                 {
                     MessageBox.Show("Your username or password was incorrect!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtPassword.Clear();
                 }
                 
             }
@@ -74,16 +74,6 @@ namespace Inventory
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
@@ -99,6 +89,25 @@ namespace Inventory
             if(e.KeyChar == (char)13)
             {
                 btnLogin.PerformClick();
+            }
+        }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+                System.Windows.Forms.Application.Exit();
+        }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult d = MessageBox.Show("Are you sure you want to exit the application?", "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (d == DialogResult.OK)
+            {
+                System.Windows.Forms.Application.Exit();
+            }
+            else
+            {
+                e.Cancel = true;
+                return;
             }
         }
     }

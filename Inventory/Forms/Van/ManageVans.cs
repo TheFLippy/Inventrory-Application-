@@ -211,5 +211,12 @@ namespace Inventory.Forms
                 edit.Show();
             }
         }
+
+       
+
+        private void ManageVans_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
     }
 }

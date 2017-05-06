@@ -129,7 +129,6 @@
             this.Name = "ManageVans";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageVans";
-            this.Load += new System.EventHandler(this.ManageVans_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridMngVans)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

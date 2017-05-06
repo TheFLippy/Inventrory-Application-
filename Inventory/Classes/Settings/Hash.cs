@@ -59,7 +59,6 @@ namespace Inventory
             }
             return Convert.ToBase64String(result);
         }
-
         public static bool Confirm(string plainTextPass, string hashValue)
         {
             byte[] hashBytes = Convert.FromBase64String(hashValue);

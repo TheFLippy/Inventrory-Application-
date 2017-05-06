@@ -10,16 +10,13 @@ namespace Inventory
 {
     class db
     {
-
-        //Class used to pass queries to the database
+        #region Utility/Display functions
         public string connectionString = @"Data Source=gapt-inventory.database.windows.net;Initial Catalog = Inventory; Persist Security Info=True;User ID = TheFLippy; Password=Gapt1234";
-
         public void sqlConnect()
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
         }
-
         public bool checkIfUserExists(string username)
         {
             //Create datatable to hold data retrieved from database
@@ -43,7 +40,6 @@ namespace Inventory
 
             return false;
         }
-
         public string getJobPosition(string username)
         {
             SqlConnection con = new SqlConnection(connectionString);
@@ -92,7 +88,9 @@ namespace Inventory
 
             return welcomeMsg;
         }
-        //Login function
+        #endregion
+
+        #region Login SQL
         public bool login(string username, string password)
         {
             //Function that looks if user exists
@@ -128,7 +126,9 @@ namespace Inventory
             //fails if username did not match
             return false;
         }
+        #endregion
 
+        #region Employee SQL
         public bool insertEmp(string username, string password, string name, string surname, string group)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -164,6 +164,56 @@ namespace Inventory
             }
             return false;
         }
+        public bool updateEmp(string username, string password, string name, string surname, string group, int id)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            string passwordHash = Hash.ComputeHash(password, null);
+
+            User editUser = new User(username, passwordHash, name, surname, group);
+
+            var myCommand = new SqlCommand("UPDATE login SET username = @username, password = @password, name = @name, surname = @surname, jobPosition = @group WHERE id='" + id + "'", conn);
+            myCommand.Parameters.AddWithValue("@username", editUser.Username);
+            myCommand.Parameters.AddWithValue("@password", editUser.Password);
+            myCommand.Parameters.AddWithValue("@name", editUser.Name);
+            myCommand.Parameters.AddWithValue("@surname", editUser.Surname);
+            myCommand.Parameters.AddWithValue("@group", editUser.jobPosition);
+
+            int result = myCommand.ExecuteNonQuery();
+
+            if (result != 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+        public bool delete(int[] array)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] != 0)
+                {
+                    var myCommand = new SqlCommand("DELETE FROM login WHERE ID = @id", conn);
+                    myCommand.Parameters.AddWithValue("@id", array[i]);
+
+                    int result = myCommand.ExecuteNonQuery();
+
+                    if (result == 0)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        #endregion
+
+        #region Package SQL
         public bool insertpack( float deliveryNumber, float height, float length, float weight, float width, float returnNumber, 
             string deliveryAddress1, string deliveryAddress2, string deliveryCity, string deliveryCountry, 
             string deliveryName , string deliveryPostcode, string deliverySurname, string returnAddress1, 
@@ -222,35 +272,6 @@ namespace Inventory
             }
             return false;
         }
-
-
-
-        public bool updateEmp(string username, string password, string name, string surname, string group, int id)
-        {
-            SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
-
-            string passwordHash = Hash.ComputeHash(password, null);
-
-            User editUser = new User(username, passwordHash, name, surname, group);
-
-            var myCommand = new SqlCommand("UPDATE login SET username = @username, password = @password, name = @name, surname = @surname, jobPosition = @group WHERE id='" + id + "'", conn);
-            myCommand.Parameters.AddWithValue("@username", editUser.Username);
-            myCommand.Parameters.AddWithValue("@password", editUser.Password);
-            myCommand.Parameters.AddWithValue("@name", editUser.Name);
-            myCommand.Parameters.AddWithValue("@surname", editUser.Surname);
-            myCommand.Parameters.AddWithValue("@group", editUser.jobPosition);
-
-            int result = myCommand.ExecuteNonQuery();
-
-            if (result != 0)
-            {
-                return true;
-            }
-
-            return false;
-        }
-
         public bool updatepackage(int id ,float packagenumber, float weight, float height, float width, float length, string returnName, string returnSurname, float returnNumber, string returnAddress1, string returnAddress2, string returnCity, string returnPostcode, string returnCountry, string deliveryName, string deliverySurname, float deliveryNumber, string deliveryAddress1, string deliveryAddress2, string deliveryCity, string deliveryPostcode, string deliveryCountry)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -292,30 +313,31 @@ namespace Inventory
 
             return false;
         }
-
-        public bool delete(int[] array)
+        public bool deletepackage(int[] array)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
 
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < array.GetLength(0); i++)
             {
-                if(array[i] != 0 && array[i] != null)
-                {
-                    var myCommand = new SqlCommand("DELETE FROM login WHERE ID = @id", conn);
-                    myCommand.Parameters.AddWithValue("@id", array[i]);
 
+                if (array[i] != null)
+                {
+                    var myCommand = new SqlCommand("UPDATE package SET deleted = 1 WHERE id =" + array[i].ToString(), conn);
                     int result = myCommand.ExecuteNonQuery();
 
-                    if(result == 0)
+                    if (result == 0)
                     {
                         return false;
                     }
                 }
             }
             return true;
-        }
 
+        }
+        #endregion
+
+        #region Van SQL
         public bool deleteVan(int[] array)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -337,31 +359,7 @@ namespace Inventory
                 }
             }
             return true;
-        }
-
-        public bool deletepackage(int[] array)
-        {
-            SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
-            
-            for(int i =0; i < array.GetLength(0); i++)
-            {
-                
-                if(array[i] != null)
-                {
-                    var myCommand = new SqlCommand("UPDATE package SET deleted = 1 WHERE id =" + array[i].ToString(), conn);
-                    int result = myCommand.ExecuteNonQuery();
-
-                    if (result == 0)
-                    {
-                        return false;
-                    }
-                }
-            }
-            return true;
-
-        }
-
+        } 
         public bool insertvan(string noPlate, float volume, float weight, string make, string model, string engSize, int YoM)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -402,7 +400,6 @@ namespace Inventory
             }
             return false;
         }
-
         public bool editvan(string noPlate, float volume, float weight, string location, int inUse, string state, string make, string model, string engSize, int YoM, int id)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -433,4 +430,5 @@ namespace Inventory
             return false;
         }
     }
+    #endregion
 }

@@ -214,5 +214,16 @@ namespace Inventory.Forms
             addPckg = null;
             Show();
         }
+
+        private void View_Inventory_FormClosed(object sender, FormClosedEventArgs e)
+        {
+                System.Windows.Forms.Application.Exit();
+
+        }
+
+        private void View_Inventory_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
     }
 }

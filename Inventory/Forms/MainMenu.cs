@@ -13,14 +13,14 @@ namespace Inventory
 {
     public partial class MainMenu : Form
     {
+        #region Main Menu Variables
 
-        //Holding forms in order to check if they have been opened
         Login login;
         ManageEmployees mng;
         View_Inventory viewInv;
         ManageVans mngVans;
         AssignPackage assPckg;
-
+        #endregion
         public MainMenu(string privelage, string welcomeMsg)
         {
             InitializeComponent();
@@ -50,7 +50,7 @@ namespace Inventory
             }
         }
 
-
+        #region Logout form navigation
         private void btnLogout_Click(object sender, EventArgs e)
         {
             DialogResult d = MessageBox.Show("Are you sure you want to logout?", "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
@@ -69,45 +69,39 @@ namespace Inventory
         void login_FormClosed(object sender, FormClosedEventArgs e)
         {
             login = null;
-            //Show();
+            System.Windows.Forms.Application.Exit();
         }
+        #endregion
 
+        #region Employee form navigation
         private void btnManageEmployees_Click(object sender, EventArgs e)
         {
             if(mng == null)
             {
                 mng = new ManageEmployees();
-                mng.FormClosed += mng_FormClosed;
+                mng.FormClosing += mng_FormClosed;
             }
 
             mng.Show(this);
             Hide();
         }
-        //Event handler that closes form without needing to recreate
-        void mng_FormClosed(object sender, FormClosedEventArgs e)
+        void mng_FormClosed(object sender, FormClosingEventArgs e)
         {
-            mng = null;
-            Show();
-        }
-       
-/*        private void btnAddPackage_Click(object sender, EventArgs e)
-        {
-            if (addPckg == null)
+            DialogResult d = MessageBox.Show("Are you sure you want to exit the application?", "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (d == DialogResult.OK)
             {
-                addPckg = new Add_Package();
-                addPckg.FormClosed += addPckg_FormClosed;
+                System.Windows.Forms.Application.Exit();
+            }
+            else
+            {
+                e.Cancel = true;
+                return;
             }
 
-            addPckg.Show(this);
-            Hide();
         }
+        #endregion
 
-        void addPckg_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            addPckg = null;
-            Show();
-        }*/
-
+        # region Inventory form navigation
         private void btnViewIntentory_Click(object sender, EventArgs e)
         {
             if(viewInv == null)
@@ -119,14 +113,14 @@ namespace Inventory
             viewInv.Show(this);
             Hide();
         }
-
         void viewInv_FormClosed(object sender, FormClosedEventArgs e)
         {
             viewInv = null;
             Show();
         }
+        #endregion
 
-
+        #region Van form nagivation
         private void btnManageVans_Click(object sender, EventArgs e)
         {
             if (mngVans == null)
@@ -143,7 +137,9 @@ namespace Inventory
             mngVans = null;
             Show();
         }
+        #endregion
 
+        #region  Assign Package form navigation
         private void btnDeliveries_Click(object sender, EventArgs e)
         {
             if (assPckg == null)
@@ -155,16 +151,34 @@ namespace Inventory
             assPckg.Show(this);
             Hide(); 
         }
-
         void assPckg_FormClosed(object sender, FormClosedEventArgs e)
         {
             assPckg = null;
             Show();
         }
+        #endregion
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void MainMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var d = MessageBox.Show("Are you sure you want to exit the application?", "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning); 
+            if (d == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                System.Windows.Forms.Application.Exit();
+            }
         }
     }
 }

@@ -22,7 +22,7 @@ namespace Inventory
         //variables for deletion of multiple rows
         bool ranOnce = false;
         int totalChk = 0;
-        int[] checkArray = new int[10];
+        int[] checkArray = new int[100];
         DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
         db sqlCon = new db();
 
@@ -216,5 +216,6 @@ namespace Inventory
         {
 
         }
+
     }
 }

@@ -90,6 +90,7 @@
             this.Name = "AssignPackage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AssignPackage";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AssignPackage_FormClosed);
             this.Load += new System.EventHandler(this.AssignPackage_Load);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);

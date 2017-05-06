@@ -123,7 +123,7 @@
             this.btnBack.TabIndex = 4;
             this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.MainMenu);
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnDeleteEmp
             // 

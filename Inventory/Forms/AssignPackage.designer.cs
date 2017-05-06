@@ -34,12 +34,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.adding = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Helpbtn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(12, 2);
+            this.panel1.Location = new System.Drawing.Point(2, 83);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(630, 497);
             this.panel1.TabIndex = 0;
@@ -59,7 +61,7 @@
             this.panel2.Controls.Add(this.flowLayoutPanel1);
             this.panel2.Controls.Add(this.adding);
             this.panel2.Controls.Add(this.AssignBtn);
-            this.panel2.Location = new System.Drawing.Point(640, 2);
+            this.panel2.Location = new System.Drawing.Point(630, 83);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(354, 497);
             this.panel2.TabIndex = 1;
@@ -79,11 +81,33 @@
             this.adding.Size = new System.Drawing.Size(354, 193);
             this.adding.TabIndex = 2;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(395, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(178, 25);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Assign Packages";
+            // 
+            // Helpbtn
+            // 
+            this.Helpbtn.Location = new System.Drawing.Point(845, 38);
+            this.Helpbtn.Name = "Helpbtn";
+            this.Helpbtn.Size = new System.Drawing.Size(75, 23);
+            this.Helpbtn.TabIndex = 3;
+            this.Helpbtn.Text = "Help";
+            this.Helpbtn.UseVisualStyleBackColor = true;
+            this.Helpbtn.Click += new System.EventHandler(this.Helpbtn_Click);
+            // 
             // AssignPackage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(997, 501);
+            this.ClientSize = new System.Drawing.Size(983, 578);
+            this.Controls.Add(this.Helpbtn);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -93,6 +117,7 @@
             this.Load += new System.EventHandler(this.AssignPackage_Load);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -103,5 +128,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel adding;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button Helpbtn;
     }
 }

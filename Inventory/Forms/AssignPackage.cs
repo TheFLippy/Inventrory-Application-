@@ -67,7 +67,7 @@ namespace Inventory.Forms
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
 
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT name FROM login WHERE jobPosition = 'Driver'", connectionString);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT username FROM login WHERE jobPosition = 'Driver'", connectionString);
             sda.Fill(dtdriver);
 
             return dtdriver.ToString();
@@ -90,7 +90,9 @@ namespace Inventory.Forms
             //area1
             string[] city = new string[] { "Qala", "Kercem" };
             //area2
-            string[] city2 = new string[] { "Munxar" };
+            string[] city2 = new string[] { "Munxar", "Victoria" };
+            //area 3
+            string[] city3 = new string[] { "Xaghra" };
 
 
             dtdriver = new DataTable();
@@ -136,6 +138,18 @@ namespace Inventory.Forms
             }
 
 
+            for (int i = 0; i < city3.GetLength(0); i++)
+            {
+                for (int j = 0; j < count1; j++)
+                {
+                    if (dtpackage.Rows[j][0].ToString() == city3[i])
+                    {
+                        que.Enqueue(dtpackage.Rows[j][1].ToString() + dtpackage.Rows[j][0].ToString());
+                        Console.WriteLine("FOUND\t" + dtpackage.Rows[j][1].ToString() + dtpackage.Rows[j][0].ToString());
+                    }
+                }
+            }
+
             acc = new Accordion();
             acc.Parent = this.panel1;
             acc.CheckBoxMargin = new Padding(2);
@@ -160,12 +174,10 @@ namespace Inventory.Forms
                     Label lb = new Label();
                     lb.Text = que.Dequeue();
                     tlp.Controls.Add(lb, 0, j);
-                    lb.Name = "lb";// + j.ToString();
                     labellst.Add(lb);
 
                     Button remove = new Button();
                     remove.Text = "Remove";
-                    remove.Name = "rmv" + j.ToString();
                     buttonlst.Add(remove);
                     tlp.Controls.Add(remove, 1, j);
                     remove.Click += new EventHandler(this.remove_Click);
@@ -212,13 +224,22 @@ namespace Inventory.Forms
 
             }
 
-            adding.FlowDirection = FlowDirection.TopDown;
+            
             Label l = new Label();
             l.Text = "To Add";
             l.AutoSize = false;
             l.TextAlign = ContentAlignment.TopCenter;
             adding.Controls.Add(l);
 
+            Label lb1 = new Label();
+            lb1.Visible = false;
+            adding.Controls.Add(lb1);
+
+            Label lb2 = new Label();
+            lb2.Visible = false;
+            adding.Controls.Add(lb2);
+
+            adding.FlowDirection = FlowDirection.TopDown;
             drivercmbx = new ComboBox();
             drivercmbx.Text = "Select driver";
             for (int k = 0; k < count; k++)
@@ -353,6 +374,7 @@ namespace Inventory.Forms
         private void AssignBtn_Click(object sender, EventArgs e)
         {
             int k = 0;
+            int pkcount = 0;
             
             
             SqlConnection conn = new SqlConnection(connectionString);
@@ -363,7 +385,6 @@ namespace Inventory.Forms
                 {
                     foreach (Control lb in tlplst.ElementAt(i).Controls)
                     {
-                        
                         if (lb is Label)
                         {
                             string drivername = tlplst.ElementAt(i).Name.ToString();
@@ -385,6 +406,7 @@ namespace Inventory.Forms
                                 mycommand.Parameters.AddWithValue("@id", packid);
                                 Console.WriteLine("dtpackage.Rows[k][1]: \t\t" + packid);
                                 k++;
+                                pkcount++;
                                 
                                 int result = mycommand.ExecuteNonQuery();
                                 if (result != 0)
@@ -396,19 +418,33 @@ namespace Inventory.Forms
                                     Console.WriteLine("ROWS NOT AFFECTED");
                                 }
                             }
-
                         }
+                      
                     }
                 }
-                MessageBox.Show("The packages were assigned");
+                if(pkcount > 0)
+                {
+                    MessageBox.Show("The packages were assigned");
+                }
+                else
+                {
+                    MessageBox.Show("No packages were assigned");
+                }
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
+            this.Hide();
+
           
+        }
+        
+        private void Helpbtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("\t\t\t         Help\n\n 1)To assign a package press tha Assign button.\n\n 2)To remove a package from a driver press the remove button.\n\n 3)To add package to a driver, choose the package and driver and press the add button.\n\n");
         }
     }
 }

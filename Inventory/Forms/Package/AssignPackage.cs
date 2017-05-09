@@ -92,7 +92,7 @@ namespace Inventory.Forms
             //area2
             string[] city2 = new string[] { "Munxar", "Victoria" };
             //area 3
-            string[] city3 = new string[] { "Xaghra" };
+            string[] city3 = new string[] { "Xaghra", "Siggiewi" };
 
 
             dtdriver = new DataTable();
@@ -158,6 +158,7 @@ namespace Inventory.Forms
             acc.Insets = new Padding(5);
             acc.ControlBackColor = Color.White;
             acc.ContentBackColor = Color.CadetBlue;
+            acc.OpenOnAdd = true;
 
             int pk = 1;
 
@@ -222,6 +223,8 @@ namespace Inventory.Forms
                     }
                 }
 
+          
+
             }
 
             
@@ -255,7 +258,7 @@ namespace Inventory.Forms
             flowLayoutPanel1.Controls.Add(addbtn);
             flowLayoutPanel1.Show();
 
-
+            
         }
 
         private void addbtn_Click(Object sender, EventArgs e)
@@ -323,6 +326,7 @@ namespace Inventory.Forms
             check = 0;
             acc.Hide();
             acc.Show();
+            
 
         }
 

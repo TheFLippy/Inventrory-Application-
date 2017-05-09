@@ -99,12 +99,12 @@
             this.panel1.Controls.Add(this.TabControl1);
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(719, 384);
+            this.panel1.Size = new System.Drawing.Size(719, 398);
             this.panel1.TabIndex = 1;
             // 
             // btncancel
             // 
-            this.btncancel.Location = new System.Drawing.Point(615, 350);
+            this.btncancel.Location = new System.Drawing.Point(615, 372);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(75, 23);
             this.btncancel.TabIndex = 1;
@@ -114,7 +114,7 @@
             // 
             // btnsave
             // 
-            this.btnsave.Location = new System.Drawing.Point(534, 350);
+            this.btnsave.Location = new System.Drawing.Point(534, 372);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(75, 23);
             this.btnsave.TabIndex = 0;
@@ -130,7 +130,7 @@
             this.TabControl1.Location = new System.Drawing.Point(4, 4);
             this.TabControl1.Name = "TabControl1";
             this.TabControl1.SelectedIndex = 0;
-            this.TabControl1.Size = new System.Drawing.Size(714, 340);
+            this.TabControl1.Size = new System.Drawing.Size(714, 349);
             this.TabControl1.TabIndex = 2;
             // 
             // package
@@ -150,7 +150,7 @@
             this.package.Location = new System.Drawing.Point(4, 22);
             this.package.Name = "package";
             this.package.Padding = new System.Windows.Forms.Padding(3);
-            this.package.Size = new System.Drawing.Size(706, 314);
+            this.package.Size = new System.Drawing.Size(706, 323);
             this.package.TabIndex = 0;
             this.package.Text = "Package";
             this.package.UseVisualStyleBackColor = true;
@@ -654,7 +654,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 386);
+            this.ClientSize = new System.Drawing.Size(722, 402);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Edit_Packages";

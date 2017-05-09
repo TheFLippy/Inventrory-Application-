@@ -85,10 +85,10 @@ namespace Inventory
                 float returntel = (float)Convert.ToDouble(txttelephone.Text);
                 float packagenumber = (float)Convert.ToDouble(txtpackagenumber.Text);
                 //if successfully added
-                if (sqlCon.insertpack(destinationtel, height, length, weight, width, returntel, txtaddress1_2.Text, txtaddress2_2.Text, 
-                    txtcity_2.Text,  txtcountry_2.Text, txtname_2.Text, txtpostcode_2.Text, txtsurname_2.Text, 
-                    txtaddress1.Text, txtaddress2.Text, txtcity.Text, txtcountry.Text, txtname.Text, txtpostcode.Text, 
-                    txtsurname.Text, packagenumber))
+                if (sqlCon.insertpack(destinationtel, height, length, weight, width, returntel, txtaddress1.Text, txtaddress2.Text, txtcity.Text, txtcountry.Text, txtname.Text, txtpostcode.Text,
+                    txtsurname.Text,txtaddress1_2.Text, txtaddress2_2.Text, 
+                    txtcity_2.Text,  txtcountry_2.Text, txtname_2.Text, txtpostcode_2.Text, txtsurname_2.Text 
+                    , packagenumber))
                 {
                     MessageBox.Show("Successfully added an package!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();

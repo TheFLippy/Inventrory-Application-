@@ -240,7 +240,7 @@ namespace Inventory
             //for testing
             Console.WriteLine("parsed" + id);
 
-            var myCommand = new SqlCommand("INSERT INTO package VALUES(@id ,GETDATE(),GETDATE(),NULL,'false','false', @deliveryNumber, @height, @length, @weight, @width, @returnNumber, @deliveryAddress1, @deliveryAddress2,@deliveryCity, @deliveryCountry, @deliveryName, @deliveryPostcode, @deliverySurname, @returnAddress1, @returnAddress2, @returnCity, @returnCountry, @returnName, @returnPostcode, @returnSurname, @packageNumber , 'Scamel')", conn);
+            var myCommand = new SqlCommand("INSERT INTO package VALUES(@id ,GETDATE(),GETDATE(),NULL,'false','false', @deliveryNumber, @height, @length, @weight, @width, @returnNumber, @deliveryAddress1, @deliveryAddress2,@deliveryCity, @deliveryCountry, @deliveryName, @deliveryPostcode, @deliverySurname, @returnAddress1, @returnAddress2, @returnCity, @returnCountry, @returnName, @returnPostcode, @returnSurname, @packageNumber , NULL)", conn);
             myCommand.Parameters.AddWithValue("@id", id);
             myCommand.Parameters.AddWithValue("@deliveryNumber", addPack.deliverynumber);
             myCommand.Parameters.AddWithValue("@height", addPack.height);
@@ -318,7 +318,7 @@ namespace Inventory
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
 
-            for (int i = 0; i < array.GetLength(0); i++)
+            for (int i = 0; i < array.Length; i++)
             {
 
                 if (array[i] != null)

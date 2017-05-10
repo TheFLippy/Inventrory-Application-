@@ -96,19 +96,5 @@ namespace Inventory
         {
                 System.Windows.Forms.Application.Exit();
         }
-
-        private void Login_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult d = MessageBox.Show("Are you sure you want to exit the application?", "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (d == DialogResult.OK)
-            {
-                System.Windows.Forms.Application.Exit();
-            }
-            else
-            {
-                e.Cancel = true;
-                return;
-            }
-        }
     }
 }

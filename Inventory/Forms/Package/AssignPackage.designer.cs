@@ -36,6 +36,7 @@
             this.adding = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.Helpbtn = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,11 +102,22 @@
             this.Helpbtn.UseVisualStyleBackColor = true;
             this.Helpbtn.Click += new System.EventHandler(this.Helpbtn_Click);
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(49, 34);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 4;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // AssignPackage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(983, 578);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.Helpbtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
@@ -114,7 +126,6 @@
             this.Name = "AssignPackage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AssignPackage";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AssignPackage_FormClosed);
             this.Load += new System.EventHandler(this.AssignPackage_Load);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -131,5 +142,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Helpbtn;
+        private System.Windows.Forms.Button btnBack;
     }
 }

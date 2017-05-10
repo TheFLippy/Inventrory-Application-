@@ -11,19 +11,28 @@ using System.Windows.Forms;
 
 namespace Inventory
 {
+    
+
     public partial class MainMenu : Form
     {
         #region Main Menu Variables
+
+        
 
         Login login;
         ManageEmployees mng;
         View_Inventory viewInv;
         ManageVans mngVans;
         AssignPackage assPckg;
+
+        bool exit = false;
+
         #endregion
         public MainMenu(string privelage, string welcomeMsg)
         {
             InitializeComponent();
+
+            FormState.PreviousPage = this;
 
             lblWelcomeMsg.Text = welcomeMsg + "\nLogged in as " + privelage;
 
@@ -79,25 +88,12 @@ namespace Inventory
             if(mng == null)
             {
                 mng = new ManageEmployees();
-                mng.FormClosing += mng_FormClosed;
+                mng.FormClosing += MainMenu_FormClosing;
+                mng.FormClosed += MainMenu_FormClosed;
             }
 
             mng.Show(this);
             Hide();
-        }
-        void mng_FormClosed(object sender, FormClosingEventArgs e)
-        {
-            DialogResult d = MessageBox.Show("Are you sure you want to exit the application?", "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (d == DialogResult.OK)
-            {
-                System.Windows.Forms.Application.Exit();
-            }
-            else
-            {
-                e.Cancel = true;
-                return;
-            }
-
         }
         #endregion
 
@@ -107,7 +103,8 @@ namespace Inventory
             if(viewInv == null)
             {
                 viewInv = new View_Inventory();
-                viewInv.FormClosed += viewInv_FormClosed;
+                viewInv.FormClosing += MainMenu_FormClosing;
+                viewInv.FormClosed += MainMenu_FormClosed;
             }
 
             viewInv.Show(this);
@@ -126,7 +123,8 @@ namespace Inventory
             if (mngVans == null)
             {
                 mngVans = new ManageVans();
-                mngVans.FormClosed += mngVans_FormClosed;
+                mngVans.FormClosing += MainMenu_FormClosing;
+                mngVans.FormClosed += MainMenu_FormClosed;
             }
 
             mngVans.Show(this);
@@ -145,7 +143,8 @@ namespace Inventory
             if (assPckg == null)
             {
                 assPckg = new AssignPackage();
-                assPckg.FormClosed += assPckg_FormClosed;
+                assPckg.FormClosing += MainMenu_FormClosing;
+                assPckg.FormClosed += MainMenu_FormClosed;
             }
 
             assPckg.Show(this);
@@ -158,11 +157,7 @@ namespace Inventory
         }
         #endregion
 
-        private void MainMenu_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        #region Navigation Management Event Handlers
         private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
@@ -170,15 +165,26 @@ namespace Inventory
 
         private void MainMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var d = MessageBox.Show("Are you sure you want to exit the application?", "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning); 
-            if (d == DialogResult.Cancel)
+            var d = DialogResult;
+
+            if(!exit)
             {
-                e.Cancel = true;
-            }
-            else
-            {
-                System.Windows.Forms.Application.Exit();
+                d = MessageBox.Show("Are you sure you want to exit the application?", "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (d == DialogResult.Cancel)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    exit = true;
+                }
             }
         }
+        #endregion
+    }
+
+    public static class FormState
+    {
+        public static Form PreviousPage;
     }
 }

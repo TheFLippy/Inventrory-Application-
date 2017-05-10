@@ -446,20 +446,17 @@ namespace Inventory.Forms
           
         }
 
-        private void AssignPackage_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            DialogResult d = MessageBox.Show("Are you sure you want to exit the application?", "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (d == DialogResult.OK)
-            {
-                System.Windows.Forms.Application.Exit();
-            }
-        }
-
         private void Helpbtn_Click(object sender, EventArgs e)
         {
         
             MessageBox.Show("\t\t\t         Help\n\n 1)To assign a package press tha Assign button.\n\n 2)To remove a package from a driver press the remove button.\n\n 3)To add package to a driver, choose the package and driver and press the add button.\n\n");
         
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormState.PreviousPage.Show();
         }
     }
 }

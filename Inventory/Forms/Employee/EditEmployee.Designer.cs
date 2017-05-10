@@ -46,14 +46,16 @@
             this.txtEditUsername = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtEditOldPassword = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // rbDriver
             // 
             this.rbDriver.AutoSize = true;
-            this.rbDriver.Location = new System.Drawing.Point(314, 271);
+            this.rbDriver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.rbDriver.Location = new System.Drawing.Point(397, 269);
             this.rbDriver.Name = "rbDriver";
-            this.rbDriver.Size = new System.Drawing.Size(53, 17);
+            this.rbDriver.Size = new System.Drawing.Size(68, 24);
             this.rbDriver.TabIndex = 21;
             this.rbDriver.TabStop = true;
             this.rbDriver.Text = "Driver";
@@ -63,9 +65,10 @@
             // rbClerk
             // 
             this.rbClerk.AutoSize = true;
-            this.rbClerk.Location = new System.Drawing.Point(239, 271);
+            this.rbClerk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.rbClerk.Location = new System.Drawing.Point(322, 269);
             this.rbClerk.Name = "rbClerk";
-            this.rbClerk.Size = new System.Drawing.Size(49, 17);
+            this.rbClerk.Size = new System.Drawing.Size(63, 24);
             this.rbClerk.TabIndex = 19;
             this.rbClerk.TabStop = true;
             this.rbClerk.Text = "Clerk";
@@ -75,9 +78,10 @@
             // rbAdmin
             // 
             this.rbAdmin.AutoSize = true;
-            this.rbAdmin.Location = new System.Drawing.Point(153, 271);
+            this.rbAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.rbAdmin.Location = new System.Drawing.Point(236, 269);
             this.rbAdmin.Name = "rbAdmin";
-            this.rbAdmin.Size = new System.Drawing.Size(54, 17);
+            this.rbAdmin.Size = new System.Drawing.Size(72, 24);
             this.rbAdmin.TabIndex = 18;
             this.rbAdmin.TabStop = true;
             this.rbAdmin.Text = "Admin";
@@ -87,22 +91,23 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(144, 227);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(52, 181);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.Size = new System.Drawing.Size(74, 20);
             this.label7.TabIndex = 25;
             this.label7.Text = "Surname";
             // 
             // txtEditSurname
             // 
-            this.txtEditSurname.Location = new System.Drawing.Point(198, 227);
+            this.txtEditSurname.Location = new System.Drawing.Point(146, 183);
             this.txtEditSurname.Name = "txtEditSurname";
-            this.txtEditSurname.Size = new System.Drawing.Size(154, 20);
+            this.txtEditSurname.Size = new System.Drawing.Size(181, 20);
             this.txtEditSurname.TabIndex = 16;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(408, 331);
+            this.btnCancel.Location = new System.Drawing.Point(620, 271);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 24;
@@ -112,7 +117,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(408, 302);
+            this.btnEdit.Location = new System.Drawing.Point(539, 271);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 22;
@@ -123,91 +128,110 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(101, 159);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(371, 183);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 13);
+            this.label3.Size = new System.Drawing.Size(137, 20);
             this.label3.TabIndex = 23;
             this.label3.Text = "Confirm Password";
             // 
             // txtEditConfirmPassword
             // 
-            this.txtEditConfirmPassword.Location = new System.Drawing.Point(198, 156);
+            this.txtEditConfirmPassword.Location = new System.Drawing.Point(514, 183);
             this.txtEditConfirmPassword.Name = "txtEditConfirmPassword";
             this.txtEditConfirmPassword.PasswordChar = '*';
-            this.txtEditConfirmPassword.Size = new System.Drawing.Size(154, 20);
+            this.txtEditConfirmPassword.Size = new System.Drawing.Size(181, 20);
             this.txtEditConfirmPassword.TabIndex = 13;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(158, 192);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(52, 151);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(51, 20);
             this.label4.TabIndex = 20;
             this.label4.Text = "Name";
             // 
             // txtEditName
             // 
-            this.txtEditName.Location = new System.Drawing.Point(198, 192);
+            this.txtEditName.Location = new System.Drawing.Point(146, 153);
             this.txtEditName.Name = "txtEditName";
-            this.txtEditName.Size = new System.Drawing.Size(154, 20);
+            this.txtEditName.Size = new System.Drawing.Size(181, 20);
             this.txtEditName.TabIndex = 15;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(115, 121);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(371, 151);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.Size = new System.Drawing.Size(113, 20);
             this.label2.TabIndex = 17;
             this.label2.Text = "New Password";
             // 
             // txtEditNewPassword
             // 
-            this.txtEditNewPassword.Location = new System.Drawing.Point(198, 121);
+            this.txtEditNewPassword.Location = new System.Drawing.Point(514, 153);
             this.txtEditNewPassword.Name = "txtEditNewPassword";
             this.txtEditNewPassword.PasswordChar = '*';
-            this.txtEditNewPassword.Size = new System.Drawing.Size(154, 20);
+            this.txtEditNewPassword.Size = new System.Drawing.Size(181, 20);
             this.txtEditNewPassword.TabIndex = 12;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(137, 50);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(52, 119);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(83, 20);
             this.label1.TabIndex = 14;
             this.label1.Text = "Username";
             // 
             // txtEditUsername
             // 
-            this.txtEditUsername.Location = new System.Drawing.Point(198, 50);
+            this.txtEditUsername.Location = new System.Drawing.Point(146, 121);
             this.txtEditUsername.Name = "txtEditUsername";
-            this.txtEditUsername.Size = new System.Drawing.Size(154, 20);
+            this.txtEditUsername.Size = new System.Drawing.Size(181, 20);
             this.txtEditUsername.TabIndex = 11;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(120, 85);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(371, 119);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 13);
+            this.label5.Size = new System.Drawing.Size(106, 20);
             this.label5.TabIndex = 27;
             this.label5.Text = "Old Password";
             // 
             // txtEditOldPassword
             // 
-            this.txtEditOldPassword.Location = new System.Drawing.Point(198, 85);
+            this.txtEditOldPassword.Location = new System.Drawing.Point(514, 119);
             this.txtEditOldPassword.Name = "txtEditOldPassword";
             this.txtEditOldPassword.PasswordChar = '*';
-            this.txtEditOldPassword.Size = new System.Drawing.Size(154, 20);
+            this.txtEditOldPassword.Size = new System.Drawing.Size(181, 20);
             this.txtEditOldPassword.TabIndex = 26;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(275, 40);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(243, 25);
+            this.label6.TabIndex = 62;
+            this.label6.Text = "Edit Employee Details";
             // 
             // EditEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(495, 366);
+            this.ClientSize = new System.Drawing.Size(721, 323);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtEditOldPassword);
             this.Controls.Add(this.rbDriver);
@@ -254,5 +278,6 @@
         private System.Windows.Forms.TextBox txtEditUsername;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtEditOldPassword;
+        private System.Windows.Forms.Label label6;
     }
 }

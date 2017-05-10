@@ -75,7 +75,7 @@ namespace Inventory.Forms
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-
+            FormState.PreviousPage.Show();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

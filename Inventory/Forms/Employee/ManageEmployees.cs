@@ -27,7 +27,7 @@ namespace Inventory
         db sqlCon = new db();
 
         //Variables for editing
-        public int editID { get; set; }
+        static int editID { get; set; }
 
 
         private void ManageEmployees_Load(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace Inventory
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-           // Show();
+            FormState.PreviousPage.Show();
         }
 
         //Search
@@ -218,4 +218,6 @@ namespace Inventory
         }
 
     }
+
+    
 }

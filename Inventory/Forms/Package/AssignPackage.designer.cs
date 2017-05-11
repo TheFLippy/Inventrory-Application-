@@ -125,7 +125,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AssignPackage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AssignPackage";
+            this.Text = "Assign Package";
             this.Load += new System.EventHandler(this.AssignPackage_Load);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -30,14 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Edit_Packages));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.TabControl1 = new System.Windows.Forms.TabControl();
-            this.package = new System.Windows.Forms.TabPage();
-            this.delivery = new System.Windows.Forms.TabPage();
-            this.Destination = new System.Windows.Forms.TabPage();
             this.btncancel = new System.Windows.Forms.Button();
             this.btnsave = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnnext = new System.Windows.Forms.Button();
+            this.TabControl1 = new System.Windows.Forms.TabControl();
+            this.package = new System.Windows.Forms.TabPage();
             this.txtlength = new System.Windows.Forms.TextBox();
             this.txtwidth = new System.Windows.Forms.TextBox();
             this.txtheight = new System.Windows.Forms.TextBox();
@@ -48,6 +44,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.package_no = new System.Windows.Forms.Label();
+            this.btnnext = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.delivery = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
             this.txttelephone_2 = new System.Windows.Forms.TextBox();
             this.txtsurname_2 = new System.Windows.Forms.TextBox();
             this.txtname_2 = new System.Windows.Forms.TextBox();
@@ -66,6 +66,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.Destination = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnprevious2 = new System.Windows.Forms.Button();
             this.txttelephone = new System.Windows.Forms.TextBox();
             this.txtsurname = new System.Windows.Forms.TextBox();
@@ -83,8 +85,6 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.TabControl1.SuspendLayout();
             this.package.SuspendLayout();
@@ -102,6 +102,35 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(719, 384);
             this.panel1.TabIndex = 1;
+            // 
+            // btncancel
+            // 
+            this.btncancel.BackColor = System.Drawing.SystemColors.Control;
+            this.btncancel.FlatAppearance.BorderSize = 0;
+            this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancel.Location = new System.Drawing.Point(618, 351);
+            this.btncancel.Name = "btncancel";
+            this.btncancel.Size = new System.Drawing.Size(75, 30);
+            this.btncancel.TabIndex = 28;
+            this.btncancel.Text = "Cancel";
+            this.btncancel.UseVisualStyleBackColor = false;
+            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
+            // 
+            // btnsave
+            // 
+            this.btnsave.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnsave.FlatAppearance.BorderSize = 0;
+            this.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsave.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsave.ForeColor = System.Drawing.Color.White;
+            this.btnsave.Location = new System.Drawing.Point(537, 351);
+            this.btnsave.Name = "btnsave";
+            this.btnsave.Size = new System.Drawing.Size(75, 30);
+            this.btnsave.TabIndex = 27;
+            this.btnsave.Text = "Save";
+            this.btnsave.UseVisualStyleBackColor = false;
+            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
             // TabControl1
             // 
@@ -136,118 +165,6 @@
             this.package.TabIndex = 0;
             this.package.Text = "Package";
             this.package.UseVisualStyleBackColor = true;
-            // 
-            // delivery
-            // 
-            this.delivery.Controls.Add(this.label3);
-            this.delivery.Controls.Add(this.txttelephone_2);
-            this.delivery.Controls.Add(this.txtsurname_2);
-            this.delivery.Controls.Add(this.txtname_2);
-            this.delivery.Controls.Add(this.txtcountry_2);
-            this.delivery.Controls.Add(this.txtpostcode_2);
-            this.delivery.Controls.Add(this.txtaddress2_2);
-            this.delivery.Controls.Add(this.txtcity_2);
-            this.delivery.Controls.Add(this.txtaddress1_2);
-            this.delivery.Controls.Add(this.label13);
-            this.delivery.Controls.Add(this.label14);
-            this.delivery.Controls.Add(this.label15);
-            this.delivery.Controls.Add(this.btnprevious);
-            this.delivery.Controls.Add(this.btnnext_2);
-            this.delivery.Controls.Add(this.label12);
-            this.delivery.Controls.Add(this.label8);
-            this.delivery.Controls.Add(this.label11);
-            this.delivery.Controls.Add(this.label9);
-            this.delivery.Controls.Add(this.label10);
-            this.delivery.Location = new System.Drawing.Point(4, 22);
-            this.delivery.Name = "delivery";
-            this.delivery.Padding = new System.Windows.Forms.Padding(3);
-            this.delivery.Size = new System.Drawing.Size(706, 314);
-            this.delivery.TabIndex = 1;
-            this.delivery.Text = "Return";
-            this.delivery.UseVisualStyleBackColor = true;
-            // 
-            // Destination
-            // 
-            this.Destination.Controls.Add(this.label2);
-            this.Destination.Controls.Add(this.btnprevious2);
-            this.Destination.Controls.Add(this.txttelephone);
-            this.Destination.Controls.Add(this.txtsurname);
-            this.Destination.Controls.Add(this.txtname);
-            this.Destination.Controls.Add(this.txtcountry);
-            this.Destination.Controls.Add(this.txtpostcode);
-            this.Destination.Controls.Add(this.txtcity);
-            this.Destination.Controls.Add(this.txtaddress2);
-            this.Destination.Controls.Add(this.txtaddress1);
-            this.Destination.Controls.Add(this.label26);
-            this.Destination.Controls.Add(this.label20);
-            this.Destination.Controls.Add(this.label21);
-            this.Destination.Controls.Add(this.label24);
-            this.Destination.Controls.Add(this.label25);
-            this.Destination.Controls.Add(this.label23);
-            this.Destination.Controls.Add(this.label22);
-            this.Destination.Controls.Add(this.label18);
-            this.Destination.Location = new System.Drawing.Point(4, 22);
-            this.Destination.Name = "Destination";
-            this.Destination.Padding = new System.Windows.Forms.Padding(3);
-            this.Destination.Size = new System.Drawing.Size(706, 314);
-            this.Destination.TabIndex = 2;
-            this.Destination.Text = "Destination";
-            this.Destination.UseVisualStyleBackColor = true;
-            // 
-            // btncancel
-            // 
-            this.btncancel.BackColor = System.Drawing.SystemColors.Control;
-            this.btncancel.FlatAppearance.BorderSize = 0;
-            this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancel.Location = new System.Drawing.Point(618, 351);
-            this.btncancel.Name = "btncancel";
-            this.btncancel.Size = new System.Drawing.Size(75, 30);
-            this.btncancel.TabIndex = 28;
-            this.btncancel.Text = "Cancel";
-            this.btncancel.UseVisualStyleBackColor = false;
-            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
-            // 
-            // btnsave
-            // 
-            this.btnsave.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnsave.FlatAppearance.BorderSize = 0;
-            this.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnsave.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsave.ForeColor = System.Drawing.Color.White;
-            this.btnsave.Location = new System.Drawing.Point(537, 351);
-            this.btnsave.Name = "btnsave";
-            this.btnsave.Size = new System.Drawing.Size(75, 30);
-            this.btnsave.TabIndex = 27;
-            this.btnsave.Text = "Save";
-            this.btnsave.UseVisualStyleBackColor = false;
-            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(213, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(244, 32);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Edit Package Details";
-            // 
-            // btnnext
-            // 
-            this.btnnext.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnnext.BackgroundImage")));
-            this.btnnext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnnext.FlatAppearance.BorderSize = 0;
-            this.btnnext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnnext.Location = new System.Drawing.Point(653, 33);
-            this.btnnext.Name = "btnnext";
-            this.btnnext.Size = new System.Drawing.Size(32, 32);
-            this.btnnext.TabIndex = 12;
-            this.btnnext.UseVisualStyleBackColor = true;
-            this.btnnext.Click += new System.EventHandler(this.btnnext_Click);
             // 
             // txtlength
             // 
@@ -338,6 +255,74 @@
             this.package_no.Size = new System.Drawing.Size(139, 20);
             this.package_no.TabIndex = 15;
             this.package_no.Text = "Package Number :";
+            // 
+            // btnnext
+            // 
+            this.btnnext.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnnext.BackgroundImage")));
+            this.btnnext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnnext.FlatAppearance.BorderSize = 0;
+            this.btnnext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnnext.Location = new System.Drawing.Point(653, 33);
+            this.btnnext.Name = "btnnext";
+            this.btnnext.Size = new System.Drawing.Size(32, 32);
+            this.btnnext.TabIndex = 12;
+            this.btnnext.UseVisualStyleBackColor = true;
+            this.btnnext.Click += new System.EventHandler(this.btnnext_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(213, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(244, 32);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Edit Package Details";
+            // 
+            // delivery
+            // 
+            this.delivery.Controls.Add(this.label3);
+            this.delivery.Controls.Add(this.txttelephone_2);
+            this.delivery.Controls.Add(this.txtsurname_2);
+            this.delivery.Controls.Add(this.txtname_2);
+            this.delivery.Controls.Add(this.txtcountry_2);
+            this.delivery.Controls.Add(this.txtpostcode_2);
+            this.delivery.Controls.Add(this.txtaddress2_2);
+            this.delivery.Controls.Add(this.txtcity_2);
+            this.delivery.Controls.Add(this.txtaddress1_2);
+            this.delivery.Controls.Add(this.label13);
+            this.delivery.Controls.Add(this.label14);
+            this.delivery.Controls.Add(this.label15);
+            this.delivery.Controls.Add(this.btnprevious);
+            this.delivery.Controls.Add(this.btnnext_2);
+            this.delivery.Controls.Add(this.label12);
+            this.delivery.Controls.Add(this.label8);
+            this.delivery.Controls.Add(this.label11);
+            this.delivery.Controls.Add(this.label9);
+            this.delivery.Controls.Add(this.label10);
+            this.delivery.Location = new System.Drawing.Point(4, 22);
+            this.delivery.Name = "delivery";
+            this.delivery.Padding = new System.Windows.Forms.Padding(3);
+            this.delivery.Size = new System.Drawing.Size(706, 314);
+            this.delivery.TabIndex = 1;
+            this.delivery.Text = "Return";
+            this.delivery.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(232, 33);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(242, 32);
+            this.label3.TabIndex = 54;
+            this.label3.Text = "Edit Return Address";
             // 
             // txttelephone_2
             // 
@@ -509,6 +494,48 @@
             this.label10.TabIndex = 41;
             this.label10.Text = "City :";
             // 
+            // Destination
+            // 
+            this.Destination.Controls.Add(this.label2);
+            this.Destination.Controls.Add(this.btnprevious2);
+            this.Destination.Controls.Add(this.txttelephone);
+            this.Destination.Controls.Add(this.txtsurname);
+            this.Destination.Controls.Add(this.txtname);
+            this.Destination.Controls.Add(this.txtcountry);
+            this.Destination.Controls.Add(this.txtpostcode);
+            this.Destination.Controls.Add(this.txtcity);
+            this.Destination.Controls.Add(this.txtaddress2);
+            this.Destination.Controls.Add(this.txtaddress1);
+            this.Destination.Controls.Add(this.label26);
+            this.Destination.Controls.Add(this.label20);
+            this.Destination.Controls.Add(this.label21);
+            this.Destination.Controls.Add(this.label24);
+            this.Destination.Controls.Add(this.label25);
+            this.Destination.Controls.Add(this.label23);
+            this.Destination.Controls.Add(this.label22);
+            this.Destination.Controls.Add(this.label18);
+            this.Destination.Location = new System.Drawing.Point(4, 22);
+            this.Destination.Name = "Destination";
+            this.Destination.Padding = new System.Windows.Forms.Padding(3);
+            this.Destination.Size = new System.Drawing.Size(706, 314);
+            this.Destination.TabIndex = 2;
+            this.Destination.Text = "Destination";
+            this.Destination.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(212, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(283, 32);
+            this.label2.TabIndex = 44;
+            this.label2.Text = "Edit Destination Details";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // btnprevious2
             // 
             this.btnprevious2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnprevious2.BackgroundImage")));
@@ -665,33 +692,6 @@
             this.label18.TabIndex = 32;
             this.label18.Text = "Name :";
             // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(232, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(242, 32);
-            this.label3.TabIndex = 54;
-            this.label3.Text = "Edit Return Address";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(212, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(283, 32);
-            this.label2.TabIndex = 44;
-            this.label2.Text = "Edit Destination Details";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Edit_Packages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -702,7 +702,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Edit_Packages";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Edit_Packages";
+            this.Text = "Edit Package";
             this.Load += new System.EventHandler(this.Edit_Packages_Load);
             this.panel1.ResumeLayout(false);
             this.TabControl1.ResumeLayout(false);

@@ -173,7 +173,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "View_Inventory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "View_Inventory";
+            this.Text = "Inventory";
             this.Load += new System.EventHandler(this.View_Inventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridViewInv)).EndInit();
             this.ResumeLayout(false);

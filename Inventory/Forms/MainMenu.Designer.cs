@@ -36,7 +36,10 @@
             this.lblWelcomeMsg = new System.Windows.Forms.Label();
             this.btnManageVans = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblNotification = new System.Windows.Forms.Label();
+            this.picNotification = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNotification)).BeginInit();
             this.SuspendLayout();
             // 
             // btnManageEmployees
@@ -88,7 +91,7 @@
             this.btnDeliveries.Location = new System.Drawing.Point(433, 307);
             this.btnDeliveries.Name = "btnDeliveries";
             this.btnDeliveries.Size = new System.Drawing.Size(120, 120);
-            this.btnDeliveries.TabIndex = 6;
+            this.btnDeliveries.TabIndex = 3;
             this.btnDeliveries.Text = "Deliveries";
             this.btnDeliveries.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDeliveries.UseVisualStyleBackColor = false;
@@ -104,7 +107,7 @@
             this.btnLogout.Location = new System.Drawing.Point(666, 85);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(57, 30);
-            this.btnLogout.TabIndex = 5;
+            this.btnLogout.TabIndex = 4;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
@@ -112,7 +115,7 @@
             // lblWelcomeMsg
             // 
             this.lblWelcomeMsg.AutoSize = true;
-            this.lblWelcomeMsg.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeMsg.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcomeMsg.Location = new System.Drawing.Point(523, 52);
             this.lblWelcomeMsg.MinimumSize = new System.Drawing.Size(200, 10);
             this.lblWelcomeMsg.Name = "lblWelcomeMsg";
@@ -148,12 +151,37 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // lblNotification
+            // 
+            this.lblNotification.AutoSize = true;
+            this.lblNotification.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotification.Location = new System.Drawing.Point(532, 21);
+            this.lblNotification.MinimumSize = new System.Drawing.Size(140, 10);
+            this.lblNotification.Name = "lblNotification";
+            this.lblNotification.Size = new System.Drawing.Size(140, 13);
+            this.lblNotification.TabIndex = 8;
+            this.lblNotification.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblNotification.Click += new System.EventHandler(this.lblNotification_Click);
+            // 
+            // picNotification
+            // 
+            this.picNotification.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picNotification.BackgroundImage")));
+            this.picNotification.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picNotification.Location = new System.Drawing.Point(678, 12);
+            this.picNotification.Name = "picNotification";
+            this.picNotification.Size = new System.Drawing.Size(45, 35);
+            this.picNotification.TabIndex = 9;
+            this.picNotification.TabStop = false;
+            this.picNotification.Click += new System.EventHandler(this.lblNotification_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(735, 461);
+            this.Controls.Add(this.picNotification);
+            this.Controls.Add(this.lblNotification);
             this.Controls.Add(this.btnManageVans);
             this.Controls.Add(this.lblWelcomeMsg);
             this.Controls.Add(this.btnLogout);
@@ -164,10 +192,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainMenu";
+            this.Text = "Main Menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMenu_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainMenu_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNotification)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,5 +210,7 @@
         private System.Windows.Forms.Label lblWelcomeMsg;
         private System.Windows.Forms.Button btnManageVans;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblNotification;
+        private System.Windows.Forms.PictureBox picNotification;
     }
 }

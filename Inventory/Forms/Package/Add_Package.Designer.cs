@@ -30,11 +30,45 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_Package));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btncancel = new System.Windows.Forms.Button();
+            this.btnsave = new System.Windows.Forms.Button();
             this.TabControl1 = new System.Windows.Forms.TabControl();
             this.package = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtlength = new System.Windows.Forms.TextBox();
+            this.txtwidth = new System.Windows.Forms.TextBox();
+            this.txtheight = new System.Windows.Forms.TextBox();
+            this.txtweight = new System.Windows.Forms.TextBox();
+            this.txtpackagenumber = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.package_no = new System.Windows.Forms.Label();
             this.btnnext = new System.Windows.Forms.Button();
             this.delivery = new System.Windows.Forms.TabPage();
+            this.txttelephone_2 = new System.Windows.Forms.TextBox();
+            this.txtsurname_2 = new System.Windows.Forms.TextBox();
+            this.txtname_2 = new System.Windows.Forms.TextBox();
+            this.txtcountry_2 = new System.Windows.Forms.TextBox();
+            this.txtpostcode_2 = new System.Windows.Forms.TextBox();
+            this.txtaddress2_2 = new System.Windows.Forms.TextBox();
+            this.txtcity_2 = new System.Windows.Forms.TextBox();
+            this.txtaddress1_2 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnprevious = new System.Windows.Forms.Button();
+            this.btnnext_2 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.Destination = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnprevious2 = new System.Windows.Forms.Button();
             this.txttelephone = new System.Windows.Forms.TextBox();
             this.txtsurname = new System.Windows.Forms.TextBox();
             this.txtname = new System.Windows.Forms.TextBox();
@@ -51,40 +85,6 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.btncancel = new System.Windows.Forms.Button();
-            this.btnsave = new System.Windows.Forms.Button();
-            this.btnprevious2 = new System.Windows.Forms.Button();
-            this.txtlength = new System.Windows.Forms.TextBox();
-            this.txtwidth = new System.Windows.Forms.TextBox();
-            this.txtheight = new System.Windows.Forms.TextBox();
-            this.txtweight = new System.Windows.Forms.TextBox();
-            this.txtpackagenumber = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.package_no = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txttelephone_2 = new System.Windows.Forms.TextBox();
-            this.btnnext_2 = new System.Windows.Forms.Button();
-            this.btnprevious = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtaddress1_2 = new System.Windows.Forms.TextBox();
-            this.txtcity_2 = new System.Windows.Forms.TextBox();
-            this.txtaddress2_2 = new System.Windows.Forms.TextBox();
-            this.txtpostcode_2 = new System.Windows.Forms.TextBox();
-            this.txtcountry_2 = new System.Windows.Forms.TextBox();
-            this.txtname_2 = new System.Windows.Forms.TextBox();
-            this.txtsurname_2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.TabControl1.SuspendLayout();
             this.package.SuspendLayout();
@@ -102,6 +102,35 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(719, 384);
             this.panel1.TabIndex = 0;
+            // 
+            // btncancel
+            // 
+            this.btncancel.BackColor = System.Drawing.SystemColors.Control;
+            this.btncancel.FlatAppearance.BorderSize = 0;
+            this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancel.Location = new System.Drawing.Point(618, 351);
+            this.btncancel.Name = "btncancel";
+            this.btncancel.Size = new System.Drawing.Size(75, 30);
+            this.btncancel.TabIndex = 26;
+            this.btncancel.Text = "Cancel";
+            this.btncancel.UseVisualStyleBackColor = false;
+            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
+            // 
+            // btnsave
+            // 
+            this.btnsave.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnsave.FlatAppearance.BorderSize = 0;
+            this.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsave.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsave.ForeColor = System.Drawing.Color.White;
+            this.btnsave.Location = new System.Drawing.Point(537, 351);
+            this.btnsave.Name = "btnsave";
+            this.btnsave.Size = new System.Drawing.Size(75, 30);
+            this.btnsave.TabIndex = 25;
+            this.btnsave.Text = "Save";
+            this.btnsave.UseVisualStyleBackColor = false;
+            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
             // TabControl1
             // 
@@ -136,6 +165,110 @@
             this.package.TabIndex = 0;
             this.package.Text = "Package";
             this.package.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(257, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(193, 32);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Package Details";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtlength
+            // 
+            this.txtlength.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtlength.Location = new System.Drawing.Point(517, 218);
+            this.txtlength.Name = "txtlength";
+            this.txtlength.Size = new System.Drawing.Size(36, 23);
+            this.txtlength.TabIndex = 16;
+            // 
+            // txtwidth
+            // 
+            this.txtwidth.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtwidth.Location = new System.Drawing.Point(517, 186);
+            this.txtwidth.Name = "txtwidth";
+            this.txtwidth.Size = new System.Drawing.Size(36, 23);
+            this.txtwidth.TabIndex = 15;
+            // 
+            // txtheight
+            // 
+            this.txtheight.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtheight.Location = new System.Drawing.Point(267, 215);
+            this.txtheight.Name = "txtheight";
+            this.txtheight.Size = new System.Drawing.Size(36, 23);
+            this.txtheight.TabIndex = 14;
+            // 
+            // txtweight
+            // 
+            this.txtweight.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtweight.Location = new System.Drawing.Point(267, 186);
+            this.txtweight.Name = "txtweight";
+            this.txtweight.Size = new System.Drawing.Size(36, 23);
+            this.txtweight.TabIndex = 12;
+            // 
+            // txtpackagenumber
+            // 
+            this.txtpackagenumber.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpackagenumber.Location = new System.Drawing.Point(298, 134);
+            this.txtpackagenumber.Name = "txtpackagenumber";
+            this.txtpackagenumber.Size = new System.Drawing.Size(255, 23);
+            this.txtpackagenumber.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(401, 218);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(102, 20);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Length (cm) :";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(401, 186);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(93, 20);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Width (cm) :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(153, 218);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(99, 20);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Height (cm) :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(153, 186);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(98, 20);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Weight (kg) :";
+            // 
+            // package_no
+            // 
+            this.package_no.AutoSize = true;
+            this.package_no.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.package_no.Location = new System.Drawing.Point(153, 135);
+            this.package_no.Name = "package_no";
+            this.package_no.Size = new System.Drawing.Size(139, 20);
+            this.package_no.TabIndex = 13;
+            this.package_no.Text = "Package Number :";
             // 
             // btnnext
             // 
@@ -179,6 +312,189 @@
             this.delivery.Text = "Return";
             this.delivery.UseVisualStyleBackColor = true;
             // 
+            // txttelephone_2
+            // 
+            this.txttelephone_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttelephone_2.Location = new System.Drawing.Point(115, 177);
+            this.txttelephone_2.Name = "txttelephone_2";
+            this.txttelephone_2.Size = new System.Drawing.Size(202, 23);
+            this.txttelephone_2.TabIndex = 2;
+            // 
+            // txtsurname_2
+            // 
+            this.txtsurname_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsurname_2.Location = new System.Drawing.Point(115, 146);
+            this.txtsurname_2.Name = "txtsurname_2";
+            this.txtsurname_2.Size = new System.Drawing.Size(202, 23);
+            this.txtsurname_2.TabIndex = 1;
+            // 
+            // txtname_2
+            // 
+            this.txtname_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtname_2.Location = new System.Drawing.Point(115, 115);
+            this.txtname_2.Name = "txtname_2";
+            this.txtname_2.Size = new System.Drawing.Size(202, 23);
+            this.txtname_2.TabIndex = 0;
+            // 
+            // txtcountry_2
+            // 
+            this.txtcountry_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcountry_2.Location = new System.Drawing.Point(483, 239);
+            this.txtcountry_2.Name = "txtcountry_2";
+            this.txtcountry_2.Size = new System.Drawing.Size(202, 23);
+            this.txtcountry_2.TabIndex = 7;
+            // 
+            // txtpostcode_2
+            // 
+            this.txtpostcode_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpostcode_2.Location = new System.Drawing.Point(483, 208);
+            this.txtpostcode_2.Name = "txtpostcode_2";
+            this.txtpostcode_2.Size = new System.Drawing.Size(202, 23);
+            this.txtpostcode_2.TabIndex = 6;
+            // 
+            // txtaddress2_2
+            // 
+            this.txtaddress2_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtaddress2_2.Location = new System.Drawing.Point(483, 146);
+            this.txtaddress2_2.Name = "txtaddress2_2";
+            this.txtaddress2_2.Size = new System.Drawing.Size(202, 23);
+            this.txtaddress2_2.TabIndex = 4;
+            // 
+            // txtcity_2
+            // 
+            this.txtcity_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcity_2.Location = new System.Drawing.Point(483, 177);
+            this.txtcity_2.Name = "txtcity_2";
+            this.txtcity_2.Size = new System.Drawing.Size(202, 23);
+            this.txtcity_2.TabIndex = 5;
+            // 
+            // txtaddress1_2
+            // 
+            this.txtaddress1_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtaddress1_2.Location = new System.Drawing.Point(483, 114);
+            this.txtaddress1_2.Name = "txtaddress1_2";
+            this.txtaddress1_2.Size = new System.Drawing.Size(202, 23);
+            this.txtaddress1_2.TabIndex = 3;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(17, 144);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(84, 21);
+            this.label13.TabIndex = 34;
+            this.label13.Text = "Surname : ";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(17, 175);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(87, 21);
+            this.label14.TabIndex = 33;
+            this.label14.Text = "Telephone :";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(17, 113);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(59, 21);
+            this.label15.TabIndex = 32;
+            this.label15.Text = "Name :";
+            // 
+            // btnprevious
+            // 
+            this.btnprevious.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnprevious.BackgroundImage")));
+            this.btnprevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnprevious.FlatAppearance.BorderSize = 0;
+            this.btnprevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnprevious.Location = new System.Drawing.Point(21, 33);
+            this.btnprevious.Name = "btnprevious";
+            this.btnprevious.Size = new System.Drawing.Size(32, 32);
+            this.btnprevious.TabIndex = 9;
+            this.btnprevious.UseVisualStyleBackColor = true;
+            this.btnprevious.Click += new System.EventHandler(this.btnprevious_Click);
+            // 
+            // btnnext_2
+            // 
+            this.btnnext_2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnnext_2.BackgroundImage")));
+            this.btnnext_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnnext_2.FlatAppearance.BorderSize = 0;
+            this.btnnext_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnnext_2.Location = new System.Drawing.Point(653, 33);
+            this.btnnext_2.Name = "btnnext_2";
+            this.btnnext_2.Size = new System.Drawing.Size(32, 32);
+            this.btnnext_2.TabIndex = 8;
+            this.btnnext_2.UseVisualStyleBackColor = true;
+            this.btnnext_2.Click += new System.EventHandler(this.btnnext_2_Click);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(262, 33);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(191, 32);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Return Address";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(388, 239);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(73, 21);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "Country :";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(388, 113);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(86, 21);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Address 1 :";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(388, 144);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(86, 21);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Address 2 :";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(388, 208);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(79, 21);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Postcode :";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(388, 177);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(44, 21);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "City :";
+            // 
             // Destination
             // 
             this.Destination.Controls.Add(this.label2);
@@ -207,6 +523,33 @@
             this.Destination.TabIndex = 2;
             this.Destination.Text = "Destination";
             this.Destination.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(237, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(232, 32);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Destination Details";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnprevious2
+            // 
+            this.btnprevious2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnprevious2.BackgroundImage")));
+            this.btnprevious2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnprevious2.FlatAppearance.BorderSize = 0;
+            this.btnprevious2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnprevious2.Location = new System.Drawing.Point(21, 33);
+            this.btnprevious2.Name = "btnprevious2";
+            this.btnprevious2.Size = new System.Drawing.Size(32, 32);
+            this.btnprevious2.TabIndex = 25;
+            this.btnprevious2.UseVisualStyleBackColor = true;
+            this.btnprevious2.Click += new System.EventHandler(this.btnprevious2_Click);
             // 
             // txttelephone
             // 
@@ -352,349 +695,6 @@
             this.label18.TabIndex = 4;
             this.label18.Text = "Name :";
             // 
-            // btncancel
-            // 
-            this.btncancel.BackColor = System.Drawing.SystemColors.Control;
-            this.btncancel.FlatAppearance.BorderSize = 0;
-            this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancel.Location = new System.Drawing.Point(618, 351);
-            this.btncancel.Name = "btncancel";
-            this.btncancel.Size = new System.Drawing.Size(75, 30);
-            this.btncancel.TabIndex = 26;
-            this.btncancel.Text = "Cancel";
-            this.btncancel.UseVisualStyleBackColor = false;
-            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
-            // 
-            // btnsave
-            // 
-            this.btnsave.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnsave.FlatAppearance.BorderSize = 0;
-            this.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnsave.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsave.ForeColor = System.Drawing.Color.White;
-            this.btnsave.Location = new System.Drawing.Point(537, 351);
-            this.btnsave.Name = "btnsave";
-            this.btnsave.Size = new System.Drawing.Size(75, 30);
-            this.btnsave.TabIndex = 25;
-            this.btnsave.Text = "Save";
-            this.btnsave.UseVisualStyleBackColor = false;
-            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
-            // 
-            // btnprevious2
-            // 
-            this.btnprevious2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnprevious2.BackgroundImage")));
-            this.btnprevious2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnprevious2.FlatAppearance.BorderSize = 0;
-            this.btnprevious2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnprevious2.Location = new System.Drawing.Point(21, 33);
-            this.btnprevious2.Name = "btnprevious2";
-            this.btnprevious2.Size = new System.Drawing.Size(32, 32);
-            this.btnprevious2.TabIndex = 25;
-            this.btnprevious2.UseVisualStyleBackColor = true;
-            this.btnprevious2.Click += new System.EventHandler(this.btnprevious2_Click);
-            // 
-            // txtlength
-            // 
-            this.txtlength.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtlength.Location = new System.Drawing.Point(517, 218);
-            this.txtlength.Name = "txtlength";
-            this.txtlength.Size = new System.Drawing.Size(36, 23);
-            this.txtlength.TabIndex = 16;
-            // 
-            // txtwidth
-            // 
-            this.txtwidth.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtwidth.Location = new System.Drawing.Point(517, 186);
-            this.txtwidth.Name = "txtwidth";
-            this.txtwidth.Size = new System.Drawing.Size(36, 23);
-            this.txtwidth.TabIndex = 15;
-            // 
-            // txtheight
-            // 
-            this.txtheight.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtheight.Location = new System.Drawing.Point(267, 215);
-            this.txtheight.Name = "txtheight";
-            this.txtheight.Size = new System.Drawing.Size(36, 23);
-            this.txtheight.TabIndex = 14;
-            // 
-            // txtweight
-            // 
-            this.txtweight.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtweight.Location = new System.Drawing.Point(267, 186);
-            this.txtweight.Name = "txtweight";
-            this.txtweight.Size = new System.Drawing.Size(36, 23);
-            this.txtweight.TabIndex = 12;
-            // 
-            // txtpackagenumber
-            // 
-            this.txtpackagenumber.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpackagenumber.Location = new System.Drawing.Point(298, 134);
-            this.txtpackagenumber.Name = "txtpackagenumber";
-            this.txtpackagenumber.Size = new System.Drawing.Size(255, 23);
-            this.txtpackagenumber.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(401, 218);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(102, 20);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "Length (cm) :";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(401, 186);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 20);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Width (cm) :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(153, 218);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 20);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Height (cm) :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(153, 186);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 20);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Weight (kg) :";
-            // 
-            // package_no
-            // 
-            this.package_no.AutoSize = true;
-            this.package_no.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.package_no.Location = new System.Drawing.Point(153, 135);
-            this.package_no.Name = "package_no";
-            this.package_no.Size = new System.Drawing.Size(139, 20);
-            this.package_no.TabIndex = 13;
-            this.package_no.Text = "Package Number :";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(388, 177);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 21);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "City :";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(388, 208);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 21);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Postcode :";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(388, 144);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(86, 21);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Address 2 :";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(388, 113);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 21);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Address 1 :";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(388, 239);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(73, 21);
-            this.label12.TabIndex = 4;
-            this.label12.Text = "Country :";
-            // 
-            // txttelephone_2
-            // 
-            this.txttelephone_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttelephone_2.Location = new System.Drawing.Point(115, 177);
-            this.txttelephone_2.Name = "txttelephone_2";
-            this.txttelephone_2.Size = new System.Drawing.Size(202, 23);
-            this.txttelephone_2.TabIndex = 2;
-            // 
-            // btnnext_2
-            // 
-            this.btnnext_2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnnext_2.BackgroundImage")));
-            this.btnnext_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnnext_2.FlatAppearance.BorderSize = 0;
-            this.btnnext_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnnext_2.Location = new System.Drawing.Point(653, 33);
-            this.btnnext_2.Name = "btnnext_2";
-            this.btnnext_2.Size = new System.Drawing.Size(32, 32);
-            this.btnnext_2.TabIndex = 8;
-            this.btnnext_2.UseVisualStyleBackColor = true;
-            this.btnnext_2.Click += new System.EventHandler(this.btnnext_2_Click);
-            // 
-            // btnprevious
-            // 
-            this.btnprevious.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnprevious.BackgroundImage")));
-            this.btnprevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnprevious.FlatAppearance.BorderSize = 0;
-            this.btnprevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnprevious.Location = new System.Drawing.Point(21, 33);
-            this.btnprevious.Name = "btnprevious";
-            this.btnprevious.Size = new System.Drawing.Size(32, 32);
-            this.btnprevious.TabIndex = 9;
-            this.btnprevious.UseVisualStyleBackColor = true;
-            this.btnprevious.Click += new System.EventHandler(this.btnprevious_Click);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(17, 113);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(59, 21);
-            this.label15.TabIndex = 32;
-            this.label15.Text = "Name :";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(17, 175);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(87, 21);
-            this.label14.TabIndex = 33;
-            this.label14.Text = "Telephone :";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(17, 144);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(84, 21);
-            this.label13.TabIndex = 34;
-            this.label13.Text = "Surname : ";
-            // 
-            // txtaddress1_2
-            // 
-            this.txtaddress1_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtaddress1_2.Location = new System.Drawing.Point(483, 114);
-            this.txtaddress1_2.Name = "txtaddress1_2";
-            this.txtaddress1_2.Size = new System.Drawing.Size(202, 23);
-            this.txtaddress1_2.TabIndex = 3;
-            // 
-            // txtcity_2
-            // 
-            this.txtcity_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcity_2.Location = new System.Drawing.Point(483, 177);
-            this.txtcity_2.Name = "txtcity_2";
-            this.txtcity_2.Size = new System.Drawing.Size(202, 23);
-            this.txtcity_2.TabIndex = 5;
-            // 
-            // txtaddress2_2
-            // 
-            this.txtaddress2_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtaddress2_2.Location = new System.Drawing.Point(483, 146);
-            this.txtaddress2_2.Name = "txtaddress2_2";
-            this.txtaddress2_2.Size = new System.Drawing.Size(202, 23);
-            this.txtaddress2_2.TabIndex = 4;
-            // 
-            // txtpostcode_2
-            // 
-            this.txtpostcode_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpostcode_2.Location = new System.Drawing.Point(483, 208);
-            this.txtpostcode_2.Name = "txtpostcode_2";
-            this.txtpostcode_2.Size = new System.Drawing.Size(202, 23);
-            this.txtpostcode_2.TabIndex = 6;
-            // 
-            // txtcountry_2
-            // 
-            this.txtcountry_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcountry_2.Location = new System.Drawing.Point(483, 239);
-            this.txtcountry_2.Name = "txtcountry_2";
-            this.txtcountry_2.Size = new System.Drawing.Size(202, 23);
-            this.txtcountry_2.TabIndex = 7;
-            // 
-            // txtname_2
-            // 
-            this.txtname_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtname_2.Location = new System.Drawing.Point(115, 115);
-            this.txtname_2.Name = "txtname_2";
-            this.txtname_2.Size = new System.Drawing.Size(202, 23);
-            this.txtname_2.TabIndex = 0;
-            // 
-            // txtsurname_2
-            // 
-            this.txtsurname_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsurname_2.Location = new System.Drawing.Point(115, 146);
-            this.txtsurname_2.Name = "txtsurname_2";
-            this.txtsurname_2.Size = new System.Drawing.Size(202, 23);
-            this.txtsurname_2.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(262, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(191, 32);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Return Address";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(257, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 32);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Package Details";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(237, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(232, 32);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Destination Details";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Add_Package
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -705,7 +705,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Add_Package";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Add_Package";
+            this.Text = "Add Package";
             this.panel1.ResumeLayout(false);
             this.TabControl1.ResumeLayout(false);
             this.package.ResumeLayout(false);

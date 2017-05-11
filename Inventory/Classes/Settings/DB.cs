@@ -82,7 +82,7 @@ namespace Inventory
                 usr = (string)read["username"];
             }
 
-            welcomeMsg = "Welcome " + name + " " + surname + " (" + usr + ")";
+            welcomeMsg = name + " " + surname + " (" + usr + ")";
             read.Close();
             con.Close();
 
@@ -429,6 +429,82 @@ namespace Inventory
 
             return false;
         }
+        #endregion
+
+        #region Note SQL
+
+        public List<int> noteID;
+
+        public bool checkIfCanceled()
+        {
+            DataTable dt = new DataTable();
+            //Create connection
+            SqlConnection con = new SqlConnection(connectionString);
+            con.Open();
+
+            //Create adapter to hold the data
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM PackageNote", connectionString);
+
+            sda.Fill(dt);
+            con.Close();
+
+            if (dt.Rows.Count > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public List<string> returnNotes()
+        {
+            List<string> listOfNotes = new List<string>();
+            string note = null;
+
+            int tempID;
+            noteID = new List<int>();
+
+            SqlConnection con = new SqlConnection(connectionString);
+            con.Open();
+
+            //Construct query to get hash from the database
+            SqlCommand command = new SqlCommand("select * from PackageNote", con);
+            SqlDataReader read = command.ExecuteReader();
+
+            while (read.Read())
+            {
+                note += "Driver " + (string)read["username"] + " has canceled package no: " + (string)read["id"] + " note: " + (string)read["note"] + "\n";
+
+                tempID = Convert.ToInt32(read["id"]);
+                noteID.Add(tempID);
+
+                listOfNotes.Add(note);
+                note = null;
+            }
+
+            return listOfNotes;
+        }
+
+        public void removeNotes()
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            foreach (int i in noteID)
+            {
+                var myCommand = new SqlCommand("DELETE FROM PackageNote WHERE ID = @id", conn);
+                myCommand.Parameters.AddWithValue("@id", i);
+                myCommand.ExecuteNonQuery();
+
+                var myCommand2 = new SqlCommand("UPDATE package set driver = NULL WHERE packageNumber = @id2", conn);
+                myCommand2.Parameters.AddWithValue("@id2", i);
+                myCommand2.ExecuteNonQuery();
+            }
+
+            conn.Close();
+        }
+
+        #endregion
     }
-    #endregion
+
 }

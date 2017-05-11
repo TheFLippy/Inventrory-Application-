@@ -56,7 +56,7 @@
             this.rbDriver.Location = new System.Drawing.Point(406, 237);
             this.rbDriver.Name = "rbDriver";
             this.rbDriver.Size = new System.Drawing.Size(71, 25);
-            this.rbDriver.TabIndex = 21;
+            this.rbDriver.TabIndex = 8;
             this.rbDriver.TabStop = true;
             this.rbDriver.Text = "Driver";
             this.rbDriver.UseVisualStyleBackColor = true;
@@ -69,7 +69,7 @@
             this.rbClerk.Location = new System.Drawing.Point(331, 237);
             this.rbClerk.Name = "rbClerk";
             this.rbClerk.Size = new System.Drawing.Size(64, 25);
-            this.rbClerk.TabIndex = 19;
+            this.rbClerk.TabIndex = 7;
             this.rbClerk.TabStop = true;
             this.rbClerk.Text = "Clerk";
             this.rbClerk.UseVisualStyleBackColor = true;
@@ -82,7 +82,7 @@
             this.rbAdmin.Location = new System.Drawing.Point(245, 237);
             this.rbAdmin.Name = "rbAdmin";
             this.rbAdmin.Size = new System.Drawing.Size(74, 25);
-            this.rbAdmin.TabIndex = 18;
+            this.rbAdmin.TabIndex = 6;
             this.rbAdmin.TabStop = true;
             this.rbAdmin.Text = "Admin";
             this.rbAdmin.UseVisualStyleBackColor = true;
@@ -104,7 +104,7 @@
             this.txtEditSurname.Location = new System.Drawing.Point(133, 183);
             this.txtEditSurname.Name = "txtEditSurname";
             this.txtEditSurname.Size = new System.Drawing.Size(181, 23);
-            this.txtEditSurname.TabIndex = 16;
+            this.txtEditSurname.TabIndex = 2;
             // 
             // btnCancel
             // 
@@ -115,7 +115,7 @@
             this.btnCancel.Location = new System.Drawing.Point(634, 281);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 30);
-            this.btnCancel.TabIndex = 24;
+            this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -130,7 +130,7 @@
             this.btnEdit.Location = new System.Drawing.Point(553, 281);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 30);
-            this.btnEdit.TabIndex = 22;
+            this.btnEdit.TabIndex = 9;
             this.btnEdit.Text = "Save";
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -152,7 +152,7 @@
             this.txtEditConfirmPassword.Name = "txtEditConfirmPassword";
             this.txtEditConfirmPassword.PasswordChar = '*';
             this.txtEditConfirmPassword.Size = new System.Drawing.Size(181, 23);
-            this.txtEditConfirmPassword.TabIndex = 13;
+            this.txtEditConfirmPassword.TabIndex = 5;
             // 
             // label4
             // 
@@ -170,7 +170,7 @@
             this.txtEditName.Location = new System.Drawing.Point(133, 152);
             this.txtEditName.Name = "txtEditName";
             this.txtEditName.Size = new System.Drawing.Size(181, 23);
-            this.txtEditName.TabIndex = 15;
+            this.txtEditName.TabIndex = 1;
             // 
             // label2
             // 
@@ -189,7 +189,7 @@
             this.txtEditNewPassword.Name = "txtEditNewPassword";
             this.txtEditNewPassword.PasswordChar = '*';
             this.txtEditNewPassword.Size = new System.Drawing.Size(181, 23);
-            this.txtEditNewPassword.TabIndex = 12;
+            this.txtEditNewPassword.TabIndex = 4;
             // 
             // label1
             // 
@@ -207,7 +207,7 @@
             this.txtEditUsername.Location = new System.Drawing.Point(133, 121);
             this.txtEditUsername.Name = "txtEditUsername";
             this.txtEditUsername.Size = new System.Drawing.Size(181, 23);
-            this.txtEditUsername.TabIndex = 11;
+            this.txtEditUsername.TabIndex = 0;
             // 
             // label5
             // 
@@ -226,7 +226,7 @@
             this.txtEditOldPassword.Name = "txtEditOldPassword";
             this.txtEditOldPassword.PasswordChar = '*';
             this.txtEditOldPassword.Size = new System.Drawing.Size(181, 23);
-            this.txtEditOldPassword.TabIndex = 26;
+            this.txtEditOldPassword.TabIndex = 3;
             // 
             // label6
             // 
@@ -268,7 +268,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EditEmployee";
+            this.Text = "Edit Employee";
             this.Load += new System.EventHandler(this.EditEmployee_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

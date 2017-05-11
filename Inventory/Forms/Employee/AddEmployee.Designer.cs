@@ -83,7 +83,7 @@
             this.txtAddPassword.Name = "txtAddPassword";
             this.txtAddPassword.PasswordChar = '*';
             this.txtAddPassword.Size = new System.Drawing.Size(181, 23);
-            this.txtAddPassword.TabIndex = 1;
+            this.txtAddPassword.TabIndex = 3;
             // 
             // label4
             // 
@@ -102,7 +102,7 @@
             this.txtAddName.Location = new System.Drawing.Point(129, 152);
             this.txtAddName.Name = "txtAddName";
             this.txtAddName.Size = new System.Drawing.Size(181, 23);
-            this.txtAddName.TabIndex = 3;
+            this.txtAddName.TabIndex = 1;
             // 
             // label3
             // 
@@ -122,7 +122,7 @@
             this.txtConfirm.Name = "txtConfirm";
             this.txtConfirm.PasswordChar = '*';
             this.txtConfirm.Size = new System.Drawing.Size(181, 23);
-            this.txtConfirm.TabIndex = 2;
+            this.txtConfirm.TabIndex = 4;
             // 
             // label7
             // 
@@ -141,7 +141,7 @@
             this.txtSurname.Location = new System.Drawing.Point(129, 183);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(181, 23);
-            this.txtSurname.TabIndex = 4;
+            this.txtSurname.TabIndex = 2;
             // 
             // rbAdmin
             // 
@@ -215,7 +215,7 @@
             this.btnCancel.Location = new System.Drawing.Point(634, 281);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 30);
-            this.btnCancel.TabIndex = 64;
+            this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnBack_Click);
@@ -230,7 +230,7 @@
             this.btnEdit.Location = new System.Drawing.Point(553, 281);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 30);
-            this.btnEdit.TabIndex = 63;
+            this.btnEdit.TabIndex = 8;
             this.btnEdit.Text = "Save";
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnAdd_Click);
@@ -260,7 +260,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddEmployee";
+            this.Text = "Add Employee";
             this.Load += new System.EventHandler(this.AddEmployee_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

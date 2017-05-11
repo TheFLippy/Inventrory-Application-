@@ -17,8 +17,8 @@ namespace Inventory
     {
         #region Main Menu Variables
 
-        
 
+        db sqlCon;
         Login login;
         ManageEmployees mng;
         View_Inventory viewInv;
@@ -31,6 +31,19 @@ namespace Inventory
         public MainMenu(string privelage, string welcomeMsg)
         {
             InitializeComponent();
+
+            picNotification.Visible = false;
+            lblNotification.Visible = false;
+
+            sqlCon = new db();
+
+            if(sqlCon.checkIfCanceled())
+            {
+                lblNotification.Visible = true;
+                lblNotification.Text = "You have new notifications";
+                picNotification.Visible = true;
+
+            }
 
             FormState.PreviousPage = this;
 
@@ -169,7 +182,7 @@ namespace Inventory
 
             if(!exit)
             {
-                d = MessageBox.Show("Are you sure you want to exit the application?", "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                d = MessageBox.Show("Are you sure you want to exit the application?","Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (d == DialogResult.Cancel)
                 {
                     e.Cancel = true;
@@ -181,6 +194,31 @@ namespace Inventory
             }
         }
         #endregion
+
+        private void lblNotification_Click(object sender, EventArgs e)
+        {
+            List<string> listNotif = sqlCon.returnNotes();
+            string finalNote = null;
+
+            foreach(string note in listNotif)
+            {
+                finalNote += note;
+            }
+
+            MessageBox.Show("The following packages have been canceled:\n\n" + finalNote, "Notification", MessageBoxButtons.OK);
+
+            lblNotification.Visible = false;
+            picNotification.Visible = false;
+            try
+            {
+                sqlCon.removeNotes();
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            
+        }
     }
 
     public static class FormState

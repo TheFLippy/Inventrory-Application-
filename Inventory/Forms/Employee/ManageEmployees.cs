@@ -34,7 +34,6 @@ namespace Inventory
         {
             btnDeleteEmp.Visible = false;
             btnEdit.Visible = false;
-            btnSearch_Click(sender, e);
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -59,28 +58,39 @@ namespace Inventory
         //Search
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            //Creating data table to put our data onto it
-            DataTable dt = new DataTable();
-            //Connectining to database
-            sqlCon.sqlConnect();
-            //Creating data adapter to query the database
-            SqlDataAdapter sda = new SqlDataAdapter("select id as ID, username as Username, name as Name, surname as Surname, joinedDate as StartDate, jobPosition as Privelages  from login where username like'" + txtSearch.Text + "%' or name like '" + txtSearch.Text + "%' or surname like '" + txtSearch.Text + "%'", sqlCon.connectionString);
-
-            //Filling the datatable with retrieved rows
-            sda.Fill(dt);
-           
-
-            //If function has more than once, will not put checkbox onto the row
-            if (ranOnce == false)
+            try
             {
-                gridMngEmployees.Columns.Add(chk);
-                chk.HeaderText = "Delete";
+                //Creating data table to put our data onto it
+                DataTable dt = new DataTable();
+                //Connectining to database
+                sqlCon.sqlConnect();
+                //Creating data adapter to query the database
+                SqlDataAdapter sda = new SqlDataAdapter("select id as ID, username as Username, name as Name, surname as Surname, joinedDate as StartDate, jobPosition as Privelages  from login where username like'" + txtSearch.Text + "%' or name like '" + txtSearch.Text + "%' or surname like '" + txtSearch.Text + "%'", sqlCon.connectionString);
 
+                //Filling the datatable with retrieved rows
+                sda.Fill(dt);
+
+
+                //If function has more than once, will not put checkbox onto the row
+                if (ranOnce == false)
+                {
+                    gridMngEmployees.Columns.Add(chk);
+                    chk.HeaderText = "Delete";
+                    chk.Width = 43;
+                    
+
+                }
+                ranOnce = true;
+
+                //Passing the data table to grid veiw to display it
+                gridMngEmployees.DataSource = dt;
+                gridMngEmployees.Columns[1].Width = 43;
             }
-            ranOnce = true;
-
-            //Passing the data table to grid veiw to display it
-            gridMngEmployees.DataSource = dt;
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            
         }
 
         //Checkbox mark

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageEmployees));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDeleteEmp = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
@@ -51,7 +51,7 @@
             this.btnEdit.Location = new System.Drawing.Point(769, 172);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(96, 43);
-            this.btnEdit.TabIndex = 13;
+            this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "Edit";
             this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -67,7 +67,7 @@
             this.btnDeleteEmp.Location = new System.Drawing.Point(769, 238);
             this.btnDeleteEmp.Name = "btnDeleteEmp";
             this.btnDeleteEmp.Size = new System.Drawing.Size(96, 46);
-            this.btnDeleteEmp.TabIndex = 12;
+            this.btnDeleteEmp.TabIndex = 4;
             this.btnDeleteEmp.Text = "Delete";
             this.btnDeleteEmp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeleteEmp.UseVisualStyleBackColor = true;
@@ -86,7 +86,7 @@
             this.btnBack.Location = new System.Drawing.Point(19, 23);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(32, 32);
-            this.btnBack.TabIndex = 11;
+            this.btnBack.TabIndex = 5;
             this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -105,7 +105,7 @@
             this.btnAdd.Location = new System.Drawing.Point(769, 104);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(96, 43);
-            this.btnAdd.TabIndex = 10;
+            this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -115,10 +115,10 @@
             // 
             this.gridMngEmployees.AllowUserToAddRows = false;
             this.gridMngEmployees.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Ivory;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridMngEmployees.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Ivory;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridMngEmployees.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.gridMngEmployees.BackgroundColor = System.Drawing.Color.White;
             this.gridMngEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridMngEmployees.Location = new System.Drawing.Point(80, 82);
@@ -144,7 +144,7 @@
             this.btnSearch.Location = new System.Drawing.Point(769, 27);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(26, 28);
-            this.btnSearch.TabIndex = 8;
+            this.btnSearch.TabIndex = 1;
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -155,7 +155,7 @@
             this.txtSearch.Location = new System.Drawing.Point(80, 26);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(671, 27);
-            this.txtSearch.TabIndex = 7;
+            this.txtSearch.TabIndex = 0;
             // 
             // ManageEmployees
             // 
@@ -173,7 +173,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManageEmployees";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Manage Employees";
+            this.Text = "Employees";
             this.Load += new System.EventHandler(this.ManageEmployees_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridMngEmployees)).EndInit();
             this.ResumeLayout(false);

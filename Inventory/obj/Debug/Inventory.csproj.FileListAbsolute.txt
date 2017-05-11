@@ -479,3 +479,27 @@ C:\Users\GEORGE MALLIA\Source\Repos\Inventrory-Application-15\Inventory\bin\Debu
 C:\Users\GEORGE MALLIA\Source\Repos\Inventrory-Application-15\Inventory\bin\Debug\EntityFramework.xml
 C:\Users\GEORGE MALLIA\Source\Repos\Inventrory-Application-15\Inventory\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\GEORGE MALLIA\Source\Repos\Inventrory-Application-15\Inventory\obj\Debug\Inventory.Forms.AssignPackage.resources
+C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\bin\Debug\Inventory.exe.config
+C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\bin\Debug\Inventory.exe
+C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\bin\Debug\Inventory.pdb
+C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\bin\Debug\EntityFramework.dll
+C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\bin\Debug\EntityFramework.xml
+C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\obj\Debug\Inventory.csprojResolveAssemblyReference.cache
+C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\obj\Debug\Inventory.AddEmployee.resources
+C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\obj\Debug\Inventory.Forms.AddVan.resources
+C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\obj\Debug\Inventory.Add_Package.resources
+C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\obj\Debug\Inventory.Forms.AssignPackage.resources
+C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\obj\Debug\Inventory.Forms.EditEmployee.resources
+C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\obj\Debug\Inventory.Forms.EditVan.resources
+C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\obj\Debug\Inventory.Forms.Edit_Packages.resources
+C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\obj\Debug\Inventory.Login.resources
+C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\obj\Debug\Inventory.MainMenu.resources
+C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\obj\Debug\Inventory.ManageEmployees.resources
+C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\obj\Debug\Inventory.Forms.ManageVans.resources
+C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\obj\Debug\Inventory.Forms.View_Inventory.resources
+C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\obj\Debug\Inventory.Properties.Resources.resources
+C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\obj\Debug\Inventory.csproj.GenerateResource.Cache
+C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\obj\Debug\Inventory.exe
+C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\obj\Debug\Inventory.pdb

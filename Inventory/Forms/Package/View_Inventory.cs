@@ -62,7 +62,7 @@ namespace Inventory.Forms
 
         private void gridViewInv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex != 0)
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
             {
                 btnEdit.Visible = true;
 
@@ -176,37 +176,14 @@ namespace Inventory.Forms
 
         private void ViewAll_Click(object sender, EventArgs e)
         {
-            //creating a table for data storage
-            DataTable dt = new DataTable();
-            //connecting to the db
-            sqlCon.sqlConnect();
-            //creating query
-            SqlDataAdapter sda = new SqlDataAdapter("select id,packageNumber,delivered,height,length,weight,width,deliveryAddress1,deliveryAddress2,deliveryCity,deliveryCountry,deliveryPostcode,deliveryName,deliverySurname,deliveryNumber,returnAddress1,returnAddress2,returnCity,returnCountry,returnPostcode,returnName,returnSurname,returnNumber,driver from package where deleted = 0", sqlCon.connectionString);
-            //fills the table with the result of the query
-            sda.Fill(dt);
 
-            //to produce the checkbox
-            if (ranOnce == false)
-            {
-                gridViewInv.Columns.Add(chk);
-
-            }
-            ranOnce = true;
-
-
-            //filling the grid with the table contents
-            gridViewInv.DataSource = dt;
         }
 
         private void btnAddPckg_Click(object sender, EventArgs e)
         {
-            if (addPckg == null)
-            {
-                addPckg = new Add_Package();
-                addPckg.FormClosed += addPckg_FormClosed;
-            }
-            addPckg.Show(this);
-            Hide();
+            Add_Package add = new Add_Package();
+            add.Show();
+            
         }
 
         void addPckg_FormClosed(object sender, FormClosedEventArgs e)

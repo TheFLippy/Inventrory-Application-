@@ -17,6 +17,8 @@ namespace Inventory.Forms
         public ManageVans()
         {
             InitializeComponent();
+            btnDeleteVan.Visible = false;
+            btnEdit.Visible = false;
         }
 
         //variables for deletion of multiple rows
@@ -25,14 +27,15 @@ namespace Inventory.Forms
         int[] checkArray = new int [20];
         DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
         db sqlCon = new db();
+        int totalchk = 0;
+        int[] id = new int[20];
 
         //Variables for editing
         public int editID { get; set; }
 
         private void ManageVans_Load(object sender, EventArgs e)
         {
-            btnDeleteVan.Visible = false;
-            btnEdit.Visible = false;
+            
         }
 
         //Redirect to add van form
@@ -77,44 +80,40 @@ namespace Inventory.Forms
         //Checkbox mark
         private void gridMngVans_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0)
-            {
-                DataGridViewCheckBoxCell ch1 = new DataGridViewCheckBoxCell();
-                ch1 = (DataGridViewCheckBoxCell)gridMngVans.Rows[gridMngVans.CurrentRow.Index].Cells[0];
-                string temp = null;
+            string temp = null;
+            DataGridViewCheckBoxCell ch1 = new DataGridViewCheckBoxCell();
+            ch1 = (DataGridViewCheckBoxCell)gridMngVans.Rows[gridMngVans.CurrentRow.Index].Cells[0];
 
-                //Checking wheter the box has been checked or unchecked
-                if (ch1.Value == null)
+            //Checking wheter the box has been checked or unchecked
+            if (ch1.Value == null)
+                ch1.Value = false;
+            switch (ch1.Value.ToString())
+            {
+                case "True":
                     ch1.Value = false;
-                switch (ch1.Value.ToString())
+                    break;
+                case "False":
+                    ch1.Value = true;
+                    break;
+            }
+            if (ch1.Value.ToString() == "True")
+            {
+                //Getting the ID of the user
+                temp = gridMngVans.Rows[ch1.RowIndex].Cells[1].Value.ToString();
+                //Placing that ID into an array with an index (needs to be this way in order to remove id when unchecked)
+                deletefields(temp, ch1.RowIndex);
+                //Display delete button
+                btnDeleteVan.Visible = true;
+            }
+            else if (ch1.Value.ToString() == "False")
+            {
+                totalchk--;
+                id[ch1.RowIndex] = 0;
+                if (totalchk == 0)
                 {
-                    case "True":
-                        ch1.Value = false;
-                        break;
-                    case "False":
-                        ch1.Value = true;
-                        break;
-                }
-                if (ch1.Value.ToString() == "True")
-                {
-                    //Getting the ID of the user
-                    temp = gridMngVans.Rows[ch1.RowIndex].Cells[1].Value.ToString();
-                    //Placing that ID into an array with an index (needs to be this way in order to remove id when unchecked)
-                    deleteArrayPopulation(temp, ch1.RowIndex);
-                    //Display delete button
-                    btnDeleteVan.Visible = true;
-                }
-                else if (ch1.Value.ToString() == "False")
-                {
-                    totalChk--;
-                    checkArray[ch1.RowIndex] = 0;
-                    if (totalChk == 0)
-                    {
-                        btnDeleteVan.Visible = false;
-                    }
+                    btnDeleteVan.Visible = false;
                 }
             }
-
         }
 
         //Array that is used to pass multiple IDs of users in order to delete them
@@ -128,6 +127,21 @@ namespace Inventory.Forms
             //Incrementing the global variable 
             totalChk++;
             checkArray[index] = id;
+        }
+
+
+        public void deletefields(string temp, int index)
+        {
+            index = 0;
+            //Initializing the variable
+            int fieldid = 0;
+            //Converting the id (varchar) to string
+            fieldid = Convert.ToInt32(temp);
+
+            //Incrementing the global variable 
+            totalchk++;
+            id[index] = fieldid;
+            index++;
         }
 
         //Delete

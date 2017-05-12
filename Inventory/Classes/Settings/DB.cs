@@ -139,7 +139,7 @@ namespace Inventory
                 string passwordHash = Hash.ComputeHash(password, null);
                 DataTable dt = new DataTable();
 
-                SqlDataAdapter sda = new SqlDataAdapter("SELECT TOP (1) id FROM login ORDER BY id DESC", connectionString);
+                SqlDataAdapter sda = new SqlDataAdapter("select id from login order by id desc", connectionString);
                 sda.Fill(dt);
 
                 int id = Convert.ToInt32(dt.Rows[0][0]);
@@ -159,6 +159,9 @@ namespace Inventory
                 conn.Close();
                 if (result != 0)
                 {
+                    string comment = "Added new employee id " + id;
+                    addLogs(FormState.userName, comment);
+
                     return true;
                 }
             }
@@ -184,6 +187,9 @@ namespace Inventory
 
             if (result != 0)
             {
+                string comment = "Edite employee id " + id;
+                addLogs(FormState.userName, comment);
+
                 return true;
             }
 
@@ -207,7 +213,11 @@ namespace Inventory
                     {
                         return false;
                     }
+                    string comment = "Deleted package id " + array[i].ToString();
+                    addLogs(FormState.userName, comment);
                 }
+
+                
             }
             return true;
         }
@@ -268,7 +278,10 @@ namespace Inventory
            
             if (result != 0)
             {
-                return true;
+                string comment = "Added new package id " + id;
+                addLogs(FormState.userName, comment);
+
+                return true;    
             }
             return false;
         }
@@ -308,7 +321,10 @@ namespace Inventory
 
             if (result != 0)
             {
-                return true;
+                string comment = "Edited package id " + id;
+                addLogs(FormState.userName, comment);
+
+                return true;     
             }
 
             return false;
@@ -330,7 +346,11 @@ namespace Inventory
                     {
                         return false;
                     }
+                    string comment = "Deleted package id " + array[i].ToString();
+                    addLogs(FormState.userName, comment);
                 }
+
+                
             }
             return true;
 
@@ -356,7 +376,11 @@ namespace Inventory
                     {
                         return false;
                     }
+                    string comment = "Deleted van id " + array[i].ToString();
+                    addLogs(FormState.userName, comment);
                 }
+
+                
             }
             return true;
         } 
@@ -396,6 +420,9 @@ namespace Inventory
 
             if (result != 0)
             {
+                string comment = "Added new van " + addVan.NoPlate + " " + addVan.Model + " " + addVan.YOM;
+                addLogs(FormState.userName, comment);
+
                 return true;
             }
             return false;
@@ -424,7 +451,10 @@ namespace Inventory
 
             if (result != 0)
             {
-                return true;
+                string comment = "Edited van id " + id + " to " + editVan.NoPlate + " " + editVan.Model + " " + editVan.YOM;
+                addLogs(FormState.userName, comment);
+
+                return true;  
             }
 
             return false;
@@ -475,6 +505,9 @@ namespace Inventory
             {
                 note += "Driver " + (string)read["username"] + " has canceled package no: " + (string)read["id"] + " note: " + (string)read["note"] + "\n";
 
+                string comment = "Canceled package number " + (string)read["id"] + " due to " + (string)read["note"];
+                addLogs((string)read["username"], comment);
+
                 tempID = Convert.ToInt32(read["id"]);
                 noteID.Add(tempID);
 
@@ -499,9 +532,34 @@ namespace Inventory
                 var myCommand2 = new SqlCommand("UPDATE package set driver = NULL WHERE packageNumber = @id2", conn);
                 myCommand2.Parameters.AddWithValue("@id2", i);
                 myCommand2.ExecuteNonQuery();
+
+                string comment = "Unassigned driver for package no: " + i;
+                addLogs(FormState.userName, comment);
             }
 
             conn.Close();
+        }
+
+        #endregion
+
+        #region Logs/History SQL
+
+        public bool addLogs(string userName, string comment)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            var myCommand = new SqlCommand("INSERT INTO logs VALUES('" + userName + "', GETDATE(), '" + comment + "')", conn);
+
+            int result = myCommand.ExecuteNonQuery();
+            conn.Close();
+
+            if (result != 0)
+            {
+
+                return true;
+            }
+            return false;
         }
 
         #endregion

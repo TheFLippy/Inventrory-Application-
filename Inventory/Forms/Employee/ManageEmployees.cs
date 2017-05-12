@@ -160,10 +160,13 @@ namespace Inventory
                 if(sqlCon.delete(checkArray))
                 {
                     MessageBox.Show("Successfully deleted " + totalChk + " row(s)!");
+
                     totalChk = 0;
                     //Reset the array of IDs 
                     resetArray(checkArray);
                     btnDeleteEmp.Visible = false;
+
+                    
 
                 }
                 else

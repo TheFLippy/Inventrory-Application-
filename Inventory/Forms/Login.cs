@@ -60,6 +60,7 @@ namespace Inventory
                     this.Hide();
 
                     MainMenu menu = new MainMenu(sqlConn.getJobPosition(txtUser.Text), sqlConn.getWelcomeMessage(txtUser.Text));
+                    FormState.userName = txtUser.Text;
                     menu.Show();
                 }
                 else

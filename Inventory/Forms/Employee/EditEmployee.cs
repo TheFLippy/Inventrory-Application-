@@ -14,14 +14,24 @@ namespace Inventory.Forms
     {
         int tempID;
         string editGroup;
+
+        //Hold old data to put into logs
+        string oldUsername, oldName, oldSurname, oldGroup;
+
         public EditEmployee(string username, string name, string surname, string group, int id)
         {
             InitializeComponent();
 
+            //Populate textboxes with old data
             txtEditUsername.Text = username;
             txtEditName.Text = name;
             txtEditSurname.Text = surname;
             tempID = id;
+
+            oldUsername = username;
+            oldName = name;
+            oldSurname = surname;
+            oldGroup = group;
 
             switch(group)
             {
@@ -78,7 +88,6 @@ namespace Inventory.Forms
                 if (sqlCon.updateEmp(txtEditUsername.Text, txtEditNewPassword.Text, txtEditName.Text, txtEditSurname.Text, editGroup, tempID))
                 {
                     MessageBox.Show("Successfully edited an employee!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                     //switching to search after completion
                     this.Hide();
                 }

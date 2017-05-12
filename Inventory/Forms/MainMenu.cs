@@ -35,6 +35,7 @@ namespace Inventory
             picNotification.Visible = false;
             lblNotification.Visible = false;
 
+            #region Notificatons
             sqlCon = new db();
 
             if(sqlCon.checkIfCanceled())
@@ -44,6 +45,7 @@ namespace Inventory
                 picNotification.Visible = true;
 
             }
+            #endregion
 
             FormState.PreviousPage = this;
 
@@ -205,24 +207,27 @@ namespace Inventory
                 finalNote += note;
             }
 
-            MessageBox.Show("The following packages have been canceled:\n\n" + finalNote, "Notification", MessageBoxButtons.OK);
-
-            lblNotification.Visible = false;
-            picNotification.Visible = false;
-            try
+            DialogResult d = MessageBox.Show("The following packages have been canceled:\n\n" + finalNote, "Notification", MessageBoxButtons.OKCancel);
+            if(d == DialogResult.OK)
             {
-                sqlCon.removeNotes();
-            }
-            catch(Exception ex)
-            {
-                throw ex;
-            }
-            
+                lblNotification.Visible = false;
+                picNotification.Visible = false;
+                try
+                {
+                    sqlCon.removeNotes();
+                    MessageBox.Show("The packages have been unassigned.");
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            } 
         }
     }
 
     public static class FormState
     {
         public static Form PreviousPage;
+        public static string userName;
     }
 }

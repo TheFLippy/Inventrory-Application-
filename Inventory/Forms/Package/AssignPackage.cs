@@ -254,7 +254,7 @@ namespace Inventory.Forms
         //auto assignbutton
         private void autoAssign_Click(Object sender, EventArgs e)
         {
-            int chkbx = 0;
+          
             int tlp;
             try
             {
@@ -274,7 +274,6 @@ namespace Inventory.Forms
                             buttonlst.Add(remove);
                             tlplst.ElementAt(x).Controls.Add(remove, 1, position + 3);
                             remove.Click += new EventHandler(this.remove_Click);
-                            
                             
                             position = x;
 
@@ -376,7 +375,7 @@ namespace Inventory.Forms
                             if (que.Count != 0)
                             {
 
-                                for (int j = 0; j < que.Count; j++)
+                                for (int j = 0; j <= que.Count; j++)
                                 { 
 
                                     //creating label
@@ -401,13 +400,14 @@ namespace Inventory.Forms
                         }
                     }
                     pos = position;
-                    for (int a =0;a < chklst.Count; a++)
+
+                    foreach (CheckBox chk in adding.Controls)
                     {
-                        chklst.ElementAt(a).Visible = false;
-                        Console.WriteLine("Checked" + chklst.ElementAt(a).Text);
-                        chkbx++;
+                        chk.Visible = false;
+                        chklst.Remove(chk);
                     }
-                    chklst.RemoveRange(0, chkbx);
+
+
                     chkbx = 0;
                     acc.Hide();
                     acc.Show();

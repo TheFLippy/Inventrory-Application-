@@ -289,7 +289,7 @@ namespace Inventory.Forms
                             if (que.Count != 0)
                             {
 
-                                for (int j = 0; j < que.Count; j++)
+                                for (int j = 0; j <= que.Count; j++)
                                 {
 
                                     //creating label

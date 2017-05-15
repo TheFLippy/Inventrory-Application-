@@ -30,7 +30,7 @@ namespace Inventory.Forms
         int pk;
         int assignedCount;
         bool iteration = false;
-
+        Random rnd = new Random();
         Accordion acc;
 
         public string connectionString = @"Data Source=gapt-inventory.database.windows.net;Initial Catalog = Inventory; Persist Security Info=True;User ID = TheFLippy; Password=Gapt1234";
@@ -55,7 +55,7 @@ namespace Inventory.Forms
         //queue to hold labels to remove 
         Queue<Label> labelque = new Queue<Label>();
         //stores the items to add 
-        Queue<Label> addPackage = new Queue<Label>();
+        List<Label> addPackage = new List<Label>();
 
         Queue<string> que = new Queue<string>();
 
@@ -65,7 +65,7 @@ namespace Inventory.Forms
         {
             InitializeComponent();
         }
-
+        //gets drivers
         private string assigndriver(DataTable dtdriver)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -76,7 +76,7 @@ namespace Inventory.Forms
 
             return dtdriver.ToString();
         }
-
+        //gets unassigned packages
         private string assignpackage(DataTable dtpackage)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -87,7 +87,7 @@ namespace Inventory.Forms
             
             return dtpackage.ToString();
         }
-
+        //gets assigned packages
         private string assignedPackages(DataTable assignedPackage)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -100,6 +100,7 @@ namespace Inventory.Forms
 
         }
 
+        //creates accordians and populates them with packages assigned to a particular driver
         private void AssignPackage_Load(object sender, EventArgs e)
         {
            
@@ -127,9 +128,9 @@ namespace Inventory.Forms
             //area1
             string[] city = new string[] { "Qala", "Kercem" };
             //area2
-            string[] city2 = new string[] { "Munxar", "Victoria" };
+            string[] city2 = new string[] { "Munxar", "Victoria", "Xaghra" };
             //area 3
-            string[] city3 = new string[] { "Xaghra", "Siggiewi" };
+            string[] city3 = new string[] { "Zabbar", "Siggiewi" };
 
 
 
@@ -171,8 +172,7 @@ namespace Inventory.Forms
                     }
                 }
             }
-
-
+            
             acc = new Accordion();
             acc.Parent = this.panel1;
             acc.CheckBoxMargin = new Padding(2);
@@ -205,32 +205,17 @@ namespace Inventory.Forms
                         buttonlst.Add(remove);
                         tlplst.ElementAt(i).Controls.Add(remove, 1, x);
                         remove.Click += new EventHandler(this.remove_Click);
-                        position = x;
+                        
                     }
+                    position = x;
                 }
 
                
                 acc.Add(tlp, name);
                 acclst.Add(acc.Name);
-
-
+                
             }
-
-            
-            Label l = new Label();
-            l.Text = "To Add";
-            l.AutoSize = false;
-            l.TextAlign = ContentAlignment.TopCenter;
-            adding.Controls.Add(l);
-
-            Label lb1 = new Label();
-            lb1.Visible = false;
-            adding.Controls.Add(lb1);
-
-            Label lb2 = new Label();
-            lb2.Visible = false;
-            adding.Controls.Add(lb2);
-
+            //creating combobox containing drivers
             adding.FlowDirection = FlowDirection.TopDown;
             drivercmbx = new ComboBox();
             drivercmbx.Text = "Select driver";
@@ -254,14 +239,23 @@ namespace Inventory.Forms
             flowLayoutPanel1.Show();
 
 
+            for (int i = 0; i < count1; i++)
+            {
+                Label L = new Label();
+                L.Text = dtpackage.Rows[i][0].ToString() + dtpackage.Rows[i][1].ToString();
+                addpk(L);
+              
+            }
+
         }
 
 
 
-
+        //auto assignbutton
         private void autoAssign_Click(Object sender, EventArgs e)
         {
             int chkbx = 0;
+            int tlp;
             try
             {
                 if(!iteration)
@@ -272,15 +266,17 @@ namespace Inventory.Forms
                         {
                             Label lb = new Label();
                             lb.Text = que.Dequeue();
-                            tlplst.ElementAt(x).Controls.Add(lb, 0, position + 1);
+                            tlplst.ElementAt(x).Controls.Add(lb, 0, position + 3);
                             labellst.Add(lb);
 
                             Button remove = new Button();
                             remove.Text = "Remove";
                             buttonlst.Add(remove);
-                            tlplst.ElementAt(x).Controls.Add(remove, 1, position + 1);
+                            tlplst.ElementAt(x).Controls.Add(remove, 1, position + 3);
                             remove.Click += new EventHandler(this.remove_Click);
-                            // position = j;
+                            
+                            
+                            position = x;
 
                         }
 
@@ -318,29 +314,56 @@ namespace Inventory.Forms
                             }
                         }
                     }
+
+                    foreach (CheckBox chk in adding.Controls)
+                    {
+                        chk.Visible = false;
+                        chklst.Remove(chk);
+                    }
+                    
+
                     acc.Hide();
                     acc.Show();
                     iteration = true;
                 }
-
-
                 else if(iteration)
                 {
+                    Console.WriteLine("Position" + position);
                     for (int x = 0; x < chklst.Count; x++)
                     {
                         for (int j = 0; j < totalPackages; j++)
                         {
-                            Label lb = new Label();
-                            lb.Text = que.Dequeue();
-                            tlplst.ElementAt(x).Controls.Add(lb, 0, position + 2);
-                            labellst.Add(lb);
+                            tlp = x;
 
-                            Button remove = new Button();
-                            remove.Text = "Remove";
-                            buttonlst.Add(remove);
-                            tlplst.ElementAt(x).Controls.Add(remove, 1, position + 2);
-                            remove.Click += new EventHandler(this.remove_Click);
-                            // position = j;
+                            if (x >= tlplst.Count)
+                            {
+                                x = rnd.Next(0, 3);
+                                Label lb = new Label();
+                                lb.Text = que.Dequeue();
+                                tlplst.ElementAt(x).Controls.Add(lb, 0, position + 2);
+                                labellst.Add(lb);
+
+                                Button remove = new Button();
+                                remove.Text = "Remove";
+                                buttonlst.Add(remove);
+                                tlplst.ElementAt(x).Controls.Add(remove, 1, position + 2);
+                                remove.Click += new EventHandler(this.remove_Click);
+                                x = tlp;
+                            }
+                            else
+                            {
+                                Label lb = new Label();
+                                lb.Text = que.Dequeue();
+                                tlplst.ElementAt(x).Controls.Add(lb, 0, position + 2);
+                                labellst.Add(lb);
+
+                                Button remove = new Button();
+                                remove.Text = "Remove";
+                                buttonlst.Add(remove);
+                                tlplst.ElementAt(x).Controls.Add(remove, 1, position + 2);
+                                remove.Click += new EventHandler(this.remove_Click);
+                            }
+                            position = x;
 
                         }
 
@@ -354,59 +377,60 @@ namespace Inventory.Forms
                             {
 
                                 for (int j = 0; j < que.Count; j++)
-                                {
+                                { 
 
                                     //creating label
                                     Label addlb = new Label();
                                     addlb.Text = que.Dequeue();
-                                    //addlabellst.Add(addlb);
-                                    //addPackage.Enqueue(addlb);
+   
                                     labellst.Add(addlb);
-                                    tlplst.ElementAt(x).Controls.Add(addlb, 0, position + 4);
+                                    tlplst.ElementAt(x).Controls.Add(addlb, 0, position + 2);
 
                                     Button remove = new Button();
                                     remove.Text = "Remove";
                                     remove.Name = "rmv" + j.ToString();
                                     buttonlst.Add(remove);
-                                    tlplst.ElementAt(x).Controls.Add(remove, 1, position + 4);
+                                    tlplst.ElementAt(x).Controls.Add(remove, 1, position + 2);
                                     remove.Click += new EventHandler(this.remove_Click);
 
 
-                                    pos = position;
+                                   
                                 }
 
                             }
                         }
                     }
-
-                    for(int a =0;a < chklst.Count; a++)
+                    pos = position;
+                    for (int a =0;a < chklst.Count; a++)
                     {
                         chklst.ElementAt(a).Visible = false;
                         Console.WriteLine("Checked" + chklst.ElementAt(a).Text);
                         chkbx++;
                     }
-                    for(int ii = 0; ii < chkbx; ii++)
-                    {
-                        chklst.RemoveAt(ii);
-                    }
-                    
+                    chklst.RemoveRange(0, chkbx);
+                    chkbx = 0;
                     acc.Hide();
                     acc.Show();
                 }
                 
+               
+
+
                 
             }
             catch(Exception ex)
             {
-                MessageBox.Show("You Already auto-assigned the packages.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
 
+        //add specific packages to specific drivers
         private void addbtn_Click(Object sender, EventArgs e)
         {
             check = 0;
             int c = 0;
+            string text = "";
 
             for(int x = 0; x < chklst.Count; x++)
             {
@@ -440,6 +464,7 @@ namespace Inventory.Forms
                     chklst.ElementAt(i).Visible = false;
                     chklst.ElementAt(i).Checked = false;
                     check++;
+                   // text = chklst.ElementAt(i).Text;
 
                 }
             }
@@ -447,24 +472,40 @@ namespace Inventory.Forms
 
             for (int k = 0; k < check; k++)
             {
+                text = "";
                 Label label = new Label();
-                label.Text = addPackage.Dequeue().Text.ToString();
                 
+                for(int i =0;i < addPackage.Count; i++)
+                {
+                    for(int j =0; j< chklst.Count; j++)
+                    {
+                        if (addPackage.ElementAt(i).Text.Equals(chklst.ElementAt(j).Text))
+                        {
+                            text = addPackage.ElementAt(i).Text.ToString();
+                            break;
+                        }
+                    }
+                }
+          
+                label.Text = text;
+
                 tlplst.ElementAt(index).Controls.Add(label, 0, pos+4);
                 labellst.Add(label);
 
                 Button bt = new Button();
                 bt.Text = "Remove";
                 buttonlst.Add(bt);
-                //remove.Click += new EventHandler(this.remove_Click);
                 bt.Click += new EventHandler(this.remove_Click);
 
-                tlplst.ElementAt(index).Controls.Add(bt, 1, pos+4); 
+                tlplst.ElementAt(index).Controls.Add(bt, 1, pos+4);
+                que.Dequeue();
                 pos++;
 
             }
-          
+     
+                chklst.RemoveRange(0, check);
 
+          
             check = 0;
             acc.Hide();
             acc.Show();
@@ -472,41 +513,54 @@ namespace Inventory.Forms
 
         }
 
+        //removes package from the driver
         private void remove_Click(Object sender, EventArgs e)
         {
-            
-            for (int j = 0; j < buttonlst.Count; j++)
+           DialogResult result =  MessageBox.Show("Are you sure you want to remove?","message", MessageBoxButtons.YesNo);
+           
+            if(result == DialogResult.No)
             {
-                if (sender == buttonlst.ElementAt(j))
+                return;
+            }
+            else
+            {
+                for (int j = 0; j < buttonlst.Count; j++)
                 {
-                  
-                   // labellst.ElementAt(j).Visible = false;
-                    buttonlst.ElementAt(j).Visible = false;
-                    for(int i = 0; i < tlplst.Count; i++)
+                    if (sender == buttonlst.ElementAt(j))
                     {
-                        foreach (Control c in tlplst.ElementAt(i).Controls)
+
+                        // labellst.ElementAt(j).Visible = false;
+                        buttonlst.ElementAt(j).Visible = false;
+                        for (int i = 0; i < tlplst.Count; i++)
                         {
-                            if(c is Label)
+                            foreach (Control c in tlplst.ElementAt(i).Controls)
                             {
-                                if(c == labellst.ElementAt(j))
+                                if (c is Label)
                                 {
-                                    tlplst.ElementAt(i).Controls.Remove(labellst.ElementAt(j));
+                                    if (c == labellst.ElementAt(j))
+                                    {
+                                        tlplst.ElementAt(i).Controls.Remove(labellst.ElementAt(j));
+                                    }
                                 }
                             }
                         }
+
+
+
+                        acc.Hide();
+                        acc.Show();
+                        que.Enqueue(labellst.ElementAt(j).Text);
+                        addPackage.Add(labellst.ElementAt(j));
+                        addpk(labellst.ElementAt(j));
+
                     }
-                   
-
-
-                    acc.Hide();
-                    acc.Show();
-                    que.Enqueue(labellst.ElementAt(j).Text);
-                    addPackage.Enqueue(labellst.ElementAt(j));
-                    addpk(labellst.ElementAt(j));
                 }
             }
+
+          
         }
         
+        //function to create checkboxes when the packages are removed from the drivers
         private void addpk(Label lb)
         { 
                 CheckBox ckb = new CheckBox();
@@ -517,6 +571,7 @@ namespace Inventory.Forms
                 
         }
 
+        //assign packages
         private void AssignBtn_Click(object sender, EventArgs e)
         {
             int k = 0;
@@ -587,14 +642,14 @@ namespace Inventory.Forms
 
           
         }
-
+        //help button
         private void Helpbtn_Click(object sender, EventArgs e)
         {
         
             MessageBox.Show("\t\t\t         Help\n\n 1)To assign a package press tha Assign button.\n\n 2)To remove a package from a driver press the remove button.\n\n 3)To add package to a driver, choose the package and driver and press the add button.\n\n");
         
         }
-
+        //back button
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();

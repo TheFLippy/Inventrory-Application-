@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Helpbtn = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +60,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.flowLayoutPanel1);
             this.panel2.Controls.Add(this.adding);
             this.panel2.Controls.Add(this.AssignBtn);
@@ -77,9 +79,9 @@
             // adding
             // 
             this.adding.AutoScroll = true;
-            this.adding.Location = new System.Drawing.Point(0, 0);
+            this.adding.Location = new System.Drawing.Point(0, 28);
             this.adding.Name = "adding";
-            this.adding.Size = new System.Drawing.Size(354, 193);
+            this.adding.Size = new System.Drawing.Size(354, 176);
             this.adding.TabIndex = 2;
             // 
             // label1
@@ -112,6 +114,15 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(152, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "To Add";
+            // 
             // AssignPackage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,6 +139,7 @@
             this.Text = "Assign Package";
             this.Load += new System.EventHandler(this.AssignPackage_Load);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,5 +155,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Helpbtn;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Label label2;
     }
 }

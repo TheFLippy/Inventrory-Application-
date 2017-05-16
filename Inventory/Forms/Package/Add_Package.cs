@@ -15,6 +15,7 @@ namespace Inventory
         public Add_Package()
         {
             InitializeComponent();
+            btnsave.Visible = false;
         }
 
         private void delivery_Click(object sender, EventArgs e)
@@ -111,21 +112,25 @@ namespace Inventory
         private void btnnext_Click(object sender, EventArgs e)
         {
             TabControl1.SelectTab(1);
+            btnsave.Visible = false;
         }
 
         private void btnprevious_Click(object sender, EventArgs e)
         {
             TabControl1.SelectTab(0);
+            btnsave.Visible = false;
         }
 
         private void btnnext_2_Click(object sender, EventArgs e)
         {
             TabControl1.SelectTab(2);
+            btnsave.Visible = true;
         }
 
         private void btnprevious2_Click(object sender, EventArgs e)
         {
             TabControl1.SelectTab(1);
+            btnsave.Visible = false;
         }
 
 

@@ -34,6 +34,7 @@ namespace Inventory.Forms
         {
             btnDelete.Visible = false;
             btnEdit.Visible = false;
+            btnSearch_Click(sender, e);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -51,6 +52,8 @@ namespace Inventory.Forms
             if (ranOnce == false)
             {
                 gridViewInv.Columns.Add(chk);
+                chk.HeaderText = "Delete";
+                chk.Width = 43;
 
             }
             ranOnce = true;
@@ -58,6 +61,7 @@ namespace Inventory.Forms
 
             //filling the grid with the table contents
             gridViewInv.DataSource = dt;
+            gridViewInv.Columns[1].Width = 43;
         }
 
         private void gridViewInv_CellClick(object sender, DataGridViewCellEventArgs e)

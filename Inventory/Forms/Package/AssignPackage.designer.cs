@@ -32,12 +32,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.AssignBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.adding = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.Helpbtn = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.Helpbtn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +69,15 @@
             this.panel2.Size = new System.Drawing.Size(354, 497);
             this.panel2.TabIndex = 1;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(152, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "To Add";
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 199);
@@ -94,39 +103,38 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Assign Packages";
             // 
-            // Helpbtn
-            // 
-            this.Helpbtn.Location = new System.Drawing.Point(845, 38);
-            this.Helpbtn.Name = "Helpbtn";
-            this.Helpbtn.Size = new System.Drawing.Size(75, 23);
-            this.Helpbtn.TabIndex = 3;
-            this.Helpbtn.Text = "Help";
-            this.Helpbtn.UseVisualStyleBackColor = true;
-            this.Helpbtn.Click += new System.EventHandler(this.Helpbtn_Click);
-            // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(49, 34);
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Location = new System.Drawing.Point(19, 23);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.Size = new System.Drawing.Size(32, 32);
             this.btnBack.TabIndex = 4;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // label2
+            // Helpbtn
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(152, 8);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "To Add";
+            this.Helpbtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Helpbtn.BackgroundImage")));
+            this.Helpbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Helpbtn.FlatAppearance.BorderSize = 0;
+            this.Helpbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Helpbtn.Location = new System.Drawing.Point(931, 23);
+            this.Helpbtn.Name = "Helpbtn";
+            this.Helpbtn.Size = new System.Drawing.Size(32, 32);
+            this.Helpbtn.TabIndex = 3;
+            this.Helpbtn.UseVisualStyleBackColor = true;
+            this.Helpbtn.Click += new System.EventHandler(this.Helpbtn_Click);
             // 
             // AssignPackage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(983, 578);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.Helpbtn);
@@ -153,8 +161,8 @@
         private System.Windows.Forms.FlowLayoutPanel adding;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button Helpbtn;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button Helpbtn;
     }
 }

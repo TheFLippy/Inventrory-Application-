@@ -34,6 +34,7 @@ namespace Inventory
         {
             btnDeleteEmp.Visible = false;
             btnEdit.Visible = false;
+            btnSearch_Click(sender, e);
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

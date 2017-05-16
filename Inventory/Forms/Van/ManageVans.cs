@@ -35,7 +35,7 @@ namespace Inventory.Forms
 
         private void ManageVans_Load(object sender, EventArgs e)
         {
-            
+            btnSearch_Click(sender, e);
         }
 
         //Redirect to add van form
@@ -69,12 +69,14 @@ namespace Inventory.Forms
             if (ranOnce == false)
             {
                 gridMngVans.Columns.Add(chk);
-
+                chk.HeaderText = "Delete";
+                chk.Width = 43;
             }
             ranOnce = true;
 
             //Passing the data table to grid veiw to display it
             gridMngVans.DataSource = dt;
+            gridMngVans.Columns[1].Width = 43;
         }
 
         //Checkbox mark

@@ -437,7 +437,7 @@ namespace Inventory.Forms
 
             if (c == chklst.Count)
             {
-                MessageBox.Show("Please choose a package");
+                MessageBox.Show("Please choose a package", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -515,7 +515,7 @@ namespace Inventory.Forms
         //removes package from the driver
         private void remove_Click(Object sender, EventArgs e)
         {
-           DialogResult result =  MessageBox.Show("Are you sure you want to remove?","message", MessageBoxButtons.YesNo);
+           DialogResult result =  MessageBox.Show("Are you sure you want to unassign this package?","Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
            
             if(result == DialogResult.No)
             {
@@ -624,28 +624,24 @@ namespace Inventory.Forms
                 }
                 if(pkcount > 0)
                 {
-                    MessageBox.Show("The packages were assigned");
+                    MessageBox.Show("The packages were assigned", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("No packages were assigned");
+                    MessageBox.Show("No packages were assigned",  "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            this.Hide();
-
-          
+            }     
         }
         //help button
         private void Helpbtn_Click(object sender, EventArgs e)
         {
         
-            MessageBox.Show("\t\t\t         Help\n\n 1)To assign a package press tha Assign button.\n\n 2)To remove a package from a driver press the remove button.\n\n 3)To add package to a driver, choose the package and driver and press the add button.\n\n");
+            MessageBox.Show("1) To assign a package press tha Assign button.\n2) To remove a package from a driver press the remove button.\n3) To add package to a driver, choose the package and driver and press the add button.","Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
         
         }
         //back button

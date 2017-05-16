@@ -173,7 +173,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManageVans";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ManageVans";
+            this.Text = "Manage Vans";
+            this.Load += new System.EventHandler(this.ManageVans_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridMngVans)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

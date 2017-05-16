@@ -249,8 +249,6 @@ namespace Inventory.Forms
 
         }
 
-
-
         //auto assignbutton
         private void autoAssign_Click(Object sender, EventArgs e)
         {
@@ -316,11 +314,12 @@ namespace Inventory.Forms
 
                     foreach (CheckBox chk in adding.Controls)
                     {
-                        chk.Visible = false;
+                       // Console.WriteLine("QUE COUNT: " + que.Count);
+                        //chk.Visible = false;
                         chklst.Remove(chk);
+                       
                     }
-                    
-
+                    adding.Controls.Clear();
                     acc.Hide();
                     acc.Show();
                     iteration = true;
@@ -365,8 +364,7 @@ namespace Inventory.Forms
                             position = x;
 
                         }
-
-
+                        
                         pk++;
 
 
@@ -391,8 +389,7 @@ namespace Inventory.Forms
                                     buttonlst.Add(remove);
                                     tlplst.ElementAt(x).Controls.Add(remove, 1, position + 2);
                                     remove.Click += new EventHandler(this.remove_Click);
-
-
+                                    
                                    
                                 }
 
@@ -403,19 +400,14 @@ namespace Inventory.Forms
 
                     foreach (CheckBox chk in adding.Controls)
                     {
-                        chk.Visible = false;
+                        //chk.Visible = false;
                         chklst.Remove(chk);
+                       
                     }
-
-
-                    chkbx = 0;
+                    adding.Controls.Clear();
                     acc.Hide();
                     acc.Show();
                 }
-                
-               
-
-
                 
             }
             catch(Exception ex)
@@ -431,6 +423,7 @@ namespace Inventory.Forms
             check = 0;
             int c = 0;
             string text = "";
+            
 
             for(int x = 0; x < chklst.Count; x++)
             {
@@ -462,7 +455,7 @@ namespace Inventory.Forms
                 if (chklst.ElementAt(i).Checked)
                 {
                     chklst.ElementAt(i).Visible = false;
-                    chklst.ElementAt(i).Checked = false;
+                    //chklst.ElementAt(i).Checked = false;
                     check++;
                    // text = chklst.ElementAt(i).Text;
 
@@ -470,42 +463,48 @@ namespace Inventory.Forms
             }
            
 
-            for (int k = 0; k < check; k++)
-            {
-                text = "";
-                Label label = new Label();
+           
                 
-                for(int i =0;i < addPackage.Count; i++)
+                
+                foreach(CheckBox chk in adding.Controls)
                 {
-                    for(int j =0; j< chklst.Count; j++)
+                    if (chk.Checked == true)
                     {
-                        if (addPackage.ElementAt(i).Text.Equals(chklst.ElementAt(j).Text))
-                        {
-                            text = addPackage.ElementAt(i).Text.ToString();
-                            break;
-                        }
-                    }
+                        text = chk.Text;
+                        Label label = new Label();
+                        label.Text = text;
+                       // chklst.Remove(chk);
+                        tlplst.ElementAt(index).Controls.Add(label, 0, pos + 4);
+                        labellst.Add(label);
+
+                        Button bt = new Button();
+                        bt.Text = "Remove";
+                        buttonlst.Add(bt);
+                        bt.Click += new EventHandler(this.remove_Click);
+
+                        tlplst.ElementAt(index).Controls.Add(bt, 1, pos + 4);
+                        que.Dequeue();
+                        pos++;
+                        
                 }
-          
-                label.Text = text;
-
-                tlplst.ElementAt(index).Controls.Add(label, 0, pos+4);
-                labellst.Add(label);
-
-                Button bt = new Button();
-                bt.Text = "Remove";
-                buttonlst.Add(bt);
-                bt.Click += new EventHandler(this.remove_Click);
-
-                tlplst.ElementAt(index).Controls.Add(bt, 1, pos+4);
-                que.Dequeue();
-                pos++;
-
+                
             }
-     
-                chklst.RemoveRange(0, check);
 
-          
+
+
+            for (int i = 0; i < chklst.Count; i++)
+            {
+                if (chklst.ElementAt(i).Checked)
+                {
+                    adding.Controls.Remove(chklst.ElementAt(i));
+                    chklst.RemoveAt(i);
+                }
+                else
+                {
+                    Console.WriteLine("NOT SELECTED CHECKBOX");
+                }
+            }
+
             check = 0;
             acc.Hide();
             acc.Show();

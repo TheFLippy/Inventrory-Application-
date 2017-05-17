@@ -82,9 +82,10 @@ namespace Inventory.Forms
         //Checkbox mark
         private void gridMngVans_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string temp = null;
+            
             DataGridViewCheckBoxCell ch1 = new DataGridViewCheckBoxCell();
             ch1 = (DataGridViewCheckBoxCell)gridMngVans.Rows[gridMngVans.CurrentRow.Index].Cells[0];
+            string temp = null;
 
             //Checking wheter the box has been checked or unchecked
             if (ch1.Value == null)
@@ -103,7 +104,7 @@ namespace Inventory.Forms
                 //Getting the ID of the user
                 temp = gridMngVans.Rows[ch1.RowIndex].Cells[1].Value.ToString();
                 //Placing that ID into an array with an index (needs to be this way in order to remove id when unchecked)
-                deletefields(temp, ch1.RowIndex);
+                deleteArrayPopulation(temp, ch1.RowIndex);
                 //Display delete button
                 btnDeleteVan.Visible = true;
             }
@@ -132,19 +133,19 @@ namespace Inventory.Forms
         }
 
 
-        public void deletefields(string temp, int index)
-        {
-            index = 0;
-            //Initializing the variable
-            int fieldid = 0;
-            //Converting the id (varchar) to string
-            fieldid = Convert.ToInt32(temp);
+        //public void deletefields(string temp, int index)
+        //{
+        //    index = 0;
+        //    //Initializing the variable
+        //    int fieldid = 0;
+        //    //Converting the id (varchar) to string
+        //    fieldid = Convert.ToInt32(temp);
 
-            //Incrementing the global variable 
-            totalchk++;
-            id[index] = fieldid;
-            index++;
-        }
+        //    //Incrementing the global variable 
+        //    totalchk++;
+        //    id[index] = fieldid;
+        //    index++;
+        //}
 
         //Delete
         private void btnDeleteVan_Click(object sender, EventArgs e)
@@ -160,7 +161,7 @@ namespace Inventory.Forms
                     totalChk = 0;
                     //Reset the array of IDs 
                     resetArray(checkArray);
-                    gridMngVans.DataSource = null;
+                    //gridMngVans.DataSource = null;
                     btnDeleteVan.Visible = false;
                     btnSearch_Click(sender, e);
 

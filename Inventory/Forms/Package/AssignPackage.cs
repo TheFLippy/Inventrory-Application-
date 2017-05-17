@@ -124,7 +124,10 @@ namespace Inventory.Forms
 
 
            totalPackages = count1 / count;
-
+            if (totalPackages == 0)
+            {
+                totalPackages = 1;
+            }
             //area1
             string[] city = new string[] { "Qala", "Kercem" };
             //area2
@@ -260,6 +263,20 @@ namespace Inventory.Forms
                 {
                     for (int x = 0; x < tlplst.Count; x++)
                     {
+                        if(que.Count == 0)
+                        {
+                            foreach (CheckBox chk in adding.Controls)
+                            {
+                                //chk.Visible = false;
+                                chklst.Remove(chk);
+
+                            }
+                            adding.Controls.Clear();
+                            acc.Hide();
+                            acc.Show();
+
+                            return;
+                        }
                         for (int j = 0; j < totalPackages; j++)
                         {
                             Label lb = new Label();

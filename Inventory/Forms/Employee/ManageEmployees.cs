@@ -166,8 +166,9 @@ namespace Inventory
                     //Reset the array of IDs 
                     resetArray(checkArray);
                     btnDeleteEmp.Visible = false;
+                    btnSearch_Click(sender, e);
 
-                    
+
 
                 }
                 else

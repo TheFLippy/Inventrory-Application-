@@ -153,8 +153,6 @@ namespace Inventory.Forms
                 Console.WriteLine("array" + id[i]);
             }
 
-
-
             DialogResult d = MessageBox.Show("Caution! This will permenantly delete " + totalchk + " row(s).\nDo you wish to proceed?", "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (d == DialogResult.OK)
             {
@@ -168,6 +166,7 @@ namespace Inventory.Forms
                     gridViewInv.DataSource = null;
                     btnDelete.Visible = false;
                     txtSearch.Text = null;
+                    btnSearch_Click(sender, e);
                 }
                 else
                 {

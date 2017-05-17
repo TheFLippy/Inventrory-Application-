@@ -162,6 +162,7 @@ namespace Inventory.Forms
                     resetArray(checkArray);
                     gridMngVans.DataSource = null;
                     btnDeleteVan.Visible = false;
+                    btnSearch_Click(sender, e);
 
                 }
                 else

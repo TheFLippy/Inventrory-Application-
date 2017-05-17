@@ -155,6 +155,8 @@ namespace Inventory
         #region  Assign Package form navigation
         private void btnDeliveries_Click(object sender, EventArgs e)
         {
+            assPckg = null;
+
             if (assPckg == null)
             {
                 assPckg = new AssignPackage();

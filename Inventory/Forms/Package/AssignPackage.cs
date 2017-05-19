@@ -199,7 +199,7 @@ namespace Inventory.Forms
                     if (assignPackage.Rows[x][3].Equals(tlp.Name))
                     {
                         Label lb = new Label();
-                        lb.Text = assignPackage.Rows[x][0].ToString() + assignPackage.Rows[x][1].ToString();
+                        lb.Text = assignPackage.Rows[x][1].ToString() + assignPackage.Rows[x][0].ToString();
                         tlplst.ElementAt(i).Controls.Add(lb, 0, x);
                         labellst.Add(lb);
 
@@ -245,7 +245,7 @@ namespace Inventory.Forms
             for (int i = 0; i < count1; i++)
             {
                 Label L = new Label();
-                L.Text = dtpackage.Rows[i][0].ToString() + dtpackage.Rows[i][1].ToString();
+                L.Text = dtpackage.Rows[i][1].ToString() + dtpackage.Rows[i][0].ToString();
                 addpk(L);
               
             }
@@ -609,14 +609,15 @@ namespace Inventory.Forms
 
                             for(int j =0; j < dtpackage.Rows.Count; j++)
                             {
-                                if(lb.Text.Equals(dtpackage.Rows[j][1].ToString()+ dtpackage.Rows[j][0].ToString()))
+                                if(lb.Text.Equals(dtpackage.Rows[j][1].ToString() + dtpackage.Rows[j][0].ToString()))
                                 {
                                    packid = dtpackage.Rows[j][2].ToString();
+                                    k = 1;
                                    break;
                                 }
                             }
 
-                            if (k <= dtpackage.Rows.Count)
+                            if (k == 1)
                             {
                                 var mycommand = new SqlCommand("UPDATE package SET driver = @drivername WHERE packageNumber = @id", conn);
                                 mycommand.Parameters.AddWithValue("@drivername", drivername);
@@ -636,6 +637,7 @@ namespace Inventory.Forms
                                 }
                             }
                         }
+                        k = 0;
                       
                     }
                 }

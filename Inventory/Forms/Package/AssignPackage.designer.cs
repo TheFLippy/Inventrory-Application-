@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AssignPackage));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.AssignBtn = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.adding = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.Helpbtn = new System.Windows.Forms.Button();
+            this.AssignBtn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,61 +45,54 @@
             // 
             this.panel1.Location = new System.Drawing.Point(2, 83);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(630, 497);
+            this.panel1.Size = new System.Drawing.Size(624, 470);
             this.panel1.TabIndex = 0;
             // 
-            // AssignBtn
+            // flowLayoutPanel1
             // 
-            this.AssignBtn.Location = new System.Drawing.Point(255, 464);
-            this.AssignBtn.Name = "AssignBtn";
-            this.AssignBtn.Size = new System.Drawing.Size(78, 23);
-            this.AssignBtn.TabIndex = 0;
-            this.AssignBtn.Text = "Assign";
-            this.AssignBtn.UseVisualStyleBackColor = true;
-            this.AssignBtn.Click += new System.EventHandler(this.AssignBtn_Click);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 294);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(344, 46);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label2);
+            this.panel2.BackColor = System.Drawing.Color.AliceBlue;
             this.panel2.Controls.Add(this.flowLayoutPanel1);
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.adding);
-            this.panel2.Controls.Add(this.AssignBtn);
-            this.panel2.Location = new System.Drawing.Point(630, 83);
+            this.panel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(624, 83);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(354, 497);
+            this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.panel2.Size = new System.Drawing.Size(360, 401);
             this.panel2.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(152, 8);
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(93, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.Size = new System.Drawing.Size(174, 25);
             this.label2.TabIndex = 3;
-            this.label2.Text = "To Add";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 199);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(348, 110);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.label2.Text = "Packages to Assign";
             // 
             // adding
             // 
             this.adding.AutoScroll = true;
-            this.adding.Location = new System.Drawing.Point(0, 28);
+            this.adding.Location = new System.Drawing.Point(8, 48);
             this.adding.Name = "adding";
-            this.adding.Size = new System.Drawing.Size(354, 176);
+            this.adding.Size = new System.Drawing.Size(344, 240);
             this.adding.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(395, 34);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(395, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 25);
+            this.label1.Size = new System.Drawing.Size(202, 32);
             this.label1.TabIndex = 2;
             this.label1.Text = "Assign Packages";
             // 
@@ -119,28 +112,44 @@
             // 
             // Helpbtn
             // 
+            this.Helpbtn.BackColor = System.Drawing.Color.Transparent;
             this.Helpbtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Helpbtn.BackgroundImage")));
-            this.Helpbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Helpbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Helpbtn.FlatAppearance.BorderSize = 0;
             this.Helpbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Helpbtn.Location = new System.Drawing.Point(931, 23);
             this.Helpbtn.Name = "Helpbtn";
             this.Helpbtn.Size = new System.Drawing.Size(32, 32);
             this.Helpbtn.TabIndex = 3;
-            this.Helpbtn.UseVisualStyleBackColor = true;
+            this.Helpbtn.UseVisualStyleBackColor = false;
             this.Helpbtn.Click += new System.EventHandler(this.Helpbtn_Click);
+            // 
+            // AssignBtn
+            // 
+            this.AssignBtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.AssignBtn.FlatAppearance.BorderSize = 0;
+            this.AssignBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AssignBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AssignBtn.ForeColor = System.Drawing.Color.White;
+            this.AssignBtn.Location = new System.Drawing.Point(742, 510);
+            this.AssignBtn.Name = "AssignBtn";
+            this.AssignBtn.Size = new System.Drawing.Size(149, 30);
+            this.AssignBtn.TabIndex = 28;
+            this.AssignBtn.Text = "Assign Packages";
+            this.AssignBtn.UseVisualStyleBackColor = false;
             // 
             // AssignPackage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(983, 578);
+            this.ClientSize = new System.Drawing.Size(984, 565);
+            this.Controls.Add(this.AssignBtn);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.Helpbtn);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AssignPackage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -156,7 +165,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button AssignBtn;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel adding;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
@@ -164,5 +172,6 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Helpbtn;
+        private System.Windows.Forms.Button AssignBtn;
     }
 }

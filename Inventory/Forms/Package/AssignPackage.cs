@@ -179,11 +179,11 @@ namespace Inventory.Forms
             acc = new Accordion();
             acc.Parent = this.panel1;
             acc.CheckBoxMargin = new Padding(2);
-            acc.ContentMargin = new Padding(15, 5, 15, 5);
+            acc.ContentMargin = new Padding(3, 5, 3, 20);
             acc.ContentPadding = new Padding(1);
             acc.Insets = new Padding(5);
             acc.ControlBackColor = Color.White;
-            acc.ContentBackColor = Color.CadetBlue;
+            acc.ContentBackColor = Color.DodgerBlue;
             acc.OpenOnAdd = true;
 
              pk = 1;
@@ -222,6 +222,10 @@ namespace Inventory.Forms
             adding.FlowDirection = FlowDirection.TopDown;
             drivercmbx = new ComboBox();
             drivercmbx.Text = "Select driver";
+            drivercmbx.FlatStyle = FlatStyle.Flat;
+            drivercmbx.Height = 30;
+            drivercmbx.Width = 120;
+            drivercmbx.Font = new Font("Segoe UI Semibold", 10, FontStyle.Bold);
             for (int k = 0; k < count; k++)
             {
                 drivercmbx.Items.Add(dtdriver.Rows[k][0].ToString());
@@ -232,12 +236,27 @@ namespace Inventory.Forms
             Button addbtn = new Button();
             addbtn.Text = "Add";
             addbtn.Click += new EventHandler(this.addbtn_Click);
+            addbtn.FlatStyle=FlatStyle.Flat;
+            addbtn.FlatAppearance.BorderSize = 0;
+            addbtn.Height = 30;
+            addbtn.Width = 75;
+            addbtn.BackColor = Color.LimeGreen;
+            addbtn.Font = new Font("Segoe UI Semibold", 10,FontStyle.Bold);
+            addbtn.ForeColor = Color.White;
+
             flowLayoutPanel1.Controls.Add(addbtn);
            
 
             Button autoAssign = new Button();
             autoAssign.Text = "Auto-Assign";
             autoAssign.Click += new EventHandler(this.autoAssign_Click);
+            autoAssign.FlatStyle = FlatStyle.Flat;
+            autoAssign.FlatAppearance.BorderSize = 0;
+            autoAssign.Height = 30;
+            autoAssign.Width = 100;
+            autoAssign.BackColor = Color.Orange;
+            autoAssign.Font = new Font("Segoe UI Semibold", 10, FontStyle.Bold);
+            autoAssign.ForeColor = Color.White;
             flowLayoutPanel1.Controls.Add(autoAssign);
             flowLayoutPanel1.Show();
 

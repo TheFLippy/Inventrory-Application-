@@ -53,7 +53,6 @@
             this.txtcountry_2 = new System.Windows.Forms.TextBox();
             this.txtpostcode_2 = new System.Windows.Forms.TextBox();
             this.txtaddress2_2 = new System.Windows.Forms.TextBox();
-            this.txtcity_2 = new System.Windows.Forms.TextBox();
             this.txtaddress1_2 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -74,7 +73,6 @@
             this.txtname = new System.Windows.Forms.TextBox();
             this.txtcountry = new System.Windows.Forms.TextBox();
             this.txtpostcode = new System.Windows.Forms.TextBox();
-            this.txtcity = new System.Windows.Forms.TextBox();
             this.txtaddress2 = new System.Windows.Forms.TextBox();
             this.txtaddress1 = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
@@ -85,6 +83,8 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.City_cmbx = new System.Windows.Forms.ComboBox();
+            this.City_cmbx1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.TabControl1.SuspendLayout();
             this.package.SuspendLayout();
@@ -143,6 +143,7 @@
             this.TabControl1.SelectedIndex = 0;
             this.TabControl1.Size = new System.Drawing.Size(714, 340);
             this.TabControl1.TabIndex = 2;
+            this.TabControl1.SelectedIndexChanged += new System.EventHandler(this.City_cmbx1_SelectedIndexChanged);
             // 
             // package
             // 
@@ -285,13 +286,13 @@
             // 
             // delivery
             // 
+            this.delivery.Controls.Add(this.City_cmbx);
             this.delivery.Controls.Add(this.txttelephone_2);
             this.delivery.Controls.Add(this.txtsurname_2);
             this.delivery.Controls.Add(this.txtname_2);
             this.delivery.Controls.Add(this.txtcountry_2);
             this.delivery.Controls.Add(this.txtpostcode_2);
             this.delivery.Controls.Add(this.txtaddress2_2);
-            this.delivery.Controls.Add(this.txtcity_2);
             this.delivery.Controls.Add(this.txtaddress1_2);
             this.delivery.Controls.Add(this.label13);
             this.delivery.Controls.Add(this.label14);
@@ -359,14 +360,6 @@
             this.txtaddress2_2.Name = "txtaddress2_2";
             this.txtaddress2_2.Size = new System.Drawing.Size(202, 23);
             this.txtaddress2_2.TabIndex = 4;
-            // 
-            // txtcity_2
-            // 
-            this.txtcity_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcity_2.Location = new System.Drawing.Point(483, 177);
-            this.txtcity_2.Name = "txtcity_2";
-            this.txtcity_2.Size = new System.Drawing.Size(202, 23);
-            this.txtcity_2.TabIndex = 5;
             // 
             // txtaddress1_2
             // 
@@ -497,6 +490,7 @@
             // 
             // Destination
             // 
+            this.Destination.Controls.Add(this.City_cmbx1);
             this.Destination.Controls.Add(this.label2);
             this.Destination.Controls.Add(this.btnprevious2);
             this.Destination.Controls.Add(this.txttelephone);
@@ -504,7 +498,6 @@
             this.Destination.Controls.Add(this.txtname);
             this.Destination.Controls.Add(this.txtcountry);
             this.Destination.Controls.Add(this.txtpostcode);
-            this.Destination.Controls.Add(this.txtcity);
             this.Destination.Controls.Add(this.txtaddress2);
             this.Destination.Controls.Add(this.txtaddress1);
             this.Destination.Controls.Add(this.label26);
@@ -590,14 +583,6 @@
             this.txtpostcode.Name = "txtpostcode";
             this.txtpostcode.Size = new System.Drawing.Size(202, 23);
             this.txtpostcode.TabIndex = 6;
-            // 
-            // txtcity
-            // 
-            this.txtcity.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtcity.Location = new System.Drawing.Point(483, 177);
-            this.txtcity.Name = "txtcity";
-            this.txtcity.Size = new System.Drawing.Size(202, 23);
-            this.txtcity.TabIndex = 5;
             // 
             // txtaddress2
             // 
@@ -695,6 +680,170 @@
             this.label18.TabIndex = 4;
             this.label18.Text = "Name :";
             // 
+            // City_cmbx
+            // 
+            this.City_cmbx.FormattingEnabled = true;
+            this.City_cmbx.Items.AddRange(new object[] {
+            "Please Choose a locality",
+            "H\' Attard",
+            "Hal Balzan",
+            "Il-Bidnija",
+            "Birgu",
+            "Birkirkara",
+            "Birzebbuga",
+            "Bormla",
+            "Had-Dingli",
+            "Il-Fugra",
+            "Il-Furjana",
+            "Hal Gharghur",
+            "Hal Ghaxaq",
+            "Il-Gudja",
+            "Il-Gzira",
+            "Il-Hamrun",
+            "L-Iklin",
+            "Il-Kalkara",
+            "Hal Kirkop",
+            "Hal Lija",
+            "Hal Luqa",
+            "Il-Marsa",
+            "Marsaskala",
+            "Marsaxlokk",
+            "L-Imdina",
+            "Il-Mellieha",
+            "L-Imgarr",
+            "Il-Mosta",
+            "L-Imqabba",
+            "L-Imsida",
+            "L-Imtarfa",
+            "In-Naxxar",
+            "Rahal Gdid",
+            "Pembroke",
+            "Tal-Pieta",
+            "Hal Qormi",
+            "Il-Qrendi",
+            "Ir-Rabat",
+            "Hal Safi",
+            "San Gwann",
+            "Santa Lucija",
+            "Santa Venera",
+            "L-Isla ",
+            "Is-Siggiewi",
+            "Tas-Sliema ",
+            "San Giljan",
+            "San Pawl il-Bahar",
+            "Hal Tarxien",
+            "Ta Xbiex",
+            "il-Belt Valletta",
+            "Ix-Xghajra",
+            "Haz-Zabbar",
+            "Haz-Zebbug",
+            "Iz-Zejtun",
+            "Iz-Zurrieq",
+            "Il-Fontana",
+            "Ghajnsielem",
+            "L-Gharb",
+            "L-Ghasri",
+            "Ta\' Kercem",
+            "Il-Munxar",
+            "Ix-Xlendi",
+            "In-Nadur",
+            "Il-Qala",
+            "Ir-Rabat",
+            "San Lawrenz",
+            "Ta\' Sannat",
+            "Ix-Xaghra",
+            "IX-Xewkija",
+            "Iz-Zebbug",
+            "Marsalfron"});
+            this.City_cmbx.Location = new System.Drawing.Point(483, 177);
+            this.City_cmbx.Name = "City_cmbx";
+            this.City_cmbx.Size = new System.Drawing.Size(202, 21);
+            this.City_cmbx.TabIndex = 35;
+            this.City_cmbx.Text = "Please Choose a Locality";
+            this.City_cmbx.SelectedIndexChanged += new System.EventHandler(this.City_cmbx_SelectedIndexChanged);
+            // 
+            // City_cmbx1
+            // 
+            this.City_cmbx1.FormattingEnabled = true;
+            this.City_cmbx1.Items.AddRange(new object[] {
+            "Please Choose a Locality",
+            "H\' Attard",
+            "Hal Balzan",
+            "Il-Bidnija",
+            "Birgu",
+            "Birkirkara",
+            "Birzebbuga",
+            "Bormla",
+            "Had-Dingli",
+            "Il-Fugra",
+            "Il-Furjana",
+            "Hal Gharghur",
+            "Hal Ghaxaq",
+            "Il-Gudja",
+            "Il-Gzira",
+            "Il-Hamrun",
+            "L-Iklin",
+            "Il-Kalkara",
+            "Hal Kirkop",
+            "Hal Lija",
+            "Hal Luqa",
+            "Il-Marsa",
+            "Marsaskala",
+            "Marsaxlokk",
+            "L-Imdina",
+            "Il-Mellieha",
+            "L-Imgarr",
+            "Il-Mosta",
+            "L-Imqabba",
+            "L-Imsida",
+            "L-Imtarfa",
+            "In-Naxxar",
+            "Rahal Gdid",
+            "Pembroke",
+            "Tal-Pieta",
+            "Hal Qormi",
+            "Il-Qrendi",
+            "Ir-Rabat",
+            "Hal Safi",
+            "San Gwann",
+            "Santa Lucija",
+            "Santa Venera",
+            "L-Isla ",
+            "Is-Siggiewi",
+            "Tas-Sliema ",
+            "San Giljan",
+            "San Pawl il-Bahar",
+            "Hal Tarxien",
+            "Ta Xbiex",
+            "il-Belt Valletta",
+            "Ix-Xghajra",
+            "Haz-Zabbar",
+            "Haz-Zebbug",
+            "Iz-Zejtun",
+            "Iz-Zurrieq",
+            "Il-Fontana",
+            "Ghajnsielem",
+            "L-Gharb",
+            "L-Ghasri",
+            "Ta\' Kercem",
+            "Il-Munxar",
+            "Ix-Xlendi",
+            "In-Nadur",
+            "Il-Qala",
+            "Ir-Rabat",
+            "San Lawrenz",
+            "Ta\' Sannat",
+            "Ix-Xaghra",
+            "IX-Xewkija",
+            "Iz-Zebbug",
+            "Marsalfron"});
+            this.City_cmbx1.Location = new System.Drawing.Point(483, 175);
+            this.City_cmbx1.Name = "City_cmbx1";
+            this.City_cmbx1.Size = new System.Drawing.Size(202, 23);
+            this.City_cmbx1.TabIndex = 36;
+            this.City_cmbx1.Text = "Please Choose a Locality";
+            this.City_cmbx1.SelectedIndexChanged += new System.EventHandler(this.City_cmbx1_SelectedIndexChanged);
+            // 
             // Add_Package
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -730,7 +879,6 @@
         private System.Windows.Forms.TextBox txtname;
         private System.Windows.Forms.TextBox txtcountry;
         private System.Windows.Forms.TextBox txtpostcode;
-        private System.Windows.Forms.TextBox txtcity;
         private System.Windows.Forms.TextBox txtaddress2;
         private System.Windows.Forms.TextBox txtaddress1;
         private System.Windows.Forms.Label label26;
@@ -760,7 +908,6 @@
         private System.Windows.Forms.TextBox txtcountry_2;
         private System.Windows.Forms.TextBox txtpostcode_2;
         private System.Windows.Forms.TextBox txtaddress2_2;
-        private System.Windows.Forms.TextBox txtcity_2;
         private System.Windows.Forms.TextBox txtaddress1_2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
@@ -775,5 +922,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox City_cmbx;
+        private System.Windows.Forms.ComboBox City_cmbx1;
     }
 }

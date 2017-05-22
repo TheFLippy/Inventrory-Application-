@@ -12,22 +12,26 @@ namespace Inventory
 {
     public partial class Add_Package : Form
     {
+        string city = "";
+        string city2 = "";
         public Add_Package()
         {
             InitializeComponent();
             btnsave.Visible = false;
         }
 
-        private void delivery_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void Add_Package_load(object sender, EventArgs e)
         {
-
+            /*
+            var datasource = new List<string>();
+            datasource.Add("Munxar");
+            this.City_cmbx.Items.Add(datasource);
+            this.City_cmbx.DropDownStyle = ComboBoxStyle.DropDownList;*/
+            
         }
-
+         
         private void btnsave_Click(object sender, EventArgs e)
         {
             //check if textboxes are empty
@@ -42,10 +46,10 @@ namespace Inventory
                         return;
                     }
                 }
-                    
+
             }
 
-            
+
             //check if integer textboxes contains integers
             int Value;
             if (!int.TryParse(txtweight.Text, out Value))
@@ -54,13 +58,13 @@ namespace Inventory
                 txtweight.Focus();
                 return;
             }
-            else if(!int.TryParse(txtheight.Text, out Value))
+            else if (!int.TryParse(txtheight.Text, out Value))
             {
                 MessageBox.Show("Please enter the correct amount");
                 txtheight.Focus();
                 return;
             }
-            else if(!int.TryParse(txtlength.Text, out Value))
+            else if (!int.TryParse(txtlength.Text, out Value))
             {
                 MessageBox.Show("Please enter the correct amount");
                 txtlength.Focus();
@@ -77,7 +81,7 @@ namespace Inventory
             try
             {
                 db sqlCon = new db();
-                
+
                 float destinationtel = (float)Convert.ToDouble(txttelephone_2.Text);
                 float height = (float)Convert.ToDouble(txtheight.Text);
                 float length = (float)Convert.ToDouble(txtlength.Text);
@@ -85,10 +89,11 @@ namespace Inventory
                 float width = (float)Convert.ToDouble(txtwidth.Text);
                 float returntel = (float)Convert.ToDouble(txttelephone.Text);
                 float packagenumber = (float)Convert.ToDouble(txtpackagenumber.Text);
+               
                 //if successfully added
-                if (sqlCon.insertpack(destinationtel, height, length, weight, width, returntel, txtaddress1.Text, txtaddress2.Text, txtcity.Text, txtcountry.Text, txtname.Text, txtpostcode.Text,
-                    txtsurname.Text,txtaddress1_2.Text, txtaddress2_2.Text, 
-                    txtcity_2.Text,  txtcountry_2.Text, txtname_2.Text, txtpostcode_2.Text, txtsurname_2.Text 
+                if (sqlCon.insertpack(destinationtel, height, length, weight, width, returntel, txtaddress1.Text, txtaddress2.Text, city, txtcountry.Text, txtname.Text, txtpostcode.Text,
+                    txtsurname.Text, txtaddress1_2.Text, txtaddress2_2.Text,
+                    city2, txtcountry_2.Text, txtname_2.Text, txtpostcode_2.Text, txtsurname_2.Text
                     , packagenumber))
                 {
                     MessageBox.Show("Successfully added an package!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -140,14 +145,45 @@ namespace Inventory
             this.Hide();
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
 
+     
+
+        private void City_cmbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if(City_cmbx.SelectedItem.ToString() != "Please Choose a locality")
+                {
+                    city = City_cmbx.SelectedItem.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Please Choose a locality", "Message");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please Choose a locality", "Message");
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void City_cmbx1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (City_cmbx1.SelectedItem.ToString() != "Please Choose a locality")
+                {
+                    city2 = City_cmbx.SelectedItem.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Please Choose a locality", "Message");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please Choose a locality", "Message");
+            }
         }
     }
 }

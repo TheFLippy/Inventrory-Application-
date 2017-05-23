@@ -15,6 +15,8 @@ namespace Inventory.Forms
     {
         db sqlCon = new db();
         int id;
+        string city = "";
+        string city2 = "";
         public Edit_Packages()
         {
             InitializeComponent();
@@ -46,7 +48,7 @@ namespace Inventory.Forms
             txttelephone_2.Text = dt.Rows[0][11].ToString();
             txtaddress1_2.Text = dt.Rows[0][19].ToString();
             txtaddress2_2.Text = dt.Rows[0][20].ToString();
-            txtcity_2.Text = dt.Rows[0][21].ToString();
+            City_cmbx.Text = dt.Rows[0][21].ToString();
             txtpostcode_2.Text = dt.Rows[0][24].ToString();
             txtcountry_2.Text = dt.Rows[0][22].ToString();
 
@@ -56,7 +58,7 @@ namespace Inventory.Forms
             txttelephone.Text = dt.Rows[0][6].ToString();
             txtaddress1.Text = dt.Rows[0][12].ToString();
             txtaddress2.Text = dt.Rows[0][13].ToString();
-            txtcity.Text = dt.Rows[0][14].ToString();
+            City_cmbx1.Text = dt.Rows[0][14].ToString();
             txtpostcode.Text = dt.Rows[0][17].ToString();
             txtcountry.Text = dt.Rows[0][15].ToString();
 
@@ -94,10 +96,7 @@ namespace Inventory.Forms
             vw.Show();
         }
 
-        private void label20_Click(object sender, EventArgs e)
-        {
-
-        }
+   
 
         private void btnsave_Click(object sender, EventArgs e)
         {
@@ -116,9 +115,9 @@ namespace Inventory.Forms
                 
                 if (sqlCon.updatepackage(id, packagenumber,weight, height, width,
                     length, txtname_2.Text, txtsurname_2.Text, returntel, txtaddress1_2.Text,
-                    txtaddress2_2.Text, txtcity_2.Text, txtpostcode_2.Text, txtcountry_2.Text,
+                    txtaddress2_2.Text, city, txtpostcode_2.Text, txtcountry_2.Text,
                     txtname.Text, txtsurname.Text, destinationtel, txtaddress1.Text,
-                    txtaddress2.Text, txtcity.Text, txtpostcode.Text, txtcountry.Text))
+                    txtaddress2.Text, city2, txtpostcode.Text, txtcountry.Text))
                 {
                     MessageBox.Show("Successfully edited a package!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -132,6 +131,46 @@ namespace Inventory.Forms
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+        private void City_cmbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (City_cmbx.SelectedItem.ToString() != "Please Choose a locality")
+                {
+                    city = City_cmbx.SelectedItem.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Please Choose a locality", "Message");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please Choose a locality", "Message");
+            }
+        }
+
+        private void City_cmbx1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (City_cmbx1.SelectedItem.ToString() != "Please Choose a locality")
+                {
+                    city2 = City_cmbx.SelectedItem.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Please Choose a locality", "Message");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please Choose a locality", "Message");
             }
         }
     }

@@ -94,6 +94,10 @@ namespace Inventory.Forms
 
         private void gridViewInv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(sender != gridViewInv.Rows[gridViewInv.CurrentRow.Index].Cells[0])
+            {
+                return;
+            }
             string temp = null;
             DataGridViewCheckBoxCell ch1 = new DataGridViewCheckBoxCell();
             ch1 = (DataGridViewCheckBoxCell)gridViewInv.Rows[gridViewInv.CurrentRow.Index].Cells[0];

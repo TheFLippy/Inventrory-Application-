@@ -448,7 +448,7 @@ namespace Inventory.Forms
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error! Could not complete operation", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -456,60 +456,55 @@ namespace Inventory.Forms
         //add specific packages to specific drivers
         private void addbtn_Click(Object sender, EventArgs e)
         {
-            check = 0;
-            int c = 0;
-            string text = "";
-            
-
-            for(int x = 0; x < chklst.Count; x++)
+            try
             {
-                if (chklst.ElementAt(x).Checked == false)
-                {
-                    c++;
-                }
-
-            }
-
-
-            if (c == chklst.Count)
-            {
-                MessageBox.Show("Please choose a package", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            for (int j = 0; j < count; j++)
-            {
-                if (drivercmbx.SelectedItem == dtdriver.Rows[j][0])
-                {
-                    index = j;
-                }
-            }
-
-
-            for (int i = 0; i < chklst.Count; i++)
-            {
-                if (chklst.ElementAt(i).Checked)
-                {
-                    chklst.ElementAt(i).Visible = false;
-                    //chklst.ElementAt(i).Checked = false;
-                    check++;
-                   // text = chklst.ElementAt(i).Text;
-
-                }
-            }
-           
-
-           
+                check = 0;
+                int c = 0;
+                string text = "";
                 
+                for (int x = 0; x < chklst.Count; x++)
+                {
+                    if (chklst.ElementAt(x).Checked == false)
+                    {
+                        c++;
+                    }
+                }
                 
-                foreach(CheckBox chk in adding.Controls)
+                if (c == chklst.Count)
+                {
+                    MessageBox.Show("Please choose a package", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                for (int j = 0; j < count; j++)
+                {
+                    if (drivercmbx.SelectedItem == dtdriver.Rows[j][0])
+                    {
+                        index = j;
+                    }
+                }
+
+
+                for (int i = 0; i < chklst.Count; i++)
+                {
+                    if (chklst.ElementAt(i).Checked)
+                    {
+                        chklst.ElementAt(i).Visible = false;
+                        //chklst.ElementAt(i).Checked = false;
+                        check++;
+                        // text = chklst.ElementAt(i).Text;
+
+                    }
+                }
+                
+                foreach (CheckBox chk in adding.Controls)
                 {
                     if (chk.Checked == true)
                     {
                         text = chk.Text;
                         Label label = new Label();
                         label.Text = text;
-                       // chklst.Remove(chk);
+                        // chklst.Remove(chk);
                         tlplst.ElementAt(index).Controls.Add(label, 0, pos + 4);
                         labellst.Add(label);
 
@@ -521,77 +516,83 @@ namespace Inventory.Forms
                         tlplst.ElementAt(index).Controls.Add(bt, 1, pos + 4);
                         que.Dequeue();
                         pos++;
-                        
+
+                    }
+
                 }
                 
+                for (int i = 0; i < chklst.Count; i++)
+                {
+                    if (chklst.ElementAt(i).Checked)
+                    {
+                        adding.Controls.Remove(chklst.ElementAt(i));
+                        chklst.RemoveAt(i);
+                    }
+                    else
+                    {
+                        Console.WriteLine("NOT SELECTED CHECKBOX");
+                    }
+                }
+
+                check = 0;
+                acc.Hide();
+                acc.Show();
+
             }
-
-
-
-            for (int i = 0; i < chklst.Count; i++)
+            catch (Exception ex)
             {
-                if (chklst.ElementAt(i).Checked)
-                {
-                    adding.Controls.Remove(chklst.ElementAt(i));
-                    chklst.RemoveAt(i);
-                }
-                else
-                {
-                    Console.WriteLine("NOT SELECTED CHECKBOX");
-                }
+                MessageBox.Show("Error! Could not complete operation", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            check = 0;
-            acc.Hide();
-            acc.Show();
-            
-
         }
 
         //removes package from the driver
         private void remove_Click(Object sender, EventArgs e)
         {
-           DialogResult result =  MessageBox.Show("Are you sure you want to unassign this package?","Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-           
-            if(result == DialogResult.No)
+            try
             {
-                return;
-            }
-            else
-            {
-                for (int j = 0; j < buttonlst.Count; j++)
-                {
-                    if (sender == buttonlst.ElementAt(j))
-                    {
+                DialogResult result = MessageBox.Show("Are you sure you want to unassign this package?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                        // labellst.ElementAt(j).Visible = false;
-                        buttonlst.ElementAt(j).Visible = false;
-                        for (int i = 0; i < tlplst.Count; i++)
-                        {
-                            foreach (Control c in tlplst.ElementAt(i).Controls)
+                if (result == DialogResult.No)
+                {
+                    return;
+                }
+                else
+                {
+                    for (int j = 0; j < buttonlst.Count; j++)
+                    {
+                        if (sender == buttonlst.ElementAt(j))
+                        { // labellst.ElementAt(j).Visible = false;
+                            buttonlst.ElementAt(j).Visible = false;
+                            for (int i = 0; i < tlplst.Count; i++)
                             {
-                                if (c is Label)
+                                foreach (Control c in tlplst.ElementAt(i).Controls)
                                 {
-                                    if (c == labellst.ElementAt(j))
+                                    if (c is Label)
                                     {
-                                        tlplst.ElementAt(i).Controls.Remove(labellst.ElementAt(j));
+                                        if (c == labellst.ElementAt(j))
+                                        {
+                                            tlplst.ElementAt(i).Controls.Remove(labellst.ElementAt(j));
+                                        }
                                     }
                                 }
                             }
+                            
+                            acc.Hide();
+                            acc.Show();
+                            que.Enqueue(labellst.ElementAt(j).Text);
+                            addPackage.Add(labellst.ElementAt(j));
+                            addpk(labellst.ElementAt(j));
+
                         }
-
-
-
-                        acc.Hide();
-                        acc.Show();
-                        que.Enqueue(labellst.ElementAt(j).Text);
-                        addPackage.Add(labellst.ElementAt(j));
-                        addpk(labellst.ElementAt(j));
-
                     }
                 }
-            }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error! Could not complete operation", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+          
           
         }
         
@@ -611,7 +612,6 @@ namespace Inventory.Forms
         {
             int k = 0;
             int pkcount = 0;
-            
             
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
@@ -657,7 +657,6 @@ namespace Inventory.Forms
                             }
                         }
                         k = 0;
-                      
                     }
                 }
                 if(pkcount > 0)
@@ -678,9 +677,7 @@ namespace Inventory.Forms
         //help button
         private void Helpbtn_Click(object sender, EventArgs e)
         {
-        
-            MessageBox.Show("1) To assign a package press tha Assign button.\n2) To remove a package from a driver press the remove button.\n3) To add package to a driver, choose the package and driver and press the add button.","Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        
+           MessageBox.Show("1) To assign a package press tha Assign button.\n2) To remove a package from a driver press the remove button.\n3) To add package to a driver, choose the package and driver and press the add button.","Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         //back button
         private void btnBack_Click(object sender, EventArgs e)

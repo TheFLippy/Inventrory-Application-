@@ -76,7 +76,7 @@ namespace Inventory.Forms
 
         private void btnprevious_Click(object sender, EventArgs e)
         {
-            TabControl1.SelectTab(0);
+            TabControl1.SelectTab(1);
         }
 
         private void btnnext_2_Click(object sender, EventArgs e)
@@ -86,7 +86,7 @@ namespace Inventory.Forms
 
         private void btnprevious2_Click(object sender, EventArgs e)
         {
-            TabControl1.SelectTab(1);
+            TabControl1.SelectTab(0);
         }
 
         private void btncancel_Click(object sender, EventArgs e)
@@ -140,14 +140,8 @@ namespace Inventory.Forms
         {
             try
             {
-                if (City_cmbx.SelectedItem.ToString() != "Please Choose a locality")
-                {
                     city = City_cmbx.SelectedItem.ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Please Choose a locality", "Message");
-                }
+              
             }
             catch (Exception ex)
             {
@@ -159,14 +153,8 @@ namespace Inventory.Forms
         {
             try
             {
-                if (City_cmbx1.SelectedItem.ToString() != "Please Choose a locality")
-                {
-                    city2 = City_cmbx.SelectedItem.ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Please Choose a locality", "Message");
-                }
+               city2 = City_cmbx.SelectedItem.ToString();
+              
             }
             catch (Exception ex)
             {

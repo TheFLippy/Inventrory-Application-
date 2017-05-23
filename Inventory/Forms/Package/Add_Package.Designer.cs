@@ -46,26 +46,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.package_no = new System.Windows.Forms.Label();
             this.btnnext = new System.Windows.Forms.Button();
-            this.delivery = new System.Windows.Forms.TabPage();
-            this.txttelephone_2 = new System.Windows.Forms.TextBox();
-            this.txtsurname_2 = new System.Windows.Forms.TextBox();
-            this.txtname_2 = new System.Windows.Forms.TextBox();
-            this.txtcountry_2 = new System.Windows.Forms.TextBox();
-            this.txtpostcode_2 = new System.Windows.Forms.TextBox();
-            this.txtaddress2_2 = new System.Windows.Forms.TextBox();
-            this.txtaddress1_2 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.btnprevious = new System.Windows.Forms.Button();
-            this.btnnext_2 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.Destination = new System.Windows.Forms.TabPage();
+            this.btnnext_2 = new System.Windows.Forms.Button();
+            this.City_cmbx1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnprevious2 = new System.Windows.Forms.Button();
             this.txttelephone = new System.Windows.Forms.TextBox();
@@ -83,13 +66,30 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.delivery = new System.Windows.Forms.TabPage();
             this.City_cmbx = new System.Windows.Forms.ComboBox();
-            this.City_cmbx1 = new System.Windows.Forms.ComboBox();
+            this.txttelephone_2 = new System.Windows.Forms.TextBox();
+            this.txtsurname_2 = new System.Windows.Forms.TextBox();
+            this.txtname_2 = new System.Windows.Forms.TextBox();
+            this.txtcountry_2 = new System.Windows.Forms.TextBox();
+            this.txtpostcode_2 = new System.Windows.Forms.TextBox();
+            this.txtaddress2_2 = new System.Windows.Forms.TextBox();
+            this.txtaddress1_2 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnprevious = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.TabControl1.SuspendLayout();
             this.package.SuspendLayout();
-            this.delivery.SuspendLayout();
             this.Destination.SuspendLayout();
+            this.delivery.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -135,15 +135,14 @@
             // TabControl1
             // 
             this.TabControl1.Controls.Add(this.package);
-            this.TabControl1.Controls.Add(this.delivery);
             this.TabControl1.Controls.Add(this.Destination);
+            this.TabControl1.Controls.Add(this.delivery);
             this.TabControl1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabControl1.Location = new System.Drawing.Point(4, 4);
             this.TabControl1.Name = "TabControl1";
             this.TabControl1.SelectedIndex = 0;
             this.TabControl1.Size = new System.Drawing.Size(714, 340);
             this.TabControl1.TabIndex = 2;
-            this.TabControl1.SelectedIndexChanged += new System.EventHandler(this.City_cmbx1_SelectedIndexChanged);
             // 
             // package
             // 
@@ -284,212 +283,9 @@
             this.btnnext.UseVisualStyleBackColor = true;
             this.btnnext.Click += new System.EventHandler(this.btnnext_Click);
             // 
-            // delivery
-            // 
-            this.delivery.Controls.Add(this.City_cmbx);
-            this.delivery.Controls.Add(this.txttelephone_2);
-            this.delivery.Controls.Add(this.txtsurname_2);
-            this.delivery.Controls.Add(this.txtname_2);
-            this.delivery.Controls.Add(this.txtcountry_2);
-            this.delivery.Controls.Add(this.txtpostcode_2);
-            this.delivery.Controls.Add(this.txtaddress2_2);
-            this.delivery.Controls.Add(this.txtaddress1_2);
-            this.delivery.Controls.Add(this.label13);
-            this.delivery.Controls.Add(this.label14);
-            this.delivery.Controls.Add(this.label15);
-            this.delivery.Controls.Add(this.btnprevious);
-            this.delivery.Controls.Add(this.btnnext_2);
-            this.delivery.Controls.Add(this.label3);
-            this.delivery.Controls.Add(this.label12);
-            this.delivery.Controls.Add(this.label8);
-            this.delivery.Controls.Add(this.label11);
-            this.delivery.Controls.Add(this.label9);
-            this.delivery.Controls.Add(this.label10);
-            this.delivery.Location = new System.Drawing.Point(4, 22);
-            this.delivery.Name = "delivery";
-            this.delivery.Padding = new System.Windows.Forms.Padding(3);
-            this.delivery.Size = new System.Drawing.Size(706, 314);
-            this.delivery.TabIndex = 1;
-            this.delivery.Text = "Return";
-            this.delivery.UseVisualStyleBackColor = true;
-            // 
-            // txttelephone_2
-            // 
-            this.txttelephone_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttelephone_2.Location = new System.Drawing.Point(115, 177);
-            this.txttelephone_2.Name = "txttelephone_2";
-            this.txttelephone_2.Size = new System.Drawing.Size(202, 23);
-            this.txttelephone_2.TabIndex = 2;
-            // 
-            // txtsurname_2
-            // 
-            this.txtsurname_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsurname_2.Location = new System.Drawing.Point(115, 146);
-            this.txtsurname_2.Name = "txtsurname_2";
-            this.txtsurname_2.Size = new System.Drawing.Size(202, 23);
-            this.txtsurname_2.TabIndex = 1;
-            // 
-            // txtname_2
-            // 
-            this.txtname_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtname_2.Location = new System.Drawing.Point(115, 115);
-            this.txtname_2.Name = "txtname_2";
-            this.txtname_2.Size = new System.Drawing.Size(202, 23);
-            this.txtname_2.TabIndex = 0;
-            // 
-            // txtcountry_2
-            // 
-            this.txtcountry_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcountry_2.Location = new System.Drawing.Point(483, 239);
-            this.txtcountry_2.Name = "txtcountry_2";
-            this.txtcountry_2.Size = new System.Drawing.Size(202, 23);
-            this.txtcountry_2.TabIndex = 7;
-            // 
-            // txtpostcode_2
-            // 
-            this.txtpostcode_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpostcode_2.Location = new System.Drawing.Point(483, 208);
-            this.txtpostcode_2.Name = "txtpostcode_2";
-            this.txtpostcode_2.Size = new System.Drawing.Size(202, 23);
-            this.txtpostcode_2.TabIndex = 6;
-            // 
-            // txtaddress2_2
-            // 
-            this.txtaddress2_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtaddress2_2.Location = new System.Drawing.Point(483, 146);
-            this.txtaddress2_2.Name = "txtaddress2_2";
-            this.txtaddress2_2.Size = new System.Drawing.Size(202, 23);
-            this.txtaddress2_2.TabIndex = 4;
-            // 
-            // txtaddress1_2
-            // 
-            this.txtaddress1_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtaddress1_2.Location = new System.Drawing.Point(483, 114);
-            this.txtaddress1_2.Name = "txtaddress1_2";
-            this.txtaddress1_2.Size = new System.Drawing.Size(202, 23);
-            this.txtaddress1_2.TabIndex = 3;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(17, 144);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(84, 21);
-            this.label13.TabIndex = 34;
-            this.label13.Text = "Surname : ";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(17, 175);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(87, 21);
-            this.label14.TabIndex = 33;
-            this.label14.Text = "Telephone :";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(17, 113);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(59, 21);
-            this.label15.TabIndex = 32;
-            this.label15.Text = "Name :";
-            // 
-            // btnprevious
-            // 
-            this.btnprevious.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnprevious.BackgroundImage")));
-            this.btnprevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnprevious.FlatAppearance.BorderSize = 0;
-            this.btnprevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnprevious.Location = new System.Drawing.Point(21, 33);
-            this.btnprevious.Name = "btnprevious";
-            this.btnprevious.Size = new System.Drawing.Size(32, 32);
-            this.btnprevious.TabIndex = 9;
-            this.btnprevious.UseVisualStyleBackColor = true;
-            this.btnprevious.Click += new System.EventHandler(this.btnprevious_Click);
-            // 
-            // btnnext_2
-            // 
-            this.btnnext_2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnnext_2.BackgroundImage")));
-            this.btnnext_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnnext_2.FlatAppearance.BorderSize = 0;
-            this.btnnext_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnnext_2.Location = new System.Drawing.Point(653, 33);
-            this.btnnext_2.Name = "btnnext_2";
-            this.btnnext_2.Size = new System.Drawing.Size(32, 32);
-            this.btnnext_2.TabIndex = 8;
-            this.btnnext_2.UseVisualStyleBackColor = true;
-            this.btnnext_2.Click += new System.EventHandler(this.btnnext_2_Click);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(262, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(191, 32);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Return Address";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(388, 239);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(73, 21);
-            this.label12.TabIndex = 4;
-            this.label12.Text = "Country :";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(388, 113);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 21);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Address 1 :";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(388, 144);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(86, 21);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Address 2 :";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(388, 208);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 21);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Postcode :";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(388, 177);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 21);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "City :";
-            // 
             // Destination
             // 
+            this.Destination.Controls.Add(this.btnnext_2);
             this.Destination.Controls.Add(this.City_cmbx1);
             this.Destination.Controls.Add(this.label2);
             this.Destination.Controls.Add(this.btnprevious2);
@@ -516,6 +312,98 @@
             this.Destination.TabIndex = 2;
             this.Destination.Text = "Destination";
             this.Destination.UseVisualStyleBackColor = true;
+            // 
+            // btnnext_2
+            // 
+            this.btnnext_2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnnext_2.BackgroundImage")));
+            this.btnnext_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnnext_2.FlatAppearance.BorderSize = 0;
+            this.btnnext_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnnext_2.Location = new System.Drawing.Point(653, 33);
+            this.btnnext_2.Name = "btnnext_2";
+            this.btnnext_2.Size = new System.Drawing.Size(32, 32);
+            this.btnnext_2.TabIndex = 37;
+            this.btnnext_2.UseVisualStyleBackColor = true;
+            this.btnnext_2.Click += new System.EventHandler(this.btnnext_2_Click);
+            // 
+            // City_cmbx1
+            // 
+            this.City_cmbx1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.City_cmbx1.FormattingEnabled = true;
+            this.City_cmbx1.Items.AddRange(new object[] {
+            "Il-Belt Valletta - (Citta\' Umalissima)",
+            "L-Imdina - (Citta\' Notabile)",
+            "Il-Birgu - (Citta\' Vittoriosa)",
+            "L-Isla - (Citta\' Invicta)",
+            "Bormla - (Citta\' Cospicua)",
+            "Ħal Qormi - (Citta\' Pinto)",
+            "Ħaż-Żebbuġ - (Citta\' Rohan)",
+            "Ħaż-Żabbar - (Citta\' Hompesch)",
+            "Is-Siġġiewi - (Citta\' Ferdinand)",
+            "Iż-Żejtun - (Citta\' Beland)",
+            "Ħ\'Attard",
+            "Ħal Balzan",
+            "Birkirkara",
+            "Birżebbuġa",
+            "Ħad-Dingli",
+            "Il-Fgura",
+            "Il-Furjana",
+            "Il-Gudja",
+            "Il-Gżira",
+            "Ħal Għargħur",
+            "Ħal Għaxaq",
+            "Il-Ħamrun",
+            "L-Iklin",
+            "Il-Kalkara",
+            "Ħal Kirkop",
+            "Ħal Lija",
+            "Ħal Luqa",
+            "Il-Marsa",
+            "Marsaskala (Wied il-Għajn)",
+            "Marsaxlokk",
+            "Il-Mellieħa",
+            "L-Imġarr",
+            "Il-Mosta",
+            "L-Imqabba",
+            "L-Imsida",
+            "In-Naxxar",
+            "Raħal Ġdid (Paola)",
+            "Pembroke",
+            "Tal-Pietà, Malta",
+            "Il-Qrendi",
+            "Ir-Rabat",
+            "Ħal Safi",
+            "San Ġiljan",
+            "San Ġwann",
+            "San Pawl il-Bahar",
+            "Santa Luċija",
+            "Santa Venera",
+            "Tas-Sliema",
+            "Is-Swieqi",
+            "Ta\' Xbiex",
+            "Ħal Tarxien",
+            "Ix-Xgħajra",
+            "Iż-Żurrieq",
+            "L-Imtarfa",
+            "Ir-Rabat, Gozo",
+            "Il-Fontana (It-Triq tal-Għajn)",
+            "Għajnsielem",
+            "L-Għarb",
+            "L-Għasri",
+            "Ta\' Kerċem",
+            "Il-Munxar",
+            "In-Nadur",
+            "Il-Qala",
+            "San Lawrenz",
+            "Ta\' Sannat",
+            "Ix-Xagħra",
+            "Ix-Xewkija",
+            "Iż-Żebbuġ"});
+            this.City_cmbx1.Location = new System.Drawing.Point(483, 175);
+            this.City_cmbx1.Name = "City_cmbx1";
+            this.City_cmbx1.Size = new System.Drawing.Size(202, 23);
+            this.City_cmbx1.TabIndex = 36;
+            this.City_cmbx1.SelectedIndexChanged += new System.EventHandler(this.City_cmbx1_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -680,169 +568,274 @@
             this.label18.TabIndex = 4;
             this.label18.Text = "Name :";
             // 
+            // delivery
+            // 
+            this.delivery.Controls.Add(this.City_cmbx);
+            this.delivery.Controls.Add(this.txttelephone_2);
+            this.delivery.Controls.Add(this.txtsurname_2);
+            this.delivery.Controls.Add(this.txtname_2);
+            this.delivery.Controls.Add(this.txtcountry_2);
+            this.delivery.Controls.Add(this.txtpostcode_2);
+            this.delivery.Controls.Add(this.txtaddress2_2);
+            this.delivery.Controls.Add(this.txtaddress1_2);
+            this.delivery.Controls.Add(this.label13);
+            this.delivery.Controls.Add(this.label14);
+            this.delivery.Controls.Add(this.label15);
+            this.delivery.Controls.Add(this.btnprevious);
+            this.delivery.Controls.Add(this.label3);
+            this.delivery.Controls.Add(this.label12);
+            this.delivery.Controls.Add(this.label8);
+            this.delivery.Controls.Add(this.label11);
+            this.delivery.Controls.Add(this.label9);
+            this.delivery.Controls.Add(this.label10);
+            this.delivery.Location = new System.Drawing.Point(4, 22);
+            this.delivery.Name = "delivery";
+            this.delivery.Padding = new System.Windows.Forms.Padding(3);
+            this.delivery.Size = new System.Drawing.Size(706, 314);
+            this.delivery.TabIndex = 1;
+            this.delivery.Text = "Return";
+            this.delivery.UseVisualStyleBackColor = true;
+            // 
             // City_cmbx
             // 
+            this.City_cmbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.City_cmbx.FormattingEnabled = true;
             this.City_cmbx.Items.AddRange(new object[] {
-            "Please Choose a locality",
-            "H\' Attard",
-            "Hal Balzan",
-            "Il-Bidnija",
-            "Birgu",
+            "Il-Belt Valletta - (Citta\' Umalissima)",
+            "L-Imdina - (Citta\' Notabile)",
+            "Il-Birgu - (Citta\' Vittoriosa)",
+            "L-Isla - (Citta\' Invicta)",
+            "Bormla - (Citta\' Cospicua)",
+            "Ħal Qormi - (Citta\' Pinto)",
+            "Ħaż-Żebbuġ - (Citta\' Rohan)",
+            "Ħaż-Żabbar - (Citta\' Hompesch)",
+            "Is-Siġġiewi - (Citta\' Ferdinand)",
+            "Iż-Żejtun - (Citta\' Beland)",
+            "Ħ\'Attard",
+            "Ħal Balzan",
             "Birkirkara",
-            "Birzebbuga",
-            "Bormla",
-            "Had-Dingli",
-            "Il-Fugra",
+            "Birżebbuġa",
+            "Ħad-Dingli",
+            "Il-Fgura",
             "Il-Furjana",
-            "Hal Gharghur",
-            "Hal Ghaxaq",
             "Il-Gudja",
-            "Il-Gzira",
-            "Il-Hamrun",
+            "Il-Gżira",
+            "Ħal Għargħur",
+            "Ħal Għaxaq",
+            "Il-Ħamrun",
             "L-Iklin",
             "Il-Kalkara",
-            "Hal Kirkop",
-            "Hal Lija",
-            "Hal Luqa",
+            "Ħal Kirkop",
+            "Ħal Lija",
+            "Ħal Luqa",
             "Il-Marsa",
-            "Marsaskala",
+            "Marsaskala (Wied il-Għajn)",
             "Marsaxlokk",
-            "L-Imdina",
-            "Il-Mellieha",
-            "L-Imgarr",
+            "Il-Mellieħa",
+            "L-Imġarr",
             "Il-Mosta",
             "L-Imqabba",
             "L-Imsida",
-            "L-Imtarfa",
             "In-Naxxar",
-            "Rahal Gdid",
+            "Raħal Ġdid (Paola)",
             "Pembroke",
-            "Tal-Pieta",
-            "Hal Qormi",
+            "Tal-Pietà, Malta",
             "Il-Qrendi",
             "Ir-Rabat",
-            "Hal Safi",
-            "San Gwann",
-            "Santa Lucija",
-            "Santa Venera",
-            "L-Isla ",
-            "Is-Siggiewi",
-            "Tas-Sliema ",
-            "San Giljan",
+            "Ħal Safi",
+            "San Ġiljan",
+            "San Ġwann",
             "San Pawl il-Bahar",
-            "Hal Tarxien",
-            "Ta Xbiex",
-            "il-Belt Valletta",
-            "Ix-Xghajra",
-            "Haz-Zabbar",
-            "Haz-Zebbug",
-            "Iz-Zejtun",
-            "Iz-Zurrieq",
-            "Il-Fontana",
-            "Ghajnsielem",
-            "L-Gharb",
-            "L-Ghasri",
-            "Ta\' Kercem",
+            "Santa Luċija",
+            "Santa Venera",
+            "Tas-Sliema",
+            "Is-Swieqi",
+            "Ta\' Xbiex",
+            "Ħal Tarxien",
+            "Ix-Xgħajra",
+            "Iż-Żurrieq",
+            "L-Imtarfa",
+            "Ir-Rabat, Gozo",
+            "Il-Fontana (It-Triq tal-Għajn)",
+            "Għajnsielem",
+            "L-Għarb",
+            "L-Għasri",
+            "Ta\' Kerċem",
             "Il-Munxar",
-            "Ix-Xlendi",
             "In-Nadur",
             "Il-Qala",
-            "Ir-Rabat",
             "San Lawrenz",
             "Ta\' Sannat",
-            "Ix-Xaghra",
-            "IX-Xewkija",
-            "Iz-Zebbug",
-            "Marsalfron"});
+            "Ix-Xagħra",
+            "Ix-Xewkija",
+            "Iż-Żebbuġ"});
             this.City_cmbx.Location = new System.Drawing.Point(483, 177);
             this.City_cmbx.Name = "City_cmbx";
             this.City_cmbx.Size = new System.Drawing.Size(202, 21);
             this.City_cmbx.TabIndex = 35;
-            this.City_cmbx.Text = "Please Choose a Locality";
             this.City_cmbx.SelectedIndexChanged += new System.EventHandler(this.City_cmbx_SelectedIndexChanged);
             // 
-            // City_cmbx1
+            // txttelephone_2
             // 
-            this.City_cmbx1.FormattingEnabled = true;
-            this.City_cmbx1.Items.AddRange(new object[] {
-            "Please Choose a Locality",
-            "H\' Attard",
-            "Hal Balzan",
-            "Il-Bidnija",
-            "Birgu",
-            "Birkirkara",
-            "Birzebbuga",
-            "Bormla",
-            "Had-Dingli",
-            "Il-Fugra",
-            "Il-Furjana",
-            "Hal Gharghur",
-            "Hal Ghaxaq",
-            "Il-Gudja",
-            "Il-Gzira",
-            "Il-Hamrun",
-            "L-Iklin",
-            "Il-Kalkara",
-            "Hal Kirkop",
-            "Hal Lija",
-            "Hal Luqa",
-            "Il-Marsa",
-            "Marsaskala",
-            "Marsaxlokk",
-            "L-Imdina",
-            "Il-Mellieha",
-            "L-Imgarr",
-            "Il-Mosta",
-            "L-Imqabba",
-            "L-Imsida",
-            "L-Imtarfa",
-            "In-Naxxar",
-            "Rahal Gdid",
-            "Pembroke",
-            "Tal-Pieta",
-            "Hal Qormi",
-            "Il-Qrendi",
-            "Ir-Rabat",
-            "Hal Safi",
-            "San Gwann",
-            "Santa Lucija",
-            "Santa Venera",
-            "L-Isla ",
-            "Is-Siggiewi",
-            "Tas-Sliema ",
-            "San Giljan",
-            "San Pawl il-Bahar",
-            "Hal Tarxien",
-            "Ta Xbiex",
-            "il-Belt Valletta",
-            "Ix-Xghajra",
-            "Haz-Zabbar",
-            "Haz-Zebbug",
-            "Iz-Zejtun",
-            "Iz-Zurrieq",
-            "Il-Fontana",
-            "Ghajnsielem",
-            "L-Gharb",
-            "L-Ghasri",
-            "Ta\' Kercem",
-            "Il-Munxar",
-            "Ix-Xlendi",
-            "In-Nadur",
-            "Il-Qala",
-            "Ir-Rabat",
-            "San Lawrenz",
-            "Ta\' Sannat",
-            "Ix-Xaghra",
-            "IX-Xewkija",
-            "Iz-Zebbug",
-            "Marsalfron"});
-            this.City_cmbx1.Location = new System.Drawing.Point(483, 175);
-            this.City_cmbx1.Name = "City_cmbx1";
-            this.City_cmbx1.Size = new System.Drawing.Size(202, 23);
-            this.City_cmbx1.TabIndex = 36;
-            this.City_cmbx1.Text = "Please Choose a Locality";
-            this.City_cmbx1.SelectedIndexChanged += new System.EventHandler(this.City_cmbx1_SelectedIndexChanged);
+            this.txttelephone_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttelephone_2.Location = new System.Drawing.Point(115, 177);
+            this.txttelephone_2.Name = "txttelephone_2";
+            this.txttelephone_2.Size = new System.Drawing.Size(202, 23);
+            this.txttelephone_2.TabIndex = 2;
+            // 
+            // txtsurname_2
+            // 
+            this.txtsurname_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsurname_2.Location = new System.Drawing.Point(115, 146);
+            this.txtsurname_2.Name = "txtsurname_2";
+            this.txtsurname_2.Size = new System.Drawing.Size(202, 23);
+            this.txtsurname_2.TabIndex = 1;
+            // 
+            // txtname_2
+            // 
+            this.txtname_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtname_2.Location = new System.Drawing.Point(115, 115);
+            this.txtname_2.Name = "txtname_2";
+            this.txtname_2.Size = new System.Drawing.Size(202, 23);
+            this.txtname_2.TabIndex = 0;
+            // 
+            // txtcountry_2
+            // 
+            this.txtcountry_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcountry_2.Location = new System.Drawing.Point(483, 239);
+            this.txtcountry_2.Name = "txtcountry_2";
+            this.txtcountry_2.Size = new System.Drawing.Size(202, 23);
+            this.txtcountry_2.TabIndex = 7;
+            // 
+            // txtpostcode_2
+            // 
+            this.txtpostcode_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpostcode_2.Location = new System.Drawing.Point(483, 208);
+            this.txtpostcode_2.Name = "txtpostcode_2";
+            this.txtpostcode_2.Size = new System.Drawing.Size(202, 23);
+            this.txtpostcode_2.TabIndex = 6;
+            // 
+            // txtaddress2_2
+            // 
+            this.txtaddress2_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtaddress2_2.Location = new System.Drawing.Point(483, 146);
+            this.txtaddress2_2.Name = "txtaddress2_2";
+            this.txtaddress2_2.Size = new System.Drawing.Size(202, 23);
+            this.txtaddress2_2.TabIndex = 4;
+            // 
+            // txtaddress1_2
+            // 
+            this.txtaddress1_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtaddress1_2.Location = new System.Drawing.Point(483, 114);
+            this.txtaddress1_2.Name = "txtaddress1_2";
+            this.txtaddress1_2.Size = new System.Drawing.Size(202, 23);
+            this.txtaddress1_2.TabIndex = 3;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(17, 144);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(84, 21);
+            this.label13.TabIndex = 34;
+            this.label13.Text = "Surname : ";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(17, 175);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(87, 21);
+            this.label14.TabIndex = 33;
+            this.label14.Text = "Telephone :";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(17, 113);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(59, 21);
+            this.label15.TabIndex = 32;
+            this.label15.Text = "Name :";
+            // 
+            // btnprevious
+            // 
+            this.btnprevious.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnprevious.BackgroundImage")));
+            this.btnprevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnprevious.FlatAppearance.BorderSize = 0;
+            this.btnprevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnprevious.Location = new System.Drawing.Point(21, 33);
+            this.btnprevious.Name = "btnprevious";
+            this.btnprevious.Size = new System.Drawing.Size(32, 32);
+            this.btnprevious.TabIndex = 9;
+            this.btnprevious.UseVisualStyleBackColor = true;
+            this.btnprevious.Click += new System.EventHandler(this.btnprevious_Click);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(262, 33);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(191, 32);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Return Address";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(388, 239);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(73, 21);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "Country :";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(388, 113);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(86, 21);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Address 1 :";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(388, 144);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(86, 21);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Address 2 :";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(388, 208);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(79, 21);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Postcode :";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(388, 177);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(44, 21);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "City :";
             // 
             // Add_Package
             // 
@@ -859,10 +852,10 @@
             this.TabControl1.ResumeLayout(false);
             this.package.ResumeLayout(false);
             this.package.PerformLayout();
-            this.delivery.ResumeLayout(false);
-            this.delivery.PerformLayout();
             this.Destination.ResumeLayout(false);
             this.Destination.PerformLayout();
+            this.delivery.ResumeLayout(false);
+            this.delivery.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -913,7 +906,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnprevious;
-        private System.Windows.Forms.Button btnnext_2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label11;
@@ -924,5 +916,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox City_cmbx;
         private System.Windows.Forms.ComboBox City_cmbx1;
+        private System.Windows.Forms.Button btnnext_2;
     }
 }

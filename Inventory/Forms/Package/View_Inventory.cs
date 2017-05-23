@@ -89,7 +89,7 @@ namespace Inventory.Forms
             
             edtpk.Show();
             this.edtpk.PassValue(editid);
-            this.Close();
+   
         }
 
         private void gridViewInv_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -17,19 +17,14 @@ namespace Inventory
         public Add_Package()
         {
             InitializeComponent();
-            btnsave.Visible = false;
+         
         }
 
         
 
         private void Add_Package_load(object sender, EventArgs e)
         {
-            /*
-            var datasource = new List<string>();
-            datasource.Add("Munxar");
-            this.City_cmbx.Items.Add(datasource);
-            this.City_cmbx.DropDownStyle = ComboBoxStyle.DropDownList;*/
-            
+           
         }
          
         private void btnsave_Click(object sender, EventArgs e)
@@ -117,25 +112,25 @@ namespace Inventory
         private void btnnext_Click(object sender, EventArgs e)
         {
             TabControl1.SelectTab(1);
-            btnsave.Visible = false;
+            
         }
 
         private void btnprevious_Click(object sender, EventArgs e)
         {
-            TabControl1.SelectTab(0);
-            btnsave.Visible = false;
+            TabControl1.SelectTab(1);
+            
         }
 
         private void btnnext_2_Click(object sender, EventArgs e)
         {
             TabControl1.SelectTab(2);
-            btnsave.Visible = true;
+           
         }
 
         private void btnprevious2_Click(object sender, EventArgs e)
         {
-            TabControl1.SelectTab(1);
-            btnsave.Visible = false;
+            TabControl1.SelectTab(0);
+           
         }
 
 
@@ -150,40 +145,38 @@ namespace Inventory
 
         private void City_cmbx_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             try
             {
-                if(City_cmbx.SelectedItem.ToString() != "Please Choose a locality")
-                {
-                    city = City_cmbx.SelectedItem.ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Please Choose a locality", "Message");
-                }
+                city = City_cmbx.SelectedItem.ToString();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Please Choose a locality", "Message");
             }
+
+
+
+
         }
 
         private void City_cmbx1_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                if (City_cmbx1.SelectedItem.ToString() != "Please Choose a locality")
-                {
-                    city2 = City_cmbx.SelectedItem.ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Please Choose a locality", "Message");
-                }
+                city2 = City_cmbx.SelectedItem.ToString();
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                MessageBox.Show("Please Choose a locality", "Message");
+                
+                    MessageBox.Show("Please Choose a locality", "Message");
+                
             }
+                
+               
+            
+               
+            
         }
     }
 }

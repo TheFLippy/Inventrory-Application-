@@ -129,11 +129,11 @@ namespace Inventory.Forms
                 totalPackages = 1;
             }
             //area1
-            string[] city = new string[] { "Qala", "Kercem" };
+            string[] city = new string[] { "Il-Qala", "Ta' Kerċem" };
             //area2
-            string[] city2 = new string[] { "Munxar", "Victoria", "Xaghra" };
+            string[] city2 = new string[] { "Il-Munxar", "Ir-Rabat, Gozo", "Ix-Xagħra" };
             //area 3
-            string[] city3 = new string[] { "Zabbar", "Siggiewi" };
+            string[] city3 = new string[] { "Ħaż-Żabbar", "Is-Siġġiewi" };
 
 
 

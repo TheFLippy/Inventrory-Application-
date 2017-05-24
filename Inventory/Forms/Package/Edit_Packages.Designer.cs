@@ -67,7 +67,6 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.delivery = new System.Windows.Forms.TabPage();
-            this.City_cmbx = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txttelephone_2 = new System.Windows.Forms.TextBox();
             this.txtsurname_2 = new System.Windows.Forms.TextBox();
@@ -85,6 +84,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.txtcity_2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.TabControl1.SuspendLayout();
             this.package.SuspendLayout();
@@ -568,7 +568,7 @@
             // 
             // delivery
             // 
-            this.delivery.Controls.Add(this.City_cmbx);
+            this.delivery.Controls.Add(this.txtcity_2);
             this.delivery.Controls.Add(this.label3);
             this.delivery.Controls.Add(this.txttelephone_2);
             this.delivery.Controls.Add(this.txtsurname_2);
@@ -593,85 +593,6 @@
             this.delivery.TabIndex = 1;
             this.delivery.Text = "Return";
             this.delivery.UseVisualStyleBackColor = true;
-            // 
-            // City_cmbx
-            // 
-            this.City_cmbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.City_cmbx.FormattingEnabled = true;
-            this.City_cmbx.Items.AddRange(new object[] {
-            "Il-Belt Valletta",
-            "L-Imdina",
-            "Il-Birgu",
-            "L-Isla",
-            "Bormla",
-            "Ħal Qormi ",
-            "Ħaż-Żebbuġ",
-            "Ħaż-Żabbar",
-            "Is-Siġġiewi",
-            "Iż-Żejtun",
-            "Ħ\'Attard",
-            "Ħal Balzan",
-            "Birkirkara",
-            "Birżebbuġa",
-            "Ħad-Dingli",
-            "Il-Fgura",
-            "Il-Furjana",
-            "Il-Gudja",
-            "Il-Gżira",
-            "Ħal Għargħur",
-            "Ħal Għaxaq",
-            "Il-Ħamrun",
-            "L-Iklin",
-            "Il-Kalkara",
-            "Ħal Kirkop",
-            "Ħal Lija",
-            "Ħal Luqa",
-            "Il-Marsa",
-            "Marsaskala",
-            "Marsaxlokk",
-            "Il-Mellieħa",
-            "L-Imġarr",
-            "Il-Mosta",
-            "L-Imqabba",
-            "L-Imsida",
-            "In-Naxxar",
-            "Raħal Ġdid",
-            "Pembroke",
-            "Tal-Pietà, Malta",
-            "Il-Qrendi",
-            "Ir-Rabat",
-            "Ħal Safi",
-            "San Ġiljan",
-            "San Ġwann",
-            "San Pawl il-Bahar",
-            "Santa Luċija",
-            "Santa Venera",
-            "Tas-Sliema",
-            "Is-Swieqi",
-            "Ta\' Xbiex",
-            "Ħal Tarxien",
-            "Ix-Xgħajra",
-            "Iż-Żurrieq",
-            "L-Imtarfa",
-            "Ir-Rabat, Gozo",
-            "Il-Fontana",
-            "Għajnsielem",
-            "L-Għarb",
-            "L-Għasri",
-            "Ta\' Kerċem",
-            "Il-Munxar",
-            "In-Nadur",
-            "Il-Qala",
-            "San Lawrenz",
-            "Ta\' Sannat",
-            "Ix-Xagħra",
-            "Ix-Xewkija",
-            "Iż-Żebbuġ"});
-            this.City_cmbx.Location = new System.Drawing.Point(483, 178);
-            this.City_cmbx.Name = "City_cmbx";
-            this.City_cmbx.Size = new System.Drawing.Size(202, 21);
-            this.City_cmbx.TabIndex = 55;
-            this.City_cmbx.SelectedIndexChanged += new System.EventHandler(this.City_cmbx_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -835,6 +756,14 @@
             this.label10.TabIndex = 41;
             this.label10.Text = "City :";
             // 
+            // txtcity_2
+            // 
+            this.txtcity_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcity_2.Location = new System.Drawing.Point(483, 177);
+            this.txtcity_2.Name = "txtcity_2";
+            this.txtcity_2.Size = new System.Drawing.Size(202, 23);
+            this.txtcity_2.TabIndex = 55;
+            // 
             // Edit_Packages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -914,8 +843,8 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox City_cmbx;
         private System.Windows.Forms.ComboBox City_cmbx1;
         private System.Windows.Forms.Button btnnext_2;
+        private System.Windows.Forms.TextBox txtcity_2;
     }
 }

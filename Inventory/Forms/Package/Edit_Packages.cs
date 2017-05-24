@@ -48,7 +48,7 @@ namespace Inventory.Forms
             txttelephone_2.Text = dt.Rows[0][11].ToString();
             txtaddress1_2.Text = dt.Rows[0][19].ToString();
             txtaddress2_2.Text = dt.Rows[0][20].ToString();
-            City_cmbx.Text = dt.Rows[0][21].ToString();
+            txtcity_2.Text = dt.Rows[0][21].ToString();
             txtpostcode_2.Text = dt.Rows[0][24].ToString();
             txtcountry_2.Text = dt.Rows[0][22].ToString();
 
@@ -115,9 +115,9 @@ namespace Inventory.Forms
                 
                 if (sqlCon.updatepackage(id, packagenumber,weight, height, width,
                     length, txtname_2.Text, txtsurname_2.Text, returntel, txtaddress1_2.Text,
-                    txtaddress2_2.Text, city, txtpostcode_2.Text, txtcountry_2.Text,
+                    txtaddress2_2.Text, city2, txtpostcode_2.Text, txtcountry_2.Text,
                     txtname.Text, txtsurname.Text, destinationtel, txtaddress1.Text,
-                    txtaddress2.Text, city2, txtpostcode.Text, txtcountry.Text))
+                    txtaddress2.Text, txtcity_2.Text, txtpostcode.Text, txtcountry.Text))
                 {
                     MessageBox.Show("Successfully edited a package!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -136,24 +136,13 @@ namespace Inventory.Forms
 
 
 
-        private void City_cmbx_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                    city = City_cmbx.SelectedItem.ToString();
-              
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Please Choose a locality", "Message");
-            }
-        }
+      
 
         private void City_cmbx1_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-               city2 = City_cmbx.SelectedItem.ToString();
+               city2 = City_cmbx1.SelectedItem.ToString();
               
             }
             catch (Exception ex)

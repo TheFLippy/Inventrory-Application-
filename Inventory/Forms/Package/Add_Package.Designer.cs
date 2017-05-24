@@ -127,7 +127,7 @@
             this.btnsave.Location = new System.Drawing.Point(537, 351);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(75, 30);
-            this.btnsave.TabIndex = 25;
+            this.btnsave.TabIndex = 0;
             this.btnsave.Text = "Save";
             this.btnsave.UseVisualStyleBackColor = false;
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
@@ -186,7 +186,7 @@
             this.txtlength.Location = new System.Drawing.Point(517, 218);
             this.txtlength.Name = "txtlength";
             this.txtlength.Size = new System.Drawing.Size(36, 23);
-            this.txtlength.TabIndex = 16;
+            this.txtlength.TabIndex = 4;
             // 
             // txtwidth
             // 
@@ -194,7 +194,7 @@
             this.txtwidth.Location = new System.Drawing.Point(517, 186);
             this.txtwidth.Name = "txtwidth";
             this.txtwidth.Size = new System.Drawing.Size(36, 23);
-            this.txtwidth.TabIndex = 15;
+            this.txtwidth.TabIndex = 3;
             // 
             // txtheight
             // 
@@ -202,7 +202,7 @@
             this.txtheight.Location = new System.Drawing.Point(267, 215);
             this.txtheight.Name = "txtheight";
             this.txtheight.Size = new System.Drawing.Size(36, 23);
-            this.txtheight.TabIndex = 14;
+            this.txtheight.TabIndex = 2;
             // 
             // txtweight
             // 
@@ -210,7 +210,7 @@
             this.txtweight.Location = new System.Drawing.Point(267, 186);
             this.txtweight.Name = "txtweight";
             this.txtweight.Size = new System.Drawing.Size(36, 23);
-            this.txtweight.TabIndex = 12;
+            this.txtweight.TabIndex = 1;
             // 
             // txtpackagenumber
             // 
@@ -218,7 +218,7 @@
             this.txtpackagenumber.Location = new System.Drawing.Point(298, 134);
             this.txtpackagenumber.Name = "txtpackagenumber";
             this.txtpackagenumber.Size = new System.Drawing.Size(255, 23);
-            this.txtpackagenumber.TabIndex = 11;
+            this.txtpackagenumber.TabIndex = 0;
             // 
             // label6
             // 
@@ -322,7 +322,7 @@
             this.btnnext_2.Location = new System.Drawing.Point(653, 33);
             this.btnnext_2.Name = "btnnext_2";
             this.btnnext_2.Size = new System.Drawing.Size(32, 32);
-            this.btnnext_2.TabIndex = 37;
+            this.btnnext_2.TabIndex = 8;
             this.btnnext_2.UseVisualStyleBackColor = true;
             this.btnnext_2.Click += new System.EventHandler(this.btnnext_2_Click);
             // 
@@ -402,7 +402,7 @@
             this.City_cmbx1.Location = new System.Drawing.Point(483, 175);
             this.City_cmbx1.Name = "City_cmbx1";
             this.City_cmbx1.Size = new System.Drawing.Size(202, 23);
-            this.City_cmbx1.TabIndex = 36;
+            this.City_cmbx1.TabIndex = 5;
             this.City_cmbx1.SelectedIndexChanged += new System.EventHandler(this.City_cmbx1_SelectedIndexChanged);
             // 
             // label2
@@ -602,7 +602,7 @@
             this.txtcity_2.Location = new System.Drawing.Point(483, 179);
             this.txtcity_2.Name = "txtcity_2";
             this.txtcity_2.Size = new System.Drawing.Size(202, 23);
-            this.txtcity_2.TabIndex = 35;
+            this.txtcity_2.TabIndex = 5;
             // 
             // txttelephone_2
             // 

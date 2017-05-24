@@ -70,7 +70,7 @@
             this.button1.Location = new System.Drawing.Point(577, 254);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 30);
-            this.button1.TabIndex = 90;
+            this.button1.TabIndex = 8;
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btncancel_Click);
@@ -85,7 +85,7 @@
             this.button2.Location = new System.Drawing.Point(496, 254);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 30);
-            this.button2.TabIndex = 89;
+            this.button2.TabIndex = 7;
             this.button2.Text = "Save";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.btnsave_Click);
@@ -96,7 +96,7 @@
             this.txtengsize.Location = new System.Drawing.Point(489, 157);
             this.txtengsize.Name = "txtengsize";
             this.txtengsize.Size = new System.Drawing.Size(163, 23);
-            this.txtengsize.TabIndex = 88;
+            this.txtengsize.TabIndex = 5;
             // 
             // txtweight
             // 
@@ -104,7 +104,7 @@
             this.txtweight.Location = new System.Drawing.Point(161, 157);
             this.txtweight.Name = "txtweight";
             this.txtweight.Size = new System.Drawing.Size(163, 23);
-            this.txtweight.TabIndex = 80;
+            this.txtweight.TabIndex = 2;
             // 
             // txtvolume
             // 
@@ -112,7 +112,7 @@
             this.txtvolume.Location = new System.Drawing.Point(161, 125);
             this.txtvolume.Name = "txtvolume";
             this.txtvolume.Size = new System.Drawing.Size(163, 23);
-            this.txtvolume.TabIndex = 77;
+            this.txtvolume.TabIndex = 1;
             // 
             // txtnoplate
             // 
@@ -120,7 +120,7 @@
             this.txtnoplate.Location = new System.Drawing.Point(161, 93);
             this.txtnoplate.Name = "txtnoplate";
             this.txtnoplate.Size = new System.Drawing.Size(163, 23);
-            this.txtnoplate.TabIndex = 75;
+            this.txtnoplate.TabIndex = 0;
             // 
             // txtyom
             // 
@@ -128,7 +128,7 @@
             this.txtyom.Location = new System.Drawing.Point(489, 189);
             this.txtyom.Name = "txtyom";
             this.txtyom.Size = new System.Drawing.Size(163, 23);
-            this.txtyom.TabIndex = 84;
+            this.txtyom.TabIndex = 6;
             // 
             // txtmodel
             // 
@@ -136,7 +136,7 @@
             this.txtmodel.Location = new System.Drawing.Point(489, 125);
             this.txtmodel.Name = "txtmodel";
             this.txtmodel.Size = new System.Drawing.Size(163, 23);
-            this.txtmodel.TabIndex = 83;
+            this.txtmodel.TabIndex = 4;
             // 
             // txtmake
             // 
@@ -144,7 +144,7 @@
             this.txtmake.Location = new System.Drawing.Point(489, 93);
             this.txtmake.Name = "txtmake";
             this.txtmake.Size = new System.Drawing.Size(163, 23);
-            this.txtmake.TabIndex = 81;
+            this.txtmake.TabIndex = 3;
             // 
             // label13
             // 

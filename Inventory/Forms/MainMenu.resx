@@ -1275,15 +1275,14 @@
   </data>
   <data name="picNotification.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAGVSURBVEhL7ZY/S8NQFMVT/wx+AEFw6WT1A1QQHEU7WNycSoUO0ql0dKtjd3EobsVJdOpSnB0E
-        HUXc1FGLmziJ9Zx4Xkxe0/SldHDwwA9yz7n3Jm3SUM9W3/PmdDggZKtE5YCSZn2hYRHcgUNZgeCVQF+U
-        ZAeCVwHPYEVWVAi4/AlwwQfIKfKFuqOMdGT7Qj0P3pX1wLKiH8HIgEs1vIK8ImY5cATMAsJjesFF4HgH
-        fALmN2BGkR9WFXyBDdn0G/LMYhtmDbWzfz+UHRhzCjzKPPZNCMcteS60NMY5fjJ6L2CWxrYMsq6mQshz
-        paBZPmnG26VxouINTAPeDz5JpskVznCW8D7Sa/ME1ypOdQVZ1eOQ1Y626lsW56ALthQWgT3oSlE7NgF3
-        XrCOCGYNxA27UNOa4UJT3RpKQ11rhotN1lAa/k8wEqcTNK2hNDS1Jl5o4Ds96eU2Cs5WtC4qBGU1xA2m
-        gTvKWvsrmPzlxQ2MQ1dr/4hwRQvgHjyEWFI8GWHhGTBfwRXIKJqcsHQN7IHkvyeBPO8bm2mNwLwM5PMA
-        AAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAZVJREFUSEvt
+        lj9Lw1AUxVP/DH4AQXDpZPUDVBAcRTtY3JxKhQ7SqXR0q2N3cShuxUl06lKcHQQdRdzUUYubOIn1nHhe
+        TF7T9KV0cPDAD3LPufcmbdJQz1bf8+Z0OCBkq0TlgJJmfaFhEdyBQ1mB4JVAX5RkB4JXAc9gRVZUCLj8
+        CXDBB8gp8oW6o4x0ZPtCPQ/elfXAsqIfwciASzW8grwiZjlwBMwCwmN6wUXgeAd8AuY3YEaRH1YVfIEN
+        2fQb8sxiG2YNtbN/P5QdGHMKPMo89k0Ixy15LrQ0xjl+MnovYJbGtgyyrqZCyHOloFk+acbbpXGi4g1M
+        A94PPkmmyRXOcJbwPtJr8wTXKk51BVnV45DVjrbqWxbnoAu2FBaBPehKUTs2AXdesI4IZg3EDbtQ05rh
+        QlPdGkpDXWuGi03WUBr+TzASpxM0raE0NLUmXmjgOz3p5TYKzla0LioEZTXEDaaBO8pa+yuY/OXFDYxD
+        V2v/iHBFC+AePIRYUjwZYeEZMF/BFcgompywdA3sgeS/J4E87xubaY3AvAzk8wAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

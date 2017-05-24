@@ -38,19 +38,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.Helpbtn = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
+            this.adding.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(0, 83);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(360, 458);
+            this.panel1.Size = new System.Drawing.Size(430, 458);
             this.panel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(24, 294);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(38, 299);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(328, 46);
             this.flowLayoutPanel1.TabIndex = 0;
@@ -63,10 +65,10 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.adding);
             this.panel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(360, 83);
+            this.panel2.Location = new System.Drawing.Point(430, 83);
             this.panel2.Name = "panel2";
             this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.panel2.Size = new System.Drawing.Size(360, 458);
+            this.panel2.Size = new System.Drawing.Size(386, 458);
             this.panel2.TabIndex = 1;
             // 
             // AssignBtn
@@ -76,7 +78,7 @@
             this.AssignBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AssignBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AssignBtn.ForeColor = System.Drawing.Color.White;
-            this.AssignBtn.Location = new System.Drawing.Point(107, 393);
+            this.AssignBtn.Location = new System.Drawing.Point(121, 398);
             this.AssignBtn.Name = "AssignBtn";
             this.AssignBtn.Size = new System.Drawing.Size(149, 40);
             this.AssignBtn.TabIndex = 28;
@@ -88,7 +90,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(93, 11);
+            this.label2.Location = new System.Drawing.Point(107, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(174, 25);
             this.label2.TabIndex = 3;
@@ -97,7 +99,8 @@
             // adding
             // 
             this.adding.AutoScroll = true;
-            this.adding.Location = new System.Drawing.Point(8, 48);
+            this.adding.Controls.Add(this.textBox1);
+            this.adding.Location = new System.Drawing.Point(22, 53);
             this.adding.Name = "adding";
             this.adding.Size = new System.Drawing.Size(344, 240);
             this.adding.TabIndex = 2;
@@ -106,7 +109,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(253, 23);
+            this.label1.Location = new System.Drawing.Point(300, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(202, 32);
             this.label1.TabIndex = 2;
@@ -133,24 +136,36 @@
             this.Helpbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Helpbtn.FlatAppearance.BorderSize = 0;
             this.Helpbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Helpbtn.Location = new System.Drawing.Point(673, 23);
+            this.Helpbtn.Location = new System.Drawing.Point(770, 23);
             this.Helpbtn.Name = "Helpbtn";
             this.Helpbtn.Size = new System.Drawing.Size(32, 32);
             this.Helpbtn.TabIndex = 3;
             this.Helpbtn.UseVisualStyleBackColor = false;
             this.Helpbtn.Click += new System.EventHandler(this.Helpbtn_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.AliceBlue;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.ForeColor = System.Drawing.Color.Black;
+            this.textBox1.Location = new System.Drawing.Point(3, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(123, 16);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.Text = "Pack No.  |  City";
+            // 
             // AssignPackage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(728, 550);
+            this.ClientSize = new System.Drawing.Size(826, 550);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.Helpbtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AssignPackage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -158,6 +173,8 @@
             this.Load += new System.EventHandler(this.AssignPackage_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.adding.ResumeLayout(false);
+            this.adding.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,5 +191,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Helpbtn;
         private System.Windows.Forms.Button AssignBtn;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

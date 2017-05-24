@@ -51,7 +51,7 @@
             this.btnEdit.Location = new System.Drawing.Point(769, 172);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(96, 43);
-            this.btnEdit.TabIndex = 13;
+            this.btnEdit.TabIndex = 4;
             this.btnEdit.Text = "Edit";
             this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -67,7 +67,7 @@
             this.btnDelete.Location = new System.Drawing.Point(769, 238);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(96, 46);
-            this.btnDelete.TabIndex = 12;
+            this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Delete";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -86,7 +86,7 @@
             this.btnBack.Location = new System.Drawing.Point(19, 23);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(32, 32);
-            this.btnBack.TabIndex = 11;
+            this.btnBack.TabIndex = 6;
             this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -105,7 +105,7 @@
             this.btnAdd.Location = new System.Drawing.Point(769, 104);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(96, 43);
-            this.btnAdd.TabIndex = 10;
+            this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Add";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -126,7 +126,7 @@
             this.gridViewInv.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridViewInv.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridViewInv.Size = new System.Drawing.Size(671, 349);
-            this.gridViewInv.TabIndex = 9;
+            this.gridViewInv.TabIndex = 2;
             this.gridViewInv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridViewInv_CellClick);
             this.gridViewInv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridViewInv_CellContentClick);
             // 
@@ -144,7 +144,7 @@
             this.btnSearch.Location = new System.Drawing.Point(769, 27);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(26, 28);
-            this.btnSearch.TabIndex = 8;
+            this.btnSearch.TabIndex = 1;
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -155,7 +155,7 @@
             this.txtSearch.Location = new System.Drawing.Point(80, 26);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(671, 27);
-            this.txtSearch.TabIndex = 7;
+            this.txtSearch.TabIndex = 0;
             // 
             // View_Inventory
             // 

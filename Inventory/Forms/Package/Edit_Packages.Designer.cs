@@ -67,6 +67,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.delivery = new System.Windows.Forms.TabPage();
+            this.txtcity_2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txttelephone_2 = new System.Windows.Forms.TextBox();
             this.txtsurname_2 = new System.Windows.Forms.TextBox();
@@ -84,7 +85,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtcity_2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.TabControl1.SuspendLayout();
             this.package.SuspendLayout();
@@ -594,6 +594,14 @@
             this.delivery.Text = "Return";
             this.delivery.UseVisualStyleBackColor = true;
             // 
+            // txtcity_2
+            // 
+            this.txtcity_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcity_2.Location = new System.Drawing.Point(483, 177);
+            this.txtcity_2.Name = "txtcity_2";
+            this.txtcity_2.Size = new System.Drawing.Size(202, 23);
+            this.txtcity_2.TabIndex = 55;
+            // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -756,14 +764,6 @@
             this.label10.TabIndex = 41;
             this.label10.Text = "City :";
             // 
-            // txtcity_2
-            // 
-            this.txtcity_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcity_2.Location = new System.Drawing.Point(483, 177);
-            this.txtcity_2.Name = "txtcity_2";
-            this.txtcity_2.Size = new System.Drawing.Size(202, 23);
-            this.txtcity_2.TabIndex = 55;
-            // 
             // Edit_Packages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -771,6 +771,7 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(721, 387);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Edit_Packages";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

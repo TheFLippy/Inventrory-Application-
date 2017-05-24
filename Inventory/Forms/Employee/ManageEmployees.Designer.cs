@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageEmployees));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDeleteEmp = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
@@ -115,10 +115,10 @@
             // 
             this.gridMngEmployees.AllowUserToAddRows = false;
             this.gridMngEmployees.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Ivory;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridMngEmployees.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Ivory;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridMngEmployees.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gridMngEmployees.BackgroundColor = System.Drawing.Color.White;
             this.gridMngEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridMngEmployees.Location = new System.Drawing.Point(80, 82);
@@ -170,6 +170,7 @@
             this.Controls.Add(this.gridMngEmployees);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManageEmployees";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

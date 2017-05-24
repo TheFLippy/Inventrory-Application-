@@ -265,6 +265,7 @@
             this.Controls.Add(this.txtEditNewPassword);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtEditUsername);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

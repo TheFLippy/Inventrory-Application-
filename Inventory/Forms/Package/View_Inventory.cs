@@ -35,6 +35,8 @@ namespace Inventory.Forms
             btnDelete.Visible = false;
             btnEdit.Visible = false;
             btnSearch_Click(sender, e);
+            gridViewInv.Columns[3].ReadOnly = true;                
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -94,7 +96,7 @@ namespace Inventory.Forms
 
         private void gridViewInv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(sender != gridViewInv.Rows[gridViewInv.CurrentRow.Index].Cells[0])
+            if (gridViewInv.CurrentCell == gridViewInv.Rows[gridViewInv.CurrentRow.Index].Cells[3])
             {
                 return;
             }

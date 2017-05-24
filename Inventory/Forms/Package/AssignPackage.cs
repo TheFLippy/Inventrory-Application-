@@ -225,7 +225,7 @@ namespace Inventory.Forms
             drivercmbx.FlatStyle = FlatStyle.Flat;
             drivercmbx.Height = 30;
             drivercmbx.Width = 120;
-            drivercmbx.Font = new Font("Segoe UI Semibold", 10, FontStyle.Bold);
+            drivercmbx.Font = new Font("Segoe UI Semibold", 11, FontStyle.Bold);
             for (int k = 0; k < count; k++)
             {
                 drivercmbx.Items.Add(dtdriver.Rows[k][0].ToString());

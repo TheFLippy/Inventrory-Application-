@@ -36,6 +36,8 @@ namespace Inventory.Forms
         private void ManageVans_Load(object sender, EventArgs e)
         {
             btnSearch_Click(sender, e);
+            for (int i = 1; i < gridMngVans.ColumnCount; i++)
+            { gridMngVans.Columns[i].ReadOnly = true; }
         }
 
         //Redirect to add van form
@@ -86,37 +88,38 @@ namespace Inventory.Forms
             DataGridViewCheckBoxCell ch1 = new DataGridViewCheckBoxCell();
             ch1 = (DataGridViewCheckBoxCell)gridMngVans.Rows[gridMngVans.CurrentRow.Index].Cells[0];
             string temp = null;
-
-            //Checking wheter the box has been checked or unchecked
-            if (ch1.Value == null)
-                ch1.Value = false;
-            switch (ch1.Value.ToString())
-            {
-                case "True":
+           
+                //Checking wheter the box has been checked or unchecked
+                if (ch1.Value == null)
                     ch1.Value = false;
-                    break;
-                case "False":
-                    ch1.Value = true;
-                    break;
-            }
-            if (ch1.Value.ToString() == "True")
-            {
-                //Getting the ID of the user
-                temp = gridMngVans.Rows[ch1.RowIndex].Cells[1].Value.ToString();
-                //Placing that ID into an array with an index (needs to be this way in order to remove id when unchecked)
-                deleteArrayPopulation(temp, ch1.RowIndex);
-                //Display delete button
-                btnDeleteVan.Enabled = true;
-            }
-            else if (ch1.Value.ToString() == "False")
-            {
-                totalchk--;
-                id[ch1.RowIndex] = 0;
-                if (totalchk == 0)
+                switch (ch1.Value.ToString())
                 {
-                    btnDeleteVan.Enabled = false;
+                    case "True":
+                        ch1.Value = false;
+                        break;
+                    case "False":
+                        ch1.Value = true;
+                        break;
                 }
-            }
+                if (ch1.Value.ToString() == "True")
+                {
+                    //Getting the ID of the user
+                    temp = gridMngVans.Rows[ch1.RowIndex].Cells[1].Value.ToString();
+                    //Placing that ID into an array with an index (needs to be this way in order to remove id when unchecked)
+                    deleteArrayPopulation(temp, ch1.RowIndex);
+                    //Display delete button
+                    btnDeleteVan.Enabled = true;
+                }
+                else if (ch1.Value.ToString() == "False")
+                {
+                    totalchk--;
+                    id[ch1.RowIndex] = 0;
+                    if (totalchk == 0)
+                    {
+                        btnDeleteVan.Enabled = false;
+                    }
+                }
+            
         }
 
         //Array that is used to pass multiple IDs of users in order to delete them

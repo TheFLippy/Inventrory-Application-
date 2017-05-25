@@ -35,7 +35,8 @@ namespace Inventory.Forms
             btnDelete.Enabled = false;
             btnEdit.Enabled = false;
             btnSearch_Click(sender, e);
-            gridViewInv.Columns[3].ReadOnly = true;                
+            for (int i = 1; i < gridViewInv.ColumnCount; i++)
+            { gridViewInv.Columns[i].ReadOnly = true; }
 
         }
 

@@ -129,11 +129,12 @@ namespace Inventory.Forms
                 totalPackages = 1;
             }
             //area1
-            string[] city = new string[] { "Il-Qala", "Ta' Kerċem" };
+            string[] city = new string[] { "Ir-Rabat, Gozo", "Il-Fontana", "Għajnsielem", "L-Għarb", "L-Għasri", "Ta' Kerċem", "Il-Munxar", "In-Nadur", "Il-Qala", "San Lawrenz", "Ta' Sannat", "Ix-Xagħra", "Ix-Xewkija", "Iż-Żebbuġ" };
             //area2
-            string[] city2 = new string[] { "Il-Munxar", "Ir-Rabat, Gozo", "Ix-Xagħra" };
+            string[] city2 = new string[] { "Il-Belt Valletta", "L-Imdina", "Il-Birgu", "L-Isla", "Bormla", "Ħal Qormi", "Ħaż-Żebbuġ", "Ħaż-Żabbar", "Is-Siġġiewi", "Iż-Żejtun", "Ħ'Attard", "Ħal Balzan", "Birkirkara", "Birżebbuġa", "Ħad-Dingli", "Il-Fgura", "Il-Furjana", "Il-Gudja", "Il-Gżira", "Ħal Għargħur", "Ħal Għaxaq", "Il-Ħamrun", "L-Iklin", "Il-Kalkara", "Ħal Kirkop", "Ħal Lija" };
             //area 3
-            string[] city3 = new string[] { "Ħaż-Żabbar", "Is-Siġġiewi" };
+            string[] city3 = new string[] { "Ħal Luqa", "Il-Marsa", "Marsaskala", "Marsaxlokk", "Il-Mellieħa", "L-Imġarr", "Il-Mosta", "L-Imqabba", "L-Imsida", "In-Naxxar", "Raħal Ġdid", "Pembroke", "Tal-Pietà, Malta", "Il-Qrendi", "Ir-Rabat", "Ħal Safi", "San Ġiljan", "San Ġwann", "San Pawl il-Baħar", "Santa Luċija", "Santa Venera", "Tas-Sliema", "Is-Swieqi", "Ta' Xbiex", "Ħal Tarxien", "Ix-Xgħajra", "Iż-Żurrieq", "L-Imtarfa" };
+
 
 
 
@@ -205,8 +206,10 @@ namespace Inventory.Forms
 
                         Button remove = new Button();
                         remove.Text = "Remove";
+                        toolTip1.SetToolTip(remove, "Unassign this package from the current driver");
                         buttonlst.Add(remove);
                         tlplst.ElementAt(i).Controls.Add(remove, 1, x);
+                        
                         remove.Click += new EventHandler(this.remove_Click);
 
                     }
@@ -243,6 +246,7 @@ namespace Inventory.Forms
             addbtn.BackColor = Color.LimeGreen;
             addbtn.Font = new Font("Segoe UI Semibold", 10, FontStyle.Bold);
             addbtn.ForeColor = Color.White;
+            
 
             flowLayoutPanel1.Controls.Add(addbtn);
 
@@ -264,10 +268,14 @@ namespace Inventory.Forms
             for (int i = 0; i < count1; i++)
             {
                 Label L = new Label();
-                L.Text = "  "+dtpackage.Rows[i][1].ToString() + "   |   "  + dtpackage.Rows[i][0].ToString();
+                L.Text = dtpackage.Rows[i][1].ToString() + "   |   "  + dtpackage.Rows[i][0].ToString();
                 addpk(L);
 
             }
+
+            this.toolTip1.SetToolTip(addbtn, "Add the checked package(s) to the selected driver");
+            this.toolTip1.SetToolTip(autoAssign, "Distributes all the unassigned packages \nto the drivers automatically");
+            this.toolTip1.SetToolTip(drivercmbx, "Select the driver that the checked \npackages will be assigned to");
 
         }
 
@@ -305,6 +313,7 @@ namespace Inventory.Forms
 
                             Button remove = new Button();
                             remove.Text = "Remove";
+                            toolTip1.SetToolTip(remove, "Unassign this package from the current driver");
                             buttonlst.Add(remove);
                             tlplst.ElementAt(x).Controls.Add(remove, 1, position + 3);
                             remove.Click += new EventHandler(this.remove_Click);
@@ -336,6 +345,7 @@ namespace Inventory.Forms
                                     Button remove = new Button();
                                     remove.Text = "Remove";
                                     remove.Name = "rmv" + j.ToString();
+                                    toolTip1.SetToolTip(remove, "Unassign this package from the current driver");
                                     buttonlst.Add(remove);
                                     tlplst.ElementAt(x).Controls.Add(remove, 1, position + 2);
                                     remove.Click += new EventHandler(this.remove_Click);
@@ -359,6 +369,8 @@ namespace Inventory.Forms
                     acc.Hide();
                     acc.Show();
                     iteration = true;
+
+                    
                 }
                 else if (iteration)
                 {
@@ -379,6 +391,7 @@ namespace Inventory.Forms
 
                                 Button remove = new Button();
                                 remove.Text = "Remove";
+                                toolTip1.SetToolTip(remove, "Unassign this package from the current driver");
                                 buttonlst.Add(remove);
                                 tlplst.ElementAt(x).Controls.Add(remove, 1, position + 2);
                                 remove.Click += new EventHandler(this.remove_Click);
@@ -393,6 +406,7 @@ namespace Inventory.Forms
 
                                 Button remove = new Button();
                                 remove.Text = "Remove";
+                                toolTip1.SetToolTip(remove, "Unassign this package from the current driver");
                                 buttonlst.Add(remove);
                                 tlplst.ElementAt(x).Controls.Add(remove, 1, position + 2);
                                 remove.Click += new EventHandler(this.remove_Click);
@@ -422,9 +436,11 @@ namespace Inventory.Forms
                                     Button remove = new Button();
                                     remove.Text = "Remove";
                                     remove.Name = "rmv" + j.ToString();
+                                    toolTip1.SetToolTip(remove, "Unassign this package from the current driver");
                                     buttonlst.Add(remove);
                                     tlplst.ElementAt(x).Controls.Add(remove, 1, position + 2);
                                     remove.Click += new EventHandler(this.remove_Click);
+
 
 
                                 }
@@ -512,6 +528,7 @@ namespace Inventory.Forms
                         bt.Text = "Remove";
                         buttonlst.Add(bt);
                         bt.Click += new EventHandler(this.remove_Click);
+
 
                         tlplst.ElementAt(index).Controls.Add(bt, 1, pos + 4);
                         que.Dequeue();
@@ -694,6 +711,11 @@ namespace Inventory.Forms
         {
             this.Hide();
             FormState.PreviousPage.Show();
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
         }
     }
 }

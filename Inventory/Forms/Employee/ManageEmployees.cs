@@ -32,8 +32,8 @@ namespace Inventory
 
         private void ManageEmployees_Load(object sender, EventArgs e)
         {
-            btnDeleteEmp.Visible = false;
-            btnEdit.Visible = false;
+            btnDeleteEmp.Enabled = false;
+            btnEdit.Enabled = false;
             btnSearch_Click(sender, e);
         }
 
@@ -122,7 +122,7 @@ namespace Inventory
                     //Placing that ID into an array with an index (needs to be this way in order to remove id when unchecked)
                     deleteArrayPopulation(temp, ch1.RowIndex);
                     //Display delete button
-                    btnDeleteEmp.Visible = true;
+                    btnDeleteEmp.Enabled = true;
                 }
                 else if (ch1.Value.ToString() == "False")
                 {
@@ -130,7 +130,7 @@ namespace Inventory
                     checkArray[ch1.RowIndex] = 0;
                     if (totalChk == 0)
                     {
-                        btnDeleteEmp.Visible = false;
+                        btnDeleteEmp.Enabled = false;
                     }
                 }
             }
@@ -165,7 +165,7 @@ namespace Inventory
                     totalChk = 0;
                     //Reset the array of IDs 
                     resetArray(checkArray);
-                    btnDeleteEmp.Visible = false;
+                    btnDeleteEmp.Enabled = false;
                     btnSearch_Click(sender, e);
 
 
@@ -192,7 +192,7 @@ namespace Inventory
         {
             if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
             {
-                btnEdit.Visible = true;
+                btnEdit.Enabled = true;
 
                 string tempID = gridMngEmployees.Rows[e.RowIndex].Cells[1].Value.ToString();
                 editID = Convert.ToInt32(tempID);

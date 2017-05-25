@@ -17,8 +17,8 @@ namespace Inventory.Forms
         public ManageVans()
         {
             InitializeComponent();
-            btnDeleteVan.Visible = false;
-            btnEdit.Visible = false;
+            btnDeleteVan.Enabled = false;
+            btnEdit.Enabled = false;
         }
 
         //variables for deletion of multiple rows
@@ -106,7 +106,7 @@ namespace Inventory.Forms
                 //Placing that ID into an array with an index (needs to be this way in order to remove id when unchecked)
                 deleteArrayPopulation(temp, ch1.RowIndex);
                 //Display delete button
-                btnDeleteVan.Visible = true;
+                btnDeleteVan.Enabled = true;
             }
             else if (ch1.Value.ToString() == "False")
             {
@@ -114,7 +114,7 @@ namespace Inventory.Forms
                 id[ch1.RowIndex] = 0;
                 if (totalchk == 0)
                 {
-                    btnDeleteVan.Visible = false;
+                    btnDeleteVan.Enabled = false;
                 }
             }
         }
@@ -162,7 +162,7 @@ namespace Inventory.Forms
                     //Reset the array of IDs 
                     resetArray(checkArray);
                     //gridMngVans.DataSource = null;
-                    btnDeleteVan.Visible = false;
+                    btnDeleteVan.Enabled = false;
                     btnSearch_Click(sender, e);
 
                 }
@@ -187,7 +187,7 @@ namespace Inventory.Forms
         {
             if (e.ColumnIndex != 0 &&e.RowIndex !=-1)
             {
-                btnEdit.Visible = true;
+                btnEdit.Enabled = true;
 
                 string tempID = gridMngVans.Rows[e.RowIndex].Cells[1].Value.ToString();
                 editID = Convert.ToInt32(tempID);

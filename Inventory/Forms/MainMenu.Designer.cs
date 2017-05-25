@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.btnManageEmployees = new System.Windows.Forms.Button();
             this.btnViewInventory = new System.Windows.Forms.Button();
@@ -38,6 +39,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblNotification = new System.Windows.Forms.Label();
             this.picNotification = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNotification)).BeginInit();
             this.SuspendLayout();
@@ -58,6 +60,7 @@
             this.btnManageEmployees.TabIndex = 0;
             this.btnManageEmployees.Text = "Employees";
             this.btnManageEmployees.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip1.SetToolTip(this.btnManageEmployees, "Manage Employee details");
             this.btnManageEmployees.UseVisualStyleBackColor = false;
             this.btnManageEmployees.Click += new System.EventHandler(this.btnManageEmployees_Click);
             // 
@@ -76,6 +79,7 @@
             this.btnViewInventory.TabIndex = 2;
             this.btnViewInventory.Text = "Inventory";
             this.btnViewInventory.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip1.SetToolTip(this.btnViewInventory, "Manage Package details");
             this.btnViewInventory.UseVisualStyleBackColor = false;
             this.btnViewInventory.Click += new System.EventHandler(this.btnViewIntentory_Click);
             // 
@@ -94,6 +98,7 @@
             this.btnDeliveries.TabIndex = 3;
             this.btnDeliveries.Text = "Deliveries";
             this.btnDeliveries.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip1.SetToolTip(this.btnDeliveries, "Manage Deliveries");
             this.btnDeliveries.UseVisualStyleBackColor = false;
             this.btnDeliveries.Click += new System.EventHandler(this.btnDeliveries_Click);
             // 
@@ -138,6 +143,7 @@
             this.btnManageVans.TabIndex = 1;
             this.btnManageVans.Text = "Vans";
             this.btnManageVans.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip1.SetToolTip(this.btnManageVans, "Manage Van details");
             this.btnManageVans.UseVisualStyleBackColor = false;
             this.btnManageVans.Click += new System.EventHandler(this.btnManageVans_Click);
             // 
@@ -172,6 +178,7 @@
             this.picNotification.Size = new System.Drawing.Size(45, 35);
             this.picNotification.TabIndex = 9;
             this.picNotification.TabStop = false;
+            this.toolTip1.SetToolTip(this.picNotification, "New Notification");
             this.picNotification.Click += new System.EventHandler(this.lblNotification_Click);
             // 
             // MainMenu
@@ -213,5 +220,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblNotification;
         private System.Windows.Forms.PictureBox picNotification;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageEmployees));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -37,6 +38,7 @@
             this.gridMngEmployees = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridMngEmployees)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,6 +56,7 @@
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "Edit";
             this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnEdit, "Edit the selected Employee");
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
@@ -70,6 +73,7 @@
             this.btnDeleteEmp.TabIndex = 4;
             this.btnDeleteEmp.Text = "Delete";
             this.btnDeleteEmp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnDeleteEmp, "Delete all checked Employees");
             this.btnDeleteEmp.UseVisualStyleBackColor = true;
             this.btnDeleteEmp.Click += new System.EventHandler(this.btnDeleteEmp_Click);
             // 
@@ -88,6 +92,7 @@
             this.btnBack.Size = new System.Drawing.Size(32, 32);
             this.btnBack.TabIndex = 5;
             this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnBack, "Back to Main Menu");
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -108,6 +113,7 @@
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnAdd, "Add a new Employee");
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -146,6 +152,7 @@
             this.btnSearch.Size = new System.Drawing.Size(26, 28);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnSearch, "Search for an Employee");
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -191,5 +198,6 @@
         private System.Windows.Forms.DataGridView gridMngEmployees;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

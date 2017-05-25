@@ -32,8 +32,8 @@ namespace Inventory.Forms
 
         private void View_Inventory_Load(object sender, EventArgs e)
         {
-            btnDelete.Visible = false;
-            btnEdit.Visible = false;
+            btnDelete.Enabled = false;
+            btnEdit.Enabled = false;
             btnSearch_Click(sender, e);
             gridViewInv.Columns[3].ReadOnly = true;                
 
@@ -70,7 +70,7 @@ namespace Inventory.Forms
         {
             if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
             {
-                btnEdit.Visible = true;
+                btnEdit.Enabled = true;
 
                 string tempID = gridViewInv.Rows[e.RowIndex].Cells[1].Value.ToString();
                 editid = Convert.ToInt32(tempID);
@@ -123,7 +123,7 @@ namespace Inventory.Forms
                 //Placing that ID into an array with an index (needs to be this way in order to remove id when unchecked)
                 deletefields(temp, ch1.RowIndex);
                 //Display delete button
-                btnDelete.Visible = true;
+                btnDelete.Enabled = true;
             }
             else if (ch1.Value.ToString() == "False")
             {
@@ -131,7 +131,7 @@ namespace Inventory.Forms
                 id[ch1.RowIndex] = 0;
                 if (totalchk == 0)
                 {
-                    btnDelete.Visible = false;
+                    btnDelete.Enabled = false;
                 }
             }
 
@@ -170,7 +170,7 @@ namespace Inventory.Forms
                     //Reset the array of IDs 
                     
                     gridViewInv.DataSource = null;
-                    btnDelete.Visible = false;
+                    btnDelete.Enabled = false;
                     txtSearch.Text = null;
                     btnSearch_Click(sender, e);
                 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AssignPackage));
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -35,12 +36,12 @@
             this.AssignBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.adding = new System.Windows.Forms.FlowLayoutPanel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.Helpbtn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel2.SuspendLayout();
-            this.adding.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -60,6 +61,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.AssignBtn);
             this.panel2.Controls.Add(this.flowLayoutPanel1);
             this.panel2.Controls.Add(this.label2);
@@ -82,7 +84,10 @@
             this.AssignBtn.Name = "AssignBtn";
             this.AssignBtn.Size = new System.Drawing.Size(149, 40);
             this.AssignBtn.TabIndex = 28;
+            this.AssignBtn.Tag = "";
             this.AssignBtn.Text = "Assign Packages";
+            this.toolTip1.SetToolTip(this.AssignBtn, "Assign the packages to the \r\nrespective to drivers as seen\r\non the left side of t" +
+        "he screen");
             this.AssignBtn.UseVisualStyleBackColor = false;
             this.AssignBtn.Click += new System.EventHandler(this.AssignBtn_Click);
             // 
@@ -99,11 +104,21 @@
             // adding
             // 
             this.adding.AutoScroll = true;
-            this.adding.Controls.Add(this.textBox1);
-            this.adding.Location = new System.Drawing.Point(22, 53);
+            this.adding.Location = new System.Drawing.Point(22, 68);
             this.adding.Name = "adding";
-            this.adding.Size = new System.Drawing.Size(344, 240);
+            this.adding.Size = new System.Drawing.Size(344, 225);
             this.adding.TabIndex = 2;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.AliceBlue;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.ForeColor = System.Drawing.Color.Black;
+            this.textBox1.Location = new System.Drawing.Point(22, 51);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(123, 16);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.Text = "Pack No.  |  City";
             // 
             // label1
             // 
@@ -126,6 +141,7 @@
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(32, 32);
             this.btnBack.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.btnBack, "Back to Main Menu");
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -140,19 +156,13 @@
             this.Helpbtn.Name = "Helpbtn";
             this.Helpbtn.Size = new System.Drawing.Size(32, 32);
             this.Helpbtn.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.Helpbtn, "Help");
             this.Helpbtn.UseVisualStyleBackColor = false;
             this.Helpbtn.Click += new System.EventHandler(this.Helpbtn_Click);
             // 
-            // textBox1
+            // toolTip1
             // 
-            this.textBox1.BackColor = System.Drawing.Color.AliceBlue;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(3, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(123, 16);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Pack No.  |  City";
+            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
             // 
             // AssignPackage
             // 
@@ -173,8 +183,6 @@
             this.Load += new System.EventHandler(this.AssignPackage_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.adding.ResumeLayout(false);
-            this.adding.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,5 +200,6 @@
         private System.Windows.Forms.Button Helpbtn;
         private System.Windows.Forms.Button AssignBtn;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

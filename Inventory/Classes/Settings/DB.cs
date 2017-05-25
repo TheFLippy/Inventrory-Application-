@@ -385,7 +385,7 @@ namespace Inventory
             return true;
         } 
 
-        public bool insertvan(string noPlate, float volume, float weight, string make, string model, string engSize, int YoM, string driver)
+        public bool insertvan(string noPlate, float volume, float weight, string make, string model, string engSize, int YoM)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
@@ -407,7 +407,7 @@ namespace Inventory
             //for testing
             Console.WriteLine("parsed" + id);
 
-            var myCommand = new SqlCommand("INSERT INTO van VALUES(@noPlate,@volume,@weight, '', 0, 'Available', @make, @model, @engSize, @YoM, @driver)", conn);
+            var myCommand = new SqlCommand("INSERT INTO van VALUES(@noPlate,@volume,@weight, '', 0, 'Available', @make, @model, @engSize, @YoM, NULL)", conn);
             //myCommand.Parameters.AddWithValue("@id", id);
             myCommand.Parameters.AddWithValue("@noPlate", addVan.NoPlate);
             myCommand.Parameters.AddWithValue("@volume", addVan.Volume);
@@ -416,7 +416,7 @@ namespace Inventory
             myCommand.Parameters.AddWithValue("@model", addVan.Model);
             myCommand.Parameters.AddWithValue("@engSize", addVan.EngSize);
             myCommand.Parameters.AddWithValue("@yom", addVan.YOM);
-            myCommand.Parameters.AddWithValue("@driver", driver);
+           
 
             int result = myCommand.ExecuteNonQuery();
 

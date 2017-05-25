@@ -14,6 +14,20 @@ namespace Inventory.Forms
     {
         db sqlCon = new db();
         int id;
+        DataTable driverdt = new DataTable();
+
+        public string connectionString = @"Data Source=gapt-inventory.database.windows.net;Initial Catalog = Inventory; Persist Security Info=True;User ID = TheFLippy; Password=Gapt1234";
+
+        private string getDriver(DataTable dtdriver)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT username FROM login WHERE jobPosition = 'Driver'", connectionString);
+            sda.Fill(dtdriver);
+
+            return dtdriver.ToString();
+        }
         public EditVan(int id)
         {
             this.id = id;
@@ -42,7 +56,7 @@ namespace Inventory.Forms
             txtmodel.Text = dt.Rows[0][8].ToString();
             txtengsize.Text = dt.Rows[0][9].ToString();
             txtyom.Text = dt.Rows[0][10].ToString();
-            txtdriver.Text = dt.Rows[0][11].ToString();
+            drivercmbx.Text = dt.Rows[0][11].ToString();
 
         }
 
@@ -90,7 +104,7 @@ namespace Inventory.Forms
                 float vol = (float)Convert.ToDouble(txtvolume.Text);
                 float weight = (float)Convert.ToDouble(txtweight.Text);
                 int yom = Convert.ToInt32(txtyom.Text);
-                string driver = txtdriver.Text;
+                string driver = drivercmbx.SelectedItem.ToString();
                 //if successfully added
 
                 DataTable dt = new DataTable();
@@ -123,7 +137,12 @@ namespace Inventory.Forms
 
         private void EditVan_Load(object sender, EventArgs e)
         {
+            getDriver(driverdt);
 
+            for(int i =0;i < driverdt.Rows.Count; i++)
+            {
+                drivercmbx.Items.Add(driverdt.Rows[i][0]);
+            }
         }
     }
 }

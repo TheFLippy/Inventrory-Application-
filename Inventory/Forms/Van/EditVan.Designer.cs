@@ -47,7 +47,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
-            this.txtdriver = new System.Windows.Forms.TextBox();
+            this.drivercmbx = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btncancel
@@ -228,13 +228,13 @@
             this.label.TabIndex = 93;
             this.label.Text = "Driver :";
             // 
-            // txtdriver
+            // drivercmbx
             // 
-            this.txtdriver.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdriver.Location = new System.Drawing.Point(161, 189);
-            this.txtdriver.Name = "txtdriver";
-            this.txtdriver.Size = new System.Drawing.Size(163, 23);
-            this.txtdriver.TabIndex = 94;
+            this.drivercmbx.FormattingEnabled = true;
+            this.drivercmbx.Location = new System.Drawing.Point(161, 191);
+            this.drivercmbx.Name = "drivercmbx";
+            this.drivercmbx.Size = new System.Drawing.Size(163, 21);
+            this.drivercmbx.TabIndex = 95;
             // 
             // EditVan
             // 
@@ -242,7 +242,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(684, 301);
-            this.Controls.Add(this.txtdriver);
+            this.Controls.Add(this.drivercmbx);
             this.Controls.Add(this.label);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btncancel);
@@ -291,6 +291,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label;
-        private System.Windows.Forms.TextBox txtdriver;
+        private System.Windows.Forms.ComboBox drivercmbx;
     }
 }

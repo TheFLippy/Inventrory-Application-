@@ -686,6 +686,38 @@ namespace Inventory.Forms
                         k = 0;
                     }
                 }
+
+                foreach (CheckBox ck in adding.Controls.OfType<CheckBox>())
+                {
+                    string s = "";
+                    for (int i = 0; i < ck.Text.Length; i++)
+                    {
+                        if (ck.Text[i] == ' ')
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            s += ck.Text[i];
+                        }
+                    }
+                    int packNo = Convert.ToInt32(s);
+                    Console.WriteLine(packNo);
+                    SqlConnection con = new SqlConnection(connectionString);
+                    con.Open();
+                    var mycom = new SqlCommand("UPDATE package SET driver = NULL WHERE packageNumber = @id", con);
+                    mycom.Parameters.AddWithValue("@id", packNo);
+
+                    int result = mycom.ExecuteNonQuery();
+                    if (result != 0)
+                    {
+                        Console.WriteLine("ROWS AFFECTED");
+                    }
+                    else
+                    {
+                        Console.WriteLine("ROWS NOT AFFECTED");
+                    }
+                }
                 if (pkcount > 0)
                 {
                     MessageBox.Show("The packages were assigned", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);

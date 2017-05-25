@@ -82,7 +82,7 @@ namespace Inventory.Forms
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
 
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT  deliveryCity,id, packageNumber FROM package WHERE deleted = 0 AND delivered = 0 AND driver IS NULL", connectionString);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT  deliveryCity, packageNumber,id FROM package WHERE deleted = 0 AND delivered = 0 AND driver IS NULL", connectionString);
             sda.Fill(dtpackage);
 
             return dtpackage.ToString();
@@ -93,7 +93,7 @@ namespace Inventory.Forms
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
 
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT  deliveryCity,id, packageNumber , driver FROM package WHERE deleted = 0 AND delivered = 0 ", connectionString);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT  deliveryCity, packageNumber,id , driver FROM package WHERE deleted = 0 AND delivered = 0 ", connectionString);
             sda.Fill(assignedPackage);
 
             return assignedPackage.ToString();
@@ -647,7 +647,7 @@ namespace Inventory.Forms
                             {
                                 if (lb.Text.Equals(dtpackage.Rows[j][1].ToString() + "   |   " + dtpackage.Rows[j][0].ToString()))
                                 {
-                                    packid = dtpackage.Rows[j][2].ToString();
+                                    packid = dtpackage.Rows[j][1].ToString();
                                     k = 1;
                                     break;
                                 }
@@ -657,7 +657,7 @@ namespace Inventory.Forms
                             {
                                 if (lb.Text.Equals(assignPackage.Rows[x][1].ToString() + "   |   " + assignPackage.Rows[x][0].ToString()))
                                 {
-                                    packid = assignPackage.Rows[x][2].ToString();
+                                    packid = assignPackage.Rows[x][1].ToString();
                                     k = 1;
                                     break;
                                 }

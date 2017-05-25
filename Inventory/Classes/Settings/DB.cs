@@ -224,7 +224,7 @@ namespace Inventory
         #endregion
 
         #region Package SQL
-        public bool insertpack( float deliveryNumber, DateTime dueDate, float height, float length, float weight, float width, float returnNumber, 
+        public bool insertpack( float deliveryNumber, float height, float length, float weight, float width, float returnNumber, 
             string deliveryAddress1, string deliveryAddress2, string deliveryCity, string deliveryCountry, 
             string deliveryName , string deliveryPostcode, string deliverySurname, string returnAddress1, 
             string returnAddress2, string returnCity, string returnCountry, string returnName,
@@ -250,7 +250,7 @@ namespace Inventory
             //for testing
             Console.WriteLine("parsed" + id);
 
-            var myCommand = new SqlCommand("INSERT INTO package VALUES(@id ,GETDATE(), GETDATE() ,NULL,'false','false', @deliveryNumber, @height, @length, @weight, @width, @returnNumber, @deliveryAddress1, @deliveryAddress2,@deliveryCity, @deliveryCountry, @deliveryName, @deliveryPostcode, @deliverySurname, @returnAddress1, @returnAddress2, @returnCity, @returnCountry, @returnName, @returnPostcode, @returnSurname, @packageNumber , NULL,'" + dueDate + "')", conn);
+            var myCommand = new SqlCommand("INSERT INTO package VALUES(@id ,GETDATE(),GETDATE(),NULL,'false','false', @deliveryNumber, @height, @length, @weight, @width, @returnNumber, @deliveryAddress1, @deliveryAddress2,@deliveryCity, @deliveryCountry, @deliveryName, @deliveryPostcode, @deliverySurname, @returnAddress1, @returnAddress2, @returnCity, @returnCountry, @returnName, @returnPostcode, @returnSurname, @packageNumber , NULL)", conn);
             myCommand.Parameters.AddWithValue("@id", id);
             myCommand.Parameters.AddWithValue("@deliveryNumber", addPack.deliverynumber);
             myCommand.Parameters.AddWithValue("@height", addPack.height);
@@ -285,14 +285,14 @@ namespace Inventory
             }
             return false;
         }
-        public bool updatepackage(int id , DateTime dueDate, float packagenumber, float weight, float height, float width, float length, string returnName, string returnSurname, float returnNumber, string returnAddress1, string returnAddress2, string returnCity, string returnPostcode, string returnCountry, string deliveryName, string deliverySurname, float deliveryNumber, string deliveryAddress1, string deliveryAddress2, string deliveryCity, string deliveryPostcode, string deliveryCountry)
+        public bool updatepackage(int id ,float packagenumber, float weight, float height, float width, float length, string returnName, string returnSurname, float returnNumber, string returnAddress1, string returnAddress2, string returnCity, string returnPostcode, string returnCountry, string deliveryName, string deliverySurname, float deliveryNumber, string deliveryAddress1, string deliveryAddress2, string deliveryCity, string deliveryPostcode, string deliveryCountry)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
 
             Package pk = new Package(deliveryNumber, height, length, weight, width, returnNumber, deliveryAddress1, deliveryAddress2, deliveryCity, deliveryCountry, deliveryName, deliveryPostcode, deliverySurname, returnAddress1, returnAddress2, returnCity, returnCountry, returnName, returnPostcode, returnSurname, packagenumber);
 
-            var myCommand = new SqlCommand("UPDATE package SET deliveryNumber = @deliveryNumber, height = @height, length = @length, weight = @weight, width = @width , returnNumber = @returnNumber, deliveryAddress1 = @deliveryAddress1, deliveryCity = @deliveryCity, deliveryCountry = @deliveryCountry, deliveryName = @deliveryName , deliveryPostcode = @deliveryPostcode, deliverySurname = @deliverySurname, returnAddress1 = @returnAddress1, returnCity = @returnCity, returnCountry = @returnCountry, returnName = @returnName , returnPostcode = @returnPostcode, returnSurname = @returnSurname,packagenumber = @packagenumber, dueDate ='" + dueDate + "'  WHERE id='" + id + "'", conn);
+            var myCommand = new SqlCommand("UPDATE package SET deliveryNumber = @deliveryNumber, height = @height, length = @length, weight = @weight, width = @width , returnNumber = @returnNumber, deliveryAddress1 = @deliveryAddress1, deliveryCity = @deliveryCity, deliveryCountry = @deliveryCountry, deliveryName = @deliveryName , deliveryPostcode = @deliveryPostcode, deliverySurname = @deliverySurname, returnAddress1 = @returnAddress1, returnCity = @returnCity, returnCountry = @returnCountry, returnName = @returnName , returnPostcode = @returnPostcode, returnSurname = @returnSurname,packagenumber = @packagenumber WHERE id='" + id + "'", conn);
             myCommand.Parameters.AddWithValue("@deliveryNumber", pk.deliverynumber);
             myCommand.Parameters.AddWithValue("@height", pk.height);
             myCommand.Parameters.AddWithValue("@length", pk.length);
@@ -341,6 +341,11 @@ namespace Inventory
                 {
                     var myCommand = new SqlCommand("UPDATE package SET deleted = 1 WHERE id =" + array[i].ToString(), conn);
                     int result = myCommand.ExecuteNonQuery();
+
+                    if (result == 0)
+                    {
+                        return false;
+                    }
                     string comment = "Deleted package id " + array[i].ToString();
                     addLogs(FormState.userName, comment);
                 }

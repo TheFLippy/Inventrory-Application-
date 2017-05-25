@@ -85,8 +85,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtDueDate = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.TabControl1.SuspendLayout();
             this.package.SuspendLayout();
@@ -148,8 +146,6 @@
             // 
             // package
             // 
-            this.package.Controls.Add(this.txtDueDate);
-            this.package.Controls.Add(this.label16);
             this.package.Controls.Add(this.txtlength);
             this.package.Controls.Add(this.txtwidth);
             this.package.Controls.Add(this.txtheight);
@@ -768,24 +764,6 @@
             this.label10.TabIndex = 41;
             this.label10.Text = "City :";
             // 
-            // txtDueDate
-            // 
-            this.txtDueDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDueDate.Location = new System.Drawing.Point(298, 265);
-            this.txtDueDate.Name = "txtDueDate";
-            this.txtDueDate.Size = new System.Drawing.Size(255, 23);
-            this.txtDueDate.TabIndex = 25;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(153, 268);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(82, 20);
-            this.label16.TabIndex = 26;
-            this.label16.Text = "Due Date:";
-            // 
             // Edit_Packages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -869,7 +847,5 @@
         private System.Windows.Forms.ComboBox City_cmbx1;
         private System.Windows.Forms.Button btnnext_2;
         private System.Windows.Forms.TextBox txtcity_2;
-        private System.Windows.Forms.TextBox txtDueDate;
-        private System.Windows.Forms.Label label16;
     }
 }

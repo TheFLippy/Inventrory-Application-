@@ -41,7 +41,7 @@ namespace Inventory.Forms
             txtwidth.Text = dt.Rows[0][10].ToString();
             txtlength.Text = dt.Rows[0][8].ToString();
             txtheight.Text = dt.Rows[0][7].ToString();
-            txtDueDate.Text = dt.Rows[0][28].ToString();
+
             //return packge contact info
             txtname_2.Text = dt.Rows[0][23].ToString();
             txtsurname_2.Text = dt.Rows[0][25].ToString();
@@ -110,11 +110,10 @@ namespace Inventory.Forms
                 float width = (float)Convert.ToDouble(txtwidth.Text);
                 float returntel = (float)Convert.ToDouble(txttelephone.Text);
                 float packagenumber = (float)Convert.ToDouble(txtpackagenumber.Text);
-                DateTime dueDate = DateTime.Parse(txtDueDate.Text);
 
                 //if successfully added
-
-                if (sqlCon.updatepackage(id, dueDate, packagenumber,weight, height, width,
+                
+                if (sqlCon.updatepackage(id, packagenumber,weight, height, width,
                     length, txtname_2.Text, txtsurname_2.Text, returntel, txtaddress1_2.Text,
                     txtaddress2_2.Text, city2, txtpostcode_2.Text, txtcountry_2.Text,
                     txtname.Text, txtsurname.Text, destinationtel, txtaddress1.Text,

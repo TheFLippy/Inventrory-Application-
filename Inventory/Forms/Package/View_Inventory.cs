@@ -47,7 +47,7 @@ namespace Inventory.Forms
            //connecting to the db
             sqlCon.sqlConnect();
             //creating query
-            SqlDataAdapter sda = new SqlDataAdapter("select id,packageNumber,delivered,height,length,weight,width,deliveryAddress1,deliveryAddress2,deliveryCity,deliveryCountry,deliveryPostcode,deliveryName,deliverySurname,deliveryNumber,returnAddress1,returnAddress2,returnCity,returnCountry,returnPostcode,returnName,returnSurname,returnNumber,driver from package where packageNumber like'" + txtSearch.Text.ToString() + "%' AND deleted = 0", sqlCon.connectionString);
+            SqlDataAdapter sda = new SqlDataAdapter("select id,createdAt, packageNumber,delivered,dueDate, height,length,weight,width,deliveryAddress1,deliveryAddress2,deliveryCity,deliveryCountry,deliveryPostcode,deliveryName,deliverySurname,deliveryNumber,returnAddress1,returnAddress2,returnCity,returnCountry,returnPostcode,returnName,returnSurname,returnNumber,driver from package where packageNumber like'" + txtSearch.Text.ToString() + "%' AND deleted = 0", sqlCon.connectionString);
             //fills the table with the result of the query
             sda.Fill(dt);
 

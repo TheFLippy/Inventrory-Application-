@@ -35,6 +35,8 @@ namespace Inventory
             btnDeleteEmp.Enabled = false;
             btnEdit.Enabled = false;
             btnSearch_Click(sender, e);
+            for (int i = 1; i < gridMngEmployees.ColumnCount; i++)
+            { gridMngEmployees.Columns[i].ReadOnly = true; }
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

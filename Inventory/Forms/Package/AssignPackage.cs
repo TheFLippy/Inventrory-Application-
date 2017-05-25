@@ -645,7 +645,7 @@ namespace Inventory.Forms
 
                             for (int j = 0; j < dtpackage.Rows.Count; j++)
                             {
-                                if (lb.Text.Equals(dtpackage.Rows[j][1].ToString() + dtpackage.Rows[j][0].ToString()))
+                                if (lb.Text.Equals(dtpackage.Rows[j][1].ToString() + "   |   " + dtpackage.Rows[j][0].ToString()))
                                 {
                                     packid = dtpackage.Rows[j][2].ToString();
                                     k = 1;
@@ -655,7 +655,7 @@ namespace Inventory.Forms
 
                             for (int x = 0; x < assignPackage.Rows.Count; x++)
                             {
-                                if (lb.Text.Equals(assignPackage.Rows[x][1].ToString() + assignPackage.Rows[x][0].ToString()))
+                                if (lb.Text.Equals(assignPackage.Rows[x][1].ToString() + "   |   " + assignPackage.Rows[x][0].ToString()))
                                 {
                                     packid = assignPackage.Rows[x][2].ToString();
                                     k = 1;

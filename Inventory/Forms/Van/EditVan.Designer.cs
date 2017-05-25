@@ -46,6 +46,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
+            this.txtdriver = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btncancel
@@ -216,12 +218,32 @@
             this.label3.TabIndex = 92;
             this.label3.Text = "Edit Van Details";
             // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label.Location = new System.Drawing.Point(33, 187);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(60, 21);
+            this.label.TabIndex = 93;
+            this.label.Text = "Driver :";
+            // 
+            // txtdriver
+            // 
+            this.txtdriver.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdriver.Location = new System.Drawing.Point(161, 189);
+            this.txtdriver.Name = "txtdriver";
+            this.txtdriver.Size = new System.Drawing.Size(163, 23);
+            this.txtdriver.TabIndex = 94;
+            // 
             // EditVan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(684, 301);
+            this.Controls.Add(this.txtdriver);
+            this.Controls.Add(this.label);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btncancel);
             this.Controls.Add(this.btnsave);
@@ -268,5 +290,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.TextBox txtdriver;
     }
 }

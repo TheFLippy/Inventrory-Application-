@@ -384,7 +384,8 @@ namespace Inventory
             }
             return true;
         } 
-        public bool insertvan(string noPlate, float volume, float weight, string make, string model, string engSize, int YoM)
+
+        public bool insertvan(string noPlate, float volume, float weight, string make, string model, string engSize, int YoM, string driver)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
@@ -406,7 +407,7 @@ namespace Inventory
             //for testing
             Console.WriteLine("parsed" + id);
 
-            var myCommand = new SqlCommand("INSERT INTO van VALUES(@noPlate,@volume,@weight, '', 0, 'Available', @make, @model, @engSize, @YoM)", conn);
+            var myCommand = new SqlCommand("INSERT INTO van VALUES(@noPlate,@volume,@weight, '', 0, 'Available', @make, @model, @engSize, @YoM, @driver)", conn);
             //myCommand.Parameters.AddWithValue("@id", id);
             myCommand.Parameters.AddWithValue("@noPlate", addVan.NoPlate);
             myCommand.Parameters.AddWithValue("@volume", addVan.Volume);
@@ -415,6 +416,7 @@ namespace Inventory
             myCommand.Parameters.AddWithValue("@model", addVan.Model);
             myCommand.Parameters.AddWithValue("@engSize", addVan.EngSize);
             myCommand.Parameters.AddWithValue("@yom", addVan.YOM);
+            myCommand.Parameters.AddWithValue("@driver", driver);
 
             int result = myCommand.ExecuteNonQuery();
 
@@ -427,14 +429,14 @@ namespace Inventory
             }
             return false;
         }
-        public bool editvan(string noPlate, float volume, float weight, string location, int inUse, string state, string make, string model, string engSize, int YoM, int id)
+        public bool editvan(string noPlate, float volume, float weight, string location, int inUse, string state, string make, string model, string engSize, int YoM, int id, string driver)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
 
             Van editVan = new Van(noPlate, volume, weight, location, inUse, state, make, model, engSize, YoM);
 
-            var myCommand = new SqlCommand("UPDATE van SET noPlate = @noPlate, volume = @volume, weight = @weight, location = @location, inUse = @inUse, state = @state, make = @make, model = @model, engSize = @engSize, YoM = @YoM WHERE id='" + id + "'", conn);
+            var myCommand = new SqlCommand("UPDATE van SET noPlate = @noPlate, volume = @volume, weight = @weight, location = @location, inUse = @inUse, state = @state, make = @make, model = @model, engSize = @engSize, YoM = @YoM , driver = @driver WHERE id='" + id + "'", conn);
             myCommand.Parameters.AddWithValue("@noPlate", editVan.NoPlate);
             myCommand.Parameters.AddWithValue("@volume", editVan.Volume);
             myCommand.Parameters.AddWithValue("@weight", editVan.Weight);
@@ -445,6 +447,7 @@ namespace Inventory
             myCommand.Parameters.AddWithValue("@model", editVan.Model);
             myCommand.Parameters.AddWithValue("@engSize", editVan.EngSize);
             myCommand.Parameters.AddWithValue("@YoM", editVan.YOM);
+            myCommand.Parameters.AddWithValue("@driver", driver);
 
 
             int result = myCommand.ExecuteNonQuery();

@@ -42,6 +42,7 @@ namespace Inventory.Forms
             txtmodel.Text = dt.Rows[0][8].ToString();
             txtengsize.Text = dt.Rows[0][9].ToString();
             txtyom.Text = dt.Rows[0][10].ToString();
+            txtdriver.Text = dt.Rows[0][11].ToString();
 
         }
 
@@ -89,13 +90,14 @@ namespace Inventory.Forms
                 float vol = (float)Convert.ToDouble(txtvolume.Text);
                 float weight = (float)Convert.ToDouble(txtweight.Text);
                 int yom = Convert.ToInt32(txtyom.Text);
+                string driver = txtdriver.Text;
                 //if successfully added
 
                 DataTable dt = new DataTable();
                 SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM van Where id =" + id.ToString(), sqlCon.connectionString);
                 sda.Fill(dt);
 
-                if (sqlCon.editvan(txtnoplate.Text, vol, weight, dt.Rows[0][4].ToString(), Convert.ToInt32(dt.Rows[0][5]), dt.Rows[0][6].ToString(), txtmake.Text, txtmodel.Text, txtengsize.Text, yom, (int) dt.Rows[0][0]))
+                if (sqlCon.editvan(txtnoplate.Text, vol, weight, dt.Rows[0][4].ToString(), Convert.ToInt32(dt.Rows[0][5]), dt.Rows[0][6].ToString(), txtmake.Text, txtmodel.Text, txtengsize.Text, yom, (int) dt.Rows[0][0],driver))
                 {
                     MessageBox.Show("Successfully edited a van!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();

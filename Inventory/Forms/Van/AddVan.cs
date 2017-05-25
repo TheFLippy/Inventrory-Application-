@@ -67,7 +67,7 @@ namespace Inventory.Forms
                 float weight = (float)Convert.ToDouble(txtweight.Text);
                 int yom = Convert.ToInt32(txtyom.Text);
                 //if successfully added
-                if (sqlCon.insertvan(txtnoplate.Text, vol, weight, txtmake.Text, txtmodel.Text, txtengsize.Text, yom))
+                if (sqlCon.insertvan(txtnoplate.Text, vol, weight, txtmake.Text, txtmodel.Text, txtengsize.Text, yom,null))
                 {
                     MessageBox.Show("Successfully added a van!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();

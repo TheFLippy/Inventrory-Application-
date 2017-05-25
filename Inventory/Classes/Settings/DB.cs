@@ -503,12 +503,12 @@ namespace Inventory
 
             while (read.Read())
             {
-                note += "Driver " + (string)read["username"] + " has canceled package no: " + (string)read["id"] + " note: " + (string)read["note"] + "\n";
+                note += "Driver " + (string)read["username"] + " has canceled package no: " + read["packageNumber"] + " note: " + (string)read["note"] + "\n";
 
-                string comment = "Canceled package number " + (string)read["id"] + " due to " + (string)read["note"];
+                string comment = "Canceled package number " + read["packageNumber"] + " due to " + (string)read["note"];
                 addLogs((string)read["username"], comment);
 
-                tempID = Convert.ToInt32(read["id"]);
+                tempID = Convert.ToInt32(read["packageNumber"]);
                 noteID.Add(tempID);
 
                 listOfNotes.Add(note);
@@ -525,7 +525,7 @@ namespace Inventory
 
             foreach (int i in noteID)
             {
-                var myCommand = new SqlCommand("DELETE FROM PackageNote WHERE ID = @id", conn);
+                var myCommand = new SqlCommand("DELETE FROM PackageNote WHERE packageNumber = @id", conn);
                 myCommand.Parameters.AddWithValue("@id", i);
                 myCommand.ExecuteNonQuery();
 

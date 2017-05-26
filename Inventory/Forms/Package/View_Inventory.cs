@@ -21,7 +21,7 @@ namespace Inventory.Forms
 
         int totalchk = 0;
         int[] id = new int[20];
-        int i =0;
+        int i = 0;
         Edit_Packages edtpk = new Edit_Packages();
         public int editid { set; get; }
 
@@ -42,29 +42,38 @@ namespace Inventory.Forms
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-          //creating a table for data storage
-            DataTable dt = new DataTable();
-           //connecting to the db
-            sqlCon.sqlConnect();
-            //creating query
-            SqlDataAdapter sda = new SqlDataAdapter("select id,createdAt, packageNumber,delivered,dueDate, height,length,weight,width,deliveryAddress1,deliveryAddress2,deliveryCity,deliveryCountry,deliveryPostcode,deliveryName,deliverySurname,deliveryNumber,returnAddress1,returnAddress2,returnCity,returnCountry,returnPostcode,returnName,returnSurname,returnNumber,driver from package where packageNumber like'" + txtSearch.Text.ToString() + "%' AND deleted = 0", sqlCon.connectionString);
-            //fills the table with the result of the query
-            sda.Fill(dt);
-
-            //to produce the checkbox
-            if (ranOnce == false)
+            try
             {
-                gridViewInv.Columns.Add(chk);
-                chk.HeaderText = "Delete";
-                chk.Width = 43;
+                //creating a table for data storage
+                DataTable dt = new DataTable();
+                //connecting to the db
+                sqlCon.sqlConnect();
+                //creating query
+                SqlDataAdapter sda = new SqlDataAdapter("select id,createdAt, packageNumber,delivered,dueDate, height,length,weight,width,deliveryAddress1,deliveryAddress2,deliveryCity,deliveryCountry,deliveryPostcode,deliveryName,deliverySurname,deliveryNumber,returnAddress1,returnAddress2,returnCity,returnCountry,returnPostcode,returnName,returnSurname,returnNumber,driver from package where packageNumber like'" + txtSearch.Text.ToString() + "%' AND deleted = 0", sqlCon.connectionString);
+                //fills the table with the result of the query
+                sda.Fill(dt);
+
+                //to produce the checkbox
+                if (ranOnce == false)
+                {
+                    gridViewInv.Columns.Add(chk);
+                    chk.HeaderText = "Delete";
+                    chk.Width = 43;
+
+                }
+                ranOnce = true;
+
+
+                //filling the grid with the table contents
+                gridViewInv.DataSource = dt;
+                gridViewInv.Columns[1].Width = 43;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred whilst trying to connect to the database. Please try again.");
 
             }
-            ranOnce = true;
 
-
-            //filling the grid with the table contents
-            gridViewInv.DataSource = dt;
-            gridViewInv.Columns[1].Width = 43;
         }
 
         private void gridViewInv_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -75,7 +84,7 @@ namespace Inventory.Forms
 
                 string tempID = gridViewInv.Rows[e.RowIndex].Cells[1].Value.ToString();
                 editid = Convert.ToInt32(tempID);
-                
+
             }
         }
 
@@ -89,10 +98,10 @@ namespace Inventory.Forms
         {
             Console.WriteLine("id " + editid);
             this.Hide();
-            
+
             edtpk.Show();
             this.edtpk.PassValue(editid);
-   
+
         }
 
         private void gridViewInv_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -155,7 +164,7 @@ namespace Inventory.Forms
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
-            for(int i = 0; i < totalchk; i++)
+            for (int i = 0; i < totalchk; i++)
             {
                 Console.WriteLine("array" + id[i]);
             }
@@ -169,7 +178,7 @@ namespace Inventory.Forms
                     MessageBox.Show("Successfully deleted " + totalchk + " row(s)!");
                     i = 0;
                     //Reset the array of IDs 
-                    
+
                     gridViewInv.DataSource = null;
                     btnDelete.Enabled = false;
                     txtSearch.Text = null;
@@ -193,7 +202,7 @@ namespace Inventory.Forms
         {
             Add_Package add = new Add_Package();
             add.Show();
-            
+
         }
 
         void addPckg_FormClosed(object sender, FormClosedEventArgs e)
@@ -204,7 +213,7 @@ namespace Inventory.Forms
 
         private void View_Inventory_FormClosed(object sender, FormClosedEventArgs e)
         {
-                System.Windows.Forms.Application.Exit();
+            System.Windows.Forms.Application.Exit();
 
         }
 

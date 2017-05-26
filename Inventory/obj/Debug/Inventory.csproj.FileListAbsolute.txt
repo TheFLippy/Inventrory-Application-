@@ -747,3 +747,6 @@ C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\bin\Debug\Invento
 C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\bin\Debug\Inventory.application
 C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\obj\Debug\Inventory.exe.manifest
 C:\Users\reube\Source\Repos\Inventrory-Application-5\Inventory\obj\Debug\Inventory.application
+C:\Users\GEORGE MALLIA\Source\Repos\Inventrory-Application-28\Inventory\bin\Debug\Inventory.exe.config
+C:\Users\GEORGE MALLIA\Source\Repos\Inventrory-Application-28\Inventory\obj\Debug\Inventory.exe
+C:\Users\GEORGE MALLIA\Source\Repos\Inventrory-Application-28\Inventory\obj\Debug\Inventory.pdb

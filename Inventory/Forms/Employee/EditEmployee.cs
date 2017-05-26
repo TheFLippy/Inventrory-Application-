@@ -99,7 +99,7 @@ namespace Inventory.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("An error occurred whilst trying to connect to the database. Please try again.");
             }
         }
 

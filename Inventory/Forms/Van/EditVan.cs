@@ -20,11 +20,21 @@ namespace Inventory.Forms
 
         private string getDriver(DataTable dtdriver)
         {
-            SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
+            try
+            {
+                SqlConnection conn = new SqlConnection(connectionString);
+                conn.Open();
 
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT username FROM login WHERE jobPosition = 'Driver'", connectionString);
-            sda.Fill(dtdriver);
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT username FROM login WHERE jobPosition = 'Driver'", connectionString);
+                sda.Fill(dtdriver);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred whilst trying to connect to the database. Please try again.");
+
+            }
+
 
             return dtdriver.ToString();
         }
@@ -39,24 +49,33 @@ namespace Inventory.Forms
         {
             id = editid;
             Console.WriteLine("Vid " + id);
-            
+
         }
         public void populatefields()
         {
-            DataTable dt = new DataTable();
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM van Where id =" + id.ToString(), sqlCon.connectionString);
-            sda.Fill(dt);
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM van Where id =" + id.ToString(), sqlCon.connectionString);
+                sda.Fill(dt);
 
-            //populating the text fields with the data table items
-            //package info
-            txtnoplate.Text = dt.Rows[0][1].ToString();
-            txtvolume.Text = dt.Rows[0][2].ToString();
-            txtweight.Text = dt.Rows[0][3].ToString();
-            txtmake.Text = dt.Rows[0][7].ToString();
-            txtmodel.Text = dt.Rows[0][8].ToString();
-            txtengsize.Text = dt.Rows[0][9].ToString();
-            txtyom.Text = dt.Rows[0][10].ToString();
-            drivercmbx.Text = dt.Rows[0][11].ToString();
+                //populating the text fields with the data table items
+                //package info
+                txtnoplate.Text = dt.Rows[0][1].ToString();
+                txtvolume.Text = dt.Rows[0][2].ToString();
+                txtweight.Text = dt.Rows[0][3].ToString();
+                txtmake.Text = dt.Rows[0][7].ToString();
+                txtmodel.Text = dt.Rows[0][8].ToString();
+                txtengsize.Text = dt.Rows[0][9].ToString();
+                txtyom.Text = dt.Rows[0][10].ToString();
+                drivercmbx.Text = dt.Rows[0][11].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred whilst trying to connect to the database. Please try again.");
+
+            }
+
 
         }
 
@@ -111,7 +130,7 @@ namespace Inventory.Forms
                 SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM van Where id =" + id.ToString(), sqlCon.connectionString);
                 sda.Fill(dt);
 
-                if (sqlCon.editvan(txtnoplate.Text, vol, weight, dt.Rows[0][4].ToString(), Convert.ToInt32(dt.Rows[0][5]), dt.Rows[0][6].ToString(), txtmake.Text, txtmodel.Text, txtengsize.Text, yom, (int) dt.Rows[0][0],driver))
+                if (sqlCon.editvan(txtnoplate.Text, vol, weight, dt.Rows[0][4].ToString(), Convert.ToInt32(dt.Rows[0][5]), dt.Rows[0][6].ToString(), txtmake.Text, txtmodel.Text, txtengsize.Text, yom, (int)dt.Rows[0][0], driver))
                 {
                     MessageBox.Show("Successfully edited a van!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
@@ -124,7 +143,7 @@ namespace Inventory.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("An error occurred whilst trying to connect to the database. Please try again.");
             }
 
 
@@ -139,7 +158,7 @@ namespace Inventory.Forms
         {
             getDriver(driverdt);
 
-            for(int i =0;i < driverdt.Rows.Count; i++)
+            for (int i = 0; i < driverdt.Rows.Count; i++)
             {
                 drivercmbx.Items.Add(driverdt.Rows[i][0]);
             }

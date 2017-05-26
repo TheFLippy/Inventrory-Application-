@@ -24,7 +24,7 @@ namespace Inventory.Forms
         //variables for deletion of multiple rows
         bool ranOnce = false;
         int totalChk = 0;
-        int[] checkArray = new int [20];
+        int[] checkArray = new int[20];
         DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
         db sqlCon = new db();
         int totalchk = 0;
@@ -57,69 +57,78 @@ namespace Inventory.Forms
         //Search
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            //Creating data table to put our data onto it
-            DataTable dt = new DataTable();
-            //Connectining to database
-            sqlCon.sqlConnect();
-            //Creating data adapter to query the database
-            SqlDataAdapter sda = new SqlDataAdapter("select * from van where noPlate like'" + txtSearch.Text + "%'", sqlCon.connectionString);
-
-            //Filling the datatable with retrieved rows
-            sda.Fill(dt);
-
-            //If function has more than once, will not put checkbox onto the row
-            if (ranOnce == false)
+            try
             {
-                gridMngVans.Columns.Add(chk);
-                chk.HeaderText = "Delete";
-                chk.Width = 43;
-            }
-            ranOnce = true;
+                //Creating data table to put our data onto it
+                DataTable dt = new DataTable();
+                //Connectining to database
+                sqlCon.sqlConnect();
+                //Creating data adapter to query the database
+                SqlDataAdapter sda = new SqlDataAdapter("select * from van where noPlate like'" + txtSearch.Text + "%'", sqlCon.connectionString);
 
-            //Passing the data table to grid veiw to display it
-            gridMngVans.DataSource = dt;
-            gridMngVans.Columns[1].Width = 43;
+                //Filling the datatable with retrieved rows
+                sda.Fill(dt);
+
+                //If function has more than once, will not put checkbox onto the row
+                if (ranOnce == false)
+                {
+                    gridMngVans.Columns.Add(chk);
+                    chk.HeaderText = "Delete";
+                    chk.Width = 43;
+                }
+                ranOnce = true;
+
+                //Passing the data table to grid veiw to display it
+                gridMngVans.DataSource = dt;
+                gridMngVans.Columns[1].Width = 43;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred whilst trying to connect to the database. Please try again.");
+
+            }
+
         }
 
         //Checkbox mark
         private void gridMngVans_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
             DataGridViewCheckBoxCell ch1 = new DataGridViewCheckBoxCell();
             ch1 = (DataGridViewCheckBoxCell)gridMngVans.Rows[gridMngVans.CurrentRow.Index].Cells[0];
             string temp = null;
-           
-                //Checking wheter the box has been checked or unchecked
-                if (ch1.Value == null)
+
+            //Checking wheter the box has been checked or unchecked
+            if (ch1.Value == null)
+                ch1.Value = false;
+            switch (ch1.Value.ToString())
+            {
+                case "True":
                     ch1.Value = false;
-                switch (ch1.Value.ToString())
+                    break;
+                case "False":
+                    ch1.Value = true;
+                    break;
+            }
+            if (ch1.Value.ToString() == "True")
+            {
+                //Getting the ID of the user
+                temp = gridMngVans.Rows[ch1.RowIndex].Cells[1].Value.ToString();
+                //Placing that ID into an array with an index (needs to be this way in order to remove id when unchecked)
+                deleteArrayPopulation(temp, ch1.RowIndex);
+                //Display delete button
+                btnDeleteVan.Enabled = true;
+            }
+            else if (ch1.Value.ToString() == "False")
+            {
+                totalchk--;
+                id[ch1.RowIndex] = 0;
+                if (totalchk == 0)
                 {
-                    case "True":
-                        ch1.Value = false;
-                        break;
-                    case "False":
-                        ch1.Value = true;
-                        break;
+                    btnDeleteVan.Enabled = false;
                 }
-                if (ch1.Value.ToString() == "True")
-                {
-                    //Getting the ID of the user
-                    temp = gridMngVans.Rows[ch1.RowIndex].Cells[1].Value.ToString();
-                    //Placing that ID into an array with an index (needs to be this way in order to remove id when unchecked)
-                    deleteArrayPopulation(temp, ch1.RowIndex);
-                    //Display delete button
-                    btnDeleteVan.Enabled = true;
-                }
-                else if (ch1.Value.ToString() == "False")
-                {
-                    totalchk--;
-                    id[ch1.RowIndex] = 0;
-                    if (totalchk == 0)
-                    {
-                        btnDeleteVan.Enabled = false;
-                    }
-                }
-            
+            }
+
         }
 
         //Array that is used to pass multiple IDs of users in order to delete them
@@ -188,7 +197,7 @@ namespace Inventory.Forms
 
         private void gridMngVans_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex != 0 &&e.RowIndex !=-1)
+            if (e.ColumnIndex != 0 && e.RowIndex != -1)
             {
                 btnEdit.Enabled = true;
 
@@ -199,42 +208,51 @@ namespace Inventory.Forms
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (editID != 0)
+            try
             {
-                //Create connection with db
-                SqlConnection con = new SqlConnection(sqlCon.connectionString);
-                con.Open();
-
-                //Create command and reader
-                SqlCommand command = new SqlCommand("select * from van where id='" + editID + "'", con);
-                SqlDataReader read = command.ExecuteReader();
-
-                //Creating user object to hold values
-                string noPlate = null, location = null, state = null, make = null, model = null, engSize = null;
-                float volume = 0, weight = 0;
-                int YoM = 0, inUse = 0;
-                
-
-                while (read.Read())
+                if (editID != 0)
                 {
-                    noPlate = (string)read["noPlate"];
-                    volume = (float)Convert.ToDouble(read["volume"]);
-                    weight = (float)Convert.ToDouble(read["weight"]);
-                    location = (string)read["location"];
-                    inUse = Convert.ToInt32(read["inUse"]);
-                    state = (string)read["state"];
-                    make = (string)read["make"];
-                    model = (string)read["model"];
-                    engSize = (string)read["engSize"];
-                    YoM = Convert.ToInt32(read["YoM"]);
-                }
+                    //Create connection with db
+                    SqlConnection con = new SqlConnection(sqlCon.connectionString);
+                    con.Open();
 
-                EditVan edit = new EditVan(editID);
-                edit.Show();
+                    //Create command and reader
+                    SqlCommand command = new SqlCommand("select * from van where id='" + editID + "'", con);
+                    SqlDataReader read = command.ExecuteReader();
+
+                    //Creating user object to hold values
+                    string noPlate = null, location = null, state = null, make = null, model = null, engSize = null;
+                    float volume = 0, weight = 0;
+                    int YoM = 0, inUse = 0;
+
+
+                    while (read.Read())
+                    {
+                        noPlate = (string)read["noPlate"];
+                        volume = (float)Convert.ToDouble(read["volume"]);
+                        weight = (float)Convert.ToDouble(read["weight"]);
+                        location = (string)read["location"];
+                        inUse = Convert.ToInt32(read["inUse"]);
+                        state = (string)read["state"];
+                        make = (string)read["make"];
+                        model = (string)read["model"];
+                        engSize = (string)read["engSize"];
+                        YoM = Convert.ToInt32(read["YoM"]);
+                    }
+
+                    EditVan edit = new EditVan(editID);
+                    edit.Show();
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred whilst trying to connect to the database. Please try again.");
+
+            }
+
         }
 
-       
+
 
         private void ManageVans_FormClosing(object sender, FormClosingEventArgs e)
         {

@@ -30,37 +30,46 @@ namespace Inventory.Forms
         }
         public void populatefields()
         {
-            DataTable dt = new DataTable();
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM package Where id =" + id.ToString(), sqlCon.connectionString);
-            sda.Fill(dt);
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM package Where id =" + id.ToString(), sqlCon.connectionString);
+                sda.Fill(dt);
 
-            //populating the text fields with the data table items
-            //package info
-            txtpackagenumber.Text = dt.Rows[0][26].ToString();
-            txtweight.Text = dt.Rows[0][9].ToString();
-            txtwidth.Text = dt.Rows[0][10].ToString();
-            txtlength.Text = dt.Rows[0][8].ToString();
-            txtheight.Text = dt.Rows[0][7].ToString();
-            txtDueDate.Text = dt.Rows[0][28].ToString();
-            //return packge contact info
-            txtname_2.Text = dt.Rows[0][23].ToString();
-            txtsurname_2.Text = dt.Rows[0][25].ToString();
-            txttelephone_2.Text = dt.Rows[0][11].ToString();
-            txtaddress1_2.Text = dt.Rows[0][19].ToString();
-            txtaddress2_2.Text = dt.Rows[0][20].ToString();
-            txtcity_2.Text = dt.Rows[0][21].ToString();
-            txtpostcode_2.Text = dt.Rows[0][24].ToString();
-            txtcountry_2.Text = dt.Rows[0][22].ToString();
+                //populating the text fields with the data table items
+                //package info
+                txtpackagenumber.Text = dt.Rows[0][26].ToString();
+                txtweight.Text = dt.Rows[0][9].ToString();
+                txtwidth.Text = dt.Rows[0][10].ToString();
+                txtlength.Text = dt.Rows[0][8].ToString();
+                txtheight.Text = dt.Rows[0][7].ToString();
+                txtDueDate.Text = dt.Rows[0][28].ToString();
+                //return packge contact info
+                txtname_2.Text = dt.Rows[0][23].ToString();
+                txtsurname_2.Text = dt.Rows[0][25].ToString();
+                txttelephone_2.Text = dt.Rows[0][11].ToString();
+                txtaddress1_2.Text = dt.Rows[0][19].ToString();
+                txtaddress2_2.Text = dt.Rows[0][20].ToString();
+                txtcity_2.Text = dt.Rows[0][21].ToString();
+                txtpostcode_2.Text = dt.Rows[0][24].ToString();
+                txtcountry_2.Text = dt.Rows[0][22].ToString();
 
-            //destination package contact info
-            txtname.Text = dt.Rows[0][16].ToString();
-            txtsurname.Text = dt.Rows[0][18].ToString();
-            txttelephone.Text = dt.Rows[0][6].ToString();
-            txtaddress1.Text = dt.Rows[0][12].ToString();
-            txtaddress2.Text = dt.Rows[0][13].ToString();
-            City_cmbx1.Text = dt.Rows[0][14].ToString();
-            txtpostcode.Text = dt.Rows[0][17].ToString();
-            txtcountry.Text = dt.Rows[0][15].ToString();
+                //destination package contact info
+                txtname.Text = dt.Rows[0][16].ToString();
+                txtsurname.Text = dt.Rows[0][18].ToString();
+                txttelephone.Text = dt.Rows[0][6].ToString();
+                txtaddress1.Text = dt.Rows[0][12].ToString();
+                txtaddress2.Text = dt.Rows[0][13].ToString();
+                City_cmbx1.Text = dt.Rows[0][14].ToString();
+                txtpostcode.Text = dt.Rows[0][17].ToString();
+                txtcountry.Text = dt.Rows[0][15].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred whilst trying to connect to the database. Please try again.");
+
+            }
+
 
 
         }
@@ -96,7 +105,7 @@ namespace Inventory.Forms
             vw.Show();
         }
 
-   
+
 
         private void btnsave_Click(object sender, EventArgs e)
         {
@@ -114,7 +123,7 @@ namespace Inventory.Forms
 
                 //if successfully added
 
-                if (sqlCon.updatepackage(id, dueDate, packagenumber,weight, height, width,
+                if (sqlCon.updatepackage(id, dueDate, packagenumber, weight, height, width,
                     length, txtname_2.Text, txtsurname_2.Text, returntel, txtaddress1_2.Text,
                     txtaddress2_2.Text, city2, txtpostcode_2.Text, txtcountry_2.Text,
                     txtname.Text, txtsurname.Text, destinationtel, txtaddress1.Text,
@@ -127,24 +136,24 @@ namespace Inventory.Forms
                     View_Inventory vi = new View_Inventory();
                     vi.Show();
                 }
-               
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("An error occurred whilst trying to connect to the database. Please try again.");
             }
         }
 
 
 
-      
+
 
         private void City_cmbx1_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-               city2 = City_cmbx1.SelectedItem.ToString();
-              
+                city2 = City_cmbx1.SelectedItem.ToString();
+
             }
             catch (Exception ex)
             {

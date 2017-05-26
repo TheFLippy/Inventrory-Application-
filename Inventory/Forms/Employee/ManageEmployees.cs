@@ -41,7 +41,7 @@ namespace Inventory
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-       
+
         }
 
         //Redirect to add employee form
@@ -80,7 +80,7 @@ namespace Inventory
                     gridMngEmployees.Columns.Add(chk);
                     chk.HeaderText = "Delete";
                     chk.Width = 43;
-                    
+
 
                 }
                 ranOnce = true;
@@ -89,17 +89,17 @@ namespace Inventory
                 gridMngEmployees.DataSource = dt;
                 gridMngEmployees.Columns[1].Width = 43;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("An error occurred whilst trying to connect to the database. Please try again.");
             }
-            
+
         }
 
         //Checkbox mark
         private void gridMngEmployees_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == 0)
+            if (e.ColumnIndex == 0)
             {
                 DataGridViewCheckBoxCell ch1 = new DataGridViewCheckBoxCell();
                 ch1 = (DataGridViewCheckBoxCell)gridMngEmployees.Rows[gridMngEmployees.CurrentRow.Index].Cells[0];
@@ -136,7 +136,7 @@ namespace Inventory
                     }
                 }
             }
-               
+
         }
 
         //Array that is used to pass multiple IDs of users in order to delete them
@@ -157,10 +157,10 @@ namespace Inventory
         {
             //Storing dialogue result in order to see what user pressed
             DialogResult d = MessageBox.Show("Caution! This will permenantly delete " + totalChk + " row(s).\nDo you wish to proceed?", "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            if(d == DialogResult.OK)
+            if (d == DialogResult.OK)
             {
                 //Passing the array of IDs to delete to DB class
-                if(sqlCon.delete(checkArray))
+                if (sqlCon.delete(checkArray))
                 {
                     MessageBox.Show("Successfully deleted " + totalChk + " row(s)!");
 
@@ -178,13 +178,13 @@ namespace Inventory
                     MessageBox.Show("There was an error! sorry", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            
+
         }
 
         //Reset array
         private void resetArray(int[] array)
         {
-            for(int i = 0; i < array.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 array[i] = 0;
             }
@@ -203,30 +203,39 @@ namespace Inventory
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (editID != 0)
+            try
             {
-                //Create connection with db
-                SqlConnection con = new SqlConnection(sqlCon.connectionString);
-                con.Open();
-
-                //Create command and reader
-                SqlCommand command = new SqlCommand("select * from login where id='" + editID + "'", con);
-                SqlDataReader read = command.ExecuteReader();
-
-                //Creating user object to hold values
-                string editUserName = null, editName = null, editSurname = null, editGroup = null;
-
-                while (read.Read())
+                if (editID != 0)
                 {
-                    editUserName = (string)read["username"];
-                    editName = (string)read["name"];
-                    editSurname = (string)read["surname"];
-                    editGroup = (string)read["jobPosition"];
-                }
+                    //Create connection with db
+                    SqlConnection con = new SqlConnection(sqlCon.connectionString);
+                    con.Open();
 
-                EditEmployee edit = new EditEmployee(editUserName, editName, editSurname, editGroup, editID);
-                edit.Show();
+                    //Create command and reader
+                    SqlCommand command = new SqlCommand("select * from login where id='" + editID + "'", con);
+                    SqlDataReader read = command.ExecuteReader();
+
+                    //Creating user object to hold values
+                    string editUserName = null, editName = null, editSurname = null, editGroup = null;
+
+                    while (read.Read())
+                    {
+                        editUserName = (string)read["username"];
+                        editName = (string)read["name"];
+                        editSurname = (string)read["surname"];
+                        editGroup = (string)read["jobPosition"];
+                    }
+
+                    EditEmployee edit = new EditEmployee(editUserName, editName, editSurname, editGroup, editID);
+                    edit.Show();
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred whilst trying to connect to the database. Please try again.");
+
+            }
+
         }
 
         private void MainMenu(object sender, EventArgs e)
@@ -236,5 +245,5 @@ namespace Inventory
 
     }
 
-    
+
 }

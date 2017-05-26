@@ -68,28 +68,46 @@ namespace Inventory.Forms
         //gets drivers
         private string assigndriver(DataTable dtdriver)
         {
-            SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
+            try
+            {
+                SqlConnection conn = new SqlConnection(connectionString);
+                conn.Open();
 
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT username FROM login WHERE jobPosition = 'Driver'", connectionString);
-            sda.Fill(dtdriver);
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT username FROM login WHERE jobPosition = 'Driver'", connectionString);
+                sda.Fill(dtdriver);
 
-            return dtdriver.ToString();
+                return dtdriver.ToString();
+
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show("An error occurred whilst trying to connect to the database. Please try again.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return "";
         }
         //gets unassigned packages
         private string assignpackage(DataTable dtpackage)
         {
-            SqlConnection conn = new SqlConnection(connectionString);
+            try
+            {
+                SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
 
             SqlDataAdapter sda = new SqlDataAdapter("SELECT  deliveryCity, packageNumber,id FROM package WHERE deleted = 0 AND delivered = 0 AND driver IS NULL", connectionString);
             sda.Fill(dtpackage);
 
             return dtpackage.ToString();
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show("An error occurred whilst trying to connect to the database. Please try again.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return "";
         }
         //gets assigned packages
         private string assignedPackages(DataTable assignedPackage)
         {
+            try {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
 
@@ -97,7 +115,12 @@ namespace Inventory.Forms
             sda.Fill(assignedPackage);
 
             return assignedPackage.ToString();
-
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show("An error occurred whilst trying to connect to the database. Please try again.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return "";
         }
 
         //creates accordians and populates them with packages assigned to a particular driver
@@ -513,7 +536,7 @@ namespace Inventory.Forms
                     }
                 }
 
-                foreach (CheckBox chk in adding.Controls)
+                foreach (CheckBox chk in adding.Controls.OfType<CheckBox>())
                 {
                     if (chk.Checked == true)
                     {
@@ -629,7 +652,7 @@ namespace Inventory.Forms
         {
             int k = 0;
             int pkcount = 0;
-
+            try {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             try
@@ -665,6 +688,7 @@ namespace Inventory.Forms
 
                             if (k == 1)
                             {
+                                    try { 
                                 var mycommand = new SqlCommand("UPDATE package SET driver = @drivername WHERE packageNumber = @id", conn);
                                 mycommand.Parameters.AddWithValue("@drivername", drivername);
                                 mycommand.Parameters.AddWithValue("@id", packid);
@@ -681,9 +705,17 @@ namespace Inventory.Forms
                                 {
                                     Console.WriteLine("ROWS NOT AFFECTED");
                                 }
-                            }
+                                    }
+                                    catch (Exception x)
+                                    {
+                                        MessageBox.Show("An error occurred whilst trying to connect to the database. Please try again.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+
+                                }
+                            
                         }
                         k = 0;
+
                     }
                 }
 
@@ -703,6 +735,7 @@ namespace Inventory.Forms
                     }
                     int packNo = Convert.ToInt32(s);
                     Console.WriteLine(packNo);
+                        try { 
                     SqlConnection con = new SqlConnection(connectionString);
                     con.Open();
                     var mycom = new SqlCommand("UPDATE package SET driver = NULL WHERE packageNumber = @id", con);
@@ -717,7 +750,13 @@ namespace Inventory.Forms
                     {
                         Console.WriteLine("ROWS NOT AFFECTED");
                     }
-                }
+                    con.Close();
+                        }
+                        catch (Exception x)
+                        {
+                            MessageBox.Show("An error occurred whilst trying to connect to the database. Please try again.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 if (pkcount > 0)
                 {
                     MessageBox.Show("The packages were assigned", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -727,16 +766,22 @@ namespace Inventory.Forms
                     MessageBox.Show("No packages were assigned", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show("An error occurred whilst trying to connect to the database. Please try again.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         //help button
         private void Helpbtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("1) To assign a package press tha Assign button.\n2) To remove a package from a driver press the remove button.\n3) To add package to a driver, choose the package and driver and press the add button.", "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("1) To assign a package press tha Assign button.\n2) To remove a package from a driver press the remove button.\n3) To add package to a driver, choose the package and driver and press the add button.", "Help", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
         //back button
         private void btnBack_Click(object sender, EventArgs e)

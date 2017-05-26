@@ -203,10 +203,10 @@ namespace Inventory
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            try
-            {
+           
                 if (editID != 0)
                 {
+                try { 
                     //Create connection with db
                     SqlConnection con = new SqlConnection(sqlCon.connectionString);
                     con.Open();
@@ -229,13 +229,12 @@ namespace Inventory
                     EditEmployee edit = new EditEmployee(editUserName, editName, editSurname, editGroup, editID);
                     edit.Show();
                 }
+                catch (Exception x)
+                {
+                    MessageBox.Show("An error occurred whilst trying to connect to the database. Please try again.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred whilst trying to connect to the database. Please try again.");
-
-            }
-
+          
         }
 
         private void MainMenu(object sender, EventArgs e)

@@ -189,7 +189,7 @@ namespace Inventory
                 {
                     string passwordHash = Hash.ComputeHash(password, null);
                     DataTable dt = new DataTable();
-
+                    try { 
                     SqlDataAdapter sda = new SqlDataAdapter("select id from login order by id desc", connectionString);
                     sda.Fill(dt);
 
@@ -214,6 +214,11 @@ namespace Inventory
                         addLogs(FormState.userName, comment);
 
                         return true;
+                    }
+                    }
+                    catch (Exception x)
+                    {
+                        MessageBox.Show("An error occurred whilst trying to connect to the database. Please try again.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

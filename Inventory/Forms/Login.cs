@@ -71,11 +71,12 @@ namespace Inventory
                 
             }
             //Exceptions
-            catch (Exception ex)
+            
+            catch (Exception x)
             {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("An error occurred whilst trying to connect to the database. Please try again.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+}
 
         private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
         {

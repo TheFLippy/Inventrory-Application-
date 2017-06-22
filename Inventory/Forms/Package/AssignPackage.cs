@@ -168,7 +168,7 @@ namespace Inventory.Forms
                 {
                     if (dtpackage.Rows[j][0].ToString() == city[i])
                     {
-                        que.Enqueue(dtpackage.Rows[j][1].ToString() + dtpackage.Rows[j][0].ToString());
+                        que.Enqueue(dtpackage.Rows[j][1].ToString() + "   |   " + dtpackage.Rows[j][0].ToString());
                         Console.WriteLine("FOUND\t" + dtpackage.Rows[j][1].ToString() + dtpackage.Rows[j][0].ToString());
                     }
                 }
@@ -181,7 +181,7 @@ namespace Inventory.Forms
                 {
                     if (dtpackage.Rows[j][0].ToString() == city2[i])
                     {
-                        que.Enqueue(dtpackage.Rows[j][1].ToString() + dtpackage.Rows[j][0].ToString());
+                        que.Enqueue(dtpackage.Rows[j][1].ToString() + "   |   " + dtpackage.Rows[j][0].ToString());
                         Console.WriteLine("FOUND\t" + dtpackage.Rows[j][1].ToString() + dtpackage.Rows[j][0].ToString());
                     }
                 }
@@ -194,12 +194,18 @@ namespace Inventory.Forms
                 {
                     if (dtpackage.Rows[j][0].ToString() == city3[i])
                     {
-                        que.Enqueue(dtpackage.Rows[j][1].ToString() + dtpackage.Rows[j][0].ToString());
+                        que.Enqueue(dtpackage.Rows[j][1].ToString() + "   |   " + dtpackage.Rows[j][0].ToString());
                         Console.WriteLine("FOUND\t" + dtpackage.Rows[j][1].ToString() + dtpackage.Rows[j][0].ToString());
                     }
                 }
             }
+            /*      for (int i = 0; i < count1; i++)
+            {
+                Label L = new Label();
+                L.Text = dtpackage.Rows[i][1].ToString() + "   |   "  + dtpackage.Rows[i][0].ToString();
+                addpk(L);
 
+            }*/
             acc = new Accordion();
             acc.Parent = this.panel1;
             acc.CheckBoxMargin = new Padding(2);

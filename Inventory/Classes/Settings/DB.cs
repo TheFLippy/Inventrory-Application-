@@ -14,9 +14,6 @@ namespace Inventory
         string welcomeMsg;
         string privelage = null;
 
-
-
-
         #region Utility/Display functions
         public string connectionString = @"Data Source=gapt-inventory.database.windows.net;Initial Catalog = Inventory; Persist Security Info=True;User ID = TheFLippy; Password=Gapt1234";
         public void sqlConnect()
@@ -438,7 +435,7 @@ namespace Inventory
                 for (int i = 0; i < array.Length; i++)
                 {
 
-                    if (array[i] != null)
+                    if (array[i] != 0)
                     {
                         var myCommand = new SqlCommand("UPDATE package SET deleted = 1 WHERE id =" + array[i].ToString(), conn);
                         int result = myCommand.ExecuteNonQuery();
@@ -470,7 +467,7 @@ namespace Inventory
 
                 for (int i = 0; i < array.Length; i++)
                 {
-                    if (array[i] != 0 && array[i] != null)
+                    if (array[i] != 0)
                     {
                         var myCommand = new SqlCommand("DELETE FROM van WHERE ID = @id", conn);
                         myCommand.Parameters.AddWithValue("@id", array[i]);

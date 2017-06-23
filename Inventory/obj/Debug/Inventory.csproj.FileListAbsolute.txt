@@ -778,3 +778,31 @@ C:\Users\GEORGE MALLIA\Source\Repos\Inventrory-Application-29\Inventory\obj\Debu
 C:\Users\GEORGE MALLIA\Source\Repos\Inventrory-Application-29\Inventory\obj\Debug\Inventory.csproj.GenerateResource.Cache
 C:\Users\GEORGE MALLIA\Source\Repos\Inventrory-Application-29\Inventory\obj\Debug\Inventory.exe.manifest
 C:\Users\GEORGE MALLIA\Source\Repos\Inventrory-Application-29\Inventory\obj\Debug\Inventory.application
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\bin\Debug\Inventory.exe.config
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\obj\Debug\Inventory.exe
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\obj\Debug\Inventory.pdb
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\bin\Debug\Inventory.exe.manifest
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\bin\Debug\Inventory.application
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\bin\Debug\Inventory.exe
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\bin\Debug\Inventory.pdb
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\bin\Debug\EntityFramework.dll
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\bin\Debug\EntityFramework.xml
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\obj\Debug\Inventory.csprojResolveAssemblyReference.cache
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\obj\Debug\Inventory.AddEmployee.resources
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\obj\Debug\Inventory.Forms.AddVan.resources
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\obj\Debug\Inventory.Add_Package.resources
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\obj\Debug\Inventory.Forms.AssignPackage.resources
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\obj\Debug\Inventory.Forms.EditEmployee.resources
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\obj\Debug\Inventory.Forms.EditVan.resources
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\obj\Debug\Inventory.Forms.Edit_Packages.resources
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\obj\Debug\Inventory.Login.resources
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\obj\Debug\Inventory.MainMenu.resources
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\obj\Debug\Inventory.ManageEmployees.resources
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\obj\Debug\Inventory.Forms.ManageVans.resources
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\obj\Debug\Inventory.Forms.View_Inventory.resources
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\obj\Debug\Inventory.Properties.Resources.resources
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\obj\Debug\Inventory.csproj.GenerateResource.Cache
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\obj\Debug\Inventory.exe.manifest
+C:\Users\Sergey\Source\Repos\Inventrory-Application-66666666666\Inventory\obj\Debug\Inventory.application
